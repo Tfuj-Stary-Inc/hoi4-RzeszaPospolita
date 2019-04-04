@@ -4,11 +4,11 @@ ideas = {
 
 	   RZP_szymon_wilk = {
 
-	      picture = "Portrait_Rzesza_Pospolita_Wilq11.dds"
-
 	      allowed = {
 	              original_tag = RZP
 	      }
+	      
+	      picture = Portrait_Rzesza_Pospolita_Wilq11
 
 	      available = {
 	          has_government = fascism
@@ -19,12 +19,12 @@ ideas = {
 
 	   RZP_jan_pawel = {
 
-	      picture =
-	      "Portrait_Rzesza_Pospolita_Karol_Wojtyla.dds"
-
 	      allowed = {
 	              original_tag = RZP
 	      }
+	      
+	      picture =
+	      Portrait_Rzesza_Pospolita_Karol_Wojtyla
 
 	      traits = { prince_of_terror }
 	   }
@@ -38,6 +38,8 @@ ideas = {
 	       allowed = {
 	           original_tag = RZP
 	       }
+	       
+	       picture = Portrait_Rzesza_Pospolita_Shefour
 
 	       available = {
 	           has_government = fascism
@@ -55,6 +57,8 @@ ideas = {
 	       allowed = {
 	           original_tag = RZP
 	       }
+	       
+	       picture = Portrait_Rzesza_Pospolita_Luigi
 
 	       traits = { army_armored_3 }
 	    }
