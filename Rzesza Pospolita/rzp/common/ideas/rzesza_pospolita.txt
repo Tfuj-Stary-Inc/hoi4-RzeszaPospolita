@@ -1,0 +1,62 @@
+ideas = {
+	
+	political_advisor = {
+
+	   RZP_szymon_wilk = {
+
+	      picture = "Portrait_Rzesza_Pospolita_Wilq11.dds"
+
+	      allowed = {
+	              original_tag = RZP
+	      }
+
+	      available = {
+	          has_government = fascism
+	      }
+
+	      traits = { fascist_demagogue propaganda_expert}
+	   }
+
+	   RZP_jan_pawel = {
+
+	      picture =
+	      "Portrait_Rzesza_Pospolita_Karol_Wojtyla.dds"
+
+	      allowed = {
+	              original_tag = RZP
+	      }
+
+	      traits = { prince_of_terror }
+	   }
+	}
+
+	navy_chief = {
+
+	    RZP_kornel_olkowski = {
+
+
+	       allowed = {
+	           original_tag = RZP
+	       }
+
+	       available = {
+	           has_government = fascism
+	       }
+
+	       traits { navy_chief_decisive_battle_2}
+	    }
+	}
+
+	high_command = {
+
+	    RZP_kapitan_luigi = {
+
+
+	       allowed = {
+	           original_tag = RZP
+	       }
+
+	       traits = { army_armored_3 }
+	    }
+	}
+}
