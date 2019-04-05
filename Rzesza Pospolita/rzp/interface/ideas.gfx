@@ -4003,4 +4003,15 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/idea_mtg_naval_treaty_adherent_reduced.dds"
 	}
 	
+	###RZP
+	
+	spriteType = {
+		name = "GFX_idea_RZP_szymon_wilk"
+		texturefile = "gfx/interface/ideas/Portrait_Rzesza_Pospolita_Wilq11.dds"
+        }
+	
+		spriteType = {
+		name = "GFX_idea_RZP_jan_pawel"
+		texturefile = "gfx/interface/ideas/Portrait_Rzesza_Pospolita_Karol_Wojtyla.dds"
+        }
 }
