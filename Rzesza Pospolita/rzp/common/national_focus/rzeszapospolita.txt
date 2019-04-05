@@ -14,8 +14,8 @@ focus_tree = {
 		id = RZP_march_on_warsaw
 		icon = GFX_goal_generic_demand_territory
 		will_lead_to_war_with = POL
-		x = 0
-		y = 1
+		x = 5
+		y = 0
 		cost = 10
 		ai_will_do = {
 		    factor = 1
@@ -47,8 +47,8 @@ focus_tree = {
 	    id = RZP_recover_from_war_of_leadership
 	    icon = GFX_goal_generic_construct_civ_factory
 	    prerequisite = { focus = RZP_march_on_warsaw }
-	    x = 0
-	    y = 2
+	    x = 5
+	    y = 3
 	    relative_position_id = RZP_march_on_warsaw
 	    cost = 10
 	    ai_will_do = {
@@ -96,8 +96,8 @@ focus_tree = {
 	    id = RZP_time_of_reforms
 	    icon = GFX_goal_generic_demand_territory
 	    prerequisite = { focus RZP_recover_from_war_of_leadership }
-	    x = 2
-	    y = 3
+	    x = 5
+	    y = 5
 	    relative_position_id = RZP_recover_from_war_of_leadership
 	    cost = 10
 	    ai_will_do = {
@@ -115,8 +115,8 @@ focus_tree = {
 	    id = RZP_army_reform
 	    icon = GFX_goal_generic_axis_build_infantry
 	    prerequisite = { focus = RZP_time_of_reforms }
-	    x = 0
-	    y = 4
+	    x = 2
+	    y = 7
 	    relative_position_id = RZP_time_of_reforms
 	    cost = 5
 	    ai_will_do = {
@@ -150,8 +150,8 @@ focus_tree = {
 	    id = RZP_air_reform
 	    icon = GFX_goal_generic_air_fighter2
 	    prerequisite = { focus = RZP_time_of_reforms }
-	    x = 1
-	    y = 4
+	    x = 5
+	    y = 7
 	    relative_position_id = RZP_time_of_reforms
 	    cost = 5
 	    ai_will_do = {
@@ -186,8 +186,8 @@ focus_tree = {
 	   id = RZP_naval_reform
 	   icon = GFX_goal_generic_construct_naval_dockyard
 	   prerequisite = { focus = RZP_time_of_reforms }
-	   x = 2
-	   y = 4
+	   x = 7
+	   y = 7
 	   relative_position_id = RZP_time_of_reforms
 	   cost = 5
 	   ai_will_do = {
@@ -245,8 +245,8 @@ focus_tree = {
 	            JAP = { is_puppet = no }
 	            NOT = { has_war_with = JAP }
 	    }
-	    x = 2
-	    y = 5
+	    x = 7
+	    y = 9
 	    relative_position_id = RZP_naval_reform
 	    cost = 10
 	    ai_will_do = {
