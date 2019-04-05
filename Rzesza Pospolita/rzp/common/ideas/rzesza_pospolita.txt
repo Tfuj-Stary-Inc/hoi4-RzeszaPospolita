@@ -8,8 +8,6 @@ ideas = {
 	              original_tag = RZP
 	      }
 	      
-	      picture = Portrait_Rzesza_Pospolita_Wilq11
-
 	      available = {
 	          has_government = fascism
 	      }
@@ -23,8 +21,6 @@ ideas = {
 	              original_tag = RZP
 	      }
 	      
-	      picture =
-	      Portrait_Rzesza_Pospolita_Karol_Wojtyla
 
 	      traits = { prince_of_terror }
 	   }
