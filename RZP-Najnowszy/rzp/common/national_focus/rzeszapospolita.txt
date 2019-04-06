@@ -21,7 +21,7 @@ focus_tree = {
 		    factor = 1
 		}
 
-	available_if_capitulated = no
+	available_if_capitulated = yes
 
 	completion_reward = {
 	    army_experience = 25
@@ -55,7 +55,7 @@ focus_tree = {
 	            factor = 2
 	    }
 
-	    available_if_capitulated = no
+	    available_if_capitulated = yes
 
 	    completion_reward = {
 	            every_state = {
@@ -104,7 +104,7 @@ focus_tree = {
 	            factor = 3
 	    }
 
-	    available_if_capitulated = no
+	    available_if_capitulated = yes
 
 	    completion_reward = {
 	            add_political_power = 300
@@ -123,7 +123,7 @@ focus_tree = {
 	            factor = 4
 	    }
 
-	    available_if_capitulated = no
+	    available_if_capitulated = yes
 
 	    completion_reward = {
 	            army_experience = 50
@@ -158,7 +158,7 @@ focus_tree = {
 	            factor = 5
 	    }
 
-	    available_if_capitulated = no
+	    available_if_capitulated = yes
 
 	    completion_reward = {
 	            air_experience = 35
