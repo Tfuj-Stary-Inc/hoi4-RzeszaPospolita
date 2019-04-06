@@ -1,0 +1,172 @@
+﻿capital = 85
+
+OOB = "RZP_1936"
+
+set_technology = {
+	infantry_weapons = 1
+        infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+        tech_mountaineers = 1
+        motorised_infantry = 1
+        gw_artillery = 1
+        interwar_antiair = 1
+        gwtank = 1
+        basic_light_tank = 1
+        early_fighter = 1
+        fighter1 = 1
+        early_bomber = 1
+        CAS1 = 1
+        naval_bomber1 = 1
+        early_submarine = 1
+        basic_submarine = 1
+        early_destroyer = 1
+        basic_destroyer = 1
+        early_light_cruiser = 1
+        early_heavy_cruiser = 1
+        early_battleship = 1
+        basic_battleship = 1
+        mobile_warfare = 1
+        synth_oil_experiments = 1
+}
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 10
+		}
+
+		fascism = {
+			popularity = 65
+		}
+		
+		communism = {
+			popularity = 5
+		}
+		
+		neutrality = { 
+			popularity = 20
+		}
+	}
+	
+	ruling_party = fascism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_research_slots = 3
+set_convoys = 234
+
+
+create_country_leader = {
+	name = "Krystian Marczuk"
+	desc = "POLITICS_KING_ZOG_DESC"
+	picture = "Portrait_Rzesza_Pospolita_Krycha.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		dictator
+                fascist_sympathies
+                camarilla_leader
+	}
+}
+
+create_country_leader = {
+	name = "Sheowww"
+	desc = "POLITICS_KONRAD_ADENAUER_DESC"
+	picture = "Portrait_Rzesza_Pospolita_Sheow.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+	        ww_one_trauma
+	}
+}
+
+create_country_leader = {
+        name = "Jakub Kowalczyk"
+        desc = "POLITICS_JOSEPH_STALIN_DESC"
+        picture = "Portrait_Rzesza_Pospolita_Kowal.dds"
+        expire = "1965.1.1"
+        ideology = stalinism
+        traits = {
+                permament_revolutionary
+                stalins_puppet
+        }
+}
+
+create_country_leader = {
+        name = "Kaczka"
+        desc = "POLITICS_FRANKLIN_DELANO_ROOSVELT_DESC"
+        picture = "Portrait_Rzesza_Pospolita_Kaczka.dds"
+        expire = "1965.1.1"
+        ideology = liberalism
+        traits = {
+                dislikes germany
+                political_dancer
+        }
+}
+
+add_namespace = {
+        name = "rzp_unit_leader"
+        type = unit_leader
+
+}
+
+create_field_marshal = {
+        name = "Dawid Piechociński"
+        picture = "Portrait_Rzesza_Pospolita_Dziku.dds"
+        traits = { inspirational_leader offensive_doctrine logistics_wizard trait_engineer }
+        skill = 4
+        attack_skill = 3
+        defense_skill = 2
+        planning_skill = 2
+        logistics_skill = 3
+        id = 1
+}
+
+create_corps_commander = {
+        name = "Owsienko"
+        picture = "Portrait_Rzesza_Pospolita_Owsiak.dds"
+        traits = { naval_invader winter_specialist }
+        skill = 3
+        id = 3
+        attack_skill = 4
+        defense_skill = 3
+        planning_skill = 3
+        logistics_skill = 3
+}
+
+create_corps_commander = {
+        name = "Luigi"
+        picture = "Portrait_Rzesza_Pospolita_Luigi.dds"
+        traits = { armor_officer trait_mountaineer bearer_of_artillery }
+        skill = 4
+        id = 1
+        attack_skill = 3
+        defense_skill = 3
+        planning_skill = 1
+        logistics_skill = 3
+}
+
+create_corps_commander = {
+        name = "Cat"
+        picture = "Portrait_Rzesza_Pospolita_Cat.dds"
+        traits = { trickster urban_assault_specialist }
+        skill = 3
+        id = 2
+        attack_skill = 2
+        defense_skill = 3
+        planning_skill = 3
+        logistics_skill = 2
+}
+
+create_navy_leader = {
+        name = "Kornel Olkowski"
+        picture = "Portrait_Rzesza_Pospolita_Shefour.dds"
+        traits = { air_controller ironside superior_tactician }
+        skill = 4
+        id = 1
+}
+
