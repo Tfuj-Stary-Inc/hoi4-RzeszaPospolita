@@ -2061,16 +2061,6 @@
 #######
  RZP_march_on_warsaw:0 "Marsz na Warszawę"
  RZP_march_on_warsaw_desc:0 "Musimy zająć resztę polskich ziem aby nasz kraj miał szanse stawić czoła naszym przyszłym wrogom, a aby to zrobić musimy pozbyć się starej władzy i siłą pokazać kto jest lepszym liderem!"
- RZP_recover_from_war_of_leadership:0 "Odbudowa po wojnie o władzę"
- RZP_recover_from_war_of_leadership_desc:0 "Teraz kiedy wygraliśmy wojnę, musimy zająć się lekko podupadłą gospodarką jeżeli chcemy spełnić jakiekolwiek ambicje o podbojach sąsiednich ziem, a aby to zrobić musimy wznieść nowe fabryki."
- RZP_time_of_reforms:0 "Czas reform"
- RZP_time_of_reforms_desc:0 "Nadszedł czas zmian, za czasów starej władzy nie było szans na rozwój tego kraju, jednak wraz z odsunięciem jej od spraw państwowych, możemy rozpocząć liczne reformy które doprowadzą do unowocześnienia naszego kraju."
- RZP_army_reform:0 "Reforma armi"
- RZP_army_reform_desc:0 "Każdy kraj powinien mieć dobrą armię, a my nie będziemy gorsi, dlatego też przyszła pora na unowocześnienie wyposażenia naszej armi."
- RZP_air_reform:0 "Reforma lotnictwa"
- RZP_air_reform_desc:0 "W tych czasach wojny będą wyglądać inaczej niż wcześniej, teraz ważną rolę będą odgrywać też samoloty, dlatego powinniśmy popracować nad nowymi modelami tych maszyn dla naszego lotnictwa bojowego."
- RZP_naval_reform:0 "Reforma marynarki"
- RZP_naval_reform_desc:0 "Wielu ze sztabu dowodzenia uważa, że nasz kraj nie powinien być w tyle za potęgami morskimi, nie ma co pytać czy będziemy walczyć na morzu, jednak wraz z upadkiem starego rządu, zdobyliśmy kilka planów statków które mogą nam się przydać, nie powinniśmy zwlekać z wcieleniem ich w życie."
- RZP_steal_saipan:0 "Ukraść Sajpan"
- RZP_steal_saipan_desc:0 "Nasz admirał marynarki posiada słabość do wyspy Sajpan. Może powinniśmy go przejąć z uwagi na jego taktyczne położenie, Japonia nie powinna mieć z tym problemu, przecież mają pełno wysp."
+ RZP_recover_from_civil_war:0 "Odbudowa po wojnie domowej"
+ RZP_recover_from_civil_war_desc:0 "Teraz kiedy wygraliśmy ze starą władzą, nadeszła pora na odbudowę naszego kraju i przygotowanie go na kolejny nieunikniony konflikt zbrojny"
  
