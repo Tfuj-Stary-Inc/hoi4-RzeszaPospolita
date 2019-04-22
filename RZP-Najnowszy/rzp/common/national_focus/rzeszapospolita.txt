@@ -9,3 +9,27 @@ focus_tree = {
                 tag = RZP
             }
 }
+
+focus = {
+           id = RZP_march_on_warsaw
+           icon = GFX_goal_generic_demand_territory
+           x = 5
+           y = 0
+           cost = 10
+           ai_will_do = {
+                  factor = 1
+           }
+           
+           available_if_capitulated = no
+           
+           completion_reward = {
+               army_experience = 25
+               
+               add_state_core = 10
+               add_state_core = 
+               add_state_core = 
+               add_state_core = 
+               add_state_core = 
+               add_state_core = 
+               add_state_core = 
+               add_state_core = 
