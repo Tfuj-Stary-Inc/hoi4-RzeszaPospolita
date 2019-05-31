@@ -66,9 +66,9 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-			#add_ideas = todt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = todt		
+			add_ideas = RZP_war_fortifications_idea
+			
+			army_experience = 15
 		}
 	}
 
