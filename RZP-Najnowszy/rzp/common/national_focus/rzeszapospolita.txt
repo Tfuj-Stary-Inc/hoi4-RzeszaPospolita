@@ -19,7 +19,7 @@ focus_tree = {
 		y = 0
 		cost = 10
 		ai_will_do = {
-			factor = 12
+			factor = 1
 		}
 		
 		completion_reward = {
@@ -54,12 +54,12 @@ focus_tree = {
 			}
 
 	focus = {
-		id = RZP_secure_ostfront
+		id = RZP_line_of_defence
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = GER_four_year_plan }
+		prerequisite = { focus = RZP_country_build_up }
 		x = -5
 		y = 1
-		relative_position_id = GER_four_year_plan
+		relative_position_id = RZP_country_build_up
 		cost = 5
 		ai_will_do = {
 			factor = 8
@@ -68,78 +68,7 @@ focus_tree = {
 		completion_reward = {
 			#add_ideas = todt
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = todt
-			50 = {
-				if = {
-					limit = { is_controlled_by = ROOT }
-					custom_effect_tooltip = GER_west_wall_forts
-					hidden_effect = {
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 11640
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 6712
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 6542
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 3530
-							instant_build = yes
-						}
-					}
-				}
-			}
-			if = {
-				limit = { 42 = { is_demilitarized_zone = yes } }
-				custom_effect_tooltip = GER_west_wall_tt
-			}
-			42 = {
-				custom_effect_tooltip = GER_west_wall_forts
-			}
-			hidden_effect = {
-				42 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 3558
-							instant_build = yes
-						}
-						
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 563
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 11531
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 3
-							province = 9575
-							instant_build = yes
-						}
-					}
-				}
-			}			
+			show_ideas_tooltip = todt		
 		}
 	}
 
