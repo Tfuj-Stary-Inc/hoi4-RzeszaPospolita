@@ -1,5 +1,28 @@
 ideas = {
 	
+	country = {
+	
+	   RZP_war_fortifications_idea = {
+		
+			allowed = {
+				original_tag = RZP
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_wall_line
+
+			modifier = {
+				production_speed_bunker_factor = 0.2
+			}
+		}
+	}
+	
 	political_advisor = {
 
 	   RZP_szymon_wilk = {
