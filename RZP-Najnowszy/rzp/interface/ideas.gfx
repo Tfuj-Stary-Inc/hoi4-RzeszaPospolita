@@ -4007,11 +4007,11 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_idea_RZP_szymon_wilk"
-		texturefile = "gfx/interface/ideas/Portrait_Rzesza_Pospolita_Wilq11.dds"
+		texturefile = "gfx/interface/ideas/rzp_advisor_wilq.dds"
         }
 	
 		spriteType = {
 		name = "GFX_idea_RZP_jan_pawel"
-		texturefile = "gfx/interface/ideas/Portrait_Rzesza_Pospolita_Karol_Wojtyla.dds"
+		texturefile = "gfx/interface/ideas/rzp_advisor_wojtyla.dds"
         }
 }
