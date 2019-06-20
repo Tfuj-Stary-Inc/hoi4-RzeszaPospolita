@@ -2060,4 +2060,21 @@
  GER_see_to_the_eastern_front_tt:0 "Zbuduj 14 §Yfortyfikacji lądowych§! w 6 prowincjach na wschodniej granicy.\n"
 #######
  
- 
+ RZP_marsznawarszaw:0 "Marsz na Warszawę"
+RZP_marsznawarszaw_desc:0 "Część kraju jest już pod naszą kontrolą, czas aby zawładnąć nad resztą"
+RZP_reformaprzemysowa:0 "Reforma Przemysłowa"
+RZP_reformaprzemysowa_desc:0 "Kraj jest w opłakanym stanie, aby to zmienić musimy go odpowiednio rozbudować"
+RZP_budowawjeda:0 "Budowa Wjeżdża"
+RZP_budowawjeda_desc:0 "Nasz kraj jest gotowy aby przejść wielkie zmiany w przemyśle. Musimy powołać odpowiednie osoby w rządzie aby zarządzały kierunkiem rozwoju przemysłowego!"
+RZP_kontrrewolucjamonarchistyczna:0 "Kontrrewolucja Monarchistyczna"
+RZP_kontrrewolucjamonarchistyczna_desc:0 "Po wojnie faszyści mają znacznie słabszą armię, to jest moment w którym możemy uderzyć i zawładnąć nad krajem w celu przywrócenia króla i wartości Królestwa Polskiego"
+RZP_reformaarmi:0 "Reforma Armi"
+RZP_reformaarmi_desc:0 "W trakcie wojny nasi generałowie poinformowali nas że armia musi zostać zmodernizowana, nie czekajmy na to do ostatniej chwili i zróbmy to już teraz"
+RZP_reformapolityczna:0 "Reforma Polityczna"
+RZP_reformapolityczna_desc:0 "Teraz gdy panujemy w Polsce, musimy umocnić pozycję naszej partii, w tym celu trzeba zdusić opozycję."
+RZP_nowemetodybudowlane:0 "Nowe metody budowlane"
+RZP_nowemetodybudowlane_desc:0 "Polscy konstruktorzy byli często uważani za spierdolonych, jednak my widzimy w nich potencjał, dlatego dofinansujemy ich i usprawnimy naszą budowlankę."
+RZP_tradycjabudowlana:0 "Tradycja budowlana"
+RZP_tradycjabudowlana_desc:0 "Dotychczasowe budownictwo było wystarczające, dzięki czemu nie musimy nic w nim zmieniać, a zamiast tego skupić się na innowacji elektroniki"
+RZP_powoanienowychszk:0 "Powołanie nowych szkół"
+RZP_powoanienowychszk_desc:0 "Mądre społeczeństwo jest silnym społeczeństwem, musimy zadbać o to aby nasi obywatele mieli jak najlepszą edukację, w tym celu powinniśmy wybudować nowe szkoły aby coraz większa liczba osób do nich uczęszczała"
