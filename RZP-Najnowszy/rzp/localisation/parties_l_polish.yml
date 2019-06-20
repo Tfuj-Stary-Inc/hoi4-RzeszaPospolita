@@ -550,3 +550,13 @@
  LUX_fascism_party_long:0 "Onofhängeg Nationalpartei"
  ICE_communism_party_long:0 "Kommúnistaflokkur íslands"
  ICE_fascism_party_long:0 "Flokkur Þjóðernissinna"
+####
+
+RZP_fascism_party:0 "NSPPR"
+RZP_fascism_party_long:0 "Narodowosocjalistyczna Polska Partia Robotników"
+RZP_neutrality_party:0 "BPKZ"
+RZP_neutrality_party_long:0 "Banda prokaiserowskich zjebów"
+RZP_democratic_party:0 "KZP"
+RZP_democratic_party_long:0 "Koledzy z Polio"
+RZP_communism_party:0 "PG"
+RZP_communism_party_long:0 "Partia GŁÓD"
