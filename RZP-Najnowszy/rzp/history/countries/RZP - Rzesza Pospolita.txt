@@ -71,29 +71,16 @@ if = {
 	
 
 set_politics = {
-
-	parties = {
-		democratic = { 
-			popularity = 10
-		}
-
-		fascism = {
-			popularity = 65
-		}
-		
-		communism = {
-			popularity = 5
-		}
-		
-		neutrality = { 
-			popularity = 20
-		}
-	}
-	
 	ruling_party = fascism
 	last_election = "1933.3.5"
 	election_frequency = 48
 	elections_allowed = no
+}
+set_popularities = {
+        democratic = 10
+	fascism = 65
+	communism = 5
+	neutrality = 20
 }
 
 set_research_slots = 3
@@ -107,9 +94,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nazism
 	traits = {
-		dictator
-                fascist_sympathies
-                camarilla_leader
+		creator_of_the_reich
+                land_force_lover
 	}
 }
 
