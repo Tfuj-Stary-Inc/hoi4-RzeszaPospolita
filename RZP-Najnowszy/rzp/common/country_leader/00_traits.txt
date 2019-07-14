@@ -34,7 +34,18 @@ leader_traits = {
                     ai_will_do = {
                            factor = 1
                     }
-}
+  }
+  
+  biest_von_wadowitz = {
+           sprite = 13
+           enemy_partisant_effect = -0.50
+           non_core_manpower = 0.05
+           
+           ai_will_do = {
+                   factor = 1
+           }
+ }
+
    
    mass_assault_specialist = {
                sprite = 5
