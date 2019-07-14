@@ -25,3 +25,15 @@ leader_traits = {
                      factor = 1
               }
    }
+   
+   mass_assault_specialist = {
+               sprite = 5
+               training_time_army_factor = -0.40
+               experience_gain_army_factor = -0.10
+               
+               ai_will_do = {
+                       factor = 8
+               }
+}
+               
+               
