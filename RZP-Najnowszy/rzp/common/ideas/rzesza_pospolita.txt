@@ -45,7 +45,7 @@ ideas = {
 	      }
 	      
 
-	      traits = { prince_of_terror }
+	      traits = { biest_von_wadowitz }
 	   }
 	   
 	   RZP_ambasador_ukrainy = {
