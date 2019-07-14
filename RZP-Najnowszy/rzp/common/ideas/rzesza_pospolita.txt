@@ -81,5 +81,15 @@ ideas = {
 
 	       traits = { army_armored_3 }
 	    }
+	    
+	    RZP_nat_war = {
+	       
+	       
+	       allowed = {
+	           original_tag = RZP
+	       }
+	       
+	       traits = { mass_assault_specialist }
+	   }
 	}
 }
