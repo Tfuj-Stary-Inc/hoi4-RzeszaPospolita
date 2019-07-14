@@ -4014,4 +4014,9 @@ spriteTypes = {
 		name = "GFX_idea_RZP_jan_pawel"
 		texturefile = "gfx/interface/ideas/rzp_advisor_wojtyla.dds"
         }
+	
+	spriteType = {
+	        name = "GFX_idea_RZP_nat_war"
+		texturefile = "gfx/interface/ideas/rzp_nat_war_advisor.dds"
+	}
 }
