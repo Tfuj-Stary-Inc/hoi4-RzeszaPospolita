@@ -47,6 +47,14 @@ ideas = {
 
 	      traits = { prince_of_terror }
 	   }
+	   
+	   RZP_ambasador_ukrainy = {
+	      
+	      allowed = {
+	              original_tag = RZP
+	      }
+	      
+	      traits = { bandera_cosplayer_but_worse }
 	}
 
 	navy_chief = {
