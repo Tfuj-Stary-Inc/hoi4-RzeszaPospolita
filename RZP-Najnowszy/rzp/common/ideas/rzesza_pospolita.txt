@@ -37,6 +37,26 @@ ideas = {
 
 	      traits = { fascist_demagogue propaganda_expert}
 	   }
+	   
+	   RZP_jerzy_urban = {
+	   
+	      allowed = {
+	              original_tag = RZP
+	      }
+	      
+	      
+	      traits = { man_of_state communist_conections }
+	   }
+	   
+	   RZP_pizducki = {
+	   
+	      allowed = {
+	              original_tag = RZP
+	      }
+	      
+	      
+	      traits = { hero_of_the_people }
+	   }
 
 	   RZP_jan_pawel = {
 
