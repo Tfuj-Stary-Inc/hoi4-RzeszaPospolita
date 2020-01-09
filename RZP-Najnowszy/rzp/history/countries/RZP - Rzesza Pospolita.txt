@@ -193,11 +193,23 @@ create_corps_commander = {
         picture = "Portrait_Rzesza_Pospolita_Cat.dds"
         traits = { trickster urban_assault_specialist }
         skill = 3
-        id = 2
+        id = 5
         attack_skill = 2
         defense_skill = 3
         planning_skill = 3
         logistics_skill = 2
+}
+
+create_corps_commander = {
+        name = "KYSawier"
+	picture = "Portrait_Rzesza_Pospolita_Xavier.dds"
+	traits = { trickster }
+	skill = 2
+	id = 6
+	attack_skill = 1
+        defense_skill = 2
+        planning_skill = 1
+        logistics_skill = 3
 }
 
 create_navy_leader = {
