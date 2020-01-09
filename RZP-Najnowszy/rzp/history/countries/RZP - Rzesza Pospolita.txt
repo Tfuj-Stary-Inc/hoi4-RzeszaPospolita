@@ -152,6 +152,18 @@ create_field_marshal = {
         id = 1
 }
 
+create_field_marshal = {
+        name = "Generał Admirał Juzef Pizducki"
+	picture = "Portrait_Rzesza_Pospolita_Pizducki.dds"
+	traits = { offensive_doctrine logistics_wizard armor_officer winter_specialist trait_mountaineer }
+	skill = 7
+	attack_skill = 5
+	defense_skill = 5
+	planning_skill = 6
+	logistics_skill = 6
+	id = 2
+}
+
 create_corps_commander = {
         name = "Owsienko"
         picture = "Portrait_Rzesza_Pospolita_Owsiak.dds"
