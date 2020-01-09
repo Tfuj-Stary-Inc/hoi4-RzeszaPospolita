@@ -36,6 +36,40 @@ leader_traits = {
                     }
   }
   
+  communist_conections = {
+           random = no
+           
+           communism_drift = 0.03
+           
+           ai_will_do = {
+                  factor = 1
+           }
+  }
+  
+  man_of_state = {
+        random = no
+        
+        political_power_factor = 0.20
+        stability_factor = 0.10
+        economy_cost_factor = -0.25
+        
+        ai_will_do = {
+                factor = 1
+        }
+  }
+  
+  hero_of_the_people = {
+             random = no
+             
+             stability_factor = 0.15
+             mobilization_laws_cost_factor = -0.50
+             army_chief_cost_factor = -0.25
+             
+             ai_will_do = {
+                    factor = 1
+             }
+  }
+  
   biest_von_wadowitz = {
            sprite = 13
            enemy_partisant_effect = -0.50
