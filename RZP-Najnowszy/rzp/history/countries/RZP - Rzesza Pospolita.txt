@@ -167,7 +167,7 @@ create_field_marshal = {
 create_corps_commander = {
         name = "Jerzy Urban"
 	picture = "Portrait_Rzesza_Pospolita_Urban.dds"
-	traits = { trickster infantry_officer }
+	traits = { trickster infantry_officer career_officer }
 	skill = 5
 	id = 7
 	attack_skill = 4
@@ -201,6 +201,18 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
+        name = "Nat-War"
+	picture = "rzp_nat_war_general.dds"
+	traits = { politically_connected }
+	skill = 3
+        id = 8
+        attack_skill = 2
+        defense_skill = 3
+        planning_skill = 1
+        logistics_skill = 1
+}
+
+create_corps_commander = {
         name = "Cat"
         picture = "Portrait_Rzesza_Pospolita_Cat.dds"
         traits = { trickster urban_assault_specialist }
@@ -226,7 +238,7 @@ create_corps_commander = {
 
 create_navy_leader = {
         name = "Kornel Olkowski"
-        picture = "Portrait_Rzesza_Pospolita_Shefour.dds"
+        picture = "rzp_shefour_general.dds"
         traits = { air_controller ironside superior_tactician }
         skill = 4
         id = 1
