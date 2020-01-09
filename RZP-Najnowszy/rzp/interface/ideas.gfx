@@ -4024,4 +4024,14 @@ spriteTypes = {
 	        name = "GFX_idea_RZP_ambasador_ukrainy"
 		texturefile = "gfx/interface/ideas/rzp_andrii_advisor.dds"
 	}
+	
+	spriteType = {
+	        name = "GFX_idea_RZP_jerzy_urban"
+		texturefile = "gfx/interface/ideas/rzp_advisor_urban.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RZP_pizducki"
+		texturefile = "gfx/interface/ideas/rzp_advisor_pizducki.dds"
+	}
 }
