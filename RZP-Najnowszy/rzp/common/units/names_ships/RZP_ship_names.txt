@@ -1,0 +1,42 @@
+RZP_DD_HISTORICAL = {
+        name = NAME_THEME_HISTORICAL_DESTROYERS
+        
+        for_countries = { RZP }
+        
+        type = ship
+        ship_types = { ship_hull_light destroyer }
+        
+        prefix = "ORP "
+        fallback_name = "Niszczyciel %d"
+        
+        unique = { "Błyskawica" "Brzoza" "Jerzy Urban" "Ślunsk" "Knur" "Kardynał Dziwisz" "Ayaya" "Ork" "Kret" "Demokracja" }
+}
+        
+RZP_CL_HISTORICAL = {
+        name = NAME_THEME_HISTORICAL_CL
+    
+        for_countries = { RZP }
+    
+        type = ship
+	      ship_types = { ship_hull_cruiser light_cruiser }
+    
+        prefix = "ORP "
+        fallback_name = "Lekki Krążownik %d"
+    
+        unique = { "Łokietek" "Japoński Krążownik Ciężki" "Andrej" "WOŚP" "Danzig" }
+}
+
+RZP_CA_HISTORICAL = {
+        name = NAME_THEME_HISTORICAL_CA
+        
+        for_countries = { RZP }
+        
+        type = ship
+	      ship_types = { ship_hull_cruiser heavy_cruiser }
+        
+        prefix = "ORP "
+	      fallback_name = "Ciężki Krążownik %d"
+        
+        unique = { "BałTHICC" "Roon, with spoon" "Adm. Olkowski" "Bandera" "Salazar był faszystą" "SS-Galizen" "Krakau" "Warmianin" }
+}
+
