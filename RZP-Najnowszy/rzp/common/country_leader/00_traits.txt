@@ -112,3 +112,15 @@ soviet_tactics_lover = {
                       factor = 1
               }
 }
+
+rebbelious_commander = {
+          random = no
+          
+          army_org_factor = 0.06
+          non_core_manpower = 0.10
+          stability_factor = -0.15
+          
+          ai_will_do = {
+                  factor = 1
+          }
+}
