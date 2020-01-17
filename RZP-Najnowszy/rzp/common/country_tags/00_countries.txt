@@ -114,3 +114,4 @@ BOT = "countries/Botswana.txt"
 MAN = "countries/Manchukou.txt"
 ########################
 RZP = "countries/Rzesza Pospolita.txt"
+JRP = "countries/Junta Wojskowa Rzeszy Pospolitej.txt"
