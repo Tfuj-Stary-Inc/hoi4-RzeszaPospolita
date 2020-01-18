@@ -21,6 +21,170 @@ ideas = {
 				production_speed_bunker_factor = 0.2
 			}
 		}
+		
+		RZP_plan_w = {
+				
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+				
+				picture = 
+				
+				modifier = {
+					non_core_manpower = 0.05
+				}
+		}
+		
+		RZP_recruitment = {
+
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+				
+                                picture = 
+
+				modifier = {
+					conscription = 0.02
+				}
+		}
+		
+		RZP_rapid_economic_development = {
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = no
+				}
+
+				removal_cost = -1
+				
+				picture = 
+				
+				modifier = {
+					consumer_goods_factor = -0.10
+					production_speed_buildings_factor = 0.25
+					political_power_gain = 0.20
+					economy_cost_factor = -0.50
+					trade_laws_cost_factor = -0.50
+				}
+		}
+		
+		RZP_main_staff_of_rzesza_pospolita = {
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+				
+				picture =
+				
+				modifier = {
+					command_power_gain = 1
+					production_speed_buildings_factor = 0.25
+					political_power_gain 
+					max_command_power = 25
+					army_morale_factor = 0.10
+					conscription = 0.03
+					planning_speed = -0.5
+					army_leader_cost_factor = -0.5
+					army_leader_start_level = 1
+				}
+		}
+		
+		RZP_polish-japanese_friendship = {
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+				
+				modifier = {
+
+					add_opinion_modifier_to_japan = { target = JAP modifier = large_increase }
+				
+					JAP = { add_opinion_modifier_to_poland = { target = POL modifier = large_increase } }
+
+				}
+		}
+		
+		RZP_aggressive_expansion_of_the_reich = {
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+				
+				picture = 
+				
+				modifier = {
+					army_morale_factor = 0.10
+					experience_gain_army = 0.05
+					justify_war_goal_time = -0.50
+				}
+		}
+		
+		RZP_imperials_recruitment = {
+				
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+				
+				picture = 
+				
+				modifier = {
+					non_core_manpower = 0.5
+				}
+		}
+		
+		RZP_night_spirit = {
+				
+				allowed = {
+					always = yes
+				}
+
+				allowed_civil_war = {
+					always = yes
+				}
+
+				removal_cost = -1
+
+                                picture = 
+				
+				modifier = {
+					land_night_attack = 0.25
+				}
+		}
 	}
 	
 	political_advisor = {
