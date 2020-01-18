@@ -1,6 +1,20 @@
 leader_traits = {
 
+blind_fucked_homeless_monk = {
+    type = land
 
+    trait_type = personality_trait
 
+    cost = 0.01
+    duration = -1
+    
+    modifiers = {
+      offence = -0.6
+      land_night_attack = 0.6
+      special_forces_attack_factor = 1.5
+      planning_speed = -0.5
+      special_forces_defence_factor = -0.5
+    }
+}
 
 }
