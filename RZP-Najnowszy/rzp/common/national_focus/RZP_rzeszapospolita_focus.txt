@@ -7,7 +7,7 @@ focus_tree = {
 			tag = RZP
 		}
 	}
-	#Focus for Obozy "wypoczynkowe" na Podlasiu
+
 	focus = {
 		id = RZP_obozywypoczynkowenapodlasiu
 		icon = GFX_goal_generic_secret_weapon
@@ -22,24 +22,22 @@ focus_tree = {
 		completion_reward = {
 			97 = {
                           add_building_construction = {
-                          type = industrial_complex
-                          level = 4
-                          instant_build = yes
+                             type = industrial_complex
+                             level = 4
+                             instant_build = yes
+                          }
                         }
-                }
-
                         97 = {
                           add_building_construction = {
-                          type = bunker
-                          level = 5
-                          province = 400
-                          instant_build = yes
-                        }
-                }
-	}
+                             type = bunker
+                             level = 5
+                             province = 400
+                             instant_build = yes
+                          }
+                       }
+	       }
 }
 
-	#Focus for Kursy Oficerów
 	focus = {
 		id = RZP_kursyoficerw
 		icon = GFX_goal_generic_intelligence_exchange
@@ -57,8 +55,7 @@ focus_tree = {
                         }
 		}
 	}
-
-	#Focus for Powołanie nowych generałów
+	
 	focus = {
 		id = RZP_powoanienowychgeneraw
 		icon = GFX_goal_generic_national_unity
@@ -71,8 +68,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-
-	#Focus for Inwestycja w baterię artyleryjskie
+	
 	focus = {
 		id = RZP_inwestycjawbateriartyleryjskie
 		icon = GFX_goal_generic_army_artillery2
@@ -86,15 +82,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = artillery_bonus
-bonus = 1.0
-uses = 2
-category = artillery
-}
-		}
+                           name = artillery_bonus
+                           bonus = 1.0
+                           uses = 2
+                           category = artillery
+                }
 	}
 
-	#Focus for Wojna na lądzie, morzu i w powietrzu
 	focus = {
 		id = RZP_wojnanaldziemorzuiwpowietrzu
 		icon = GFX_goal_generic_army_doctrines
@@ -108,29 +102,28 @@ category = artillery
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = land_doc_bonus
-bonus = 1.0
-uses = 2
-category = land_doctrine
+                           name = land_doc_bonus
+                           bonus = 1.0
+                           uses = 2
+                           category = land_doctrine
+                        }
+
+                        add_tech_bonus = {
+                           name = air_doc_bonus
+                           bonus = 1.0
+			   uses = 2
+			   category = air_doctrine
+			}
+
+                        add_tech_bonus = {
+			   name = fleet_in_being_bonus
+			   bonus = 1.0
+			   uses = 2
+			   category = fleet_in_being_tree
+			}
+	      }
 }
 
-add_tech_bonus = {
-name = air_doc_bonus
-bonus = 1.0
-uses = 2
-category = air_doctrine
-}
-
-add_tech_bonus = {
-name = fleet_in_being_bonus
-bonus = 1.0
-uses = 2
-category = fleet_in_being_tree
-}
-		}
-	}
-
-	#Focus for Arsenał Papieski
 	focus = {
 		id = RZP_arsenapapieski
 		icon = GFX_goal_generic_build_tank
@@ -145,40 +138,41 @@ category = fleet_in_being_tree
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-	}
-}
-		}
+                           type = arms_factory
+                           level = 2
+			   instant_build = yes
+	                }
+                }
 		completion_reward = {
 			random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory				level = 2
-instant_build = yes
-	}
-}
+                              add_extra_state_shared_building_slots = 2
+			      add_building_construction = {
+			         type = arms_factory
+			         level = 2
+                                 instant_build = yes
+	                      }
+                        }
 
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory				level = 2
-instant_build = yes
-	}
-}
+                        random_owned_controlled_state = {
+			      add_extra_state_shared_building_slots = 2
+			      add_building_construction = {
+			         type = arms_factory
+			         level = 2
+                                 instant_build = yes
+			      }
+                        }
 
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory				level = 2
-instant_build = yes
-	}
-}
+                        random_owned_controlled_state = {
+			      add_extra_state_shared_building_slots = 2
+			      add_building_construction = {
+			         type = arms_factory
+				 level = 2
+                                 instant_build = yes
+	                      }
+                        }
 		}
-	}
+}
 
-	#Focus for Marsz na Warszawę
 	focus = {
 		id = RZP_marsznawarszaw
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -191,23 +185,22 @@ instant_build = yes
 		}
 		completion_reward = {
 			add_state_core= 98
-add_state_core= 10
-add_state_core= 92
-add_state_core= 91
-add_state_core= 89
-add_state_core= 93
-add_state_core= 94
-add_state_core= 95
-add_state_core= 96
-add_state_core= 97
+                        add_state_core= 10
+                        add_state_core= 92
+                        add_state_core= 91
+                        add_state_core= 89
+                        add_state_core= 93
+                        add_state_core= 94
+                        add_state_core= 95
+                        add_state_core= 96
+                        add_state_core= 97
 
-add_political_power = 100
+                        add_political_power = 100
 
-country_event = { id = rzeszapospolita.1 }
+                        country_event = { id = rzeszapospolita.1 }
 		}
 	}
 
-	#Focus for Reforma Przemysłowa
 	focus = {
 		id = RZP_reformaprzemysowa
 		icon = GFX_goal_generic_construction2
@@ -224,55 +217,48 @@ country_event = { id = rzeszapospolita.1 }
 		}
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 1
-add_building_construction = {
-type = industrial_complex
-level = 2
-instant_build = yes
-}			
-}
-		}
+                           add_building_construction = {
+			      type = industrial_complex
+			      level = 2
+			      instant_build = yes
+                           }			
+                }
 		completion_reward = {
-			random_owned_controlled_state={
-limit = {
-free_building_slots = {
-building = industrial_complex
-size > 0
-include_locked = yes
-}
+			random_owned_controlled_state= {
+                                                     limit = {
+						                free_building_slots = {
+								    building = industrial_complex
+								    size > 0
+								    include_locked = yes
+                                                                }
+                                                     }
 
-}
+                             add_extra_state_shared_building_slots = 2
+                             add_building_construction = {
+			        type = industrial_complex
+				level = 2
+				instant_build = yes
+                             }
+                      }
+		      
+		      random_owned_controlled_state= {
+                                                     limit = {
+						                free_building_slots = {
+								    building = industrial_complex
+								    size > 0
+								    include_locked = yes
+                                                                }
+                                                     }
 
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = industrial_complex
-level = 2
-instant_build = yes
-}
-
-set_state_flag = RZP_industrial_effort
-}
-
-random_owned_controlled_state={
- limit = {
- free_building_slots = {
- building = industrial_complex
- size > 0
- include_locked = yes
- }
-
- }
-
- add_extra_state_shared_building_slots = 2
- add_building_construction = {
- type = industrial_complex
- level = 2
- instant_build = yes
- }
-
- set_state_flag = RZP_industrial_effort
- }
-		}
+                             add_extra_state_shared_building_slots = 2
+                             add_building_construction = {
+			        type = industrial_complex
+				level = 2
+				instant_build = yes
+                             }
+                      }
 	}
+}
 
 	#Focus for Rozbudowa zakładów militarnych
 	focus = {
@@ -289,39 +275,41 @@ random_owned_controlled_state={
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
-type = arms_factory
-level = 1
-instant_build = yes
-}
+			   type = arms_factory
+			   level = 1
+			   instant_build = yes
+                       }
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory				level = 1
-instant_build = yes
+                              add_extra_state_shared_building_slots = 1
+			      add_building_construction = {
+				 type = arms_factory
+				 level = 1
+				 instant_build = yes
+	                      }
+                       }
+
+                       random_owned_controlled_state = {
+                             add_extra_state_shared_building_slots = 1
+			     add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+	                     }
+                       }
+
+                       random_owned_controlled_state = {
+		             add_extra_state_shared_building_slots = 1
+			     add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+	                     }
+                       }
 	}
 }
 
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory				level = 1
-instant_build = yes
-	}
-}
-
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory				level = 1
-instant_build = yes
-	}
-}
-		}
-	}
-
-	#Focus for Budowa Wjeżdża
 	focus = {
 		id = RZP_budowawjeda
 		icon = GFX_goal_generic_construct_civ_factory
@@ -337,41 +325,46 @@ instant_build = yes
 			num_of_factories> 35
 		}
 		complete_tooltip = {
-			complete_tooltip = {
 			add_building_construction = {
-type = infrastructure
-level = 1				instant_build = yes
-}
+                           type = infrastructure
+			   level = 1
+			   instant_build = yes
+                        }
 			add_building_construction = {
-type = infrastructure
-level = 1			instant_build = yes
-}
-}
+                           type = infrastructure
+			   level = 1			
+			   instant_build = yes
+                        }
 		}
 		completion_reward = {
 			add_political_power = 100
 
-add_extra_state_shared_building_slots= {
- add_extra_state_shared_building_slots = 4 
-}
-random_owned_controlled_state= {
-add_building_construction = {type = infrastructurelevel = 2
-instant_build = yes}
-}
+                        10 = {
+                           add_extra_state_shared_building_slots = 4 
+                        }
+                        random_owned_controlled_state= {
+			      add_building_construction = {
+			         type = infrastructurelevel = 2
+                                 instant_build = yes
+			      }
+                        }
 
-random_owned_controlled_state= {
-add_building_construction = {type = infrastructurelevel = 2
-instant_build = yes}
-}
+                        random_owned_controlled_state= {
+                              add_building_construction = {
+			         type = infrastructurelevel = 2
+			         instant_build = yes
+			      }
+                        }
 
-random_owned_controlled_state = {
-add_building_construction = {type = infrastructurelevel = 2
-instant_build = yes}
-}
-		}
+                        random_owned_controlled_state = {
+			      add_building_construction = {
+			         type = infrastructurelevel = 2
+				 instant_build = yes
+			      }
+                        }
 	}
+}
 
-	#Focus for Kontrrewolucja Monarchistyczna
 	focus = {
 		id = RZP_kontrrewolucjamonarchistyczna
 		icon = GFX_goal_generic_demand_territory
@@ -386,14 +379,13 @@ instant_build = yes}
 		}
 		completion_reward = {
 			add_popularity= { 
-ideology = neutrality 
-popularity = 0.3 
-}
-add_political_power= 75
+                           ideology = neutrality 
+                           popularity = 0.3 
+                        }
+                        add_political_power= 75
 		}
 	}
 
-	#Focus for Reforma Armi
 	focus = {
 		id = RZP_reformaarmi
 		icon = GFX_goal_generic_axis_build_infantry
@@ -411,15 +403,14 @@ add_political_power= 75
 		completion_reward = {
 			army_experience= 25
 
-add_tech_bonus= {
-bonus = 0.5 
-uses = 2 
-category = land_doctrine 
-}
+                        add_tech_bonus= {
+			   bonus 0.5
+			   uses = 2
+			   category = land_doctrine 
+			}
 		}
 	}
 
-	#Focus for Reforma Polityczna
 	focus = {
 		id = RZP_reformapolityczna
 		icon = GFX_focus_generic_polish_deal
@@ -437,14 +428,14 @@ category = land_doctrine
 		}
 		completion_reward = {
 			add_political_power= 100
-add_popularity= { 
-ideology = fascism 
-popularity = 0.5 
-}
+
+                        add_popularity= { 
+			   ideology = fascism 
+			   popularity = 0.5 
+                        }
 		}
 	}
-
-	#Focus for Nowe metody budowlane
+	
 	focus = {
 		id = RZP_nowemetodybudowlane
 		icon = GFX_goal_generic_air_production
@@ -459,15 +450,14 @@ popularity = 0.5
 		}
 		completion_reward = {
 			add_tech_bonus= {
-name = bonus BGC
-bonus = 1.0 
-uses = 2 
-category = industry 
-}
+                           name = bonus BGC
+                           bonus = 1.0 
+                           uses = 2 
+                           category = industry 
+                       }
 		}
 	}
 
-	#Focus for Tradycja budowlana
 	focus = {
 		id = RZP_tradycjabudowlana
 		icon = GFX_goal_generic_production2
@@ -482,15 +472,14 @@ category = industry
 		}
 		completion_reward = {
 			add_tech_bonus= {
-name = bonus BGC
-bonus = 0.3 
-uses = 3 
-category = electronics 
-}
+                           name = bonus BGC
+                           bonus = 0.3 
+                           uses = 3 
+                           category = electronics 
+                       }
 		}
 	}
 
-	#Focus for Powołanie nowych szkół
 	focus = {
 		id = RZP_powoanienowychszk
 		icon = GFX_goal_tfv_generic_tech_sharing
@@ -507,11 +496,11 @@ category = electronics
 		}
 		completion_reward = {
 			add_research_slot= 1
-add_political_power= 50
+			
+                        add_political_power= 50
 		}
 	}
 
-	#Focus for Projekt Wielkiej Floty
 	focus = {
 		id = RZP_projektwielkiejfloty
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -524,11 +513,10 @@ add_political_power= 50
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas =
+			add_ideas = 
 		}
 	}
 
-	#Focus for Pierwsza eskadra lotniskowców Rzeszy Pospolitej
 	focus = {
 		id = RZP_pierwszaeskadralotniskowcwrzeszypospolitej
 		icon = GFX_goal_generic_navy_carrier
@@ -547,17 +535,16 @@ add_political_power= 50
 		completion_reward = {
 			navy_experience = 50
 
-add_tech_bonus = {
-name = cv_bonus
-bonus = 3.0
-ahead_reduction = 2
-uses = 2
-category = cv_tech
-}
+                        add_tech_bonus = {
+                           name = cv_bonus
+			   bonus = 3.0
+			   ahead_reduction = 2
+			   uses = 2
+			   category = cv_tech
+                       }
 		}
 	}
 
-	#Focus for Koordynacja floty Atlantyckiej
 	focus = {
 		id = RZP_koordynacjaflotyatlantyckiej
 		icon = GFX_goal_generic_navy_doctrines_tactics
@@ -571,15 +558,14 @@ category = cv_tech
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = fleet_in_being_bonus
-bonus = 1.0
-uses = 3
-category = fleet_in_being_tree
-}
+                           name = fleet_in_being_bonus
+			   bonus = 1.0
+			   uses = 3
+			   category = fleet_in_being_tree
+			}
 		}
 	}
 
-	#Focus for Zainwestujmy w niszczyciele!
 	focus = {
 		id = RZP_zainwestujmywniszczyciele
 		icon = GFX_goal_generic_build_navy
@@ -593,16 +579,15 @@ category = fleet_in_being_tree
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = dd_bonus
-bonus = 1.0
-ahead_reduction = 2
-uses = 2
-category = dd_tech
-}
+                           name = dd_bonus
+                           bonus = 1.0
+                           ahead_reduction = 2
+                           uses = 2
+                           category = dd_tech
+			}
 		}
 	}
 
-	#Focus for Obrona Wybrzeża
 	focus = {
 		id = RZP_obronawybrzea
 		icon = GFX_goal_generic_navy_anti_submarine
@@ -613,29 +598,30 @@ category = dd_tech
 		prerequisite = { focus = RZP_stoczniagdaska }
 		mutually_exclusive = { focus = RZP_odbatykupoatlantyk }
 		ai_will_do = {
-			factor = 8
+			factor = 0
 		}
 		completion_reward = {
 			navy_experience = 25
 
-add_tech_bonus = {
-name = ss_bonus
-bonus = 1.0
-uses = 1
-category = ss_tech
-}
+                            add_tech_bonus = {
+			       name = ss_bonus
+			       bonus = 1.0
+			       uses = 1
+			       category = ss_tech
+			    }
 
-add_tech_bonus = {
-name = sub_op_bonus
-bonus = 1.0
-uses = 2
-technology = submarine_operations	technology = undersea_blockade
-technology = convoy_interdiction	technology = submarine_offensive
-}
+                            add_tech_bonus = {
+			       name = sub_op_bonus
+			       bonus = 1.0
+			       uses = 2
+			       technology = submarine_operations
+			       technology = undersea_blockade
+			       technology = convoy_interdiction
+			       technology = submarine_offensive
+			    }
 		}
 	}
 
-	#Focus for Od Bałtyku po Atlantyk!
 	focus = {
 		id = RZP_odbatykupoatlantyk
 		icon = GFX_goal_generic_navy_doctrines_tactics
@@ -656,24 +642,24 @@ technology = convoy_interdiction	technology = submarine_offensive
 		completion_reward = {
 			navy_experience = 50
 
-add_tech_bonus = {
-name = bb_bonus
-bonus = 1.0
-uses = 2
-category = bb_tech
-category = bc_tech
-}
+                        add_tech_bonus = {
+                           name = bb_bonus
+			   bonus = 1.0
+			   uses = 2
+			   category = bb_tech
+			   category = bc_tech
+                       }
 
-add_tech_bonus = {
-name = cr_bonus
-bonus = 1.0				uses = 2
-category = cl_tech
-category = ca_tech
-}
-		}
+                       add_tech_bonus = {
+                          name = cr_bonus
+			  bonus = 1.0
+			  uses = 2
+			  category = cl_tech
+			  category = ca_tech
+                       }
+	      }
 	}
 
-	#Focus for Dofinansowanie Marynarki Rzeszy Pospolitej
 	focus = {
 		id = RZP_dofinansowaniemarynarkirzeszypospolitej
 		icon = GFX_goal_generic_navy_battleship
@@ -685,14 +671,13 @@ category = ca_tech
 			factor = 5
 		}
 		available = {
-			RZP = {has_completed_focus =  }
+			has_completed_focus = RZP_rozwjmarynarki
 		}
 		completion_reward = {
 			navy_experience= 25
 		}
 	}
 
-	#Focus for Stocznia Gdańska
 	focus = {
 		id = RZP_stoczniagdaska
 		icon = GFX_goal_generic_amphibious_assault
@@ -706,36 +691,31 @@ category = ca_tech
 		}
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 3
-add_building_construction = {
-type = dockyard
-level = 3
-instant_build = yes
-}
+                           add_building_construction = {
+                              type = dockyard
+			      level = 3
+			      instant_build = yes
+			   }
 		}
 		completion_reward = {
 			random_owned_controlled_state={
- limit = {
- free_building_slots = {
- building = dockyard
- size > 0
- include_locked = yes
- }
+                                                     limit = {
+						         free_building_slots = {
+							              building = dockyard
+								      size > 0
+								      include_locked = yes
+						         }
+						     }
 
- }
-
- add_extra_state_shared_building_slots = 3
- add_building_construction = {
- type = dockyard
- level = 3
- instant_build = yes
- }
-
- set_state_flag = rzpnavy
- }
-		}
+                                   add_extra_state_shared_building_slots = 3
+                                   add_building_construction = {
+                                      type = dockyard
+				      level = 3
+				      instant_build = yes
+				   }
+		      }
 	}
-
-	#Focus for Zatopmy łodzie dostawcze!
+	
 	focus = {
 		id = RZP_zatopmyodziedostawcze
 		icon = GFX_goal_generic_navy_cruiser
@@ -749,15 +729,14 @@ instant_build = yes
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = ti_bonus
-bonus = 1.0
-uses = 2
-category = trade_interdiction_tree
-}
+                           name = ti_bonus
+			   bonus = 1.0
+			   uses = 2
+			   category = trade_interdiction_tree
+			}
 		}
 	}
 
-	#Focus for Cel: Gdańsk!
 	focus = {
 		id = RZP_celgdask
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -772,28 +751,24 @@ category = trade_interdiction_tree
 		mutually_exclusive = { 
 			focus = RZP_celpodlasie 
 		}
-		mutually_exclusive = { 
-			focus = RZP_ 
-		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			add_resource = {
-type = oil
-amount = 12
-state = 85
-}
+                           type = oil
+                           amount = 12
+                           state = 85
+                        }
 
-add_resource = {
-type = steel
-amount = 16
-state = 85
-}
-		}
+                        add_resource = {
+			   type = steel
+			   amount = 16
+			   state = 85
+                        }
+	       }
 	}
 
-	#Focus for Umocnienie Władzy NSPPRu
 	focus = {
 		id = RZP_umocnieniewadzynsppru
 		icon = GFX_goal_support_fascism
@@ -807,15 +782,14 @@ state = 85
 		}
 		completion_reward = {
 			add_popularity= { 
-ideology = fascism 
-popularity = 0.2
-}
+                           ideology = fascism 
+                           popularity = 0.2
+                        }
 
-add_political_power = 120
+                        add_political_power = 120
 		}
 	}
 
-	#Focus for Modernizacja Sił Powietrznych
 	focus = {
 		id = RZP_modernizacjasipowietrznych
 		icon = GFX_goal_generic_air_fighter2
@@ -829,17 +803,16 @@ add_political_power = 120
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = fighter_bonus
-bonus = 1.0
-uses = 2
-technology = fighter1
-technology = fighter2
-technology = fighter3
-}
-		}
+                           name = fighter_bonus
+			   bonus = 1.0
+			   uses = 2
+			   technology = fighter1
+			   technology = fighter2
+			   technology = fighter3
+                       }
+	       }
 	}
 
-	#Focus for Wisła Marines
 	focus = {
 		id = RZP_wisamarines
 		icon = GFX_goal_generic_special_forces
@@ -856,17 +829,16 @@ technology = fighter3
 		}
 		completion_reward = {
 			add_tech_bonus = {
-        name = marines_bonus
-        bonus = 1.0
-        uses = 2
-        technology = marines
-        technology = marines2
-        technology = marines3
-}
-		}
+                           name = marines_bonus
+			   bonus = 1.0
+			   uses = 2
+			   technology = marines
+			   technology = marines2
+			   technology = marines3
+                       }
+	        }
 	}
 
-	#Focus for Rozwój Marynarki
 	focus = {
 		id = RZP_rozwjmarynarki
 		icon = GFX_focus_generic_navy_battleship2
@@ -882,8 +854,7 @@ technology = fighter3
 			navy_experience = 25
 		}
 	}
-
-	#Focus for Modernizacja Sił Pancernych
+	
 	focus = {
 		id = RZP_modernizacjasipancernych
 		icon = GFX_focus_generic_army_tanks2
@@ -897,14 +868,13 @@ technology = fighter3
 		}
 		completion_reward = {
 			add_tech_bonus= {
-bonus = 2.0 
-uses = 1
-category = armor_tech 
-}
+                           bonus = 2.0 
+                           uses = 1
+                           category = armor_tech 
+                        }
 		}
 	}
 
-	#Focus for Zakład Militarny "Wołyń"
 	focus = {
 		id = RZP_zakadmilitarnywoy
 		icon = GFX_goal_generic_construct_mil_factory
@@ -922,24 +892,23 @@ category = armor_tech
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-}
+			   type = arms_factory
+			   level = 2
+			   instant_build = yes
+                        }
 		}
 		completion_reward = {
 			93 = {
-add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-}
-}
+                          add_extra_state_shared_building_slots = 2
+			  add_building_construction = {
+			     type = arms_factory
+			     level = 2
+			     instant_build = yes
+                          }
+                        }
 		}
 	}
 
-	#Focus for Modernizacja karabinów
 	focus = {
 		id = RZP_modernizacjakarabinw
 		icon = GFX_goal_generic_air_production
@@ -953,15 +922,14 @@ instant_build = yes
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = infantry_bonus
-bonus = 1.0
-uses = 2
-category = infantry_weapons
-}
-		}
+                           name = infantry_bonus
+                           bonus = 1.0
+			   uses = 2
+			   category = infantry_weapons
+                        }
+	        }
 	}
 
-	#Focus for Cel: Podlasie!
 	focus = {
 		id = RZP_celpodlasie
 		icon = GFX_focus_generic_industry_3
@@ -981,20 +949,19 @@ category = infantry_weapons
 		}
 		completion_reward = {
 			add_resource = {
-type = aluminium
-amount = 24
-state = 97
-}
+                           type = aluminium
+                           amount = 24
+                           state = 97
+                        }
 
-add_resource = {
-type = aluminium
-amount = 7
-state = 94
-}
+                        add_resource = {
+                           type = aluminium
+			   amount = 7
+			   state = 94
+			}
 		}
 	}
 
-	#Focus for Jednostki Specjalne
 	focus = {
 		id = RZP_jednostkispecjalne
 		icon = GFX_focus_secret_rearmament
@@ -1008,19 +975,19 @@ state = 94
 		}
 		completion_reward = {
 			add_tech_bonus = {
-name = special_forces_bonus
-bonus = 1.0				uses = 1
-technology = paratroopers
-technology = paratroopers2
-technology = marines
-technology = marines2
-technology = tech_mountaineers
-technology = tech_mountaineers2
-}
+                           name = special_forces_bonus
+			   bonus = 1.0	
+			   uses = 1
+			   technology = paratroopers
+			   technology = paratroopers2
+			   technology = marines
+			   technology = marines2
+			   technology = tech_mountaineers
+			   technology = tech_mountaineers2
+			}
 		}
 	}
 
-	#Focus for Rozbudowa Piekarni Wadowickich
 	focus = {
 		id = RZP_rozbudowapiekarniwadowickich
 		icon = GFX_goal_generic_construct_civ_factory
@@ -1034,33 +1001,32 @@ technology = tech_mountaineers2
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
+                           type = industrial_complex
+			   level = 3
+			   instant_build = yes
+                        }
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
+                              add_extra_state_shared_building_slots = 3
+			      add_building_construction = {
+			         type = industrial_complex
+				 level = 3
+				 instant_build = yes
+			      }
+			}
 
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
+                        random_owned_controlled_state = {
+                              add_extra_state_shared_building_slots = 3
+			      add_building_construction = {
+			         type = industrial_complex
+				 level = 3
+				 instant_build = yes
+			      }
+			}
 		}
 	}
-
-	#Focus for Sztab Generalny Wielkiej Armii Rzeszy Pospolitej
+	
 	focus = {
 		id = RZP_sztabgeneralnywielkiejarmiirzeszypospolitej
 		icon = GFX_focus_generic_strike_at_democracy1
@@ -1083,9 +1049,11 @@ instant_build = yes
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+		          add_ideas = RZP_main_staff_of_rzesza_pospolita
+		}
 	}
 
-	#Focus for Rozbudowa Armii
 	focus = {
 		id = RZP_rozbudowaarmii
 		icon = GFX_goal_generic_small_arms
@@ -1098,14 +1066,13 @@ instant_build = yes
 		}
 		completion_reward = {
 			add_tech_bonus= {
- bonus = 1.0 
-uses = 2 
-category = land_doctrine 
-}
+                           bonus = 1.0 
+                           uses = 2 
+                           category = land_doctrine 
+                       }
 		}
 	}
 
-	#Focus for Czystka Polityczna
 	focus = {
 		id = RZP_czystkapolityczna
 		icon = GFX_goal_generic_forceful_treaty
@@ -1122,7 +1089,6 @@ category = land_doctrine
 		}
 	}
 
-	#Focus for Kopalnia na Gwarkach
 	focus = {
 		id = RZP_kopalnianagwarkach
 		icon = GFX_goal_generic_construction2
@@ -1136,54 +1102,46 @@ category = land_doctrine
 		}
 		completion_reward = {
 			add_core = 66
-add_core = 67
+                        add_core = 67
 
-add_resources = {
-type = aluminium
-amount = 6
-state = 66
-}
-
-
-add_resources = {
-type = chromium
-amount = 3
-state = 66
-}
-
-
-add_resources = {
-type = steel
-amount = 8
-state = 67
-}
-
-
-add_resources = {
-type = tungsten
-amount = 12
-state = 67
-}
-
-67 = {
-add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
-
-66 = {
-add_building_construction = {
-type = industrial_complex
-level = 5
-instant_build = yes
-}
-}
+                        add_resources = {
+                           type = aluminium
+			   amount = 6
+			   state = 66
+                        }
+                        add_resources = {
+                           type = chromium
+			   amount = 3
+			   state = 66
+			}
+			add_resources = {
+			   type = steel
+			   amount = 8
+			   state = 67
+			}
+			add_resources = {
+			   type = tungsten
+			   amount = 12
+			   state = 67
+			}
+			
+			67 = {
+                         add_building_construction = {
+                            type = industrial_complex
+                            level = 3
+                            instant_build = yes
+			 }
+			}
+			66 = {
+			 add_building_construction = {
+			    type = industrial_complex
+			    level = 5
+			    instant_build = yes
+			 }
+			}
 		}
 	}
 
-	#Focus for Stocznia Szczecińska
 	focus = {
 		id = RZP_stoczniaszczeciska
 		icon = GFX_goal_generic_amphibious_assault
@@ -1197,28 +1155,28 @@ instant_build = yes
 		}
 		completion_reward = {
 			85 = {
-add_building_construction = {
-type = dockyard
-level = 4
-instant_build = yes
-}
-}
-
-62 = {
-add_building_construction = {
-type = dockyard
-level = 5
-instant_build = yes
-}
-}
-
-85 = {
-add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
+                         add_building_construction = {
+			    type = dockyard
+			    level = 4
+			    instant_build = yes
+			 }
+			}
+			
+			62 = {
+			 add_building_construction = {
+			    type = dockyard
+			    level = 5
+			    instant_build = yes
+			 }
+			}
+			
+			85 = {
+			 add_building_construction = {
+			    type = industrial_complex
+			    level = 3
+			    instant_build = yes
+			 }
+			}
 		}
 	}
 
@@ -1238,9 +1196,11 @@ instant_build = yes
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+		          add_ideas = RZP_rapid_economic_development
+		}
 	}
 
-	#Focus for Zakłady Pracy "Oświęcim"
 	focus = {
 		id = RZP_zakadypracyowicim
 		icon = GFX_goal_generic_secret_weapon
@@ -1254,33 +1214,32 @@ instant_build = yes
 		}
 		completion_reward = {
 			89 = {
-add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
-
-89 = {
-add_building_construction = {
-type = arms_factrory
-level = 2
-instant_build = yes
-}
-}
-
-89 = {
-add_building_construction = {
-type = bunker
-level = 6
-province = 3743
-instant_build = yes
-}
-}
+                         add_building_construction = {
+                            type = industrial_complex
+			    level = 3
+			    instant_build = yes
+			 }
+			}
+			
+			89 = {
+			 add_building_construction = {
+			    type = arms_factrory
+			    level = 2
+			    instant_build = yes
+			 }
+			}
+			
+			89 = {
+			 add_building_construction = {
+			    type = bunker
+			    level = 6
+			    province = 3743
+			    instant_build = yes
+			 }
+			}
 		}
 	}
 
-	#Focus for Okręg przemysłowy "Knur"
 	focus = {
 		id = RZP_okrgprzemysowyknur
 		icon = GFX_goal_generic_intelligence_exchange
@@ -1294,32 +1253,31 @@ instant_build = yes
 		}
 		completion_reward = {
 			97 = {
-add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
-
-94 = {
-add_building_construction = {
-type = industrial_complex
-level = 4
-instant_build = yes
-}
-}
-
-95 = {
-add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
+			 add_building_construction = {
+			    type = industrial_complex
+			    level = 3
+			    instant_build = yes
+			 }
+			}
+			
+			94 = {
+			 add_building_construction = {
+			    type = industrial_complex
+			    level = 4
+			    instant_build = yes
+			 }
+			}
+			
+			95 = {
+			 add_building_construction = {
+			    type = industrial_complex
+			    level = 3
+			    instant_build = yes
+			 }
+			}
 		}
 	}
 
-	#Focus for Fundament Imperium
 	focus = {
 		id = RZP_fundamentimperium
 		icon = GFX_goal_support_fascism
@@ -1330,9 +1288,11 @@ instant_build = yes
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+		          add_ideas = RZP_aggressive_expansion_of_the_reich
+		}
 	}
 
-	#Focus for Przyłączenie Litwy
 	focus = {
 		id = RZP_przyczenielitwy
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -1349,7 +1309,6 @@ instant_build = yes
 		}
 	}
 
-	#Focus for Śląsk za Pomorze
 	focus = {
 		id = RZP_lskzapomorze
 		icon = GFX_focus_generic_polish_deal
@@ -1366,7 +1325,6 @@ instant_build = yes
 		}
 	}
 
-	#Focus for Przyjaźń Niemiecka
 	focus = {
 		id = RZP_przyjaniemiecka
 		icon = GFX_focus_chi_mission_to_germany
@@ -1384,13 +1342,12 @@ instant_build = yes
 		}
 		completion_reward = {
 			diplomatic_relation= { 
-country = GER 
-relation = non_aggression_pact 
-}
+                                  country = GER 
+                                  relation = non_aggression_pact 
+			}
 		}
 	}
 
-	#Focus for Cel: Śląsk!
 	focus = {
 		id = RZP_cellsk
 		icon = GFX_focus_generic_steel
@@ -1413,20 +1370,19 @@ relation = non_aggression_pact
 		}
 		completion_reward = {
 			add_resource = {
-type = steel
-amount = 15
-state = 88
-}
-
-add_resource = {
-type = steel
-amount = 20
-state = 89
-}
+                           type = steel
+			   amount = 15
+			   state = 88
+			}
+			
+			add_resource = {
+			   type = steel
+			   amount = 20
+			   state = 89
+			}
 		}
 	}
 
-	#Focus for Wybrzeże za Południe
 	focus = {
 		id = RZP_wybrzeezapoudnie
 		icon = GFX_focus_chi_mission_to_germany
@@ -1442,8 +1398,7 @@ state = 89
 			country_event = { id = rzeszapospolita.5 }
 		}
 	}
-
-	#Focus for Wyspy na Bałtyku
+	
 	focus = {
 		id = RZP_wyspynabatyku
 		icon = GFX_goal_tripartite_pact
@@ -1459,8 +1414,7 @@ state = 89
 			country_event = { id = rzeszapospolita.6 }
 		}
 	}
-
-	#Focus for Dyplomacja Europejska
+	
 	focus = {
 		id = RZP_dyplomacjaeuropejska
 		icon = GFX_focus_usa_focus_on_europe
@@ -1474,7 +1428,6 @@ state = 89
 		}
 	}
 
-	#Focus for Armia okupacyjna naszych możliwości
 	focus = {
 		id = RZP_armiaokupacyjnanaszychmoliwoci
 		icon = GFX_focus_generic_little_entente
@@ -1486,9 +1439,11 @@ state = 89
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+		          add_ideas = RZP_imperials_recruitment
+		}
 	}
 
-	#Focus for Członkostwo w Osi
 	focus = {
 		id = RZP_czonkostwowosi
 		icon = GFX_goal_support_fascism
@@ -1502,12 +1457,11 @@ state = 89
 		}
 		completion_reward = {
 			GER = {
-add_to_faction = RZP
-}
+                          add_to_faction = RZP
+                        }
 		}
 	}
 
-	#Focus for Dyplomacja Azjatycka
 	focus = {
 		id = RZP_dyplomacjaazjatycka
 		icon = GFX_focus_chi_collaboration_with_the_japanese
@@ -1521,11 +1475,10 @@ add_to_faction = RZP
 		}
 		completion_reward = {
 			add_political_power= 150
-army_experience= 25
+                        army_experience= 25
 		}
 	}
 
-	#Focus for Przyjaźń Radziecka
 	focus = {
 		id = RZP_przyjaradziecka
 		icon = GFX_focus_chi_mission_to_the_soviet_union
@@ -1540,7 +1493,6 @@ army_experience= 25
 		}
 	}
 
-	#Focus for Dyplomacja Światowa
 	focus = {
 		id = RZP_dyplomacjawiatowa
 		icon = GFX_goal_tripartite_pact
@@ -1557,7 +1509,6 @@ army_experience= 25
 		}
 	}
 
-	#Focus for Nawiązanie kontaktu ze Wspólnotą
 	focus = {
 		id = RZP_nawizaniekontaktuzewsplnot
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
@@ -1571,16 +1522,15 @@ army_experience= 25
 		}
 		available = {
 			has_opinion= {
-target = ENG 
-value > 25
-}
+			   target = ENG 
+			   value > 25
+			}
 		}
 		completion_reward = {
 			air_experience= 25
 		}
 	}
 
-	#Focus for Gwarancja bezpieczeństwa
 	focus = {
 		id = RZP_gwarancjabezpieczestwa
 		icon = GFX_focus_CZE_german_puppet
@@ -1594,13 +1544,12 @@ value > 25
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.20
-}
+			       days = 1 
+			       id = rzeszapospolita.20
+			}
 		}
 	}
 
-	#Focus for Ameryka Południowa
 	focus = {
 		id = RZP_amerykapoudniowa
 		icon = GFX_goal_tripartite_pact
@@ -1618,7 +1567,6 @@ id = rzeszapospolita.20
 		}
 	}
 
-	#Focus for Ameryka Północna
 	focus = {
 		id = RZP_amerykapnocna
 		icon = GFX_goal_tripartite_pact
@@ -1636,7 +1584,6 @@ id = rzeszapospolita.20
 		}
 	}
 
-	#Focus for Rozbudowa wyspy
 	focus = {
 		id = RZP_rozbudowawyspy
 		icon = GFX_goal_generic_construction2
@@ -1650,13 +1597,12 @@ id = rzeszapospolita.20
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.17
-}
+			       days = 1 
+			       id = rzeszapospolita.17
+			}
 		}
 	}
 
-	#Focus for Junta Wojskowa Rzeszy Pospolitej
 	focus = {
 		id = RZP_juntawojskowarzeszypospolitej
 		icon = GFX_focus_ger_oppose_hitler
@@ -1670,13 +1616,12 @@ id = rzeszapospolita.17
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.15
-}
+			       days = 1 
+			       id = rzeszapospolita.15
+			}
 		}
 	}
 
-	#Focus for Ukraść Saipan!
 	focus = {
 		id = RZP_ukrasaipan
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -1691,13 +1636,12 @@ id = rzeszapospolita.15
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.9
-}
+			       days = 1 
+			       id = rzeszapospolita.9
+			}
 		}
 	}
 
-	#Focus for Wymiana technologiczna
 	focus = {
 		id = RZP_wymianatechnologiczna
 		icon = GFX_goal_tfv_generic_tech_sharing
@@ -1709,7 +1653,6 @@ id = rzeszapospolita.9
 		mutually_exclusive = { focus = RZP_ukrasaipan }
 	}
 
-	#Focus for Wpólne manewry
 	focus = {
 		id = RZP_wplnemanewry
 		icon = GFX_goal_generic_navy_battleship
@@ -1726,7 +1669,7 @@ id = rzeszapospolita.9
 		}
 	}
 
-	#Focus for Baza za pomoc
+
 	focus = {
 		id = RZP_bazazapomoc
 		icon = GFX_goal_generic_position_armies
@@ -1740,12 +1683,11 @@ id = rzeszapospolita.9
 		}
 		completion_reward = {
 			RZP = {
-transfer_state = 743
-}
+			   transfer_state = 743
+			}
 		}
 	}
 
-	#Focus for Cios w plecy
 	focus = {
 		id = RZP_cioswplecy
 		icon = GFX_goal_generic_political_pressure
@@ -1759,25 +1701,24 @@ transfer_state = 743
 		}
 		available = {
 			has_navy_size= {
-size > 35
-}
+			   size > 35
+			}
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id =  rzeszapospolita.11
-}
+			       days = 1 
+			       id =  rzeszapospolita.11
+			}
 		}
 	}
 
-	#Focus for Przyjaźń Polsko-Japońska
 	focus = {
 		id = RZP_przyjapolskojaposka
 		icon = GFX_focus_jap_showa_restoration
 		x = 14
 		y = 8
 		cost = 5
-		available_if_capitulated = yes
+		available_if_capitulated = no
 		prerequisite = { focus = RZP_dyplomacjaazjatycka }
 		mutually_exclusive = { focus = RZP_wsparciedlachin }
 		ai_will_do = {
@@ -1788,48 +1729,46 @@ id =  rzeszapospolita.11
 		}
 		completion_reward = {
 			JAP = {
-add_manpower = 15000
-army_experience= 20
-air_experience= 20
-
-send_equipment= {
- target = JAP 
-type = infantry_equipment amount = 4000
-}
-}
-
-RZP = {
-add_political_power= 125
-navy_experience= 25
-}
+			  add_manpower = 15000
+			  army_experience= 20
+			  air_experience= 20
+			  
+			  send_equipment= {
+			      target = JAP 
+			      type = infantry_equipment amount = 4000
+			  }
+		}
+		
+		       RZP = {
+		         add_political_power= 125
+			 navy_experience= 25
+		      }
 		}
 	}
 
-	#Focus for Wsparcie dla Chin
 	focus = {
 		id = RZP_wsparciedlachin
 		icon = GFX_focus_generic_china1
 		x = 12
 		y = 8
 		cost = 5
-		available_if_capitulated = yes
+		available_if_capitulated = no
 		prerequisite = { focus = RZP_dyplomacjaazjatycka }
 		mutually_exclusive = { focus = RZP_przyjapolskojaposka }
 		completion_reward = {
 			CHI = {
-add_manpower = 25000
-add_political_power = 100
-army_experience = 20
-}
-
-RZP = {
-add_political_power = 150
-army_experience = 25
-}
+			  add_manpower = 25000
+			  add_political_power = 100
+			  army_experience = 20
+			}
+			
+			RZP = {
+			  add_political_power = 150
+			  army_experience = 25
+			}
 		}
 	}
 
-	#Focus for Dołączenie do Kominternu
 	focus = {
 		id = RZP_doczeniedokominternu
 		icon = GFX_goal_support_communism
@@ -1846,12 +1785,11 @@ army_experience = 25
 		}
 		completion_reward = {
 			SOV = {
-add_to_faction = RZP
-}
+			   add_to_faction = RZP
+			}
 		}
 	}
 
-	#Focus for Nawiązanie kontaktu z Amerykami
 	focus = {
 		id = RZP_nawizaniekontaktuzamerykami
 		icon = GFX_focus_chi_mission_to_the_us
@@ -1865,16 +1803,15 @@ add_to_faction = RZP
 		}
 		available = {
 			has_navy_size= {
-size > 15
-}
+			   size > 15
+			}
 		}
 		completion_reward = {
 			navy_experience= 25
-add_political_power= 100
+			add_political_power= 100
 		}
 	}
-
-	#Focus for Ukraść Alaskę!
+	
 	focus = {
 		id = RZP_ukraalask
 		icon = GFX_goal_generic_position_armies
@@ -1888,13 +1825,12 @@ add_political_power= 100
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.18 
-}
+			       days = 1 
+			       id = rzeszapospolita.18 
+			}
 		}
 	}
 
-	#Focus for Sprawa Graniczna I
 	focus = {
 		id = RZP_sprawagranicznai
 		icon = GFX_goal_generic_position_armies
@@ -1909,18 +1845,17 @@ id = rzeszapospolita.18
 		available = {
 			date >, date <> 1939.1.1
 
-43 = { is_controlled_by= RZP }
-46 = { is_controlled_by= RZP }
+                        43 = { is_controlled_by= RZP }
+                        46 = { is_controlled_by= RZP }
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id =  rzeszapospolita.25
-}
+			       days = 1 
+			       id =  rzeszapospolita.25
+			}
 		}
 	}
 
-	#Focus for Sprawa Graniczna II
 	focus = {
 		id = RZP_sprawagranicznaii
 		icon = GFX_goal_generic_position_armies
@@ -1934,19 +1869,18 @@ id =  rzeszapospolita.25
 		}
 		available = {
 			date >, date <> 1940.1.1
-
-RZP = { controls_state = 107 }
-RZP = { controls_state = 48 }
+			
+			RZP = { controls_state = 107 }
+			RZP = { controls_state = 48 }
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.26
-}
+			       days = 1 
+			       id = rzeszapospolita.26
+			}
 		}
 	}
 
-	#Focus for Projekt floty Śródziemnomorskiej
 	focus = {
 		id = RZP_projektflotyrdziemnomorskiej
 		icon = GFX_goal_generic_navy_battleship
@@ -1960,7 +1894,6 @@ id = rzeszapospolita.26
 		}
 	}
 
-	#Focus for Ostateczne granice Imperium
 	focus = {
 		id = RZP_ostatecznegraniceimperium
 		icon = GFX_focus_generic_treaty
@@ -1979,18 +1912,17 @@ id = rzeszapospolita.26
 		}
 		available = {
 			date >, date <> 1941.1.1
-
-RZP = { controls_state = 49 }
+			
+			RZP = { controls_state = 49 }
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.27
-}
+			       days = 1 
+			       id = rzeszapospolita.27
+			}
 		}
 	}
 
-	#Focus for Zajęcie Czechosłowacji
 	focus = {
 		id = RZP_zajcieczechosowacji
 		icon = GFX_goal_rhineland
@@ -2004,9 +1936,9 @@ id = rzeszapospolita.27
 		}
 		completion_reward = {
 			create_wargoal= { 
-type = annex_everything 
-target = CZE
-}
+			      type = annex_everything 
+			      target = CZE
+			}
 		}
 	}
 
@@ -2024,13 +1956,12 @@ target = CZE
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = 
-}
+			       days = 1 
+			       id = 
+			}
 		}
 	}
 
-	#Focus for Wojna na Bałkanach
 	focus = {
 		id = RZP_wojnanabakanach
 		icon = GFX_focus_generic_strike_at_democracy1
@@ -2049,23 +1980,20 @@ id =
 		}
 		completion_reward = {
 			create_wargoal= { 
-type = annex_everything 
-target = YUG
-}
-
-create_wargoal= { 
-type = annex_everything 
-target = BUL
-}
-
-create_wargoal= { 
-type = annex_everything 
-target = GRE
-}
+			      type = annex_everything 
+			      target = YUG
+			}
+			create_wargoal= { 
+			      type = annex_everything 
+			      target = BUL
+			}
+			create_wargoal= { 
+			      type = annex_everything 
+			      target = GRE
+			}
 		}
 	}
-
-	#Focus for Ekspansja Północna
+	
 	focus = {
 		id = RZP_ekspansjapnocna
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -2082,18 +2010,16 @@ target = GRE
 		}
 		completion_reward = {
 			create_wargoal= { 
-type = annex_everything 
-target = EST
-}
-
-create_wargoal= { 
-type = annex_everything 
-target = LAT
-}
+                              type = annex_everything 
+			      target = EST
+			}
+			create_wargoal= { 
+			      type = annex_everything 
+			      target = LAT
+			}
 		}
 	}
 
-	#Focus for Sprawa Węgier
 	focus = {
 		id = RZP_sprawawgier
 		icon = GFX_focus_hun_assassinate_horthy
@@ -2112,13 +2038,12 @@ target = LAT
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = 
-}
+			       days = 1 
+			       id = 
+			}
 		}
 	}
 
-	#Focus for Nowe granice Imperium
 	focus = {
 		id = RZP_nowegraniceimperium
 		icon = GFX_focus_generic_treaty
@@ -2137,19 +2062,19 @@ id =
 		}
 		available = {
 			LIT = { has_capitulated = yes }
-9 = { is_controlled_by= RZP }
-13 = { is_controlled_by= RZP }
-12 = { is_controlled_by= RZP }
+			
+			9 = { is_controlled_by= RZP }
+			13 = { is_controlled_by= RZP }
+			12 = { is_controlled_by= RZP }
 		}
 		completion_reward = {
 			country_event= {
-days = 1 
-id = rzeszapospolita.24
-}
+			       days = 1 
+			       id = rzeszapospolita.24
+			}
 		}
 	}
 
-	#Focus for Wojna z Turcją
 	focus = {
 		id = RZP_wojnazturcj
 		icon = GFX_goal_generic_secret_weapon
@@ -2163,9 +2088,9 @@ id = rzeszapospolita.24
 		}
 		completion_reward = {
 			create_wargoal= { 
-type = annex_everything 
-target = TUR
-}
+			      type = annex_everything 
+			      target = TUR
+			}
 		}
 	}
 
