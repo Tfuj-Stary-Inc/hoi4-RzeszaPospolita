@@ -1,5 +1,6 @@
 focus_tree = {
 	id = rzeszapospolita_focus
+	continuous_focus_position = { x = 500 y = 1000 }
 	country = {
 		factor = 0
 		modifier = {
@@ -359,7 +360,401 @@ focus_tree = {
 		}
 	}
 	
+	focus = {
+		id = RZP_reformapolityczna
+		icon = GFX_focus_generic_polish_deal
+		x = 10
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_marsznawarszawe }
+		mutually_exclusive = { focus = RZP_kontrrewolucjamonarchistyczna }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			10 = is_controlled_by = RZP
+		}
+		completion_reward = {
+			add_political_power= 100
+
+                        add_popularity= { 
+			   ideology = fascism 
+			   popularity = 0.5 
+                        }
+		}
+	}
 	
+	focus = {
+		id = RZP_kontrrewolucjamonarchistyczna
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_marsznawarszawe }
+		mutually_exclusive = { focus = RZP_reformapolityczna }
+		available = {
+			10 = is_controlled_by = RZP
+		}
+		completion_reward = {
+			add_popularity= { 
+                           ideology = neutrality 
+                           popularity = 0.3 
+                        }
+                        add_political_power= 75
+		}
+	}
+	
+	focus = {
+		id = RZP_umocnieniewladzynsppru
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_reformapolityczna }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+                           ideology = fascism 
+                           popularity = 0.2
+                        }
+
+                        add_political_power = 120
+		}
+	}
+	
+	focus = {
+		id = RZP_czystkapolityczna
+		icon = GFX_goal_generic_forceful_treaty
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_umocnieniewladzynsppru }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = RZP_dyplomacjaeuropejska
+		icon = GFX_focus_usa_focus_on_europe
+		x = 9
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_czystkapolityczna }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RZP_przyjaznniemiecka
+		icon = GFX_focus_chi_mission_to_germany
+		x = 8
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_dyplomacjaeuropejska }
+		mutually_exclusive = { focus = RZP_przyjaznradziecka }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			date >, date <> 1937.1.1
+		}
+		completion_reward = {
+			diplomatic_relation= { 
+                                  country = GER 
+                                  relation = non_aggression_pact 
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_czlonkostwowosi
+		icon = GFX_goal_support_fascism
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_przyjaznniemiecka }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			GER = {
+                          add_to_faction = RZP
+                        }
+		}
+	}
+	
+	focus = {
+		id = RZP_przyjaznradziecka
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_dyplomacjaeuropejska }
+		mutually_exclusive = { focus = RZP_przyjaznniemiecka }
+		ai_will_do = {
+		        factor = 0
+		}
+		available = {
+			date >, date <> 1939.1.1
+		}
+	}
+	
+	focus = {
+		id = RZP_dolaczeniedokominternu
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_przyjaznradziecka }
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			date >, date <> 1939.4.4
+		}
+		completion_reward = {
+			SOV = {
+			   add_to_faction = RZP
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_dyplomacjaswiatowa
+		icon = GFX_goal_tripartite_pact
+		x = 11
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_czystkapolityczna }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 200
+		}
+	}
+	
+	focus = {
+		id = RZP_dyplomacjaazjatycka
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		x = 13
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_dyplomacjaswiatowa }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 150
+                        army_experience= 25
+		}
+	}
+	
+	focus = {
+		id = RZP_wsparciedlachin
+		icon = GFX_focus_generic_china1
+		x = 12
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_dyplomacjaazjatycka }
+		mutually_exclusive = { focus = RZP_przyjaznpolskojaponska }
+		completion_reward = {
+			CHI = {
+			  add_manpower = 25000
+			  add_political_power = 100
+			  army_experience = 20
+			}
+			
+			RZP = {
+			  add_political_power = 150
+			  army_experience = 25
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_bazazapomoc
+		icon = GFX_goal_generic_position_armies
+		x = 12
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wsparciedlachin }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			RZP = {
+			   transfer_state = 743
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_przyjaznpolskojaponska
+		icon = GFX_focus_jap_showa_restoration
+		x = 14
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_dyplomacjaazjatycka }
+		mutually_exclusive = { focus = RZP_wsparciedlachin }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_equipment = {infantry_equipment > 4000}
+		}
+		completion_reward = {
+			JAP = {
+			  add_manpower = 15000
+			  army_experience= 20
+			  air_experience= 20
+			  
+			  send_equipment= {
+			      target = JAP 
+			      type = infantry_equipment amount = 4000
+			  }
+		}
+		
+		       RZP = {
+		         add_political_power= 125
+			 navy_experience= 25
+		      }
+		}
+	}
+	
+	focus = {
+		id = RZP_wspolnemanewry
+		icon = GFX_goal_generic_navy_battleship
+		x = 14
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_przyjaznpolskojaponska }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+	
+	focus = {
+		id = RZP_wymianatechnologiczna
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 12
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wspolnemanewry }
+		mutually_exclusive = { focus = RZP_ukrascsaipan }
+		ai_will_do = {
+		       factor = 0
+		}
+		available = {
+		       always = no
+		}
+	}
+	
+	focus = {
+		id = RZP_ukrascsaipan
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 16
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wspolnemanewry }
+		mutually_exclusive = { focus = RZP_wymianatechnologiczna }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event= {
+			       days = 1 
+			       id = rzeszapospolita.9
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_rozbudowawyspy
+		icon = GFX_goal_generic_construction2
+		x = 16
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_ukrascsaipan }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event= {
+			       days = 1 
+			       id = rzeszapospolita.17
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_juntawojskowarzeszypospolitej
+		icon = GFX_focus_ger_oppose_hitler
+		x = 16
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_rozbudowawyspy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event= {
+			       days = 1 
+			       id = rzeszapospolita.15
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_nawizaniekontaktuzewspolnota
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 16
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_dyplomacjawiatowa }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_opinion= {
+			   target = ENG 
+			   value > 25
+			}
+		}
+		completion_reward = {
+			air_experience= 25
+		}
+	}
 	
 	focus = {
 		id = RZP_obozywypoczynkowenapodlasiu
@@ -574,53 +969,6 @@ focus_tree = {
                        }
 	}
 }
-
-	focus = {
-		id = RZP_kontrrewolucjamonarchistyczna
-		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszaw }
-		mutually_exclusive = { focus = RZP_reformapolityczna }
-		available = {
-			10 = is_controlled_by = RZP
-		}
-		completion_reward = {
-			add_popularity= { 
-                           ideology = neutrality 
-                           popularity = 0.3 
-                        }
-                        add_political_power= 75
-		}
-	}
-
-	
-	focus = {
-		id = RZP_reformapolityczna
-		icon = GFX_focus_generic_polish_deal
-		x = 10
-		y = 3
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszaw }
-		mutually_exclusive = { focus = RZP_kontrrewolucjamonarchistyczna }
-		ai_will_do = {
-			factor = 4
-		}
-		available = {
-			10 = is_controlled_by = RZP
-		}
-		completion_reward = {
-			add_political_power= 100
-
-                        add_popularity= { 
-			   ideology = fascism 
-			   popularity = 0.5 
-                        }
-		}
-	}
 
 	focus = {
 		id = RZP_projektwielkiejfloty
@@ -891,27 +1239,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RZP_umocnieniewadzynsppru
-		icon = GFX_goal_support_fascism
-		x = 10
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_reformapolityczna }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_popularity= { 
-                           ideology = fascism 
-                           popularity = 0.2
-                        }
-
-                        add_political_power = 120
-		}
-	}
-
-	focus = {
 		id = RZP_modernizacjakarabinw
 		icon = GFX_goal_generic_air_production
 		x = 31
@@ -1076,22 +1403,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RZP_czystkapolityczna
-		icon = GFX_goal_generic_forceful_treaty
-		x = 10
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_umocnieniewadzynsppru }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-
-	focus = {
 		id = RZP_kopalnianagwarkach
 		icon = GFX_goal_generic_construction2
 		x = 41
@@ -1182,7 +1493,6 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Złoty Wiek Rzeszy Pospolitej
 	focus = {
 		id = RZP_zotywiekrzeszypospolitej
 		icon = GFX_goal_generic_consumer_goods
@@ -1328,29 +1638,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RZP_przyjaniemiecka
-		icon = GFX_focus_chi_mission_to_germany
-		x = 8
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_dyplomacjaeuropejska }
-		mutually_exclusive = { focus = RZP_przyjaradziecka }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			date >, date <> 1937.1.1
-		}
-		completion_reward = {
-			diplomatic_relation= { 
-                                  country = GER 
-                                  relation = non_aggression_pact 
-			}
-		}
-	}
-
-	focus = {
 		id = RZP_cellsk
 		icon = GFX_focus_generic_steel
 		x = 41
@@ -1416,19 +1703,6 @@ focus_tree = {
 			country_event = { id = rzeszapospolita.6 }
 		}
 	}
-	
-	focus = {
-		id = RZP_dyplomacjaeuropejska
-		icon = GFX_focus_usa_focus_on_europe
-		x = 9
-		y = 6
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_czystkapolityczna }
-		ai_will_do = {
-			factor = 1
-		}
-	}
 
 	focus = {
 		id = RZP_armiaokupacyjnanaszychmoliwoci
@@ -1443,93 +1717,6 @@ focus_tree = {
 		}
 		completion_reward = {
 		          add_ideas = RZP_imperials_recruitment
-		}
-	}
-
-	focus = {
-		id = RZP_czonkostwowosi
-		icon = GFX_goal_support_fascism
-		x = 8
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_przyjaniemiecka }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			GER = {
-                          add_to_faction = RZP
-                        }
-		}
-	}
-
-	focus = {
-		id = RZP_dyplomacjaazjatycka
-		icon = GFX_focus_chi_collaboration_with_the_japanese
-		x = 13
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_dyplomacjawiatowa }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power= 150
-                        army_experience= 25
-		}
-	}
-
-	focus = {
-		id = RZP_przyjaradziecka
-		icon = GFX_focus_chi_mission_to_the_soviet_union
-		x = 10
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_dyplomacjaeuropejska }
-		mutually_exclusive = { focus = RZP_przyjaniemiecka }
-		available = {
-			date >, date <> 1939.1.1
-		}
-	}
-
-	focus = {
-		id = RZP_dyplomacjawiatowa
-		icon = GFX_goal_tripartite_pact
-		x = 11
-		y = 6
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_czystkapolityczna }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power= 200
-		}
-	}
-
-	focus = {
-		id = RZP_nawizaniekontaktuzewsplnot
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 16
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_dyplomacjawiatowa }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_opinion= {
-			   target = ENG 
-			   value > 25
-			}
-		}
-		completion_reward = {
-			air_experience= 25
 		}
 	}
 
@@ -1587,110 +1774,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RZP_rozbudowawyspy
-		icon = GFX_goal_generic_construction2
-		x = 16
-		y = 11
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_ukrasaipan }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.17
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_juntawojskowarzeszypospolitej
-		icon = GFX_focus_ger_oppose_hitler
-		x = 16
-		y = 12
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_rozbudowawyspy }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.15
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_ukrasaipan
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 16
-		y = 10
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wplnemanewry }
-		mutually_exclusive = { focus = RZP_wymianatechnologiczna }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.9
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_wymianatechnologiczna
-		icon = GFX_goal_tfv_generic_tech_sharing
-		x = 12
-		y = 10
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wplnemanewry }
-		mutually_exclusive = { focus = RZP_ukrasaipan }
-	}
-
-	focus = {
-		id = RZP_wplnemanewry
-		icon = GFX_goal_generic_navy_battleship
-		x = 14
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_przyjapolskojaposka }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			navy_experience = 25
-		}
-	}
-
-
-	focus = {
-		id = RZP_bazazapomoc
-		icon = GFX_goal_generic_position_armies
-		x = 12
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wsparciedlachin }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			RZP = {
-			   transfer_state = 743
-			}
-		}
-	}
-
-	focus = {
 		id = RZP_cioswplecy
 		icon = GFX_goal_generic_political_pressure
 		x = 16
@@ -1710,84 +1793,6 @@ focus_tree = {
 			country_event= {
 			       days = 1 
 			       id =  rzeszapospolita.11
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_przyjapolskojaposka
-		icon = GFX_focus_jap_showa_restoration
-		x = 14
-		y = 8
-		cost = 5
-		available_if_capitulated = no
-		prerequisite = { focus = RZP_dyplomacjaazjatycka }
-		mutually_exclusive = { focus = RZP_wsparciedlachin }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_equipment = {infantry_equipment > 4000}
-		}
-		completion_reward = {
-			JAP = {
-			  add_manpower = 15000
-			  army_experience= 20
-			  air_experience= 20
-			  
-			  send_equipment= {
-			      target = JAP 
-			      type = infantry_equipment amount = 4000
-			  }
-		}
-		
-		       RZP = {
-		         add_political_power= 125
-			 navy_experience= 25
-		      }
-		}
-	}
-
-	focus = {
-		id = RZP_wsparciedlachin
-		icon = GFX_focus_generic_china1
-		x = 12
-		y = 8
-		cost = 5
-		available_if_capitulated = no
-		prerequisite = { focus = RZP_dyplomacjaazjatycka }
-		mutually_exclusive = { focus = RZP_przyjapolskojaposka }
-		completion_reward = {
-			CHI = {
-			  add_manpower = 25000
-			  add_political_power = 100
-			  army_experience = 20
-			}
-			
-			RZP = {
-			  add_political_power = 150
-			  army_experience = 25
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_doczeniedokominternu
-		icon = GFX_goal_support_communism
-		x = 10
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_przyjaradziecka }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			date >, date <> 1939.4.4
-		}
-		completion_reward = {
-			SOV = {
-			   add_to_faction = RZP
 			}
 		}
 	}
