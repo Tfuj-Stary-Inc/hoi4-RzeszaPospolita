@@ -94,6 +94,50 @@ focus_tree = {
                       }
 	    }
         }
+	
+	focus = {
+		id = RZP_nowemetodybudowlane
+		icon = GFX_goal_generic_air_production
+		x = 1
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_reformaprzemysowa }
+		mutually_exclusive = { focus = RZP_tradycjabudowlana }
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_tech_bonus= {
+                           name = bonus BGC
+                           bonus = 1.0 
+                           uses = 2 
+                           category = industry 
+                       }
+		}
+	}
+	
+	focus = {
+		id = RZP_tradycjabudowlana
+		icon = GFX_goal_generic_production2
+		x = 3
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_reformaprzemysowa }
+		mutually_exclusive = { focus = RZP_nowemetodybudowlane }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+                           name = bonus BGC
+                           bonus = 0.3 
+                           uses = 3 
+                           category = electronics 
+                       }
+		}
+	}
 
 	focus = {
 		id = RZP_obozywypoczynkowenapodlasiu
@@ -433,50 +477,6 @@ focus_tree = {
 			   ideology = fascism 
 			   popularity = 0.5 
                         }
-		}
-	}
-	
-	focus = {
-		id = RZP_nowemetodybudowlane
-		icon = GFX_goal_generic_air_production
-		x = 1
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_reformaprzemysowa }
-		mutually_exclusive = { focus = RZP_tradycjabudowlana }
-		ai_will_do = {
-			factor = 5
-		}
-		completion_reward = {
-			add_tech_bonus= {
-                           name = bonus BGC
-                           bonus = 1.0 
-                           uses = 2 
-                           category = industry 
-                       }
-		}
-	}
-
-	focus = {
-		id = RZP_tradycjabudowlana
-		icon = GFX_goal_generic_production2
-		x = 3
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_reformaprzemysowa }
-		mutually_exclusive = { focus = RZP_nowemetodybudowlane }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_tech_bonus= {
-                           name = bonus BGC
-                           bonus = 0.3 
-                           uses = 3 
-                           category = electronics 
-                       }
 		}
 	}
 
