@@ -31,12 +31,7 @@ news_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = {
-declare_war_on = { 
-target = POL 
-type = annex_everything 
-}
-}
+		RZP = { declare_war = POL }
 	}
 	mean_time_to_happen = {
 		days = 5
