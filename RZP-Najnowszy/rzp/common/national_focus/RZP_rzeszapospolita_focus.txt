@@ -36,8 +36,6 @@ focus_tree = {
 		}
 	}
 	
-	#Focus for Industry Reform
-	
 	focus = {
 		id = RZP_reformaprzemyslowa
 		icon = GFX_goal_generic_construction2
@@ -45,7 +43,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszaw }
+		prerequisite = { focus = RZP_marsznawarszawe }
 		ai_will_do = {
 			factor = 2
 		}
@@ -104,7 +102,7 @@ focus_tree = {
 		y = 4
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_reformaprzemysowa }
+		prerequisite = { focus = RZP_reformaprzemyslowa }
 		mutually_exclusive = { focus = RZP_tradycjabudowlana }
 		ai_will_do = {
 			factor = 5
@@ -126,7 +124,7 @@ focus_tree = {
 		y = 4
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_reformaprzemysowa }
+		prerequisite = { focus = RZP_reformaprzemyslowa }
 		mutually_exclusive = { focus = RZP_nowemetodybudowlane }
 		ai_will_do = {
 			factor = 1
@@ -169,7 +167,7 @@ focus_tree = {
 		y = 6
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_powoanienowychszk }
+		prerequisite = { focus = RZP_powolanienowychszkol }
 		ai_will_do = {
 			factor = 7
 		}
@@ -219,7 +217,152 @@ focus_tree = {
 	       }
         }
 	
+	focus = {
+		id = RZP_reformaarmi
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_marsznawarszawe }
+		ai_will_do = {
+			factor = 3
+		}
+		available = {
+			10 = is_controlled_by = RZP
+		}
+		completion_reward = {
+			army_experience= 25
 
+                        add_tech_bonus= {
+			   bonus 0.5
+			   uses = 2
+			   category = land_doctrine 
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_modernizacjasilpancernych
+		icon = GFX_focus_generic_army_tanks2
+		x = 6
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_reformaarmi }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus= {
+                           bonus = 2.0 
+                           uses = 1
+                           category = armor_tech 
+                        }
+		}
+	}
+	
+	focus = {
+		id = RZP_wislamarines
+		icon = GFX_goal_generic_special_forces
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_modernizacjasilpancernych }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			10 = { is_controlled_by = RZP }
+		}
+		completion_reward = {
+			add_tech_bonus = {
+                           name = marines_bonus
+			   bonus = 1.0
+			   uses = 2
+			   technology = marines
+			   technology = marines2
+			   technology = marines3
+                       }
+	        }
+	}
+	
+	focus = {
+		id = RZP_modernizacjasilpowietrznych
+		icon = GFX_goal_generic_air_fighter2
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wislamarines }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+                           name = fighter_bonus
+			   bonus = 1.0
+			   uses = 2
+			   technology = fighter1
+			   technology = fighter2
+			   technology = fighter3
+                       }
+	       }
+	}
+	
+	focus = {
+		id = RZP_zakladmilitarnywolyn
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 6
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wislamarines }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			RZP = { controls_state= 93 }
+		}
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+			   type = arms_factory
+			   level = 2
+			   instant_build = yes
+                        }
+		}
+		completion_reward = {
+			93 = {
+                          add_extra_state_shared_building_slots = 2
+			  add_building_construction = {
+			     type = arms_factory
+			     level = 2
+			     instant_build = yes
+                          }
+                        }
+		}
+	}
+	
+	focus = {
+		id = RZP_rozwojmarynarki
+		icon = GFX_focus_generic_navy_battleship2
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wislamarines }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+	
+	
+	
 	focus = {
 		id = RZP_obozywypoczynkowenapodlasiu
 		icon = GFX_goal_generic_secret_weapon
@@ -385,7 +528,6 @@ focus_tree = {
 		}
 }
 
-	#Focus for Rozbudowa zakładów militarnych
 	focus = {
 		id = RZP_rozbudowazakadwmilitarnych
 		icon = GFX_goal_generic_construct_mil_factory
@@ -456,31 +598,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = RZP_reformaarmi
-		icon = GFX_goal_generic_axis_build_infantry
-		x = 6
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszaw }
-		ai_will_do = {
-			factor = 3
-		}
-		available = {
-			10 = is_controlled_by = RZP
-		}
-		completion_reward = {
-			army_experience= 25
-
-                        add_tech_bonus= {
-			   bonus 0.5
-			   uses = 2
-			   category = land_doctrine 
-			}
-		}
-	}
-
+	
 	focus = {
 		id = RZP_reformapolityczna
 		icon = GFX_focus_generic_polish_deal
@@ -792,125 +910,6 @@ focus_tree = {
                         }
 
                         add_political_power = 120
-		}
-	}
-
-	focus = {
-		id = RZP_modernizacjasipowietrznych
-		icon = GFX_goal_generic_air_fighter2
-		x = 5
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wisamarines }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_tech_bonus = {
-                           name = fighter_bonus
-			   bonus = 1.0
-			   uses = 2
-			   technology = fighter1
-			   technology = fighter2
-			   technology = fighter3
-                       }
-	       }
-	}
-
-	focus = {
-		id = RZP_wisamarines
-		icon = GFX_goal_generic_special_forces
-		x = 6
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_modernizacjasipancernych }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			10 = { is_controlled_by = RZP }
-		}
-		completion_reward = {
-			add_tech_bonus = {
-                           name = marines_bonus
-			   bonus = 1.0
-			   uses = 2
-			   technology = marines
-			   technology = marines2
-			   technology = marines3
-                       }
-	        }
-	}
-
-	focus = {
-		id = RZP_rozwjmarynarki
-		icon = GFX_focus_generic_navy_battleship2
-		x = 7
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wisamarines }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			navy_experience = 25
-		}
-	}
-	
-	focus = {
-		id = RZP_modernizacjasipancernych
-		icon = GFX_focus_generic_army_tanks2
-		x = 6
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_reformaarmi }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_tech_bonus= {
-                           bonus = 2.0 
-                           uses = 1
-                           category = armor_tech 
-                        }
-		}
-	}
-
-	focus = {
-		id = RZP_zakadmilitarnywoy
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 6
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wisamarines }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			RZP = { controls_state= 93 }
-		}
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-			   type = arms_factory
-			   level = 2
-			   instant_build = yes
-                        }
-		}
-		completion_reward = {
-			93 = {
-                          add_extra_state_shared_building_slots = 2
-			  add_building_construction = {
-			     type = arms_factory
-			     level = 2
-			     instant_build = yes
-                          }
-                        }
 		}
 	}
 
