@@ -109,7 +109,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus= {
-                           name = bonus BGC
                            bonus = 1.0 
                            uses = 2 
                            category = industry 
@@ -131,7 +130,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus= {
-                           name = bonus BGC
                            bonus = 0.3 
                            uses = 3 
                            category = electronics 
