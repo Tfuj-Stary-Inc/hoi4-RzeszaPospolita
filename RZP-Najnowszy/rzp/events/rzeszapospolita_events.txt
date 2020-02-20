@@ -1,6 +1,5 @@
 add_namespace = rzeszapospolita
 
-##Event: Marsz na Warszawę
 country_event = {
 	id = rzeszapospolita.1
 	title = rzeszapospolita.1.title
@@ -21,7 +20,7 @@ country_event = {
 		create_wargoal = { type = annex_everything target = POL }
 	}
 }
-##Event: Wojna domowa w Polsce!
+
 news_event = {
 	id = rzeszapospolita.2
 	title = rzeszapospolita.2.title
@@ -41,7 +40,7 @@ news_event = {
 		ai_chance = { factor = 1}
 	}
 }
-##Event: Klęska Sanacji
+
 news_event = {
 	id = rzeszapospolita.3
 	title = rzeszapospolita.3.title
@@ -51,14 +50,14 @@ news_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		has_capitulated = POL
+		POL = has_capitulated
 	}
 	mean_time_to_happen = {
 		days = 5
 	}
 	option = {
 		name = rzeszapospolita.3.a
-		ai_chance = { factor = 1}
+		ai_chance = { factor = 1 }
 	}
 }
 ##Event: Przekazanie Śląska
@@ -71,7 +70,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus=  }
+		RZP = { has_completed_focus =  }
 	}
 	mean_time_to_happen = {
 		days = 12
@@ -80,18 +79,19 @@ country_event = {
 		name = rzeszapospolita.4.a
 		ai_chance = { factor = 1}
 		RZP = {
-transfer_state= 66
-transfer_state= 67
-add_state_core= 66
-add_state_core= 67
-}
+                    transfer_state= 66
+                    transfer_state= 67
+		    add_state_core= 66
+		    add_state_core= 67
+	       }
 
-GER = {
-transfer_state= 85
-add_state_core= 85
-}
+               GER = {
+	           transfer_state= 85
+	           add_state_core= 85
+	       }
 	}
 }
+
 ##Event: Przekazanie Wybrzeża
 country_event = {
 	id = rzeszapospolita.5
