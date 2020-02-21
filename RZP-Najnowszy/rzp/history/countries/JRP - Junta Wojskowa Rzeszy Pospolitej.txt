@@ -72,7 +72,7 @@ if = {
 }
 
 set_politics = {
-	ruling_party = fascism
+	ruling_party = neutrality
 	last_election = "1933.3.5"
 	election_frequency = 48
 	elections_allowed = no
@@ -89,7 +89,7 @@ set_convoys = 300
 create_country_leader = {
         name = "Kornel Olkowski"
         desc = "POLITICS_KING_ZOG_DESC"
-        picture = "Portrait_Rzesza_Pospolita_Shefour.dds"
+        picture = "Portrait_Shefour_RZP.dds"
         expire = "1965.1.1"
         ideology = despotism
         traits = {
