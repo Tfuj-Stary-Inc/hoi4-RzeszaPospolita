@@ -1385,102 +1385,6 @@ focus_tree = {
 	}
 	
 	#Focus for Industry
-	
-
-	focus = {
-		id = RZP_obozywypoczynkowenapodlasiu
-		icon = GFX_goal_generic_secret_weapon
-		x = 44
-		y = 4
-		cost = 15
-		available_if_capitulated = no
-		prerequisite = { focus = RZP_przyczenielitwy }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			97 = {
-                          add_building_construction = {
-                             type = industrial_complex
-                             level = 4
-                             instant_build = yes
-                          }
-                        }
-                        97 = {
-                          add_building_construction = {
-                             type = bunker
-                             level = 5
-                             province = 400
-                             instant_build = yes
-                          }
-                       }
-	       }
-}
-
-	focus = {
-		id = RZP_celgdask
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 47
-		y = 2
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_rozbudowapiekarniwadowickich }
-		mutually_exclusive = { 
-			focus = RZP_cellsk 
-		}
-		mutually_exclusive = { 
-			focus = RZP_celpodlasie 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_resource = {
-                           type = oil
-                           amount = 12
-                           state = 85
-                        }
-
-                        add_resource = {
-			   type = steel
-			   amount = 16
-			   state = 85
-                        }
-	       }
-	}
-
-	focus = {
-		id = RZP_celpodlasie
-		icon = GFX_focus_generic_industry_3
-		x = 44
-		y = 2
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_rozbudowapiekarniwadowickich }
-		mutually_exclusive = { 
-			focus = RZP_cellsk 
-		}
-		mutually_exclusive = { 
-			focus = RZP_celgdask 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_resource = {
-                           type = aluminium
-                           amount = 24
-                           state = 97
-                        }
-
-                        add_resource = {
-                           type = aluminium
-			   amount = 7
-			   state = 94
-			}
-		}
-	}
-
 	focus = {
 		id = RZP_rozbudowapiekarniwadowickich
 		icon = GFX_goal_generic_construct_civ_factory
@@ -1519,7 +1423,55 @@ focus_tree = {
 			}
 		}
 	}
-
+	
+	focus = {
+		id = RZP_celslask
+		icon = GFX_focus_generic_steel
+		x = 41
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_rozbudowapiekarniwadowickich }
+		mutually_exclusive = { 
+			focus = RZP_celpodlasie 
+		}
+		mutually_exclusive = { 
+			focus = RZP_celgdansk 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+                           type = steel
+			   amount = 15
+			   state = 88
+			}
+			
+			add_resource = {
+			   type = steel
+			   amount = 20
+			   state = 89
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_slaskzapomorze
+		icon = GFX_focus_generic_polish_deal
+		x = 41
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_celslask }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = { id = rzeszapospolita.4 }
+		}
+	}
+	
 	focus = {
 		id = RZP_kopalnianagwarkach
 		icon = GFX_goal_generic_construction2
@@ -1527,7 +1479,7 @@ focus_tree = {
 		y = 4
 		cost = 15
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_lskzapomorze }
+		prerequisite = { focus = RZP_slaskzapomorze }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1572,67 +1524,9 @@ focus_tree = {
 			}
 		}
 	}
-
+	
 	focus = {
-		id = RZP_stoczniaszczeciska
-		icon = GFX_goal_generic_amphibious_assault
-		x = 47
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wyspynabatyku }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			85 = {
-                         add_building_construction = {
-			    type = dockyard
-			    level = 4
-			    instant_build = yes
-			 }
-			}
-			
-			62 = {
-			 add_building_construction = {
-			    type = dockyard
-			    level = 5
-			    instant_build = yes
-			 }
-			}
-			
-			85 = {
-			 add_building_construction = {
-			    type = industrial_complex
-			    level = 3
-			    instant_build = yes
-			 }
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_zotywiekrzeszypospolitej
-		icon = GFX_goal_generic_consumer_goods
-		x = 44
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_okrgprzemysowyknur 
-			focus = RZP_zakadypracyowicim 
-			focus = RZP_stoczniaszczeciska 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-		          add_ideas = RZP_rapid_economic_development
-		}
-	}
-
-	focus = {
-		id = RZP_zakadypracyowicim
+		id = RZP_zakladypracyoswiecim
 		icon = GFX_goal_generic_secret_weapon
 		x = 41
 		y = 5
@@ -1669,9 +1563,87 @@ focus_tree = {
 			}
 		}
 	}
+	
+	focus = {
+		id = RZP_celpodlasie
+		icon = GFX_focus_generic_industry_3
+		x = 44
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_rozbudowapiekarniwadowickich }
+		mutually_exclusive = { 
+			focus = RZP_celslask 
+		}
+		mutually_exclusive = { 
+			focus = RZP_celgdansk 
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_resource = {
+                           type = aluminium
+                           amount = 24
+                           state = 97
+                        }
+
+                        add_resource = {
+                           type = aluminium
+			   amount = 7
+			   state = 94
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_przylaczenielitwy
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 44
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_celpodlasie }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = LIT }
+		}
+	}
 
 	focus = {
-		id = RZP_okrgprzemysowyknur
+		id = RZP_obozywypoczynkowenapodlasiu
+		icon = GFX_goal_generic_secret_weapon
+		x = 44
+		y = 4
+		cost = 15
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_przylaczenielitwy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			97 = {
+                          add_building_construction = {
+                             type = industrial_complex
+                             level = 4
+                             instant_build = yes
+                          }
+                        }
+                        97 = {
+                          add_building_construction = {
+                             type = bunker
+                             level = 5
+                             province = 400
+                             instant_build = yes
+                          }
+                       }
+	       }
+        }
+	
+	focus = {
+		id = RZP_okregprzemyslowyknur
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 44
 		y = 5
@@ -1709,6 +1681,129 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RZP_celgdansk
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 47
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_rozbudowapiekarniwadowickich }
+		mutually_exclusive = { 
+			focus = RZP_celslask 
+		}
+		mutually_exclusive = { 
+			focus = RZP_celpodlasie 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+                           type = oil
+                           amount = 12
+                           state = 85
+                        }
+
+                        add_resource = {
+			   type = steel
+			   amount = 16
+			   state = 85
+                        }
+	       }
+	}
+	
+	focus = {
+		id = RZP_wybrzezezapoludnie
+		icon = GFX_focus_chi_mission_to_germany
+		x = 47
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_celgdansk }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = { id = rzeszapospolita.5 }
+		}
+	}
+	
+	focus = {
+		id = RZP_wyspynabaltyku
+		icon = GFX_goal_tripartite_pact
+		x = 47
+		y = 4
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wybrzezezapoludnie }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = { id = rzeszapospolita.6 }
+		}
+	}
+
+	focus = {
+		id = RZP_stoczniaszczeciska
+		icon = GFX_goal_generic_amphibious_assault
+		x = 47
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wyspynabaltyku }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			85 = {
+                         add_building_construction = {
+			    type = dockyard
+			    level = 4
+			    instant_build = yes
+			 }
+			}
+			
+			62 = {
+			 add_building_construction = {
+			    type = dockyard
+			    level = 5
+			    instant_build = yes
+			 }
+			}
+			
+			85 = {
+			 add_building_construction = {
+			    type = industrial_complex
+			    level = 3
+			    instant_build = yes
+			 }
+			}
+		}
+	}
+
+	focus = {
+		id = RZP_zlotywiekrzeszypospolitej
+		icon = GFX_goal_generic_consumer_goods
+		x = 44
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = RZP_okregprzemyslowyknur 
+			focus = RZP_zakladypracyoswiecim 
+			focus = RZP_stoczniaszczeciska 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		          add_ideas = RZP_rapid_economic_development
+		}
+	}
+	
+	#Focus for Conquer of Europe
+	focus = {
 		id = RZP_fundamentimperium
 		icon = GFX_goal_support_fascism
 		x = 31
@@ -1722,122 +1817,80 @@ focus_tree = {
 		          add_ideas = RZP_aggressive_expansion_of_the_reich
 		}
 	}
-
+	
 	focus = {
-		id = RZP_przyczenielitwy
+		id = RZP_ekspansjapolnocna
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 44
-		y = 3
+		x = 27
+		y = 8
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_celpodlasie }
+		prerequisite = { focus = RZP_fundamentimperium }
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			create_wargoal = { type = annex_everything target = LIT }
-		}
-	}
-
-	focus = {
-		id = RZP_lskzapomorze
-		icon = GFX_focus_generic_polish_deal
-		x = 41
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_cellsk }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event = { id = rzeszapospolita.4 }
-		}
-	}
-
-	focus = {
-		id = RZP_cellsk
-		icon = GFX_focus_generic_steel
-		x = 41
-		y = 2
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_rozbudowapiekarniwadowickich }
-		mutually_exclusive = { 
-			focus = RZP_celpodlasie 
-		}
-		mutually_exclusive = { 
-			focus = RZP_celgdask 
-		}
-		mutually_exclusive = { 
-			focus = RZP_ 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_resource = {
-                           type = steel
-			   amount = 15
-			   state = 88
+			create_wargoal= { 
+                              type = annex_everything 
+			      target = EST
 			}
-			
-			add_resource = {
-			   type = steel
-			   amount = 20
-			   state = 89
+			create_wargoal= { 
+			      type = annex_everything 
+			      target = LAT
 			}
-		}
-	}
-
-	focus = {
-		id = RZP_wybrzeezapoudnie
-		icon = GFX_focus_chi_mission_to_germany
-		x = 47
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_celgdask }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event = { id = rzeszapospolita.5 }
 		}
 	}
 	
 	focus = {
-		id = RZP_wyspynabatyku
-		icon = GFX_goal_tripartite_pact
-		x = 47
-		y = 4
-		cost = 15
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wybrzeezapoudnie }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event = { id = rzeszapospolita.6 }
-		}
-	}
-
-	focus = {
-		id = RZP_armiaokupacyjnanaszychmoliwoci
-		icon = GFX_focus_generic_little_entente
+		id = RZP_zajecieczechoslowacji
+		icon = GFX_goal_rhineland
 		x = 31
-		y = 13
+		y = 8
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_ostatecznegraniceimperium }
+		prerequisite = { focus = RZP_fundamentimperium }
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-		          add_ideas = RZP_imperials_recruitment
+			create_wargoal= { 
+			      type = annex_everything 
+			      target = CZE
+			}
 		}
 	}
-
+	
+	focus = {
+		id = RZP_nowegraniceimperium
+		icon = GFX_focus_generic_treaty
+		x = 29
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = RZP_ekspansjapolnocna 
+		}
+		prerequisite = { 
+			focus = RZP_zajecieczechosowacji 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			LIT = { has_capitulated = yes }
+			
+			9 = { is_controlled_by = RZP }
+			13 = { is_controlled_by = RZP }
+			12 = { is_controlled_by = RZP }
+		}
+		completion_reward = {
+			country_event= {
+			       days = 1 
+			       id = rzeszapospolita.24
+			}
+		}
+	}
+	
 	focus = {
 		id = RZP_sprawagranicznai
 		icon = GFX_goal_generic_position_armies
@@ -1852,8 +1905,8 @@ focus_tree = {
 		available = {
 			date >, date <> 1939.1.1
 
-                        43 = { is_controlled_by= RZP }
-                        46 = { is_controlled_by= RZP }
+                        43 = { is_controlled_by = RZP }
+                        46 = { is_controlled_by = RZP }
 		}
 		completion_reward = {
 			country_event= {
@@ -1862,7 +1915,7 @@ focus_tree = {
 			}
 		}
 	}
-
+	
 	focus = {
 		id = RZP_sprawagranicznaii
 		icon = GFX_goal_generic_position_armies
@@ -1887,71 +1940,9 @@ focus_tree = {
 			}
 		}
 	}
-
+	
 	focus = {
-		id = RZP_projektflotyrdziemnomorskiej
-		icon = GFX_goal_generic_navy_battleship
-		x = 36
-		y = 11
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wojnanabakanach }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = {
-		id = RZP_ostatecznegraniceimperium
-		icon = GFX_focus_generic_treaty
-		x = 31
-		y = 12
-		cost = 15
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_wojnazturcj 
-		}
-		prerequisite = { 
-			focus = RZP_sprawagranicznaii 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			date >, date <> 1941.1.1
-			
-			RZP = { controls_state = 49 }
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.27
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_zajcieczechosowacji
-		icon = GFX_goal_rhineland
-		x = 31
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_fundamentimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = CZE
-			}
-		}
-	}
-
-	#Focus for Brama na Bałkany
-	focus = {
-		id = RZP_bramanabakany
+		id = RZP_bramanabalkany
 		icon = GFX_focus_rom_preserve_romania
 		x = 35
 		y = 8
@@ -1968,19 +1959,43 @@ focus_tree = {
 			}
 		}
 	}
-
+	
 	focus = {
-		id = RZP_wojnanabakanach
+		id = RZP_sprawawegier
+		icon = GFX_focus_hun_assassinate_horthy
+		x = 33
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = RZP_zajecieczechoslowacji 
+		}
+		prerequisite = { 
+			focus = RZP_bramanabalkany 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event= {
+			       days = 1 
+			       id = 
+			}
+		}
+	}
+	
+	focus = {
+		id = RZP_wojnanabalkanach
 		icon = GFX_focus_generic_strike_at_democracy1
 		x = 35
 		y = 10
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { 
-			focus = RZP_bramanabakany 
+			focus = RZP_bramanabalkany 
 		}
 		prerequisite = { 
-			focus = RZP_sprawawgier 
+			focus = RZP_sprawawegier 
 		}
 		ai_will_do = {
 			factor = 1
@@ -2002,94 +2017,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = RZP_ekspansjapnocna
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 27
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_fundamentimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			RZP = { has_completed_focus =  }
-		}
-		completion_reward = {
-			create_wargoal= { 
-                              type = annex_everything 
-			      target = EST
-			}
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = LAT
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_sprawawgier
-		icon = GFX_focus_hun_assassinate_horthy
-		x = 33
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_zajcieczechosowacji 
-		}
-		prerequisite = { 
-			focus = RZP_bramanabakany 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = 
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_nowegraniceimperium
-		icon = GFX_focus_generic_treaty
-		x = 29
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_ekspansjapnocna 
-		}
-		prerequisite = { 
-			focus = RZP_zajcieczechosowacji 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			LIT = { has_capitulated = yes }
-			
-			9 = { is_controlled_by= RZP }
-			13 = { is_controlled_by= RZP }
-			12 = { is_controlled_by= RZP }
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.24
-			}
-		}
-	}
-
-	focus = {
-		id = RZP_wojnazturcj
+		id = RZP_wojnazturcja
 		icon = GFX_goal_generic_secret_weapon
 		x = 33
 		y = 11
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wojnanabakanach }
+		prerequisite = { focus = RZP_wojnanabalkanach }
 		ai_will_do = {
 			factor = 1
 		}
@@ -2098,6 +2032,64 @@ focus_tree = {
 			      type = annex_everything 
 			      target = TUR
 			}
+		}
+	}
+	
+	focus = {
+		id = RZP_projektflotysrodziemnomorskiej
+		icon = GFX_goal_generic_navy_battleship
+		x = 36
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_wojnanabalkanach }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RZP_ostatecznegraniceimperium
+		icon = GFX_focus_generic_treaty
+		x = 31
+		y = 12
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = RZP_wojnazturcja 
+		}
+		prerequisite = { 
+			focus = RZP_sprawagranicznaii 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			date >, date <> 1941.1.1
+			
+			RZP = { controls_state = 49 }
+		}
+		completion_reward = {
+			country_event= {
+			       days = 1 
+			       id = rzeszapospolita.27
+			}
+		}
+	}
+
+	focus = {
+		id = RZP_armiaokupacyjnanaszychmozliwosci
+		icon = GFX_focus_generic_little_entente
+		x = 31
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_ostatecznegraniceimperium }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		          add_ideas = RZP_imperials_recruitment
 		}
 	}
 
