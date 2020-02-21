@@ -239,6 +239,24 @@ ideas = {
 	      }
 	      
 	      traits = { bandera_cosplayer_but_worse }
+	  }
+	}
+	
+	theorist = {
+	        luigi = {
+		
+		 allowed = {
+		         original_tag = RZP
+		 }
+		 
+		 cost = 75
+		 
+		 research_bonus = {
+				land_doctrine = 0.10
+		 }
+		 
+		 traits = { }
+		}
 	}
 
 	navy_chief = {
