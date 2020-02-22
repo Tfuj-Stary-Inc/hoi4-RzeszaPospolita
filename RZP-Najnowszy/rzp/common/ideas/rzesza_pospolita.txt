@@ -53,7 +53,7 @@ ideas = {
 
 				removal_cost = -1
 				
-                                picture = 
+                                picture = generic_infantry_bonus
 
 				modifier = {
 					conscription = 0.02
@@ -71,7 +71,7 @@ ideas = {
 
 				removal_cost = -1
 				
-				picture = 
+				picture = generic_goods_red_bonus
 				
 				modifier = {
 					consumer_goods_factor = -0.10
@@ -93,7 +93,7 @@ ideas = {
 
 				removal_cost = -1
 				
-				picture =
+				picture = idea_general_staff
 				
 				modifier = {
 					command_power_gain = 1
@@ -139,7 +139,7 @@ ideas = {
 
 				removal_cost = -1
 				
-				picture = 
+				picture = idea_cze_planning_bonus
 				
 				modifier = {
 					army_morale_factor = 0.10
@@ -160,7 +160,7 @@ ideas = {
 
 				removal_cost = -1
 				
-				picture = 
+				picture = idea_generic_reserve_division
 				
 				modifier = {
 					non_core_manpower = 0.5
@@ -179,7 +179,7 @@ ideas = {
 
 				removal_cost = -1
 
-                                picture = 
+                                picture = idea_generic_war_preparation
 				
 				modifier = {
 					land_night_attack = 0.25
