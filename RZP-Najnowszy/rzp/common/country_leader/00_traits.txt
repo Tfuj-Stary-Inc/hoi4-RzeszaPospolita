@@ -124,3 +124,19 @@ rebbelious_commander = {
                   factor = 1
           }
 }
+
+cringekrieg_theorist = {
+     sprite = 14
+     
+     equipment_bonus = {
+             armor = {
+                   instant = yes
+                   maximum_speed = 0.05
+                   armor_value = 0.05
+             }
+             experience_gain_army = 0.05
+             
+             ai_will_do = {
+			factor = 1
+		   }
+}
