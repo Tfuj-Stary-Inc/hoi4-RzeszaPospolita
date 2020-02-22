@@ -6,7 +6,7 @@ RZP_Inf_01 =
 
 	    can_use = { always = yes }
 
-	    dyvision_types = { "infantry" }
+	    division_types = { "infantry" }
 
 	    fallback_name = "%d. Dywizja Piechoty"
 
