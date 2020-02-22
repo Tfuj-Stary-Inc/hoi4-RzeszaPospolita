@@ -34,7 +34,7 @@ ideas = {
 
 				removal_cost = -1
 				
-				picture = 
+				picture = generic_manpower_bonus
 				
 				modifier = {
 					non_core_manpower = 0.05
