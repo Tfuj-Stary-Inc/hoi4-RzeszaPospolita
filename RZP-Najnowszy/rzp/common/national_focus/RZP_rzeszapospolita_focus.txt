@@ -49,7 +49,7 @@ focus_tree = {
 			factor = 2
 		}
 		available = {
-			10 = is_controlled_by = RZP
+			has_full_control_of_state = 10
 		}
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 1
