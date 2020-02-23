@@ -107,9 +107,7 @@ create_country_leader = {
 	picture = "Portrait_Rzesza_Pospolita_Sheow.dds"
 	expire = "1965.1.1"
 	ideology = despotism
-	traits = {
-	        ww_one_trauma
-	}
+	traits = { }
 }
 
 create_country_leader = {
@@ -130,10 +128,7 @@ create_country_leader = {
         picture = "Portrait_Rzesza_Pospolita_Kaczka.dds"
         expire = "1965.1.1"
         ideology = liberalism
-        traits = {
-                dislikes germany
-                political_dancer
-        }
+        traits = { }
 }
 
 add_namespace = {
