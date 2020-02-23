@@ -201,7 +201,7 @@ news_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus = RZP_bazazapomoc }
 	}
 	mean_time_to_happen = {
 		days = 5
@@ -220,7 +220,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus = RZP_ukrascsaipan }
 	}
 	mean_time_to_happen = {
 		days = 4
@@ -409,14 +409,13 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus = }
+		RZP = { has_completed_focus = RZP_rozbudowawyspy }
 	}
 	mean_time_to_happen = {
 		days = 7
 	}
 	option = {
 		name = rzeszapospolita.17.a
-		ai_chance = { factor = 1}
 	}
 }
 ##Event: Wyprawa na Alaskę
