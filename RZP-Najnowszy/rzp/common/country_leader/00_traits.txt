@@ -3390,4 +3390,148 @@ leader_traits = {
 			}
 		}
 	}
+	
+	#Rzesza Pospolita traits#
+	
+	creator_of_the_reich = {
+               random = no
+               
+               political_power_factor = 0.40
+               stability_factor = 0.05
+               political_advisor_cost_factor = -0.25
+               trade_laws_cost_factor = -0.25
+               mobilization_laws_cost_factor = -0.25
+               economy_cost_factor = -0.25
+               
+               ai_will_do = {
+                       factor = 1
+               }
+    }
+    
+    land_force_lover = {
+              random = no
+              
+              high_command_cost_factor = -0.25
+              army_chief_cost_factor = -0.50
+              
+              ai_will_do = {
+                     factor = 1
+              }
+   }
+   
+   bandera_cosplayer_but_worse = {
+                    random = no
+                    
+                    subjects_autonomy_gain = -1
+                    
+                    ai_will_do = {
+                           factor = 1
+                    }
+  }
+  
+  communist_conections = {
+           random = no
+           
+           communism_drift = 0.03
+           
+           ai_will_do = {
+                  factor = 1
+           }
+  }
+  
+  man_of_state = {
+        random = no
+        
+        political_power_factor = 0.20
+        stability_factor = 0.10
+        economy_cost_factor = -0.25
+        
+        ai_will_do = {
+                factor = 1
+        }
+  }
+  
+  hero_of_the_people = {
+             random = no
+             
+             stability_factor = 0.15
+             mobilization_laws_cost_factor = -0.50
+             army_chief_cost_factor = -0.25
+             
+             ai_will_do = {
+                    factor = 1
+             }
+  }
+  
+  biest_von_wadowitz = {
+           sprite = 13
+           enemy_partisant_effect = -0.50
+           non_core_manpower = 0.05
+           
+           ai_will_do = {
+                   factor = 1
+           }
+ }
+
+   
+   mass_assault_specialist = {
+               sprite = 5
+               training_time_army_factor = -0.40
+               experience_gain_army_factor = -0.10
+               
+               ai_will_do = {
+                       factor = 1
+               }
+}
+
+revolutionary_rubish = {
+             random = no
+             
+             stability_factor = -0.10
+             drift_defence_factor = 0.25
+             
+             ai_will_do = {
+                     factor = 1
+             }
+}
+
+soviet_tactics_lover = {
+              random = no
+              
+              army_org_factor = -0.04
+              conscription = 0.010
+              
+              ai_will_do = {
+                      factor = 1
+              }
+}
+
+rebbelious_commander = {
+          random = no
+          
+          army_org_factor = 0.06
+          non_core_manpower = 0.10
+          stability_factor = -0.15
+          
+          ai_will_do = {
+                  factor = 1
+          }
+}
+
+cringekrieg_theorist = {
+     sprite = 14
+     
+     equipment_bonus = {
+             armor = {
+                   instant = yes
+                   maximum_speed = 0.05
+                   armor_value = 0.05
+             }
+             experience_gain_army = 0.05
+             
+             ai_will_do = {
+			factor = 1
+		   }
+}
+
 }
