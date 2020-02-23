@@ -738,7 +738,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = RZP_nawizaniekontaktuzewspolnota
+		id = RZP_nawiazaniekontaktuzewspolnota
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 16
 		y = 7
