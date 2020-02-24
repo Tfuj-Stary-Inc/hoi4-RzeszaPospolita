@@ -98,7 +98,6 @@ ideas = {
 				modifier = {
 					command_power_gain = 1
 					production_speed_buildings_factor = 0.25
-					political_power_gain 
 					max_command_power = 25
 					army_morale_factor = 0.10
 					conscription = 0.03
@@ -121,9 +120,9 @@ ideas = {
 				
 				modifier = {
 
-					add_opinion_modifier_to_japan = { target = JAP modifier = large_increase }
+					add_opinion_modifier = { target = JAP modifier = large_increase }
 				
-					JAP = { add_opinion_modifier_to_poland = { target = POL modifier = large_increase } }
+					JAP = { add_opinion_modifier = { target = RZP modifier = large_increase } }
 
 				}
 		}
