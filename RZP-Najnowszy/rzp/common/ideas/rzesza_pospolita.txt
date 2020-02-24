@@ -184,6 +184,37 @@ ideas = {
 					land_night_attack = 0.25
 				}
 		}
+		
+		RZP_new_ship_projects = {
+		
+		                allowed = {
+				        always = yes
+				}
+				
+				allowed_civil_war = {
+				        always = yes
+				}
+				
+				removal_cost = -1
+				
+				picture = idea_generic_coastal_defense_ships
+				
+				equipement_bonus = {
+				         ship_hull_light = {
+					         build_cost_ic = -0.25 instant = yes
+					 }
+					 carrier = {
+					         build_cost_ic = -0.25 instant = yes
+					 }
+					 capital_ship = {
+					         build_cost_ic = -0.25 instant = yes
+					 }
+					 screen_ship = {
+					         build_cost_ic = -.0.25 instant = yes
+					 }
+				}
+		}
+				         
 	}
 	
 	political_advisor = {
