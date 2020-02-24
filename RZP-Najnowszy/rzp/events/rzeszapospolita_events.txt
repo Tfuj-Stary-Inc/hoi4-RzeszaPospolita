@@ -43,13 +43,12 @@ news_event = {
 	major = yes
 	trigger = {
 		POL = { has_capitulated }
-		
 	}
 	option = {
 		name = rzeszapospolita.3.a
 	}
 }
-##Event: Przekazanie Śląska
+
 country_event = {
 	id = rzeszapospolita.4
 	title = rzeszapospolita.4.title
@@ -77,7 +76,7 @@ country_event = {
 	}
 }
 
-##Event: Przekazanie Wybrzeża
+
 country_event = {
 	id = rzeszapospolita.5
 	title = rzeszapospolita.5.title
@@ -105,7 +104,8 @@ country_event = {
 		}
 	}
 }
-##Event: Umowa ze Skandynawią
+
+
 country_event = {
 	id = rzeszapospolita.6
 	title = rzeszapospolita.6.title
@@ -135,7 +135,7 @@ relation = non_aggression_pact
 }
 	}
 }
-##Event: Litwa przyłączona!
+
 country_event = {
 	id = rzeszapospolita.7
 	title = rzeszapospolita.7.title
@@ -170,7 +170,7 @@ country_event = {
                 }
 	}
 }
-##Event: Chiny przekazują Qingdao
+
 news_event = {
 	id = rzeszapospolita.8
 	title = rzeszapospolita.8.title
@@ -185,7 +185,7 @@ news_event = {
 		name = rzeszapospolita.8.a
 	}
 }
-##Event: Kradzież Saipanu
+
 country_event = {
 	id = rzeszapospolita.9
 	title = rzeszapospolita.9.title
@@ -202,7 +202,7 @@ country_event = {
 		RZP = { set_state_controller = 646 }
 	}
 }
-##Event: Napięcie na Pacyfiku
+
 news_event = {
 	id = rzeszapospolita.10
 	title = rzeszapospolita.10.title
@@ -218,7 +218,7 @@ news_event = {
 		name = rzeszapospolita.10.a
 	}
 }
-##Event: Nasza własna strefa wpływów
+
 country_event = {
 	id = rzeszapospolita.11
 	title = rzeszapospolita.11.title
@@ -253,7 +253,7 @@ country_event = {
                 }
 	}
 }
-##Event: Rzesza Pospolita zajmuje wyspy brytyjskie
+
 news_event = {
 	id = rzeszapospolita.12
 	title = rzeszapospolita.12.title
@@ -269,7 +269,7 @@ news_event = {
 		name = rzeszapospolita.12.a
 	}
 }
-##Event: Bunt dowódców Rzeszy Pospolitej!
+
 news_event = {
 	id = rzeszapospolita.13
 	title = rzeszapospolita.13.title
@@ -289,7 +289,7 @@ news_event = {
 		name = rzeszapospolita.13.a
 	}
 }
-##Event: Druga Poslka Wojna Domowa!
+
 news_event = {
 	id = rzeszapospolita.14
 	title = rzeszapospolita.14.title
@@ -305,7 +305,7 @@ news_event = {
 		name = rzeszapospolita.14.a
 	}
 }
-##Event: Bunt dowódców!
+
 country_event = {
 	id = rzeszapospolita.15
 	title = rzeszapospolita.15.title
@@ -335,7 +335,7 @@ country_event = {
                 }
 	}
 }
-##Event: Upadek Junty Wojskowej Rzeszy Pospolitej!
+
 news_event = {
 	id = rzeszapospolita.16
 	title = rzeszapospolita.16.title
@@ -351,7 +351,7 @@ news_event = {
 		name = rzeszapospolita.16.a
 	}
 }
-##Event: Rozbudowa garnizonu na Saipanie
+
 country_event = {
 	id = rzeszapospolita.17
 	title = rzeszapospolita.17.title
@@ -367,7 +367,7 @@ country_event = {
 		name = rzeszapospolita.17.a
 	}
 }
-##Event: Wyprawa na Alaskę
+
 country_event = {
 	id = rzeszapospolita.18
 	title = rzeszapospolita.18.title
@@ -384,7 +384,7 @@ country_event = {
 		RZP = { transfer_state = 463 }
 	}
 }
-##Event: Alaska zajęta przez Rzeszę Pospolitą!
+
 news_event = {
 	id = rzeszapospolita.19
 	title = rzeszapospolita.19.title
@@ -400,7 +400,7 @@ news_event = {
 		name = rzeszapospolita.19.a
 	}
 }
-##Event: Propozycja Ochrony
+
 country_event = {
 	id = rzeszapospolita.20
 	title = rzeszapospolita.20.title
@@ -434,7 +434,7 @@ country_event = {
                 }
 	}
 }
-##Event: Rząd Wnezueli uległ Rzeszy Pospolitej
+
 news_event = {
 	id = rzeszapospolita.21
 	title = rzeszapospolita.21.title
@@ -450,7 +450,7 @@ news_event = {
 		name = rzeszapospolita.21.a
 	}
 }
-##Event: Rząd Argentyny ulega Rzeszy Pospolitej
+
 news_event = {
 	id = rzeszapospolita.22
 	title = rzeszapospolita.22.title
@@ -466,7 +466,7 @@ news_event = {
 		name = rzeszapospolita.22.a
 	}
 }
-##Event: Rząd Peru ulega Rzeszy Pospolitej
+
 news_event = {
 	id = rzeszapospolita.23
 	title = rzeszapospolita.23.title
@@ -482,7 +482,7 @@ news_event = {
 		name = rzeszapospolita.23.a
 	}
 }
-##Event: Kwestia nowych granic
+
 country_event = {
 	id = rzeszapospolita.24
 	title = rzeszapospolita.24.title
@@ -520,7 +520,7 @@ add_state_claim= 74
 }
 	}
 }
-##Event: Dalsza integracja ziem
+
 country_event = {
 	id = rzeszapospolita.25
 	title = rzeszapospolita.25.title
@@ -559,7 +559,7 @@ add_state_core= 77
 }
 	}
 }
-##Event: Kwestia bałkańska
+
 country_event = {
 	id = rzeszapospolita.26
 	title = rzeszapospolita.26.title
@@ -596,7 +596,7 @@ add_state_core= 106
 }
 	}
 }
-##Event: Ostateczne granice
+
 country_event = {
 	id = rzeszapospolita.27
 	title = rzeszapospolita.27.title
@@ -646,7 +646,7 @@ add_state_core= 182
 		}
 	}
 }
-##Event: Rzesza Pospolita wkracza do Azjii!
+
 news_event = {
 	id = rzeszapospolita.28
 	title = rzeszapospolita.28.title
