@@ -1873,7 +1873,7 @@ focus_tree = {
 			focus = RZP_ekspansjapolnocna 
 		}
 		prerequisite = { 
-			focus = RZP_zajecieczechosowacji 
+			focus = RZP_zajecieczechoslowacji 
 		}
 		ai_will_do = {
 			factor = 1
