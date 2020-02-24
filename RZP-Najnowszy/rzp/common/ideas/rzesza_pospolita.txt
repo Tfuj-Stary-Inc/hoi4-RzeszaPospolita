@@ -199,7 +199,7 @@ ideas = {
 				
 				picture = idea_generic_coastal_defense_ships
 				
-				equipement_bonus = {
+				equipment_bonus = {
 				         ship_hull_light = {
 					         build_cost_ic = -0.25 instant = yes
 					 }
