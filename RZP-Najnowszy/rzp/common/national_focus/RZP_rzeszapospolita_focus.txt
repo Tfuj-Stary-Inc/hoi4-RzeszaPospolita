@@ -1074,8 +1074,8 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = RZP_zainwestujmywniszczyciele 
-			focus = RZP_odbatykupoatlantyk 
-			focus = RZP_obronawybrzea 
+			focus = RZP_odbaltykupoatlantyk 
+			focus = RZP_obronawybrzeza 
 		}
 		ai_will_do = {
 			factor = 1
@@ -1264,7 +1264,8 @@ focus_tree = {
                            bonus = 1.0
                            uses = 2
                            category = artillery
-                }
+                        }
+	        }
 	}
 	
 	focus = {
