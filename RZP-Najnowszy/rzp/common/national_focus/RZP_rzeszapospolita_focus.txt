@@ -1,6 +1,6 @@
 focus_tree = {
 	id = rzeszapospolita_focus
-	continuous_focus_position = { x = 100 y = 500 }
+	continuous_focus_position = { x = 2137 y = 6969 }
 	country = {
 		factor = 0
 		modifier = {
@@ -1905,7 +1905,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			date >, date <> 1939.1.1
+			date > 1939.1.1
 
                         43 = { is_controlled_by = RZP }
                         46 = { is_controlled_by = RZP }
@@ -1930,7 +1930,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			date >, date <> 1940.1.1
+			date > 1940.1.1
 			
 			RZP = { controls_state = 107 }
 			RZP = { controls_state = 48 }
@@ -2067,7 +2067,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			date >, date <> 1941.1.1
+			date > 1941.1.1
 			
 			RZP = { controls_state = 49 }
 		}
