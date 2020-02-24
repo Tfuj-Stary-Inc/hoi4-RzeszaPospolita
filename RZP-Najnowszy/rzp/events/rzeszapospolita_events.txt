@@ -11,9 +11,6 @@ country_event = {
 	trigger = {
 		RZP = { has_completed_focus = RZP_marsznawarszawe }
 	}
-	mean_time_to_happen = {
-		days = 7
-	}
 	option = {
 		name = rzeszapospolita.1.a
 		create_wargoal = { type = annex_everything target = POL }
@@ -30,9 +27,6 @@ news_event = {
 	major = yes
 	trigger = {
 		RZP = { has_offensive_war_with = POL }
-	}
-	mean_time_to_happen = {
-		days = 5
 	}
 	option = {
 		name = rzeszapospolita.2.a
@@ -51,12 +45,8 @@ news_event = {
 		POL = { has_capitulated }
 		
 	}
-	mean_time_to_happen = {
-		days = 5
-	}
 	option = {
 		name = rzeszapospolita.3.a
-		ai_chance = { factor = 1 }
 	}
 }
 ##Event: Przekazanie Śląska
@@ -70,9 +60,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus =  }
-	}
-	mean_time_to_happen = {
-		days = 12
 	}
 	option = {
 		name = rzeszapospolita.4.a
@@ -102,9 +89,6 @@ country_event = {
 	trigger = {
 		RZP = { has_completed_focus=  }
 	}
-	mean_time_to_happen = {
-		days = 12
-	}
 	option = {
 		name = rzeszapospolita.5.a
 		RZP = {
@@ -132,9 +116,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus=  }
-	}
-	mean_time_to_happen = {
-		days = 12
 	}
 	option = {
 		name = rzeszapospolita.6.a
@@ -165,9 +146,6 @@ country_event = {
 	major = yes
 	trigger = {
 		LIT = { has_capitulated= yes }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.7.a
@@ -203,9 +181,6 @@ news_event = {
 	trigger = {
 		RZP = { has_completed_focus = RZP_bazazapomoc }
 	}
-	mean_time_to_happen = {
-		days = 5
-	}
 	option = {
 		name = rzeszapospolita.8.a
 	}
@@ -221,9 +196,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus = RZP_ukrascsaipan }
-	}
-	mean_time_to_happen = {
-		days = 4
 	}
 	option = {
 		name = rzeszapospolita.9.a
@@ -242,9 +214,6 @@ news_event = {
 	trigger = {
 		RZP = { has_completed_focus = }
 	}
-	mean_time_to_happen = {
-		days = 15
-	}
 	option = {
 		name = rzeszapospolita.10.a
 	}
@@ -260,9 +229,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus =  }
-	}
-	mean_time_to_happen = {
-		days = 15
 	}
 	option = {
 		name = rzeszapospolita.11.a
@@ -299,9 +265,6 @@ news_event = {
 	trigger = {
 		RZP = { has_completed_focus = }
 	}
-	mean_time_to_happen = {
-		days = 5
-	}
 	option = {
 		name = rzeszapospolita.12.a
 	}
@@ -322,9 +285,6 @@ news_event = {
                     controls_state= 646
                }
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
 	option = {
 		name = rzeszapospolita.13.a
 	}
@@ -340,8 +300,6 @@ news_event = {
 	major = yes
 	trigger = {
 		RZP = { has_war_with = JRP }
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.14.a
@@ -358,9 +316,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus = }
-	}
-	mean_time_to_happen = {
-		days = 7
 	}
 	option = {
 		name = rzeszapospolita.15.a
@@ -392,9 +347,6 @@ news_event = {
 	trigger = {
 		JRP = { has_capitulated }
 	}
-	mean_time_to_happen = {
-		days = 20
-	}
 	option = {
 		name = rzeszapospolita.16.a
 	}
@@ -411,9 +363,6 @@ country_event = {
 	trigger = {
 		RZP = { has_completed_focus = RZP_rozbudowawyspy }
 	}
-	mean_time_to_happen = {
-		days = 7
-	}
 	option = {
 		name = rzeszapospolita.17.a
 	}
@@ -429,9 +378,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus = }
-	}
-	mean_time_to_happen = {
-		days = 7
 	}
 	option = {
 		name = rzeszapospolita.18.a
@@ -450,9 +396,6 @@ news_event = {
 	trigger = {
 		463 = { is_controlled_by = RZP }
 	}
-	mean_time_to_happen = {
-		days = 14
-	}
 	option = {
 		name = rzeszapospolita.19.a
 	}
@@ -468,9 +411,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus = }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.20.a
@@ -506,9 +446,6 @@ news_event = {
 	trigger = {
 		VEN = { is_subject_of = RZP }
 	}
-	mean_time_to_happen = {
-		days = 14
-	}
 	option = {
 		name = rzeszapospolita.21.a
 	}
@@ -524,9 +461,6 @@ news_event = {
 	major = yes
 	trigger = {
 		ARG = { is_subject_of = RZP }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.22.a
@@ -544,9 +478,6 @@ news_event = {
 	trigger = {
 		PRU = { is_subject_of = RZP }
 	}
-	mean_time_to_happen = {
-		days = 14
-	}
 	option = {
 		name = rzeszapospolita.23.a
 	}
@@ -562,9 +493,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus =  }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.24.a
@@ -603,9 +531,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus=  }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.25.a
@@ -646,9 +571,6 @@ country_event = {
 	trigger = {
 		RZP = { has_completed_focus = }
 	}
-	mean_time_to_happen = {
-		days = 14
-	}
 	option = {
 		name = rzeszapospolita.26.a
 		ai_chance = { factor = 0}
@@ -685,9 +607,6 @@ country_event = {
 	major = yes
 	trigger = {
 		RZP = { has_completed_focus= }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.27.a
@@ -739,9 +658,6 @@ news_event = {
 	trigger = {
 		347 = { is_core_of= RZP }
                 340 = { is_core_of= RZP }
-	}
-	mean_time_to_happen = {
-		days = 14
 	}
 	option = {
 		name = rzeszapospolita.28.a
