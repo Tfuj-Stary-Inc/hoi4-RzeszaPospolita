@@ -1105,7 +1105,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas = 
+			add_ideas = RZP_new_ship_projects
 		}
 	}
 	
