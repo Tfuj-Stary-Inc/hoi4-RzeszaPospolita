@@ -1,1 +1,213 @@
 add_namespace = news
+
+news_event = {
+	id = news.1
+	title = rzeszapospolita.2.title
+	desc = rzeszapospolita.2.desc
+	picture = GFX_/hoi4/event_gfx/news_event_003
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		RZP = { has_offensive_war_with = POL }
+	}
+	option = {
+		name = news.1.a
+	}
+}
+
+news_event = {
+	id = news.2
+	title = rzeszapospolita.3.title
+	desc = rzeszapospolita.3.desc
+	picture = GFX_/hoi4/event_gfx/news_event_hitler_handshake
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		POL = { has_capitulated }
+	}
+	option = {
+		name = news.2.a
+	}
+}
+
+news_event = {
+	id = news.3
+	title = rzeszapospolita.8.title
+	desc = rzeszapospolita.8.desc
+	picture = GFX_/hoi4/event_gfx/news_event_hitler_handshake
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		RZP = { has_completed_focus = RZP_bazazapomoc }
+	}
+	option = {
+		name = news.3.a
+	}
+}
+
+news_event = {
+	id = news.4
+	title = rzeszapospolita.10.title
+	desc = rzeszapospolita.10.desc
+	picture = GFX_/hoi4/event_gfx/news_event_ast_navy
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		RZP = { has_completed_focus = }
+	}
+	option = {
+		name = news.4.a
+	}
+}
+
+news_event = {
+	id = news.5
+	title = rzeszapospolita.12.title
+	desc = rzeszapospolita.12.desc
+	picture = GFX_/hoi4/event_gfx/news_event_020
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		RZP = { has_completed_focus = }
+	}
+	option = {
+		name = news.5.a
+	}
+}
+
+news_event = {
+	id = news.6
+	title = rzeszapospolita.13.title
+	desc = rzeszapospolita.13.desc
+	picture = GFX_/hoi4/event_gfx/news_event_german_officers
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		JRP = {
+                    controls_state= 62
+                    controls_state= 86
+                    controls_state= 646
+               }
+	}
+	option = {
+		name = news.6.a
+	}
+}
+
+news_event = {
+	id = news.7
+	title = rzeszapospolita.14.title
+	desc = rzeszapospolita.14.desc
+	picture = GFX_/hoi4/event_gfx/news_event_polish_resistance_warsaw
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		RZP = { has_offensive_war_with = JRP }
+	}
+	option = {
+		name = news.7.a
+	}
+}
+
+news_event = {
+	id = news.8
+	title = rzeszapospolita.16.title
+	desc = rzeszapospolita.16.desc
+	picture = GFX_/hoi4/event_gfx/news_event_033
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		JRP = { has_capitulated }
+	}
+	option = {
+		name = news.8.a
+	}
+}
+
+news_event = {
+	id = news.9
+	title = rzeszapospolita.19.title
+	desc = rzeszapospolita.19.desc
+	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		463 = { is_controlled_by = RZP }
+	}
+	option = {
+		name = news.9.a
+	}
+}
+
+news_event = {
+	id = news.10
+	title = rzeszapospolita.21.title
+	desc = rzeszapospolita.21.desc
+	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		VEN = { is_subject_of = RZP }
+	}
+	option = {
+		name = news.10.a
+	}
+}
+
+news_event = {
+	id = news.11
+	title = rzeszapospolita.22.title
+	desc = rzeszapospolita.22.desc
+	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		ARG = { is_subject_of = RZP }
+	}
+	option = {
+		name = news.11.a
+	}
+}
+
+news_event = {
+	id = news.12
+	title = rzeszapospolita.23.title
+	desc = rzeszapospolita.23.desc
+	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		PRU = { is_subject_of = RZP }
+	}
+	option = {
+		name = news.12.a
+	}
+}
+
+news_event = {
+	id = news.13
+	title = rzeszapospolita.28.title
+	desc = rzeszapospolita.28.desc
+	picture = GFX_/hoi4/event_gfx/news_event_soldiers_marching
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		347 = { is_core_of= RZP }
+                340 = { is_core_of= RZP }
+	}
+	option = {
+		name = news.13.a
+	}
+}
