@@ -17,38 +17,6 @@ country_event = {
 	}
 }
 
-news_event = {
-	id = rzeszapospolita.2
-	title = rzeszapospolita.2.title
-	desc = rzeszapospolita.2.desc
-	picture = GFX_/hoi4/event_gfx/news_event_003
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		RZP = { has_offensive_war_with = POL }
-	}
-	option = {
-		name = rzeszapospolita.2.a
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.3
-	title = rzeszapospolita.3.title
-	desc = rzeszapospolita.3.desc
-	picture = GFX_/hoi4/event_gfx/news_event_hitler_handshake
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		POL = { has_capitulated }
-	}
-	option = {
-		name = rzeszapospolita.3.a
-	}
-}
-
 country_event = {
 	id = rzeszapospolita.4
 	title = rzeszapospolita.4.title
@@ -171,21 +139,6 @@ country_event = {
 	}
 }
 
-news_event = {
-	id = rzeszapospolita.8
-	title = rzeszapospolita.8.title
-	desc = rzeszapospolita.8.desc
-	picture = GFX_/hoi4/event_gfx/news_event_hitler_handshake
-	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-		RZP = { has_completed_focus = RZP_bazazapomoc }
-	}
-	option = {
-		name = rzeszapospolita.8.a
-	}
-}
-
 country_event = {
 	id = rzeszapospolita.9
 	title = rzeszapospolita.9.title
@@ -200,22 +153,6 @@ country_event = {
 	option = {
 		name = rzeszapospolita.9.a
 		RZP = { set_state_controller = 646 }
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.10
-	title = rzeszapospolita.10.title
-	desc = rzeszapospolita.10.desc
-	picture = GFX_/hoi4/event_gfx/news_event_ast_navy
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		RZP = { has_completed_focus = }
-	}
-	option = {
-		name = rzeszapospolita.10.a
 	}
 }
 
@@ -254,58 +191,6 @@ country_event = {
 	}
 }
 
-news_event = {
-	id = rzeszapospolita.12
-	title = rzeszapospolita.12.title
-	desc = rzeszapospolita.12.desc
-	picture = GFX_/hoi4/event_gfx/news_event_020
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		RZP = { has_completed_focus = }
-	}
-	option = {
-		name = rzeszapospolita.12.a
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.13
-	title = rzeszapospolita.13.title
-	desc = rzeszapospolita.13.desc
-	picture = GFX_/hoi4/event_gfx/news_event_german_officers
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		JRP = {
-                    controls_state= 62
-                    controls_state= 86
-                    controls_state= 646
-               }
-	}
-	option = {
-		name = rzeszapospolita.13.a
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.14
-	title = rzeszapospolita.14.title
-	desc = rzeszapospolita.14.desc
-	picture = GFX_/hoi4/event_gfx/news_event_polish_resistance_warsaw
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		RZP = { has_war_with = JRP }
-	}
-	option = {
-		name = rzeszapospolita.14.a
-	}
-}
-
 country_event = {
 	id = rzeszapospolita.15
 	title = rzeszapospolita.15.title
@@ -333,22 +218,6 @@ country_event = {
                     type = annex_everything 
                     }
                 }
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.16
-	title = rzeszapospolita.16.title
-	desc = rzeszapospolita.16.desc
-	picture = GFX_/hoi4/event_gfx/news_event_033
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		JRP = { has_capitulated }
-	}
-	option = {
-		name = rzeszapospolita.16.a
 	}
 }
 
@@ -385,22 +254,6 @@ country_event = {
 	}
 }
 
-news_event = {
-	id = rzeszapospolita.19
-	title = rzeszapospolita.19.title
-	desc = rzeszapospolita.19.desc
-	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		463 = { is_controlled_by = RZP }
-	}
-	option = {
-		name = rzeszapospolita.19.a
-	}
-}
-
 country_event = {
 	id = rzeszapospolita.20
 	title = rzeszapospolita.20.title
@@ -432,54 +285,6 @@ country_event = {
 		RZP = {
                     puppet = PRU
                 }
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.21
-	title = rzeszapospolita.21.title
-	desc = rzeszapospolita.21.desc
-	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		VEN = { is_subject_of = RZP }
-	}
-	option = {
-		name = rzeszapospolita.21.a
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.22
-	title = rzeszapospolita.22.title
-	desc = rzeszapospolita.22.desc
-	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		ARG = { is_subject_of = RZP }
-	}
-	option = {
-		name = rzeszapospolita.22.a
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.23
-	title = rzeszapospolita.23.title
-	desc = rzeszapospolita.23.desc
-	picture = GFX_/hoi4/event_gfx/news_event_generic_usa_treaty
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		PRU = { is_subject_of = RZP }
-	}
-	option = {
-		name = rzeszapospolita.23.a
 	}
 }
 
@@ -644,22 +449,5 @@ add_state_core= 182
 		    add_state_core= 353
 		    add_state_core= 354
 		}
-	}
-}
-
-news_event = {
-	id = rzeszapospolita.28
-	title = rzeszapospolita.28.title
-	desc = rzeszapospolita.28.desc
-	picture = GFX_/hoi4/event_gfx/news_event_soldiers_marching
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	trigger = {
-		347 = { is_core_of= RZP }
-                340 = { is_core_of= RZP }
-	}
-	option = {
-		name = rzeszapospolita.28.a
 	}
 }
