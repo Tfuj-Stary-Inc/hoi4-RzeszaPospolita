@@ -637,12 +637,15 @@ focus_tree = {
 			      target = JAP 
 			      type = infantry_equipment amount = 4000
 			  }
-		}
+		       }
 		
 		       RZP = {
 		         add_political_power= 125
 			 navy_experience= 25
 		      }
+		      JAP = { add_opinion_modifier = { target = RZP modifier = large_increase } }
+		      
+		      add_opinion_modifier = { target = JAP modifier = large_increase }
 		}
 	}
 	
