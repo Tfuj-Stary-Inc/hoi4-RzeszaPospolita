@@ -1282,6 +1282,30 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+		    create_corps_commander = {
+                          name = "Jerzy Urban"
+			  picture = "Portrait_Rzesza_Pospolita_Urban.dds"
+			  traits = { trickster infantry_officer career_officer }
+			  skill = 5
+			  id = 2137
+			  attack_skill = 4
+			  defense_skill = 2
+			  planning_skill = 4
+			  logistics_skill = 3
+		    }
+		    
+		    create_corps_commander = {
+                          name = "Owsienko"
+			  picture = "Portrait_Rzesza_Pospolita_Owsiak.dds"
+			  traits = { naval_invader winter_specialist }
+			  skill = 3
+			  id = 2138
+			  attack_skill = 4
+			  defense_skill = 3
+			  planning_skill = 3
+			  logistics_skill = 3
+		   }
 	}
 	
 	focus = {
