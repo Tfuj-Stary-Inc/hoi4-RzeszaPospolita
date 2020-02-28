@@ -107,26 +107,6 @@ ideas = {
 				}
 		}
 		
-		RZP_polish-japanese_friendship = {
-				allowed = {
-					always = yes
-				}
-
-				allowed_civil_war = {
-					always = yes
-				}
-
-				removal_cost = -1
-				
-				modifier = {
-
-					add_opinion_modifier = { target = JAP modifier = large_increase }
-				
-					JAP = { add_opinion_modifier = { target = RZP modifier = large_increase } }
-
-				}
-		}
-		
 		RZP_aggressive_expansion_of_the_reich = {
 				allowed = {
 					always = yes
