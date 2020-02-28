@@ -26,7 +26,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus = RZP_slaskzapomorze }
 	}
 	option = {
 		name = rzeszapospolita.4.a
@@ -54,7 +54,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus=  }
+		RZP = { has_completed_focus = RZP_wybrzezezapoludnie }
 	}
 	option = {
 		name = rzeszapospolita.5.a
@@ -83,7 +83,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus=  }
+		RZP = { has_completed_focus = RZP_wyspynabaltyku }
 	}
 	option = {
 		name = rzeszapospolita.6.a
@@ -113,7 +113,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		LIT = { has_capitulated= yes }
+		LIT = { has_capitulated = yes }
 	}
 	option = {
 		name = rzeszapospolita.7.a
@@ -165,7 +165,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus = RZP_cioswplecy }
 	}
 	option = {
 		name = rzeszapospolita.11.a
@@ -200,7 +200,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus = }
+		RZP = { has_completed_focus = RZP_juntawojskowarzeszypospolitej }
 	}
 	option = {
 		name = rzeszapospolita.15.a
@@ -246,7 +246,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus = }
+		RZP = { has_completed_focus = RZP_ukrascalaske }
 	}
 	option = {
 		name = rzeszapospolita.18.a
@@ -297,7 +297,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus = RZP_nowegraniceimperium }
 	}
 	option = {
 		name = rzeszapospolita.24.a
@@ -335,7 +335,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus=  }
+		RZP = { has_completed_focus = RZP_sprawagranicznai }
 	}
 	option = {
 		name = rzeszapospolita.25.a
@@ -374,7 +374,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus = }
+		RZP = { has_completed_focus = RZP_sprawagranicznaii }
 	}
 	option = {
 		name = rzeszapospolita.26.a
@@ -411,7 +411,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus= }
+		RZP = { has_completed_focus = RZP_ostatecznegraniceimperium }
 	}
 	option = {
 		name = rzeszapospolita.27.a
