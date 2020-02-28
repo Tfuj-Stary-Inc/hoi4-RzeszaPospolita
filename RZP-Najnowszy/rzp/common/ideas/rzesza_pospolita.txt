@@ -275,6 +275,8 @@ ideas = {
 	theorist = {
 	        luigi = {
 		
+		 ledger = army
+		
 		 allowed = {
 		         original_tag = RZP
 		 }
@@ -311,8 +313,8 @@ ideas = {
 	high_command = {
 
 	    RZP_kapitan_luigi = {
-
-
+	       ledger = army
+	       
 	       allowed = {
 	           original_tag = RZP
 	       }
@@ -323,7 +325,7 @@ ideas = {
 	    }
 	    
 	    RZP_nat_war = {
-	       
+	       ledger = army
 	       
 	       allowed = {
 	           original_tag = RZP
