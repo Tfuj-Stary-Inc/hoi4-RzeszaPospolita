@@ -199,3 +199,6 @@ CAT = "countries/Catalonia.txt"
 NAV = "countries/Navarra.txt"
 GLC = "countries/Galicia.txt"
 ADU = "countries/Andalusia.txt"
+#######################################
+RZP = "countries/Rzesza Pospolita.txt"
+JRP = "countries/Junta Wojskowa Rzeszy Pospolitej.txt"
