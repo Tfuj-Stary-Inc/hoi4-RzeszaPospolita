@@ -1,0 +1,17 @@
+  #
+  #
+  #
+  #
+#####
+
+RZP_civil_wars_category = {
+   icon = military_operation
+   
+   allowed = {
+		original_tag = RZP
+	}
+  
+  visible = {
+		has_completed_focus = RZP_marsznawarszawe
+	}
+}
