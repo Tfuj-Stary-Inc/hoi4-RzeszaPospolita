@@ -5,4 +5,4 @@ tags={
 	"Graphics"
 	"Events"
 }
-supported_version="1.9.x"
+supported_version="1.9.0"
