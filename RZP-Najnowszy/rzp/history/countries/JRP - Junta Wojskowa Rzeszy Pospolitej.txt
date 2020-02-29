@@ -125,6 +125,6 @@ create_navy_leader = {
         name = "Kornel Olkowski"
         picture = "rzp_shefour_general.dds"
         traits = { air_controller ironside superior_tactician }
-        skill = 3127
-        id = 1
+        skill = 4
+        id = 3127
 }
