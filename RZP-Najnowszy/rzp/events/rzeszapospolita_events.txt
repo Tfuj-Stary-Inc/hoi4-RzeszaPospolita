@@ -152,7 +152,7 @@ country_event = {
 	}
 	option = {
 		name = rzeszapospolita.9.a
-		RZP = { set_state_controller = 646 }
+		RZP = { transfer_state = 646 }
 	}
 }
 
@@ -207,7 +207,7 @@ country_event = {
 		JRP = {
                     transfer_state= 646
                     transfer_state= 62
-                    transfer_state= 86
+                    transfer_state= 85
                     add_state_core= 62
                     add_state_core= 86
                 }
@@ -263,7 +263,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		RZP = { has_completed_focus = }
+		RZP = { has_completed_focus = RZP_gwarancjabezpieczenstwa }
 	}
 	option = {
 		name = rzeszapospolita.20.a
