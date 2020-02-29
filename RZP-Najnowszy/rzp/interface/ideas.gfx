@@ -4036,7 +4036,7 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-	        name = GFX_idea_RZP_polish_ssman"
+	        name = "GFX_idea_RZP_polish_ssman"
 		texturefile = "gfx/interface/ideas/rzp_advisor_adam.dds"
         }
 }
