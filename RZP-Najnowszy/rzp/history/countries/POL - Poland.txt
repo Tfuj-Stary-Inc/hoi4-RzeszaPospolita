@@ -174,7 +174,7 @@ if = {
 
 set_convoys = 10
 
-set_politics = {
+set_popularities = {
 
 	parties = {
 		democratic = { 
