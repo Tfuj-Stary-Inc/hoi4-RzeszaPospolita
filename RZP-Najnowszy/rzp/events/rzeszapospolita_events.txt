@@ -537,24 +537,22 @@ country_event = {
 	major = yes
 
 	trigger = {
-
-		RZP = { has_completed_focus =  RZP_sprawawegier}
-
+           RZP = { has_completed_focus =  RZP_sprawawegier}
 	}
 	option = {
 		name = rzeszapospolita.28.a
-		kill_country_leader = True
-		add_popularity = {
+		HUN = {
+		 kill_country_leader = True
+		 add_popularity = {
 			ideology = ruling_party
 			popularity = -0.1
+		 }
+		 add_stability = -0.1
 		}
-		add_stability = -0.1
 		RZP = {
 			create_wargoal = { type = annex_everything target = HUN }
 			add_war_support = 0.5
 		}
-		
-		
 	}
 }
 
