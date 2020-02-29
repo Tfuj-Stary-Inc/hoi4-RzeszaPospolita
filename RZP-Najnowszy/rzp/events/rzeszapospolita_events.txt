@@ -30,9 +30,7 @@ country_event = {
 			       limit = { ROOT = { has_full_control_of_state = PREV } }
 			       prioritize = { 85 }
 			        create_unit = {
-                                  division = "name = \"1. Dyw. Bohaterów Stoczni\" 
-                                  division_template = \"Dywizja Piechoty\" 
-                                  start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                                  division = "name = \"1. Dyw. Bohaterów Stoczni\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
                                   owner = RZP
                                 }
 			}
@@ -41,9 +39,7 @@ country_event = {
 			       limit = { ROOT = { has_full_control_of_state = PREV } }
 			       prioritize = { 85 }
 			        create_unit = {
-                                  division = "name = \"2. Dyw. Bohaterów Wielkopolskich\" 
-                                  division_template = \"Dywizja Piechoty\" 
-                                  start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                                  division = "name = \"2. Dyw. Bohaterów Wielkopolskich\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
                                   owner = RZP
                                 }
 			}
@@ -52,9 +48,7 @@ country_event = {
 			       limit = { ROOT = { has_full_control_of_state = PREV } }
 			       prioritize = { 85 }
 			        create_unit = {
-                                  division = "name = \"3. Dyw. Męczenników Oświęcimskich\" 
-                                  division_template = \"Dywizja Piechoty\" 
-                                  start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                                  division = "name = \"3. Dyw. Męczenników Oświęcimskich\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
                                   owner = RZP
                                 }
 			}
@@ -63,9 +57,7 @@ country_event = {
 			       limit = { ROOT = { has_full_control_of_state = PREV } }
 			       prioritize = { 85 }
 			        create_unit = {
-                                  division = "name = \"4. Dyw. Zajmowania pustych prowincji\" 
-                                  division_template = \"Dywizja Piechoty\" 
-                                  start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                                  division = "name = \"4. Dyw. Zajmowania pustych prowincji\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
                                   owner = RZP
                                 }
 			}
@@ -74,9 +66,7 @@ country_event = {
 			       limit = { ROOT = { has_full_control_of_state = PREV } }
 			       prioritize = { 85 }
 			        create_unit = {
-                                     division = "name = \"1. Dyw. Alpinistów Polskich\" 
-                                     division_template = \"Dywizja Piechoty Górskiej\" 
-                                     start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                                     division = "name = \"1. Dyw. Alpinistów Polskich\" division_template = \"Dywizja Piechoty Górskiej\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
                                      owner = RZP
                                 }
 			}
@@ -85,9 +75,7 @@ country_event = {
 			       limit = { ROOT = { has_full_control_of_state = PREV } }
 			       prioritize = { 85 }
 			        create_unit = {
-                                  division = "name = \"2. Dyw. Słowiańskich Bojówek\" 
-                                  division_template = \"Dywizja Piechoty Górskiej\" 
-                                  start_experience_factor = 1.0 start_equipment_factor = 1.0"
+                                  division = "name = \"2. Dyw. Słowiańskich Bojówek\" division_template = \"Dywizja Piechoty Górskiej\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
                                   owner = RZP
                                }
 		        }
