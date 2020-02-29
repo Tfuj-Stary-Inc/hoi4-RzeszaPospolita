@@ -4,7 +4,7 @@
   #
 #####
 
-RZP_civil_wars_category = {
+RZP_civil_war_category = {
    icon = military_operation
    
    allowed = {
