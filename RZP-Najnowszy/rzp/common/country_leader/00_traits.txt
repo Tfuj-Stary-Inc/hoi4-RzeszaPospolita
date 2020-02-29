@@ -3534,5 +3534,18 @@ rebbelious_commander = {
 			factor = 1
 	     }
     }
+    
+   polish_special_forces = {
+    sprite = 15
+    
+    army_org_factor = 0.04
+    planning_speed = 0.05
+    special_forces_attack_factor = 0.15
+    special_forces_defence_factor = 0.15
+    
+    ai_will_do = {
+           factor = 3
+    }
+   }
 
 }
