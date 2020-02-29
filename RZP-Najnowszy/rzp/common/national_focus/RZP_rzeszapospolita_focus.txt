@@ -1985,7 +1985,7 @@ focus_tree = {
 		completion_reward = {
 			country_event= {
 			       days = 1 
-			       id = 
+			       id = rzeszapospolita.29
 			}
 		}
 	}
@@ -2009,7 +2009,7 @@ focus_tree = {
 		completion_reward = {
 			country_event= {
 			       days = 1 
-			       id = 
+			       id = rzeszapospolita.28
 			}
 		}
 	}
