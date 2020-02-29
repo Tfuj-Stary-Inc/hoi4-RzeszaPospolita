@@ -1,4 +1,4 @@
-RZP_civil_war = {
+civil_war_category = {
 
    RZP_recruit_soldiers = {
          
