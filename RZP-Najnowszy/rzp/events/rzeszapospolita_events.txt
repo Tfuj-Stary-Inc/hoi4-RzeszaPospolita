@@ -538,11 +538,23 @@ country_event = {
 
 	trigger = {
 
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus =  RZP_sprawawegier}
 
 	}
 	option = {
-
+		name = rzeszapospolita.28.a
+		kill_country_leader = True
+		add_popularity = {
+			ideology = ruling_party
+			popularity = -0.1
+		}
+		add_stability = -0.1
+		RZP = {
+			create_wargoal = { type = annex_everything target = HUN }
+			add_war_support = 0.5
+		}
+		
+		
 	}
 }
 
@@ -564,10 +576,12 @@ country_event = {
 
 	trigger = {
 
-		RZP = { has_completed_focus =  }
+		RZP = { has_completed_focus =  RZP_bramanabalkany}
 
 	}
 	option = {
-
+		RZP = {
+			create_wargoal = { type = annex_everything target = ROM }
+		}
 	}
 }
