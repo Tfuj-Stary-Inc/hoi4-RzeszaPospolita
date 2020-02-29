@@ -113,7 +113,7 @@ country_event = {
 	fire_only_once = yes
 	major = yes
 	trigger = {
-		LIT = { has_capitulated = yes }
+		11 = { is_controlled_by = RZP }
 	}
 	option = {
 		name = rzeszapospolita.7.a
@@ -206,7 +206,7 @@ country_event = {
 		name = rzeszapospolita.15.a
 		JRP = {
                     transfer_state= 646
-                    transfer_state= 62
+                    transfer_state= 63
                     transfer_state= 85
                     add_state_core= 62
                     add_state_core= 86
