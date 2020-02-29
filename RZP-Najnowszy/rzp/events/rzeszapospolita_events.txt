@@ -519,3 +519,55 @@ add_state_core= 182
 		}
 	}
 }
+
+country_event = {
+
+	id = rzeszapospolita.28
+
+	title = rzeszapospolita.28.title
+
+	desc = rzeszapospolita.28.desc
+
+	picture = GFX_/hoi4/event_gfx/
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+
+		RZP = { has_completed_focus =  }
+
+	}
+	option = {
+
+	}
+}
+
+country_event = {
+
+	id = rzeszapospolita.29
+
+	title = rzeszapospolita.29.title
+
+	desc = rzeszapospolita.29.desc
+
+	picture = GFX_/hoi4/event_gfx/
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+
+		RZP = { has_completed_focus =  }
+
+	}
+	option = {
+
+	}
+}
