@@ -270,10 +270,26 @@ ideas = {
 		 traits = { cringekrieg_theorist }
 		}
 	}
+	
+	army_chief = {
+	    RZP_polish_ssman = {
+	       ledger = army
+	       
+	       allowed = {
+	               original_tag = RZP
+	       }
+	       
+	       cost = 175
+	       
+	       traits = { polish_special_forces }
+	       
+	       ai_will_do = {
+	              factor = 4
+	       }
 
 	navy_chief = {
 
-	    RZP_kornel_olkowski = {
+	    RZP_kornel_olkowski = { 
 
 
 	       allowed = {
