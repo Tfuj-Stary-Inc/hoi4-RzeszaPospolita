@@ -7,10 +7,7 @@ civil_war_category = {
          allowed = { always = no }
          
          available = {
-                OR = {
-				         has_idea = RZP_szymon_wilk
-				         has_country_leader = { name = "Krystian Marczuk" }
-			       }
+                country_exists = POL
          }
          
          cost = 0
