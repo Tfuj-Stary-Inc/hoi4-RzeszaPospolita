@@ -4,4 +4,11 @@ civil_war_category = {
    allowed = {
 		original_tag = RZP
 	}
+	
+   visible = {
+       OR = {
+          country_exists = POL
+	  country_exists = JRP
+       }
+   }
 }
