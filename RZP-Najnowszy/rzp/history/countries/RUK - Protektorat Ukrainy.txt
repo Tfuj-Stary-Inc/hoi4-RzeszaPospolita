@@ -79,3 +79,15 @@ add_namespace = {
         name = "ruk_unit_leader"
         type = unit_leader
 }
+
+create_corps_commander = {
+        name = "Osttruppen"
+	picture = "Portrait_RUK_Ostruppen.dds"
+	traits = {  }
+	skill = 5
+        id = 4562
+        attack_skill = 4
+        defense_skill = 3
+        planning_skill = 3
+        logistics_skill = 2
+}
