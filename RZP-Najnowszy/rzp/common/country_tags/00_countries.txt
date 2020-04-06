@@ -202,3 +202,4 @@ ADU = "countries/Andalusia.txt"
 #######################################
 RZP = "countries/Rzesza Pospolita.txt"
 JRP = "countries/Junta Wojskowa Rzeszy Pospolitej.txt"
+RUK = "countries/Protektorat Ukraiński.txt"
