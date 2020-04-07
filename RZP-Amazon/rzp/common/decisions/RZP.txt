@@ -1,0 +1,29 @@
+civil_war_category = {
+
+   RZP_recruit_soldiers = {
+         
+         icon = generic_operation
+         
+         allowed = { always = no }
+         
+         available = {
+                country_exists = POL
+         }
+         
+         cost = 0
+         
+         ai_will_do = {
+                factor = 1
+         }
+         
+         fire_only_once = yes
+         
+         visible = {
+                original_tag = RZP
+         }
+         
+         complete_effect = {        
+                 country_event = rzeszapospolita.2
+         }
+   }
+}
