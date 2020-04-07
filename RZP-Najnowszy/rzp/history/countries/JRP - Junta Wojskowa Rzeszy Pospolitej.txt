@@ -98,14 +98,14 @@ create_country_leader = {
 }
 
 create_field_marshal = {
-        name = "Kornel Olkowski"
+        name = "Shefour"
         picture = "rzp_shefour_general.dds"
         traits = { infantry_officer }
-        skill = 1
+        skill = 3
         id = 3125
-        attack_skill = 2
-        defense_skill = 2
-        planning_skill = 4
+        attack_skill = 4
+        defense_skill = 4
+        planning_skill = 3
         logistics_skill = 3
 }
 
@@ -122,7 +122,7 @@ create_corps_commander = {
 }
 
 create_navy_leader = {
-        name = "Kornel Olkowski"
+        name = "Shefour"
         picture = "rzp_shefour_general.dds"
         traits = { air_controller ironside superior_tactician }
         skill = 4
