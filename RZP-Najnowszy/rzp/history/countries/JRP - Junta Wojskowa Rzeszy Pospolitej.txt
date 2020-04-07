@@ -87,7 +87,7 @@ set_popularities = {
 set_convoys = 300
 
 create_country_leader = {
-        name = "Kornel Olkowski"
+        name = "Shefour"
         desc = "POLITICS_KING_ZOG_DESC"
         picture = "Portrait_Shefour_RZP.dds"
         expire = "1965.1.1"
