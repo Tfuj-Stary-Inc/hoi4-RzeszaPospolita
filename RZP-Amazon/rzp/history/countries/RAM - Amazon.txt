@@ -1,4 +1,4 @@
-capital = 646
+capital = 361
 
 oob = "RAM_1936"
 
