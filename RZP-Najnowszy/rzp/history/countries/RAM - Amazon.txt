@@ -78,7 +78,7 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-  democratic = 0
+        democratic = 0
 	fascism = 0
 	communism = 0
 	neutrality = 100
@@ -89,9 +89,42 @@ set_convoys = 300
 create_country_leader = {
         name = "Jeff Pesos"
         desc = "POLITICS_KING_ZOG_DESC"
-        picture = "Portrait_RAM_Jeff_dem.dds"
+        picture = "Portrait_RAM_Jeff_neu.dds"
         expire = "1965.1.1"
         ideology = despotism
+        traits = {
+        
+        }
+}
+
+create_country_leader = {
+        name = "Jeff Pesos"
+        desc = "POLITICS_KING_ZOG_DESC"
+        picture = "Portrait_RAM_Jeff_dem.dds"
+        expire = "1965.1.1"
+        ideology = liberalism
+        traits = {
+        
+        }
+}
+
+create_country_leader = {
+        name = "Jeff Pesös"
+        desc = "POLITICS_KING_ZOG_DESC"
+        picture = "Portrait_RAM_Jeff_fas.dds"
+        expire = "1965.1.1"
+        ideology = nazism
+        traits = {
+        
+        }
+}
+
+create_country_leader = {
+        name = "Towarzysz Pesos"
+        desc = "POLITICS_KING_ZOG_DESC"
+        picture = "Portrait_RAM_Jeff_com.dds"
+        expire = "1965.1.1"
+        ideology = stalinism
         traits = {
         
         }
