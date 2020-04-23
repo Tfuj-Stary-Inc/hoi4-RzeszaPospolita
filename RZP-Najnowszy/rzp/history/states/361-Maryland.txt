@@ -2,12 +2,17 @@
 state={
 	id=361
 	name="STATE_361"
-	manpower = 2118394
+	manpower = 2538394
+	resources = {
+	        oil = 5
+		steel = 10
+		aluminium = 7
+	}
 	
 	state_category = city
 
 	history={
-		owner = USA
+		owner = RAM
 		victory_points = {
 			3957 40 
 		}
@@ -15,20 +20,21 @@ state={
 			6984 5 
 		}
 		buildings = {
-			infrastructure = 7
-			industrial_complex = 5
-			dockyard = 1
+			infrastructure = 10
+			industrial_complex = 6
+			dockyard = 2
 			air_base = 6
 			6984 = {
-				naval_base = 2
+				naval_base = 6
 
 			}
 			3957 = {
-				naval_base = 1
+				naval_base = 4
 
 			}
 		}
 		add_core_of = USA
+		add_core_of = RAM
 
 	}
 
