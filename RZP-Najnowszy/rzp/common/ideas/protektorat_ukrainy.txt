@@ -2,7 +2,7 @@ ideas = {
  
   country = {
   
-     UKR_enemies_on_all_sides = {
+                  UKR_enemies_on_all_sides = {
 		
 			allowed = {
 				original_tag = UKR
@@ -18,12 +18,12 @@ ideas = {
 			picture = 
 
 			modifier = {
-				stability_factor = -0.1
-        conscription_factor = 0.15
-        political_power_factor = -0.2
-        fascism_drift = 0.05
-        democratic_drift = 0.05
-        communism_drift = 0.05
+			  stability_factor = -0.1
+                          conscription_factor = 0.15
+                          political_power_factor = -0.2
+                          fascism_drift = 0.05
+                          democratic_drift = 0.05
+                          communism_drift = 0.05
 			}
 		}
     
