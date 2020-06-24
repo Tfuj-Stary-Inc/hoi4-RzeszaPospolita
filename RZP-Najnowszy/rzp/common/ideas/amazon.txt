@@ -1,1 +1,33 @@
-tak
+ideas = {
+  
+  contry = {
+  
+         RAM_merchant_republic = {
+         
+            allowed = {
+                    original_tag = RAM
+                    always = no
+            }
+            
+            allowed_civil_war = {
+                    always = yes
+            }
+            
+            removal_cost = -1
+            
+            picture = 
+            
+            modifier = {
+                   war_support_factor = -0.3
+                   conscription = -0.010
+                   join_faction_tension = 0.80
+                   guarantee_tension = 0.75
+                   lend_lease_tension = 0.40
+                   generate_wargoal_tension = 1.00
+                   production_speed_arms_factory_factor = -0.75
+                   production_speed_industrial_complex_factor = 0.25
+            }
+         }
+  
+  }
+}
