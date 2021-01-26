@@ -1,4 +1,4 @@
-capital = 
+capital = 202
 
 OOB = "RUK_1936"
 
