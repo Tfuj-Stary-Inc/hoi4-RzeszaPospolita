@@ -1,1 +1,3 @@
-tu powstanie ta dzika bestia
+equipments = {
+
+        ship_hull_
