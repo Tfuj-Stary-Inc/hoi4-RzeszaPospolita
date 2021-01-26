@@ -1,0 +1,48 @@
+amazon_african_expansion = {
+	amazon_claim_tag = {
+		visible = {
+			FROM = {
+				capital_scope = { is_on_continent = africa }
+				NOT = {is_in_faction_with = ROOT}
+				NOT = {is_subject_of = ROOT}
+				OR = {
+					any_neighbor_country = {
+						OR = {
+							original_tag = RAM
+							is_subject_of = RAM
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		icon = border_war
+		cost = 50
+		available = {
+			FROM = {
+				NOT = {has_war_with = ROOT}
+			}
+			NOT = { has_wargoal_against = FROM }
+		}
+		target_trigger = {
+			FROM = {
+				capital_scope = { is_on_continent = africa }
+			}
+		}
+		modifier = {
+			political_power_gain = -0.15
+		}
+		days_remove = 70
+		remove_effect = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FROM
+			}
+		}
+	}
+}
