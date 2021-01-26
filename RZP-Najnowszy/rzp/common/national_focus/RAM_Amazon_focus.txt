@@ -1,1 +1,4221 @@
-123
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = ram_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = RAM
+		}
+		default = no
+	}
+	
+	focus = {
+		id = ram_free_market
+		icon = GFX_focus_generic_industry_2
+		x = 7
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 100
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = ram_free_market
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					reverse_add_opinion_modifier = {
+						target = GER
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = SOV
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = JAP
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = ITA
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = ENG
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = FRA
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = USA
+						modifier = medium_increase
+					}	
+					reverse_add_opinion_modifier = {
+						target = RZP
+						modifier = medium_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = POL
+						modifier = medium_increase
+					}
+					add_political_power = -75
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ram_ger_trade
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = {focus = ram_free_market}
+		x = -7
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			GER = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = GER}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = GER
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				GER = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			GER = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_ita_trade
+		icon = GFX_focus_befriend_italy
+		prerequisite = {focus = ram_free_market}
+		x = -5
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			ITA = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = ITA}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = ITA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				ITA = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			ITA = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_jap_trade
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		prerequisite = {focus = ram_free_market}
+		x = -3
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			JAP = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = JAP}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = JAP
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				JAP = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			JAP = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_sov_trade
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = {focus = ram_free_market}
+		x = -1
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			SOV = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = SOV}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = SOV
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				SOV = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			SOV = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_usa_trade
+		icon = GFX_focus_chi_mission_to_the_us
+		prerequisite = {focus = ram_free_market}
+		x = 1
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			USA = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = USA}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = USA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				USA = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			USA = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_eng_trade
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = {focus = ram_free_market}
+		x = 3
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			ENG = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = ENG}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = ENG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				ENG = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			ENG = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_fra_trade
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = {focus = ram_free_market}
+		x = 5
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			FRA = {
+				exists = yes
+				has_capitulated = no
+			}
+			NOT = {has_war_with = FRA}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			NOT = {
+				country_exists = FRA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				FRA = {
+					has_opinion = {
+						target = RAM
+						value > 9
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			FRA = {
+				country_event = { id = amazon.1 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_offsite_building = { type = arms_factory level = 1}
+					add_offsite_building = { type = industrial_complex level = 1}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_pol_trade
+		icon = GFX_focus_generic_polish_deal
+		prerequisite = {focus = ram_free_market}
+		x = 7
+		y = 1
+		relative_position_id = ram_free_market
+		cost = 8
+		available = {
+			OR = {
+				AND = {
+					POL = {
+						exists = yes
+						has_capitulated = no
+					}
+					NOT = {has_war_with = POL}
+				}
+				AND = {
+					RZP = {
+						exists = yes
+						has_capitulated = no
+					}
+					NOT = {has_war_with = RZP}
+				}
+			}
+			NOT = {has_idea = amazon_reparations}
+		}
+		bypass = {
+			AND = {
+				POL = {exists = no}
+				RZP = {exists = no}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				if = {
+					limit = {country_exists = RZP}
+					RZP = {
+						has_opinion = {
+							target = RAM
+							value > 9
+						}
+					}
+				}
+				else = {
+					POL = {
+						has_opinion = {
+							target = RAM
+							value > 9
+						}
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+				limit = {country_exists = RZP}
+				RZP = {
+					country_event = { id = amazon.1 days = 1}
+					custom_effect_tooltip = needs_approval
+					effect_tooltip = {
+						add_offsite_building = { type = arms_factory level = 1}
+						add_offsite_building = { type = industrial_complex level = 1}
+					}
+				}
+			}
+			else = {
+				POL = {
+					country_event = { id = amazon.1 days = 1}
+					custom_effect_tooltip = needs_approval
+					effect_tooltip = {
+						add_offsite_building = { type = arms_factory level = 1}
+						add_offsite_building = { type = industrial_complex level = 1}
+					}
+				}
+			}
+			
+		}
+	}
+	focus = {
+		id = ram_research
+		icon = GFX_focus_research
+		prerequisite = { focus = ram_eng_trade focus = ram_fra_trade focus = ram_ger_trade focus = ram_ita_trade focus = ram_jap_trade focus = ram_pol_trade focus = ram_sov_trade focus = ram_usa_trade }
+		x = -2
+		y = 2
+		relative_position_id = ram_free_market
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = ram_develop_factories
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = ram_eng_trade focus = ram_fra_trade focus = ram_ger_trade focus = ram_ita_trade focus = ram_jap_trade focus = ram_pol_trade focus = ram_sov_trade focus = ram_usa_trade }
+		x = 2
+		y = 2
+		relative_position_id = ram_free_market
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 100 #unlock decisions
+			custom_effect_tooltip = amazon_expand_factories
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = ram_buy_tech
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = ram_research focus = ram_develop_factories }
+		x = 2
+		y = 1
+		relative_position_id = ram_research
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = amazon_buy_tech
+			add_tech_bonus = {
+				name = ram_buy_tech
+				bonus = 0.75
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = ram_jap_airforce
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_eng_airforce}
+		x = -7
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			has_completed_focus = ram_jap_trade
+			JAP = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = JAP}
+		}
+		bypass = { #Maybe bypassing isn't a good idea...
+			#AND = {
+				has_completed_focus = ram_jap_trade
+				OR = {
+					NOT = { country_exists = JAP }
+					JAP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = ENG }
+					ENG = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				JAP = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#naval, carrier fighters
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = RAM_naval_air_designer
+			JAP = {
+				country_event = { id = amazon.6 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = naval_air 
+						category = naval_bomber
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_eng_airforce
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_jap_airforce}
+		x = -5
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			has_completed_focus = ram_eng_trade
+			ENG = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = ENG}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_eng_trade
+				OR = {
+					NOT = { country_exists = JAP }
+					JAP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = ENG }
+					ENG = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				ENG = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#fighters
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = RAM_light_air_designer
+			ENG = {
+				country_event = { id = amazon.6 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = light_fighter
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_ger_airforce
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = ram_eng_airforce focus = ram_jap_airforce }
+		mutually_exclusive = { focus = ram_usa_airforce}
+		x = 0
+		y = 1
+		relative_position_id = ram_eng_airforce
+		cost = 8
+		available = {
+			has_completed_focus = ram_ger_trade
+			GER = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = GER}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_ger_trade
+				OR = {
+					NOT = { country_exists = GER }
+					GER = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = USA }
+					USA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				GER = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#CAS
+			GER = {
+				country_event = { id = amazon.6 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = cas_bomber
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_usa_airforce
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = ram_eng_airforce focus =ram_jap_airforce }
+		mutually_exclusive = { focus = ram_ger_airforce}
+		x = 0
+		y = 1
+		relative_position_id = ram_jap_airforce
+		cost = 8
+		available = {
+			has_completed_focus = ram_usa_trade
+			USA = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = USA}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_usa_trade
+				OR = {
+					NOT = { country_exists = GER }
+					GER = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = USA }
+					USA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				USA = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#strat bombers
+			USA = {
+				country_event = { id = amazon.6 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = cat_strategic_bomber 
+						category = tactical_bomber
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ram_pol_tanks
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_fra_tanks}
+		x = 1
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			OR = {
+				POL = {
+					NOT = {has_war_with = RAM}
+					OR = {
+						has_idea = amazon_trade_contract
+						has_idea = amazon_trade_contract_2
+						has_idea = amazon_trade_contract_3
+					}
+				}
+				RZP = {
+					NOT = {has_war_with = RAM}
+					OR = {
+						has_idea = amazon_trade_contract
+						has_idea = amazon_trade_contract_2
+						has_idea = amazon_trade_contract_3
+					}
+				}
+			}
+			has_completed_focus = ram_pol_trade
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_pol_trade
+				OR = {
+					NOT = { country_exists = POL }
+					POL = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = RZP }
+					RZP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = FRA }
+					FRA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				if = {
+					limit = {country_exists = RZP}
+					RZP = {
+						has_opinion = {
+							target = RAM
+							value > -10
+						}
+					}
+				}
+				else = {
+					POL = {
+						has_opinion = {
+							target = RAM
+							value > -10
+						}
+					}
+				}
+			}
+		}
+		completion_reward = {
+			#light tanks
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = RAM_light_tank_designer
+			if = {
+				limit = {
+					POL = {
+						exists = yes
+						has_capitulated = no
+						NOT = {has_war_with = RAM}
+					}
+				}
+				POL = {
+					country_event = { id = amazon.9 days = 1}
+					custom_effect_tooltip = needs_approval
+					effect_tooltip = {
+						add_tech_bonus = {
+							name = amazon_tech_exchange
+							bonus = 0.50
+							uses = 2
+							category = cat_light_armor
+						}
+					}
+				}
+			}
+			else = {
+				RZP = {
+					country_event = { id = amazon.9 days = 1}
+					custom_effect_tooltip = needs_approval
+					effect_tooltip = {
+						add_tech_bonus = {
+							name = amazon_tech_exchange
+							bonus = 0.50
+							uses = 2
+							category = cat_light_armor
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_fra_tanks
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_pol_tanks}
+		x = 3
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			has_completed_focus = ram_fra_trade
+			FRA = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = FRA}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_fra_trade
+				OR = {
+					NOT = { country_exists = POL }
+					POL = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = RZP }
+					RZP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = FRA }
+					FRA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				FRA = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#anti-tanks
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = RAM_anti_tank_designer
+			FRA = {
+				country_event = { id = amazon.9 days = 1}
+				custom_effect_tooltip = needs_approval
+			}
+			effect_tooltip = {
+				add_tech_bonus = {
+					name = amazon_tech_exchange
+					bonus = 0.75
+					uses = 4
+					technology = improved_light_td 
+					technology = advanced_light_td 
+					technology = basic_medium_td 
+					technology = improved_medium_td
+					technology = advanced_medium_td
+					technology = basic_heavy_td
+					technology = improved_heavy_td
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_ger_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = ram_pol_tanks focus = ram_fra_tanks }
+		mutually_exclusive = { focus = ram_sov_tanks}
+		x = 0
+		y = 1
+		relative_position_id = ram_pol_tanks
+		cost = 8
+		available = {
+			has_completed_focus = ram_ger_trade
+			GER = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = GER}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_ger_trade
+				OR = {
+					NOT = { country_exists = GER }
+					GER = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = SOV }
+					SOV = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				GER = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#medium tanks
+			GER = {
+				country_event = { id = amazon.9 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = cat_medium_armor
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_sov_tanks
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = ram_pol_tanks focus = ram_fra_tanks }
+		mutually_exclusive = { focus = ram_ger_tanks}
+		x = 0
+		y = 1
+		relative_position_id = ram_fra_tanks
+		cost = 8
+		available = {
+			has_completed_focus = ram_sov_trade
+			SOV = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = SOV}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_sov_trade
+				OR = {
+					NOT = { country_exists = GER }
+					GER = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = SOV }
+					SOV = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				SOV = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#heavy tanks
+			SOV = {
+				country_event = { id = amazon.9 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = cat_heavy_armor
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ram_ita_navy
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_eng_navy}
+		x = -3
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			has_completed_focus = ram_ita_trade
+			ITA = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = ITA}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_ita_trade
+				OR = {
+					NOT = { country_exists = ITA }
+					ITA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = ENG }
+					ENG = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				ITA = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#light ships, idk
+			navy_experience = 30
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = RAM_raiding_navy_designer
+			ITA = {
+				country_event = { id = amazon.12 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = dd_tech
+						category = cl_tech
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_eng_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_ita_navy}
+		x = -1
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			has_completed_focus = ram_eng_trade
+			ENG = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = ENG}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_eng_trade
+				OR = {
+					NOT = { country_exists = ITA }
+					ITA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = ENG }
+					ENG = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				ENG = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#heavy ships
+			navy_experience = 30
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = RAM_atlantic_navy_designer
+			ENG = {
+				country_event = { id = amazon.12 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = bc_tech
+						category = ca_tech
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_jap_navy
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = ram_ita_navy focus = ram_eng_navy }
+		mutually_exclusive = { focus = ram_usa_navy}
+		x = 0
+		y = 1
+		relative_position_id = ram_ita_navy
+		cost = 8
+		available = {
+			has_completed_focus = ram_jap_trade
+			JAP = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = JAP}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_jap_trade
+				OR = {
+					NOT = { country_exists = JAP }
+					JAP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = USA }
+					USA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				JAP = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#battleships
+			navy_experience = 30
+			JAP = {
+				country_event = { id = amazon.12 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = shbb_tech
+						category = bb_tech
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_usa_navy
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = ram_ita_navy focus = ram_eng_navy }
+		mutually_exclusive = { focus = ram_jap_navy}
+		x = 0
+		y = 1
+		relative_position_id = ram_eng_navy
+		cost = 8
+		available = {
+			has_completed_focus = ram_usa_trade
+			USA = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = USA}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_usa_trade
+				OR = {
+					NOT = { country_exists = JAP }
+					JAP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = USA }
+					USA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				USA = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#carriers
+			navy_experience = 30
+			USA = {
+				country_event = { id = amazon.12 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = cv_tech
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_pol_army
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_sov_army}
+		x = 5
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			OR = {
+				POL = {
+					NOT = {has_war_with = RAM}
+					OR = {
+						has_idea = amazon_trade_contract
+						has_idea = amazon_trade_contract_2
+						has_idea = amazon_trade_contract_3
+					}
+				}
+				RZP = {
+					NOT = {has_war_with = RAM}
+					OR = {
+						has_idea = amazon_trade_contract
+						has_idea = amazon_trade_contract_2
+						has_idea = amazon_trade_contract_3
+					}
+				}
+			}
+			has_completed_focus = ram_pol_trade
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_pol_trade
+				OR = {
+					NOT = { country_exists = POL }
+					POL = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = RZP }
+					RZP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = SOV }
+					SOV = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				if = {
+					limit = {country_exists = RZP}
+					RZP = {
+						has_opinion = {
+							target = RAM
+							value > -10
+						}
+					}
+				}
+				else = {
+					POL = {
+						has_opinion = {
+							target = RAM
+							value > -10
+						}
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#infantry eq
+			#also advisors
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = amazon_polish_army_agent
+			if = {
+				limit = {
+					POL = {
+						exists = yes
+						has_capitulated = no
+						NOT = {has_war_with = RAM}
+					}
+				}
+				POL = {
+					country_event = { id = amazon.15 days = 1}
+					custom_effect_tooltip = needs_approval
+					effect_tooltip = {
+						add_tech_bonus = {
+							name = amazon_tech_exchange
+							bonus = 0.50
+							uses = 2
+							category = infantry_weapons
+						}
+					}
+				}
+			}
+			else = {
+				RZP = {
+					country_event = { id = amazon.15 days = 1}
+					custom_effect_tooltip = needs_approval
+					effect_tooltip = {
+						add_tech_bonus = {
+							name = amazon_tech_exchange
+							bonus = 0.50
+							uses = 2
+							category = infantry_weapons
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_sov_army
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = ram_buy_tech }
+		mutually_exclusive = { focus = ram_pol_army}
+		x = 7
+		y = 1
+		relative_position_id = ram_buy_tech
+		cost = 8
+		available = {
+			has_completed_focus = ram_sov_trade
+			NOT = {has_war_with = SOV}
+			SOV = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_sov_trade
+				OR = {
+					NOT = { country_exists = POL }
+					POL = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = RZP }
+					RZP = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = SOV }
+					SOV = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				SOV = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#infantry eq
+			#also advisors
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = amazon_soviet_army_agent
+			SOV = {
+				country_event = { id = amazon.15 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = infantry_weapons
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_fra_army
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ram_pol_army focus = ram_sov_army }
+		mutually_exclusive = { focus = ram_ger_army}
+		x = 0
+		y = 1
+		relative_position_id = ram_pol_army
+		cost = 8
+		available = {
+			has_completed_focus = ram_fra_trade
+			FRA = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = FRA}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_fra_trade
+				OR = {
+					NOT = { country_exists = FRA }
+					FRA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = GER }
+					GER = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				FRA = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#artillery
+			FRA = {
+				country_event = { id = amazon.15 days = 1}
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = amazon_tech_exchange
+						bonus = 0.50
+						uses = 2
+						category = artillery
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_ger_army
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = ram_pol_army focus = ram_sov_army}
+		mutually_exclusive = { focus = ram_fra_army}
+		x = 0
+		y = 1
+		relative_position_id = ram_sov_army
+		cost = 8
+		available = {
+			has_completed_focus = ram_ger_trade
+			GER = {
+				OR = {
+					has_idea = amazon_trade_contract
+					has_idea = amazon_trade_contract_2
+					has_idea = amazon_trade_contract_3
+				}
+			}
+			NOT = {has_war_with = GER}
+		}
+		bypass = {
+			#AND = {
+				has_completed_focus = ram_ger_trade
+				OR = {
+					NOT = { country_exists = FRA }
+					FRA = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+				OR = {
+					NOT = { country_exists = GER }
+					GER = {
+						NOT = { has_idea = amazon_trade_contract}
+						NOT = { has_idea = amazon_trade_contract_2}
+						NOT = { has_idea = amazon_trade_contract_3}
+					}
+				}
+			#}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				GER = {
+					has_opinion = {
+						target = RAM
+						value > -10
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			#aa, at
+			GER = {
+				country_event = { id = amazon.15 days = 1}
+				custom_effect_tooltip = needs_approval
+			}
+			effect_tooltip = {
+				add_tech_bonus = {
+					name = amazon_tech_exchange
+					bonus = 0.50
+					uses = 2
+					technology = antiair1
+					technology = antiair2
+					technology = antitank1 
+					technology = antitank2
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ram_air_effort
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = ram_ger_airforce focus = ram_usa_airforce}
+		mutually_exclusive = { focus = ram_navy_effort}
+		x = 1
+		y = 1
+		relative_position_id = ram_usa_airforce
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			air_experience = 50
+			add_tech_bonus = {
+				name = ram_air_effort
+				bonus = 0.50
+				uses = 3
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = ram_air_effort
+				bonus = 0.50
+				uses = 1
+				category = light_air
+			}
+			add_ideas = amazon_air_effort
+		}
+	}
+	focus = {
+		id = ram_navy_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = ram_jap_navy focus = ram_usa_navy}
+		mutually_exclusive = { focus = ram_air_effort}
+		x = 1
+		y = 1
+		relative_position_id = ram_jap_navy
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				name = ram_navy_effort
+				bonus = 0.50
+				uses = 3
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				name = ram_navy_effort
+				bonus = 0.50
+				uses = 2
+				category = naval_equipment
+			}
+			add_ideas = amazon_navy_effort
+		}
+	}
+	focus = {
+		id = ram_tank_effort
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = ram_ger_tanks focus = ram_sov_tanks}
+		mutually_exclusive = { focus = ram_army_effort}
+		x = 1
+		y = 1
+		relative_position_id = ram_ger_tanks
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ram_tank_effort
+				bonus = 0.50
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = ram_tank_effort
+				bonus = 0.50
+				uses = 2
+				category = armor
+			}
+			add_tech_bonus = {
+				name = ram_tank_effort
+				bonus = 0.75
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+			add_ideas = amazon_tank_effort
+		}
+	}
+	focus = {
+		id = ram_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = ram_fra_army focus = ram_ger_army}
+		mutually_exclusive = { focus = ram_tank_effort}
+		x = 1
+		y = 1
+		relative_position_id = ram_fra_army
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ram_army_effort
+				bonus = 0.50
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = ram_army_effort
+				bonus = 0.50
+				uses = 2
+				category = infantry_tech
+			}
+			add_tech_bonus = {
+				name = ram_army_effort
+				bonus = 0.50
+				uses = 1
+				category = artillery
+			}
+			add_ideas = amazon_army_effort
+		}
+	}
+	
+	
+	
+	focus = {
+		id = ram_army_development
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 20
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_timed_idea = {
+				idea = amazon_recruitment
+				days = 365
+			}
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = ram_doctrine
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = ram_army_development }
+		x = -1
+		y = 1
+		relative_position_id = ram_army_development
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = ram_high_command
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = ram_army_development }
+		x = 1
+		y = 1
+		relative_position_id = ram_army_development
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			army_experience = 15
+			custom_effect_tooltip = amazon_recruit_generals
+			hidden_effect = {
+				create_corps_commander = { 
+					skill = 2
+					attack_skill = 4
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 4
+				}
+				create_corps_commander = { 
+					skill = 2
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_militarism
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = ram_doctrine focus = ram_high_command }
+		x = 1
+		y = 1
+		relative_position_id = ram_doctrine
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT}
+		completion_reward = {
+			add_ideas = amazon_militarism
+			add_stability = -0.05
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ram_volunteers_army
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = ram_militarism }
+		mutually_exclusive = { focus = ram_army_of_aggro }
+		x = -1
+		y = 1
+		relative_position_id = ram_militarism
+		cost = 10
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 4
+				has_completed_focus = ram_expanding_markets
+			}
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = amazon_volunteers
+		}
+	}
+	focus = {
+		id = ram_army_of_aggro
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = ram_militarism }
+		mutually_exclusive = { focus = ram_volunteers_army }
+		x = 1
+		y = 1
+		relative_position_id = ram_militarism
+		cost = 10
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 4
+				has_completed_focus = ram_expanding_country
+			}
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = amazon_aggro
+		}
+	}
+	focus = {
+		id = ram_staff
+		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = ram_volunteers_army focus = ram_army_of_aggro }
+		x = 1
+		y = 1
+		relative_position_id = ram_volunteers_army
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			army_experience = 30
+			add_ideas = amazon_staff
+		}
+	}
+	
+	focus = {
+		id = ram_forming_a_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = ram_staff }
+		x = -1
+		y = 1
+		relative_position_id = ram_staff
+		cost = 5
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = dockyard
+					size > 1
+					include_locked = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_destroyers
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = ram_forming_a_navy }
+		x = -2
+		y = 1
+		relative_position_id = ram_forming_a_navy
+		cost = 5
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = ram_destroyers
+				bonus = 0.50
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+	focus = {
+		id = ram_submarines
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = ram_forming_a_navy }
+		x = 0
+		y = 1
+		relative_position_id = ram_forming_a_navy
+		cost = 5
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = ram_submarines
+				bonus = 0.50
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+	focus = {
+		id = ram_navy_doctrine
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = ram_submarines }
+		prerequisite = { focus = ram_destroyers }
+		x = 0
+		y = 1
+		relative_position_id = ram_submarines
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				name = ram_navy_doctrine
+				bonus = 0.50
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = ram_aluminium
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = ram_staff }
+		x = 1
+		y = 1
+		relative_position_id = ram_staff
+		cost = 5
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = aluminium
+					amount = 24
+					state = THIS
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_light_aircraft
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = ram_aluminium }
+		x = 0
+		y = 1
+		relative_position_id = ram_aluminium
+		cost = 5
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = ram_light_aircraft
+				bonus = 0.50
+				uses = 2
+				category = light_fighter
+				category = cas_bomber
+			}
+		}
+	}
+	focus = {
+		id = ram_bombers
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = ram_aluminium }
+		x = 2
+		y = 1
+		relative_position_id = ram_aluminium
+		cost = 5
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = ram_bombers
+				bonus = 0.50
+				uses = 2
+				category = tactical_bomber
+				category = cat_strategic_bomber
+			}
+		}
+	}
+	focus = {
+		id = ram_air_doctrine
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = ram_light_aircraft }
+		prerequisite = { focus = ram_bombers }
+		x = 0
+		y = 1
+		relative_position_id = ram_light_aircraft
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			air_experience = 50
+			add_tech_bonus = {
+				name = ram_navy_doctrine
+				bonus = 0.50
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = ram_the_purge
+		icon = GFX_goal_generic_demand_territory
+		x = 34
+		y = 0
+		cost = 20
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 5
+				date > 1937.6.6
+			}
+			modifier = {
+				factor = 7
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 5
+				has_stability < 0.5
+			}
+		}
+		available = {
+			date > 1937.1.1
+		}
+		bypass = {
+			has_country_flag = amazon_failed_purge
+			NOT = {
+				focus_progress = {
+					focus = ram_the_purge
+					progress > 0.5
+				}
+			}
+		}
+		cancelable = no
+		continue_if_invalid = yes
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = amazon_unstable_government
+				add_idea = amazon_unstable_government_2
+			}
+			add_stability = 0.1
+		}
+		select_effect = {
+			hidden_effect = {
+				country_event = {
+					id = amazon.21 days = 3 #purge
+				}
+			}
+		}
+	}
+	focus = {#Victory of Reformists
+		id = ram_democracy
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = ram_the_purge }
+		x = -8
+		y = 1
+		relative_position_id = ram_the_purge
+		cost = 5
+		available = {
+			has_country_flag = amazon_towards_democracy
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ram_constitution
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = ram_democracy focus = ram_neutrality }
+		x = 4
+		y = 1
+		relative_position_id = ram_democracy
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.05
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.1
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_representative_parliament
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = ram_constitution }
+		x = 0
+		y = 1
+		relative_position_id = ram_constitution
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.1
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_emancipation_of_workers
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = ram_democracy }
+		x = -1
+		y = 1
+		relative_position_id = ram_democracy
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_ideas = amazon_emancipation_of_workers
+			if = {
+				limit = {
+					has_idea = amazon_unstable_government
+				}
+				remove_ideas = amazon_unstable_government
+			}
+			else = {
+				remove_ideas = amazon_unstable_government_2
+			}
+		}
+	}
+	focus = {
+		id = ram_industrial_development
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ram_democracy }
+		x = 1
+		y = 1
+		relative_position_id = ram_democracy
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3}
+		}
+	}
+	focus = {
+		id = ram_preparing_for_war
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = ram_industrial_development }
+		x = 3
+		y = 1
+		relative_position_id = ram_emancipation_of_workers
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		available = {
+			OR = {
+				has_war = yes
+				threat > 0.3
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_ideas = amazon_preparing_for_war
+		}
+	}
+	focus = {
+		id = ram_global_army
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = ram_preparing_for_war }
+		prerequisite = { focus = ram_representative_parliament }
+		x = 1
+		y = 1
+		relative_position_id = ram_preparing_for_war
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT}
+		completion_reward = {
+			add_ideas = amazon_global_army
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ram_anti_fascist_coalition
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ram_emancipation_of_workers }
+		mutually_exclusive = { focus = ram_join_allies }
+		available = {
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+			is_subject = no
+			OR = {
+				has_war = yes
+				threat > 0.7
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = ram_emancipation_of_workers
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				AND = {
+					NOT = {
+						ENG = {
+							is_faction_leader = yes
+							NOT = { has_government = fascism }
+							NOT = { has_government = communism }
+						}
+					}
+					NOT = {
+						FRA = {
+							is_faction_leader = yes
+							NOT = { has_government = fascism }
+							NOT = { has_government = communism }
+						}
+					}
+					NOT = {
+						USA = {
+							is_faction_leader = yes
+							NOT = { has_government = fascism }
+							NOT = { has_government = communism }
+						}
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction = amazon_anti_fascist_coalition
+			}
+			else = {
+				set_faction_name = amazon_anti_fascist_coalition
+			}
+			set_rule = {
+				can_create_factions = yes
+			}
+			every_other_country = {
+				limit = {
+					is_in_faction = no
+					not = { has_war_with = ROOT }
+					is_subject = no
+					OR = {
+						has_government = democratic
+						#has_government = neutrality
+					}
+					OR = {
+						capital_scope = {
+								is_on_continent = europe
+						}
+						capital_scope = {
+								is_on_continent = south_america
+						}
+						capital_scope = {
+								is_on_continent = north_america
+						}
+						num_of_factories > 50
+					}
+				}
+				country_event = generic.5
+			}
+			add_named_threat = { threat = 5 name = RAM_anti_fascist_coalition_threat }
+		}
+	}
+	focus = {
+		id = ram_join_allies
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = ram_emancipation_of_workers focus = ram_industrial_development }
+		mutually_exclusive = { focus = ram_anti_fascist_coalition }
+		available = {
+			OR = {
+				has_war = yes
+				threat > 0.5
+			}
+			is_in_faction = no
+			is_subject = no
+			OR = {
+				ENG = {
+					is_faction_leader = yes
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+					NOT = { has_war_with = ROOT }
+				}
+				FRA = {
+					is_faction_leader = yes
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+					NOT = { has_war_with = ROOT }
+				}
+				USA = {
+					is_faction_leader = yes
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+					NOT = { has_war_with = ROOT }
+				}
+				GER = {
+					is_faction_leader = yes
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+		bypass = {
+			is_in_faction = yes
+			is_faction_leader = no
+		}
+		x = 1
+		y = 1
+		relative_position_id = ram_emancipation_of_workers
+		cost = 10
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				add = 10
+				OR = {
+					ENG = {
+						is_faction_leader = yes
+						has_government = fascism
+						has_war = yes
+					}
+					FRA = {
+						is_faction_leader = yes
+						has_government = fascism
+						has_war = yes
+					}
+					USA = {
+						is_faction_leader = yes
+						has_government = fascism
+						has_war = yes
+					}
+					GER = {
+						is_faction_leader = yes
+						has_government = fascism
+						has_war = yes
+					}
+					ITA = {
+						is_faction_leader = yes
+						has_government = fascism
+						has_war = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					ENG = {
+						is_faction_leader = yes
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				ENG = {
+					country_event = { id = generic.2 days = 3 }
+				}
+			}
+			else_if = {
+				limit = {
+					FRA = {
+						is_faction_leader = yes
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				FRA = {
+					country_event = { id = generic.2 days = 3 }
+				}
+			}
+			else_if = {
+				limit = {
+					USA = {
+						is_faction_leader = yes
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				USA = {
+					country_event = { id = generic.2 days = 3 }
+				}
+			}
+			else_if = {
+				limit = {
+					GER = {
+						is_faction_leader = yes
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				GER = {
+					country_event = { id = generic.2 days = 3 }
+				}
+			}
+			else = {
+				set_rule = {
+					can_create_factions = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_contain_fascism
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		prerequisite = { focus = ram_anti_fascist_coalition focus = ram_join_allies }
+		#prerequisite = { focus = ram_preparing_for_war }
+		x = 1
+		y = 1
+		relative_position_id = ram_anti_fascist_coalition
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			OR = {
+				has_war = yes
+				threat > 0.7
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.2
+			}
+			every_other_country = {
+				limit = {
+					has_government = fascism
+					is_subject = no
+				}
+				ROOT = {
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = ENG_tackle_fascism
+					}
+					create_wargoal = {
+						type = topple_government
+						target = PREV
+					}
+				}
+			}
+			every_other_country = {
+				limit = {
+					has_government = fascism
+					is_subject = yes
+				}
+				ROOT = {
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = anti_fascist_diplomacy_focus
+					}
+					create_wargoal = {
+						type = topple_government
+						target = PREV
+					}
+				}
+			}
+			add_named_threat = { threat = 10 name = RAM_contain_fascism_threat }
+		}
+	}
+	
+	
+	
+	focus = {#Status Quo
+		id = ram_neutrality
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = ram_the_purge }
+		x = -3
+		y = 1
+		relative_position_id = ram_the_purge
+		cost = 5
+		available = {
+			has_country_flag = amazon_status_quo
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.2
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = ram_recover_from_purge
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = ram_neutrality }
+		x = 1
+		y = 1
+		relative_position_id = ram_neutrality
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = amazon_commando_expert
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = amazon_interception_expert
+			custom_effect_tooltip = available_chief_of_navy
+			show_ideas_tooltip = amazon_naval_air_def_expert
+			custom_effect_tooltip = available_chief_of_navy
+			show_ideas_tooltip = amazon_chief_decisive_battle
+		}
+	}
+	focus = {
+		id = ram_neutrality_focus
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = ram_recover_from_purge }
+		prerequisite = { focus = ram_constitution }
+		x = 0
+		y = 1
+		relative_position_id = ram_recover_from_purge
+		cost = 10
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_ideas = amazon_neutrality
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ram_center_of_research
+		icon = GFX_focus_research2
+		prerequisite = { focus = ram_neutrality_focus }
+		prerequisite = { focus = ram_representative_parliament }
+		x = -1
+		y = 1
+		relative_position_id = ram_neutrality_focus
+		cost = 10
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = amazon_center_of_research
+		}
+	}
+	focus = {#Victory of Loyalists
+		id = ram_fascism
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = ram_the_purge }
+		x = 3
+		y = 1
+		relative_position_id = ram_the_purge
+		cost = 5
+		available = {
+			has_country_flag = amazon_towards_fascism
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ram_realising_ambitions
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = ram_fascism }
+		x = 1
+		y = 1
+		relative_position_id = ram_fascism
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			add_ideas = amazon_realising_ambitions
+		}
+	}
+	focus = {
+		id = ram_industrial_buildup
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ram_fascism }
+		x = -1
+		y = 1
+		relative_position_id = ram_fascism
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_stability = 0.05
+			add_offsite_building = { type = arms_factory level = 3}
+		}
+	}
+	focus = {
+		id = ram_fash_conscription
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = ram_industrial_buildup focus = ram_fascism }
+		x = 0
+		y = 1
+		relative_position_id = ram_industrial_buildup
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_ideas = amazon_fash_conscription
+			add_manpower = 100000
+		}
+	}
+	focus = {
+		id = ram_imperialist_conscription
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ram_industrial_buildup focus = ram_fascism }
+		x = 2
+		y = 1
+		relative_position_id = ram_industrial_buildup
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_ideas = amazon_imperialism
+		}
+	}
+	focus = {
+		id = ram_ultimate_weapon
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = ram_fash_conscription focus = ram_imperialist_conscription}
+		x = 1
+		y = 1
+		relative_position_id = ram_fash_conscription
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ram_ultimate_weapon
+				bonus = 0.75
+				uses = 3
+				category = nuclear
+			}
+		}
+	}
+	
+	
+	
+	focus = {
+		id = ram_deradicalize_government
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = ram_fascism focus = ram_neutrality }
+		x = -3
+		y = 1
+		relative_position_id = ram_fascism
+		cost = 10
+		ai_will_do = {
+			factor = 13
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = ram_functional_government
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = ram_deradicalize_government }
+		x = 0
+		y = 1
+		relative_position_id = ram_deradicalize_government
+		cost = 10
+		available = {
+			communism < 0.1
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = amazon_unstable_government
+				}
+				remove_ideas = amazon_unstable_government
+			}
+			else = {
+				remove_ideas = amazon_unstable_government_2
+			}
+			add_stability = 0.15
+			custom_effect_tooltip = amazon_recruit_generals
+			hidden_effect = {
+				create_corps_commander = { 
+					skill = 3
+					attack_skill = 3
+					defense_skill = 4
+					planning_skill = 2
+					logistics_skill = 4
+					traits = { brilliant_strategist politically_connected }
+				}
+				create_corps_commander = { 
+					skill = 2
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 3
+					logistics_skill = 3
+					traits = { armor_officer trait_reckless }
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_crusade_against_communism
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = ram_functional_government }
+		x = 0
+		y = 1
+		relative_position_id = ram_functional_government
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.1
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+			every_other_country = {
+				limit = {
+					has_government = communism
+					is_subject = no
+				}
+				ROOT = {
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = JAP_anti_communist_bulwark
+					}
+					create_wargoal = {
+						type = topple_government
+						target = PREV
+					}
+				}
+			}
+			set_rule = {
+				can_create_factions = yes
+			}
+			add_named_threat = { threat = 5 name = RAM_crusade_against_communism_threat }
+		}
+	}
+	
+	
+	
+	
+	focus = {#Victory of Radicals
+		id = ram_communism
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = ram_the_purge }
+		x = 8
+		y = 1
+		relative_position_id = ram_the_purge
+		cost = 5
+		available = {
+			has_country_flag = amazon_failed_purge
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+			add_stability = -0.2
+			if = {
+				limit = {
+					OR = {
+						has_country_leader = {
+							name = "Workers Council"
+							ruling_only = yes
+						}
+						NOT = { has_government = communism }
+					}
+				}
+				country_event = {
+					#"elections" between Jeffrey Beyblade and Jonathan Boestar, both look same and have Stalin's stache
+					id = amazon.33 days = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_new_manifesto
+		icon = GFX_focus_spr_unify_the_london_bureau
+		prerequisite = { focus = ram_communism }
+		x = -1
+		y = 1
+		relative_position_id = ram_communism
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_stability = 0.05
+			add_political_power = 100
+			every_other_country = {
+				limit = {
+					has_government = communism
+					is_subject = no
+				}
+				ROOT = {
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = betrayed_our_cause
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_two_year_plan
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ram_communism }
+		x = 1
+		y = 1
+		relative_position_id = ram_communism
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_timed_idea = {
+				idea = amazon_two_year_plan
+				days = 730
+			}
+			add_stability = 0.05
+			hidden_effect = {
+				country_event = { id = amazon.18 days = 735 }
+			}
+		}
+	}
+	focus = {
+		id = ram_fight_for_revolution
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = ram_two_year_plan }
+		x = 1
+		y = 1
+		relative_position_id = ram_two_year_plan
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_war_support = 0.05
+			add_manpower = 100000
+		}
+	}
+	focus = {
+		id = ram_new_generation_commanders
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = ram_fight_for_revolution }
+		x = 1
+		y = 1
+		relative_position_id = ram_fight_for_revolution
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_war_support = 0.05
+			custom_effect_tooltip = amazon_recruit_generals
+			hidden_effect = {
+				create_corps_commander = { 
+					skill = 3
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 4
+					logistics_skill = 4
+					traits = { inflexible_strategist career_officer }
+				}
+				create_corps_commander = { 
+					skill = 2
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 4
+					traits = { infantry_officer media_personality }
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_new_home_of_revolution
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = ram_new_generation_commanders }
+		prerequisite = { focus = ram_socialist_miracle }
+		x = -1
+		y = 1
+		relative_position_id = ram_new_generation_commanders
+		cost = 10
+		ai_will_do = {
+			factor = 11
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			add_political_power = 200
+			every_other_country = {
+				limit = {
+					is_major = yes
+					is_subject = no
+					NOT = { is_in_faction_with = ROOT }
+				}
+				ROOT = {
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = ENG_tackle_capitalism
+					}
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = PREV
+					}
+				}
+			}
+			add_named_threat = { threat = 10 name = RAM_new_home_of_revolution_threat }
+		}
+	}
+	focus = {
+		id = ram_improved_worker_conditions
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = ram_new_manifesto }
+		prerequisite = { focus = ram_two_year_plan }
+		x = 1
+		y = 1
+		relative_position_id = ram_new_manifesto
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = amazon_unstable_government
+				}
+				remove_ideas = amazon_unstable_government
+			}
+			else = {
+				remove_ideas = amazon_unstable_government_2
+			}
+			add_timed_idea = {
+				idea = amazon_improved_conditions
+				days = 180
+			}
+		}
+	}
+	focus = {
+		id = ram_socialist_miracle
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = { focus = ram_improved_worker_conditions }
+		x = 1
+		y = 1
+		relative_position_id = ram_improved_worker_conditions
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = amazon_two_year_plan
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = amazon_socialist_miracle
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ram_export_revolution
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = ram_improved_worker_conditions }
+		x = -1
+		y = 1
+		relative_position_id = ram_improved_worker_conditions
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = amazon_improved_conditions
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION}
+		completion_reward = {
+			add_ideas = amazon_export_revolution
+			add_war_support = 0.15
+			add_political_power = 100
+			set_rule = {
+				can_create_factions = yes
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = ram_expanding_country
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ram_export_revolution focus = ram_crusade_against_communism focus = ram_contain_fascism }
+		mutually_exclusive = { focus = ram_expanding_markets }
+		x = 1
+		y = 5
+		relative_position_id = ram_the_purge
+		cost = 10
+		available = {
+			#NOT = {
+			#	has_government = democratic
+			#}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_ideas = amazon_expanding_country
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ram_inclusion_in_monroe
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = ram_expanding_country }
+		x = 1
+		y = 1
+		relative_position_id = ram_expanding_country
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			USA = {
+				country_event = { id = amazon.19 days = 5 }
+			}
+		}
+	}
+	focus = {
+		id = ram_carribean_expansion
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = ram_inclusion_in_monroe }
+		x = 0
+		y = 1
+		relative_position_id = ram_inclusion_in_monroe
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {#Cuba
+				limit = {
+					country_exists = CUB
+					NOT = { is_in_faction_with = CUB }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = CUB	
+					expire = 0
+					generator = { 315 }
+				}
+				reverse_add_opinion_modifier = {
+					target = CUB
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 315
+			}
+			if = {#Haiti
+				limit = {
+					country_exists = HAI
+					NOT = { is_in_faction_with = HAI }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = HAI	
+					expire = 0
+					generator = { 318 }
+				}
+				reverse_add_opinion_modifier = {
+					target = HAI
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 318
+			}
+			if = {#Dominicana
+				limit = {
+					country_exists = DOM
+					NOT = { is_in_faction_with = DOM }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = DOM	
+					expire = 0
+					generator = { 319 }
+				}
+				reverse_add_opinion_modifier = {
+					target = DOM
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 319
+			}
+			if = {#Puerto rico
+				limit = {
+					country_exists = PUE
+					NOT = { is_in_faction_with = PUE }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = PUE	
+					expire = 0
+					generator = { 686 }
+				}
+				reverse_add_opinion_modifier = {
+					target = PUE
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 686
+			}
+			if = {#Bahamas
+				limit = {
+					country_exists = BAH
+					NOT = { is_in_faction_with = BAH }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = BAH	
+					expire = 0
+					generator = { 690 }
+				}
+				reverse_add_opinion_modifier = {
+					target = BAH
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 690
+				add_state_claim = 693
+			}
+			if = {#Jamaica
+				limit = {
+					country_exists = JAM
+					NOT = { is_in_faction_with = JAM }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = JAM	
+					expire = 0
+					generator = { 689 }
+				}
+				reverse_add_opinion_modifier = {
+					target = JAM
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 689
+			}
+			add_named_threat = { threat = 2 name = RAM_carribean_expansion_threat }
+		}
+	}
+	focus = {
+		id = ram_secure_central_america
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = ram_carribean_expansion }
+		x = 0
+		y = 1
+		relative_position_id = ram_carribean_expansion
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {#Belize
+				limit = {
+					country_exists = BLZ
+					NOT = { is_in_faction_with = BLZ }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = BLZ	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = BLZ
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 311
+			}
+			if = {#Honduras
+				limit = {
+					country_exists = HON
+					NOT = { is_in_faction_with = HON }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = HON	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = HON
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 312
+			}
+			if = {#Guatemala
+				limit = {
+					country_exists = GUA
+					NOT = { is_in_faction_with = GUA }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = GUA	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = GUA
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 313
+			}
+			if = {#El Salvador
+				limit = {
+					country_exists = ELS
+					NOT = { is_in_faction_with = ELS }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = ELS	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = ELS
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 314
+			}
+			if = {#I don't have the n-word pass
+				limit = {
+					country_exists = NIC
+					NOT = { is_in_faction_with = NIC }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = NIC	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = NIC
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 317
+			}
+			if = {#Costa Rica
+				limit = {
+					country_exists = COS
+					NOT = { is_in_faction_with = COS }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = COS	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = COS
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 316
+			}
+			if = {#Panama
+				limit = {
+					country_exists = PAN
+					NOT = { is_in_faction_with = PAN }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = PAN	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = PAN
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 304
+			}
+			add_named_threat = { threat = 3 name = RAM_central_america_threat }
+		}
+	}
+	focus = {
+		id = ram_grand_columbia_area
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = ram_carribean_expansion }
+		x = 2
+		y = 1
+		relative_position_id = ram_carribean_expansion
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {#Columbia
+				limit = {
+					country_exists = COL
+					NOT = { is_in_faction_with = COL }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = COL	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = COL
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 306
+				add_state_claim = 493
+			}
+			if = {#Venezuela
+				limit = {
+					country_exists = VEN
+					NOT = { is_in_faction_with = VEN }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = VEN	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = VEN
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 307
+				add_state_claim = 489
+			}
+			add_named_threat = { threat = 4 name = RAM_grand_columbia_threat }
+		}
+	}
+	
+	focus = {
+		id = ram_foothold_in_africa
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ram_inclusion_in_monroe }
+		x = 4
+		y = 1
+		relative_position_id = ram_inclusion_in_monroe
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {#Liberia
+				limit = {
+					country_exists = LIB
+					NOT = { is_in_faction_with = LIB }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = LIB	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = LIB
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 298
+			}
+			if = {#South Africa
+				limit = {
+					country_exists = SAF
+					NOT = { is_in_faction_with = SAF }
+					SAF = {
+						is_subject = no
+					}
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SAF	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = SAF
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 719
+				add_state_claim = 681
+			}
+			add_named_threat = { threat = 3 name = RAM_foothold_in_africa_threat }
+		}
+	}
+	focus = {
+		id = ram_recolonisation_of_africa
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ram_foothold_in_africa }
+		x = 2
+		y = 1
+		relative_position_id = ram_foothold_in_africa
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 100
+			add_named_threat = { threat = 3 name = RAM_recolonisation_threat }
+			#decisions
+		}
+	}
+	focus = {
+		id = ram_middle_east_invasion
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ram_foothold_in_africa }
+		x = 0
+		y = 1
+		relative_position_id = ram_foothold_in_africa
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {#Yemen
+				limit = {
+					country_exists = YEM
+					NOT = { is_in_faction_with = YEM }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = YEM	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = YEM
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 293
+			}
+			if = {#Oman
+				limit = {
+					country_exists = OMA
+					NOT = { is_in_faction_with = OMA }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = OMA	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = OMA
+					modifier = unprovoked_aggression
+				}
+			}
+			else = {
+				add_state_claim = 294
+			}
+			if = {#Saudi Arabia
+				limit = {
+					country_exists = SAU
+					NOT = { is_in_faction_with = SAU }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SAU	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = SAU
+					modifier = unprovoked_aggression
+				}
+			}
+			if = {#Iraq
+				limit = {
+					country_exists = IRQ
+					NOT = { is_in_faction_with = IRQ }
+					IRQ = {
+						has_war = no
+					}
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = IRQ	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = IRQ
+					modifier = unprovoked_aggression
+				}
+			}
+			else_if = {#Iran
+				limit = {
+					country_exists = PER
+					NOT = { is_in_faction_with = PER }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = PER	
+					expire = 0
+				}
+				reverse_add_opinion_modifier = {
+					target = PER
+					modifier = unprovoked_aggression
+				}
+			}
+			add_named_threat = { threat = 3 name = RAM_middle_east_threat }
+		}
+	}
+	focus = {
+		id = ram_take_down_usa
+		icon = GFX_focus_generic_strike_at_democracy3
+		prerequisite = { focus = ram_secure_central_america }
+		prerequisite = { focus = ram_grand_columbia_area }
+		x = 1
+		y = 1
+		relative_position_id = ram_secure_central_america
+		cost = 10
+		available = {
+			country_exists = USA 
+			USA = {
+				has_capitulated = no
+				NOT = { is_in_faction_with = PREV }
+			}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 5
+				OR = {
+					strength_ratio = {
+						tag = USA
+						ratio > 0.9
+					}
+				}
+			}
+		}
+		will_lead_to_war_with = USA
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+				expire = 0
+			}
+			reverse_add_opinion_modifier = {
+				target = USA
+				modifier = unprovoked_aggression
+			}
+			add_named_threat = { threat = 10 name = RAM_take_down_usa_threat }
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = ram_expanding_markets
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ram_export_revolution focus = ram_crusade_against_communism focus = ram_contain_fascism}
+		mutually_exclusive = { focus = ram_expanding_country }
+		x = -1
+		y = 5
+		relative_position_id = ram_the_purge
+		cost = 10
+		available = {
+			#NOT = {
+			#	has_government = communism
+			#}
+			always = no
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_ANNEXATION}
+		completion_reward = {
+			custom_effect_tooltip = amazon_coming_soon
+			#add_ideas = amazon_expanding_markets
+			#add_stability = 0.05
+		}
+	}
+	
+	
+	
+	focus = {
+		id = ram_decryption_focus
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = ram_export_revolution focus = ram_crusade_against_communism }
+		x = -3
+		y = 5
+		relative_position_id = ram_the_purge
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				add_ideas = amazon_decryption_focus 
+			}
+			add_tech_bonus = {
+				name = ram_decryption_focus
+				bonus = 0.75
+				uses = 2
+				category = encryption_tech
+				category = decryption_tech
+			}
+		}
+	}
+	focus = {
+		id = ram_tech_sharing
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = ram_export_revolution focus = ram_crusade_against_communism }
+		x = 3
+		y = 5
+		relative_position_id = ram_the_purge
+		cost = 10
+		available = {
+			is_in_faction = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 4
+				any_allied_country = {
+					is_major = yes
+				}
+			}
+			modifier = {
+				add = 5
+				num_faction_members > 9
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_to_tech_sharing_group = amazon_tech_share
+			every_other_country = {
+				limit = {
+					is_in_faction_with = PREV
+				}
+				add_to_tech_sharing_group = amazon_tech_share
+			}
+		}
+	}
+	
+	focus = {
+		id = ram_dockyard_expansion
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = ram_expanding_country focus = ram_expanding_markets }
+		x = 1
+		y = 1
+		relative_position_id = ram_expanding_markets
+		cost = 8
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = dockyard
+					size > 2
+					include_locked = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			navy_experience = 50
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ram_amphibious_invasions
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = ram_dockyard_expansion }
+		x = 0
+		y = 1
+		relative_position_id = ram_dockyard_expansion
+		cost = 8
+		ai_will_do = {
+			factor = 7
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			navy_experience = 30
+			add_ideas = amazon_build_convoys 
+			add_tech_bonus = {
+				name = ram_amphibious_invasions
+				bonus = 0.75
+				uses = 2
+				category = marine_tech
+				category = tp_tech
+			}
+		}
+	}
+}
