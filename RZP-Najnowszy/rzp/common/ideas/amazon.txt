@@ -1,33 +1,1513 @@
 ideas = {
-  
-  contry = {
-  
-         RAM_merchant_republic = {
-         
-            allowed = {
-                    original_tag = RAM
-                    always = no
-            }
-            
-            allowed_civil_war = {
-                    always = yes
-            }
-            
-            removal_cost = -1
-            
-            picture = 
-            
-            modifier = {
-                   war_support_factor = -0.3
-                   conscription = -0.010
-                   join_faction_tension = 0.80
-                   guarantee_tension = 0.75
-                   lend_lease_tension = 0.40
-                   generate_wargoal_tension = 1.00
-                   production_speed_arms_factory_factor = -0.75
-                   production_speed_industrial_complex_factor = 0.25
-            }
-         }
-  
-  }
+
+country = {
+	amazon_unstable_government = { #starting idea
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_disjointed_gov
+		removal_cost = -1
+		modifier = {
+			stability_weekly  = -0.005
+			political_power_factor = -0.15
+			communism_drift = 0.02
+			democratic_drift = -0.03
+		}
+	}
+	amazon_unstable_government_2 = { #after the purge
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_purge
+		removal_cost = -1
+		modifier = {
+			stability_weekly  = -0.005
+			political_power_factor = -0.1
+			drift_defence_factor = 0.5
+		}
+	}
+	amazon_megacorp = { #starting idea
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_pp_unity_bonus
+		removal_cost = -1
+		modifier = {
+			stability_factor = 0.1
+			trade_laws_cost_factor = 1 #or just lock to free trade
+			trade_opinion_factor = 0.25
+			#maybe sth else
+		}
+	}
+	amazon_delivery_company = { #starting idea
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = FRA_motorized_focus
+		removal_cost = -1
+		modifier = {
+		}
+		equipment_bonus = {
+			convoy = {
+				instant = yes
+				build_cost_ic = -0.05
+			}
+			transport_plane_equipment_1 = {
+				instant = yes
+				build_cost_ic = -0.05
+			}
+			motorized_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+			}
+		}
+	}
+	amazon_trade_contract = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_production_bonus
+		removal_cost = -1
+		modifier = {
+			industrial_capacity_factory = 0.05
+		}
+	}
+	amazon_trade_contract_2 = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_production_bonus
+		removal_cost = -1
+		modifier = {
+			industrial_capacity_factory = 0.10
+		}
+	}
+	amazon_trade_contract_3 = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_production_bonus
+		removal_cost = -1
+		modifier = {
+			industrial_capacity_factory = 0.15
+		}
+	}
+	amazon_broken_contract = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_production_bonus
+		removal_cost = -1
+		modifier = {
+			#industrial_capacity_factory = 0.05
+		}
+	}
+	amazon_reparations = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_goods_red_bonus
+		removal_cost = -1
+		modifier = {
+			consumer_goods_factor = 0.03
+		}
+	}
+	amazon_reparations_receiver = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_goods_red_bonus
+		removal_cost = -1
+		modifier = {
+			consumer_goods_factor = -0.03
+		}
+	}
+	amazon_buy_tech = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_license_production
+		removal_cost = -1
+		modifier = {
+			license_purchase_cost = -0.5 
+		}
+	}
+	amazon_recruitment = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_manpower_bonus
+		removal_cost = -1
+		modifier = {
+			weekly_manpower = 1250 
+		}
+	}
+	amazon_militarism = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_reserve_divisions
+		removal_cost = -1
+		modifier = {
+			conscription = 0.02
+			conscription_factor = 0.1
+		}
+	}
+	amazon_volunteers = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_volunteer_expedition_bonus
+		removal_cost = -1
+		modifier = {
+			send_volunteer_size = 2
+			send_volunteer_divisions_required = -0.75
+			send_volunteers_tension = -0.25
+		}
+	}
+	amazon_aggro = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_intel_bonus
+		removal_cost = -1
+		modifier = {
+			ai_focus_aggressive_factor = 0.25
+			army_attack_factor = 0.1
+			army_defence_factor = 0.05
+			army_speed_factor = 0.05
+		}
+	}
+	amazon_staff = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = general_staff
+		removal_cost = -1
+		modifier = {
+			attrition = -0.03 
+			max_planning = 0.2 
+			planning_speed = 0.05
+			army_morale_factor = 0.05 
+		}
+	}
+	amazon_air_effort = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_air_bonus
+		removal_cost = -1
+		modifier = {
+			experience_gain_air_factor = 0.1 
+			army_bonus_air_superiority_factor = 0.05 
+			air_accidents_factor = -0.05 
+		}
+		research_bonus = {
+			air_doctrine = 0.1
+			air_equipment = 0.1
+		}
+	}
+	amazon_navy_effort = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_navy_bonus
+		removal_cost = -1
+		modifier = {
+			experience_gain_navy_factor = 0.1 
+			naval_hit_chance = 0.05 
+			naval_speed_factor = 0.05
+		}
+		research_bonus = {
+			naval_doctrine = 0.1
+			naval_equipment = 0.1
+		}
+	}
+	amazon_tank_effort = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_acquire_tanks
+		removal_cost = -1
+		modifier = {
+			experience_gain_army_factor = 0.1 
+			army_armor_attack_factor = 0.1
+			army_armor_defence_factor = 0.05 
+			army_armor_speed_factor = 0.05 
+		}
+		research_bonus = {
+			land_doctrine = 0.05
+			armor = 0.15
+		}
+	}
+	amazon_army_effort = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_infantry_bonus
+		removal_cost = -1
+		modifier = {
+			experience_gain_army_factor = 0.1 
+			army_infantry_attack_factor = 0.1
+			army_infantry_defence_factor = 0.05 
+			attrition = -0.1 
+		}
+		research_bonus = {
+			land_doctrine = 0.05
+			infantry_weapons = 0.15
+		}
+	}
+	
+	amazon_emancipation_of_workers = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = democratic
+		}
+		picture = generic_production_bonus
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.15
+			consumer_goods_factor = 0.02
+		}
+	}
+	amazon_preparing_for_war = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = democratic
+		}
+		picture = yug_federal_defense_council
+		removal_cost = -1
+		modifier = {
+			conscription = 0.02
+			production_speed_arms_factory_factor = 0.1
+		}
+	}
+	amazon_global_army = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = democratic
+		}
+		picture = eng_service_overseas
+		removal_cost = -1
+		modifier = {
+			heat_attrition_factor = -0.15
+			winter_attrition_factor = -0.15
+		}
+	}
+	
+	amazon_neutrality = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = neutrality
+		}
+		cancel = {
+			has_war = yes
+		}
+		picture = neutrality_idea
+		removal_cost = -1
+		modifier = {
+			trade_opinion_factor = 0.5
+			production_speed_buildings_factor = 0.1
+			#custom_effect_tooltip = amazon_will_remove_at_war
+		}
+	}
+	amazon_center_of_research = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = neutrality
+		}
+		cancel = {
+			has_war = yes
+		}
+		picture = generic_research_bonus
+		removal_cost = -1
+		modifier = {
+			research_speed_factor = 0.1
+			war_support_factor = -0.1
+			#custom_effect_tooltip = amazon_will_remove_at_war
+		}
+	}
+	
+	amazon_realising_ambitions = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = fascism
+		}
+		picture = man_five_year_plan_industry
+		removal_cost = -1
+		modifier = {
+			production_speed_buildings_factor = 0.1
+			industrial_capacity_factory = 0.1
+		}
+	}
+	amazon_fash_conscription = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = fascism
+		}
+		picture = generic_manpower_bonus
+		removal_cost = -1
+		modifier = {
+			conscription = 0.025
+			war_support_factor = 0.05
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.05
+		}
+	}
+	amazon_imperialism = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = fascism
+		}
+		picture = generic_manpower_bonus
+		removal_cost = -1
+		modifier = {
+			stability_factor = -0.05
+			non_core_manpower = 0.025
+			resistance_damage_to_garrison = -0.1
+			compliance_gain = 0.05			
+		}
+	}
+	
+	
+	
+	
+	amazon_two_year_plan = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = communism
+		}
+		picture = man_five_year_plan_industry
+		removal_cost = -1
+		modifier = {
+			conscription_factor = -0.05
+			consumer_goods_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			industrial_capacity_factory = 0.15
+		}
+	}
+	amazon_improved_conditions = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = communism
+		}
+		picture = eng_spirit_of_the_industrial_revolution
+		removal_cost = -1
+		modifier = {
+			conscription_factor = -0.05 
+			consumer_goods_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			stability_weekly = 0.005
+		}
+	}
+	amazon_socialist_miracle = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = communism
+		}
+		picture = hol_haven_of_tolerance
+		removal_cost = -1
+		modifier = {
+			consumer_goods_factor = -0.1
+			production_speed_buildings_factor = 0.15
+			political_power_gain = 0.1
+			communism_drift = 0.01
+		}
+	}
+	amazon_export_revolution = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			has_government = communism
+		}
+		picture = generic_communist_army
+		removal_cost = -1
+		modifier = {
+			subversive_activites_upkeep = -0.25
+			justify_war_goal_time = 0.1
+		}
+	}
+	
+	
+	amazon_expanding_country = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			NOT = {
+				has_government = democratic
+			}
+		}
+		picture = eng_imperial_conscription
+		removal_cost = -1
+		modifier = {
+			army_attack_factor = 0.05
+			justify_war_goal_time = -0.25
+			ai_focus_aggressive_factor = 0.15
+		}
+	}
+	amazon_expanding_markets = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+		picture = fra_market_dynamism
+		removal_cost = -1
+		modifier = {
+			subjects_autonomy_gain = -0.25
+			political_power_factor = 0.05
+			opinion_gain_monthly_same_ideology_factor = 0.5
+		}
+	}
+	amazon_decryption_focus = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = generic_spy_intel
+		removal_cost = -1
+		modifier = {
+			operative_slot = 1
+			intel_network_gain_factor = 0.5
+		}
+	}
+	amazon_build_convoys = {
+		allowed = {
+			always = no
+		}
+		allowed_civil_war = {
+			always = yes
+		}
+		picture = liberty_ships_focus
+		removal_cost = -1
+		equipment_bonus = {
+			convoy = {
+				instant = yes
+				build_cost_ic = -0.25
+			}
+		}
+		modifier = {
+			industrial_capacity_dockyard = 0.05
+		}
+	}
+}
+ 
+political_advisor = {
+	
+	RAM_captain_of_industry = {
+		picture = generic_political_advisor_asia_1
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		traits = { captain_of_industry }
+	}
+	RAM_war_industrialist = {
+		picture = generic_political_advisor_europe_6
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		traits = { war_industrialist }
+	}
+	RAM_smooth_talking_charmer = {
+		picture = generic_political_advisor_europe_3
+		allowed = {
+			original_tag = RAM
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		traits = { smooth_talking_charmer }
+		modifier = { opinion_gain_monthly_same_ideology_factor = 0.5  }
+		#hidden_effect = {
+		on_add = {
+			if = {
+				limit = { NOT = { has_country_flag = ram_improved_relations } }
+				set_country_flag = ram_improved_relations
+					reverse_add_opinion_modifier = {
+						target = GER
+						modifier = small_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = SOV
+						modifier = small_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = JAP
+						modifier = small_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = ITA
+						modifier = small_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = ENG
+						modifier = small_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = FRA
+						modifier = small_increase
+					}
+					reverse_add_opinion_modifier = {
+						target = USA
+						modifier = small_increase
+					}
+					if = {
+						limit = {
+							country_exists = RZP
+						}	
+						reverse_add_opinion_modifier = {
+							target = RZP
+							modifier = small_increase
+						}
+					}
+					else = {
+						reverse_add_opinion_modifier = {
+							target = POL
+							modifier = small_increase
+						}
+					}
+			}
+		}
+		#}
+	}
+	RAM_popular_figurehead = {
+		picture = generic_political_advisor_europe_1
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = neutrality
+		}
+		available = {
+			has_government = neutrality
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		traits = { popular_figurehead }
+		modifier = { political_power_factor = 0.05 }
+	}
+	RAM_silent_workhorse = {
+		picture = generic_political_advisor_europe_4
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = fascism
+		}
+		available = {
+			has_government = fascism
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		traits = { silent_workhorse }
+		modifier = { non_core_manpower = 0.005 }
+	}
+	RAM_national_integralist = {
+		picture = generic_political_advisor_europe_5
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = communism
+		}
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		traits = { national_integralist }
+	}
+	RAM_editor = {
+		picture = generic_political_advisor_female_south_america
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = democratic
+		}
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 0.25
+				NOT = {has_completed_focus = ram_democracy }
+			}
+		}
+		traits = { editor }
+		modifier = { political_power_gain = 0.05 }
+	}
+	
+	RAM_financial_expert = {
+		picture = generic_political_advisor_south_america_2
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		available = {
+			#NOT = { has_government = neutrality }
+			has_government = communism
+		}
+		traits = { financial_expert }
+	}
+	RAM_economist = {
+		picture = generic_political_advisor_europe_2
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		available = {
+			#NOT = { has_government = communism }
+			has_government = neutrality
+		}
+		traits = { economist }
+	}
+	RAM_reluctant_interventionist = {
+		picture = generic_political_advisor_asia_2
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		available = {
+			#NOT = { has_government = fascism }
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 0.25
+				NOT = {has_completed_focus = ram_democracy }
+			}
+		}
+		traits = { backroom_backstabber }
+		#traits = {reluctant_interventionist}
+		modifier = {
+			lend_lease_tension = -0.05
+			request_lease_tension = -0.05
+		}
+	}
+	RAM_prince_of_terror = {
+		picture = generic_political_advisor_asia_3
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		available = {
+			#NOT = { has_government = democratic }
+			has_government = fascism
+		}
+		traits = { prince_of_terror }
+	}
+	
+	RAM_democratic_reformer = {
+		picture = generic_political_advisor_female_europe
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = democratic
+		}
+		available = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				NOT = { has_autonomy_state = autonomy_supervised_state }
+			}
+		}
+		do_effect = {
+			NOT = {
+				has_government = democratic
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 4
+				has_government = democratic
+				democratic < 0.5
+			}
+		}
+		traits = { democratic_reformer }
+	}
+	RAM_commie_reformer = {
+		picture = generic_army_europe_6
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = communism
+		}
+		available = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				NOT = { has_autonomy_state = autonomy_supervised_state }
+			}
+		}
+		do_effect = {
+			NOT = {
+				has_government = communism
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 4
+				has_government = communism
+				communism < 0.5
+			}
+		}
+		traits = { communist_revolutionary }
+	}
+	RAM_fascist_reformer = {
+		picture = generic_army_europe_2
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           has_government = fascism
+		}
+		available = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				NOT = { has_autonomy_state = autonomy_supervised_state }
+			}
+		}
+		do_effect = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 4
+				has_government = fascism
+				fascism < 0.5
+			}
+		}
+		traits = { fascist_demagogue }
+	}
+	
+}
+
+
+
+army_chief = {
+	
+	amazon_chief_defensive = {
+		picture = generic_army_europe_5
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_chief_defensive }
+		}
+		traits = { army_chief_defensive_3 }
+		modifier = { experience_gain_army_factor = -0.05 }
+	}
+	#amazon_chief_offensive = {
+	#	picture = generic_army_europe_6
+	#	allowed = {
+	#		original_tag = RAM
+	#	}
+	#	available = {
+	#		
+	#	}
+	#	traits = { army_chief_offensive_2 }
+	#}
+	amazon_chief_reformist = {
+		picture = generic_army_europe_3
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_chief_reformist }
+		}
+		traits = { army_chief_reform_2 }
+	}
+	amazon_chief_maneuver = {
+		picture = generic_army_europe_2
+		allowed = {
+			original_tag = RAM
+		}
+		traits = { army_chief_maneuver_2 }
+	}
+}
+air_chief = {
+	amazon_chief_air_reformist = {
+		picture = generic_air_asia_1
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_chief_air_reformist }
+		}
+		traits = { air_chief_reform_3 }
+	}
+	amazon_chief_night_ops = {
+		picture = generic_air_europe_2
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_chief_night_ops }
+		}
+		traits = { air_chief_night_operations_3 }
+	}
+	#amazon_chief_ground_support = {
+	#	picture = generic_air_south_america_1
+	#	allowed = {
+	#		original_tag = RAM
+	#	}
+	#	traits = { air_chief_ground_support_2 }
+	#}
+	amazon_chief_all_weather = {
+		picture = generic_air_europe_3
+		allowed = {
+			original_tag = RAM
+		}
+		traits = { air_chief_all_weather_3 }
+	}
+}
+navy_chief = {
+	amazon_chief_naval_aviation = {
+		picture = generic_navy_europe_1
+		allowed = {
+			original_tag = RAM
+		}
+		traits = { navy_chief_naval_aviation_2 }
+	}
+	amazon_chief_decisive_battle = {
+		picture = generic_navy_asia_2
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_recover_from_purge
+		}
+		traits = { navy_chief_decisive_battle_3 }
+	}
+	amazon_chief_raiding = {
+		picture = generic_navy_europe_2
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_chief_raiding }
+		}
+		traits = { navy_chief_commerce_raiding_1 }
+	}
+	amazon_chief_naval_maneuver = {
+		picture = generic_navy_female_europe
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_chief_naval_maneuver }
+		}
+		traits = { navy_chief_maneuver_3 }
+	}
+}
+high_command = {
+	
+	amazon_polish_army_agent = {
+		ledger = army
+		picture = generic_army_europe_3
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_pol_army
+		}
+		traits = { army_regrouping_3 }
+		modifier = { max_planning = 0.25 }
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	amazon_soviet_army_agent = {
+		ledger = army
+		picture = alexander_novikov
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_sov_army
+		}
+		traits = { army_logistics_3 }
+		modifier = { training_time_army_factor = -0.1 }
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	amazon_infantry_expert = {
+		ledger = army
+		picture = generic_army_europe_1
+		allowed = {
+			original_tag = RAM
+		}
+		traits = { army_infantry_1 }
+	}
+	amazon_tank_expert = {
+		ledger = army
+		picture = soviet_vsevolod_merkulov
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_tank_expert }
+		}
+		traits = { army_armored_2 }
+	}
+	amazon_commando_expert = {
+		ledger = army
+		picture = generic_army_asia_4
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_recover_from_purge
+		}
+		traits = { army_commando_2 }
+	}
+	#amazon_concealment_expert = {
+	#	ledger = army
+	#	picture = generic_army_asia_3
+	#	allowed = {
+	#		original_tag = RAM
+	#	}
+	#	available = {
+	#		#purgeable
+	#	}
+	#	traits = { army_concealment_2 }
+	#}
+	amazon_ace_expert = {
+		ledger = air
+		picture = generic_air_asia_2
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_ace_expert }
+		}
+		traits = { air_air_combat_training_2 }
+	}
+	amazon_naval_strike_expert = {
+		ledger = air
+		picture = generic_air_europe_1
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_naval_strike_expert }
+		}
+		traits = { air_naval_strike_2 }
+	}
+	amazon_interception_expert = {
+		ledger = air
+		picture = generic_air_south_america_2
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_recover_from_purge
+		}
+		traits = { air_bomber_interception_2 }
+	}
+	amazon_airborne_expert = {
+		ledger = air
+		picture = generic_air_asia_3
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_airborne_expert }
+		}
+		traits = { air_airborne_1 }
+	}
+	#amazon_anti_subs_expert = {
+	#	ledger = navy
+	#	picture = louis_kahn
+	#	allowed = {
+	#		original_tag = RAM
+	#	}
+	#	available = {
+	#		#purgeable
+	#	}
+	#	traits = { navy_anti_submarine_2 }
+	#}
+	amazon_naval_air_def_expert = {
+		ledger = navy
+		picture = robert_odic
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_recover_from_purge
+		}
+		traits = { navy_naval_air_defense_3 }
+	}
+	amazon_logistics_expert = {
+		ledger = navy
+		picture = renato_sandalli
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_logistics_expert }
+		}
+		traits = { navy_fleet_logistics_3 }
+	}
+	amazon_marines_expert = {
+		ledger = navy
+		picture = generic_navy_europe_3
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			NOT = { has_country_flag = purged_amazon_marines_expert }
+		}
+		traits = { navy_amphibious_assault_3 }
+	}
+	#amazon_screen_expert = {
+	#	ledger = navy
+	#	picture = martial_valin
+	#	allowed = {
+	#		original_tag = RAM
+	#	}
+	#	available = {
+	#		#purgeable
+	#	}
+	#	traits = { navy_screen_3 }
+	#}
+}
+
+tank_manufacturer = {
+	
+	designer = yes
+	RAM_invisible_tank_designer = {#I don't want the generic ones to show
+		picture = generic_tank_manufacturer_1
+		visible = {always = no}
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			armor = 0.15
+		}
+		traits = { tank_manufacturer }
+	}
+	RAM_basic_tank_designer = {
+		picture = chrysler
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			armor = 0.15
+		}
+		traits = { medium_tank_manufacturer }
+	}
+	RAM_light_tank_designer = {
+		picture = generic_tank_manufacturer_2 #PZInż nie działa, kurwa
+		
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_pol_tanks
+		}
+		research_bonus = {
+			armor = 0.15
+		}
+		traits = { fast_tank_manufacturer }
+	}
+	RAM_anti_tank_designer = {
+		picture = renault
+		cost = 200
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_fra_tanks
+		}
+		research_bonus = {
+			armor = 0.15
+		}
+		traits = { heavy_tank_manufacturer }
+		equipment_bonus = {
+			light_tank_destroyer_equipment = {
+				build_cost_ic = -0.05
+				ap_attack = 0.05
+				hard_attack = 0.15
+			}
+			medium_tank_destroyer_equipment = {
+				build_cost_ic = -0.05
+				ap_attack = 0.05
+				hard_attack = 0.15
+			}
+			heavy_tank_destroyer_equipment = {
+				build_cost_ic = -0.05
+				ap_attack = 0.05
+				hard_attack = 0.15
+			}
+		}
+	}
+}
+
+naval_manufacturer = {
+	designer = yes
+	RAM_invisible_navy_designer = {#I don't want the generic ones to show
+		picture = generic_naval_manufacturer_1
+		visible = {always = no}
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			naval_equipment = 0.15
+		}
+		traits = { naval_manufacturer }
+	}
+	RAM_basic_navy_designer = {
+		picture = newport_news_shipbuilding
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			naval_equipment = 0.15
+		}
+		traits = { convoy_escort_naval_manufacturer }
+	}
+	RAM_atlantic_navy_designer = {
+		picture = brooklyn_naval_yard
+		
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_eng_navy
+		}
+		research_bonus = {
+			naval_equipment = 0.15
+		}
+		traits = { atlantic_fleet_naval_manufacturer }
+	}
+	RAM_raiding_navy_designer = {
+		picture = crda
+		
+		allowed = {
+			OR = {
+				original_tag = RAM
+				original_tag = ITA
+			}
+		}
+		available = {
+			OR = {
+				has_completed_focus = ram_ita_navy
+				original_tag = ITA
+			}
+		}
+		research_bonus = {
+			naval_equipment = 0.15
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				original_tag = ITA
+			}
+		}
+		traits = { raiding_fleet_naval_manufacturer }
+	}
+}
+
+aircraft_manufacturer = {
+	designer = yes
+	RAM_invisible_1_air_designer = {#I don't want the generic ones to show
+		picture = generic_air_manufacturer_3
+		visible = { always = no }
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { naval_aircraft_manufacturer }
+	}
+	RAM_invisible_2_air_designer = {#I don't want the generic ones to show
+		picture = generic_air_manufacturer_2
+		visible = { always = no }
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { light_aircraft_manufacturer }
+	}
+	RAM_cas_air_designer = {
+		picture = douglas_aircraft_company
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { CAS_manufacturer }
+	}
+	RAM_medium_air_designer = {
+		picture = lockheed
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { medium_aircraft_manufacturer }
+	}
+	RAM_heavy_air_designer = {
+		picture = boeing
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { heavy_aircraft_manufacturer }
+	}
+	RAM_light_air_designer = {
+		picture = supermarine
+		
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_eng_airforce
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { light_aircraft_manufacturer }
+	}
+	RAM_naval_air_designer = {
+		picture = mitsubishi
+		
+		allowed = {
+			original_tag = RAM
+		}
+		available = {
+			has_completed_focus = ram_jap_airforce
+		}
+		research_bonus = {
+			air_equipment = 0.15
+		}
+		traits = { naval_aircraft_manufacturer }
+	}
+}
+
+industrial_concern = {
+	designer = yes
+	RAM_industrial_concern = {
+		picture = aioc
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			industry = 0.15
+		}
+		traits = { industrial_concern }
+	}
+	RAM_electronics_concern = {
+		picture = general_electric
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			electronics = 0.15
+		}
+		traits = { electronics_concern }
+	}
+}
+
+materiel_manufacturer = {
+	designer = yes
+	RAM_infantry_eq_designer = {
+		picture = springfield_armory
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			infantry_weapons = 0.15
+		}
+		traits = { infantry_equipment_manufacturer }
+	}
+	RAM_artillery_designer = {
+		picture = rock_island_arsenal
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			artillery = 0.15
+		}
+		traits = { artillery_manufacturer }
+	}
+	RAM_motorized_designer = {
+		picture = ford_motor_company
+		
+		allowed = {
+			original_tag = RAM
+		}
+		research_bonus = {
+			infantry_weapons = 0.15
+		}
+		traits = { motorized_equipment_manufacturer }
+	}
+}
+
+theorist = {
+	RAM_army_theorist = {
+		picture = ettore_muti
+		ledger = army
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		research_bonus = {
+			land_doctrine = 0.10
+		}
+		traits = { military_theorist }
+	}
+	RAM_air_theorist = {
+		picture = jimmy_doolittle
+		ledger = air
+		allowed = {
+			original_tag = RAM
+		}
+		allowed_civil_war = {
+           always = yes
+		}
+		research_bonus = {
+			air_doctrine = 0.10
+		}
+		traits = { air_warfare_theorist }
+	}
+}
 }
