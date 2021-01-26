@@ -1,0 +1,1882 @@
+add_namespace = amazon
+
+country_event = { #TAG - build factories
+	id = amazon.1
+	title = amazon.1.t
+	desc = amazon.1.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = amazon.1.a
+		add_ideas = amazon_trade_contract
+		FROM = { country_event = { id = amazon.2 days = 3} }
+		add_tech_bonus = {
+			name = amazon_factories
+			bonus = 0.50
+			uses = 1
+			category = industry
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					FROM = {
+						any_allied_country = {
+							has_war_with = PREV
+						}
+					}
+					THIS = {
+						has_opinion = {
+							target = FROM
+							value < 0
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					THIS = {
+						has_opinion = {
+							target = FROM
+							value > 9
+						}
+					}
+					THIS = {
+						is_in_faction_with = FROM
+					}
+				}
+				
+			}
+		}
+	}
+	option = { # Demand
+		name = amazon.1.b
+		FROM = { country_event = { id = amazon.4 days = 3} }
+		custom_effect_tooltip = amazon_higher_reward
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				FROM = {is_ai = no}
+			}
+		}
+	}
+	option = { # Decline
+		name = amazon.1.c
+		FROM = { country_event = { id = amazon.3 days = 3} }
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -19
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -39
+					}
+				}
+			}
+		}
+	}
+}
+country_event = { #TAG accepted
+	id = amazon.2
+	title = amazon.2.t
+	desc = amazon.2.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.2.a
+		add_offsite_building = { type = arms_factory level = 1}
+		add_offsite_building = { type = industrial_complex level = 1}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = aided_industry
+		}
+	}
+}
+country_event = { #TAG declined
+	id = amazon.3
+	title = amazon.3.t
+	desc = amazon.3.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.3.a #bruh
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_decrease
+		}
+	}
+}
+country_event = { #TAG demanded
+	id = amazon.4
+	title = amazon.4.t
+	desc = amazon.4.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.4.a
+		add_timed_idea = { idea = amazon_reparations days = 50}
+		add_offsite_building = { type = arms_factory level = 1}
+		add_offsite_building = { type = industrial_complex level = 1}
+		hidden_effect = { 
+			FROM = { country_event = { id = amazon.5 days = 3} }
+			add_opinion_modifier = {
+				target = FROM
+				modifier = aided_industry
+			}
+		}
+	}
+	option = {
+		ai_chance = { factor = 0 }
+		name = amazon.4.b
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_decrease
+		}
+	}
+}
+country_event = { #TAG is satisfied
+	id = amazon.5
+	title = amazon.5.t
+	desc = amazon.5.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.5.a
+		add_timed_idea = { idea = amazon_reparations_receiver days = 100}
+		add_ideas = amazon_trade_contract
+		add_tech_bonus = {
+			name = amazon_factories
+			bonus = 0.50
+			uses = 1
+			category = industry
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_increase
+		}
+	}
+}
+
+country_event = { #TAG - buy air tech
+	id = amazon.6
+	title = amazon.6.t
+	desc = amazon.6.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = { #Accept - for industry tech
+		name = amazon.6.a
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = industry
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.8 days = 3}}
+	}
+	option = { #Accept - for electronics tech
+		name = amazon.6.b
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = electronics
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.8 days = 3}}
+	}
+	option = { #Accept - for doctrines
+		name = amazon.6.c
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.25
+			uses = 2
+			category = air_doctrine 
+			category = land_doctrine 
+			category = naval_doctrine
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.8 days = 3}}
+	}
+	option = { #Decline
+		name = amazon.6.e
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -39
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -9
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { is_ai = no }
+			}
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_decrease
+		}
+		FROM = { country_event = {id = amazon.7 days = 3}}
+	}
+}
+country_event = { #TAG declined
+	id = amazon.7
+	title = amazon.7.t
+	desc = amazon.7.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.7.a #bruh
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_decrease
+		}
+		add_political_power = -50
+	}
+}
+country_event = { #TAG accepted
+	id = amazon.8
+	title = amazon.8.t
+	desc = amazon.8.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.8.a 
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_increase
+		}
+		if = {
+			limit = {
+				FROM = { original_tag = JAP }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = naval_air 
+				category = naval_bomber
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = ENG }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = light_fighter
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = GER }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = cas_bomber
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = USA }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = cat_strategic_bomber 
+				category = tactical_bomber
+			}
+		}
+	}
+	option = {
+		name = amazon.8.b 
+		trigger = {
+			AND = {
+				NOT = { FROM = { original_tag = USA } }
+				NOT = { FROM = { original_tag = ENG } }
+				NOT = { FROM = { original_tag = GER } }
+				NOT = { FROM = { original_tag = JAP } }
+			}
+		}
+		#if you somehow reached this, congrats, this shouldn't have happened.
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.25
+				uses = 2
+				category = light_air 
+				category = medium_air 
+				category = heavy_air
+		}
+	}
+}
+
+country_event = { #TAG - buy tank tech
+	id = amazon.9
+	title = amazon.9.t
+	desc = amazon.9.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = { #Accept - for industry tech
+		name = amazon.9.a
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = industry
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.11 days = 3}}
+	}
+	option = { #Accept - for electronics tech
+		name = amazon.9.b
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = electronics
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.11 days = 3}}
+	}
+	option = { #Accept - for doctrines
+		name = amazon.9.c
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.25
+			uses = 2
+			category = air_doctrine
+			category = land_doctrine 
+			category = naval_doctrine
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.11 days = 3}}
+	}
+	option = { #Decline
+		name = amazon.9.e
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -39
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -9
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { is_ai = no }
+			}
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_decrease
+		}
+		FROM = { country_event = {id = amazon.10 days = 3}}
+	}
+}
+country_event = { #TAG declined
+	id = amazon.10
+	title = amazon.10.t
+	desc = amazon.10.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.10.a #bruh
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_decrease
+		}
+		add_political_power = -50
+	}
+}
+country_event = { #TAG accepted
+	id = amazon.11
+	title = amazon.11.t
+	desc = amazon.11.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.11.a 
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_increase
+		}
+		if = {
+			limit = {
+				FROM = { original_tag = FRA }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.75
+				uses = 4
+				technology = improved_light_td 
+				technology = advanced_light_td 
+				technology = basic_medium_td 
+				technology = improved_medium_td
+				technology = advanced_medium_td
+				technology = basic_heavy_td
+				technology = improved_heavy_td
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = GER }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = cat_medium_armor
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = SOV }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = cat_heavy_armor
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					FROM = { original_tag = POL }
+					FROM = { original_tag = RZP }
+				}
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = cat_light_armor
+			}
+		}
+	}
+	option = {
+		name = amazon.11.b 
+		trigger = {
+			AND = {
+				NOT = { FROM = { original_tag = GER } }
+				NOT = { FROM = { original_tag = POL } }
+				NOT = { FROM = { original_tag = RZP } }
+				NOT = { FROM = { original_tag = FRA } }
+				NOT = { FROM = { original_tag = SOV } }
+			}
+		}
+		#if you somehow reached this, congrats, this shouldn't have happened.
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.25
+				uses = 2
+				category = armor
+		}
+	}
+}
+
+
+country_event = { #TAG - buy naval tech
+	id = amazon.12
+	title = amazon.12.t
+	desc = amazon.12.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = { #Accept - for industry tech
+		name = amazon.12.a
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = industry
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.14 days = 3}}
+	}
+	option = { #Accept - for electronics tech
+		name = amazon.12.b
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = electronics
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.14 days = 3}}
+	}
+	option = { #Accept - for doctrines
+		name = amazon.12.c
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.25
+			uses = 2
+			category = air_doctrine 
+			category = land_doctrine 
+			category = naval_doctrine
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.14 days = 3}}
+	}
+	option = { #Decline
+		name = amazon.12.e
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -39
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -9
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { is_ai = no }
+			}
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_decrease
+		}
+		FROM = { country_event = {id = amazon.13 days = 3}}
+	}
+}
+country_event = { #TAG declined
+	id = amazon.13
+	title = amazon.13.t
+	desc = amazon.13.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.13.a #bruh
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_decrease
+		}
+		add_political_power = -50
+	}
+}
+country_event = { #TAG accepted
+	id = amazon.14
+	title = amazon.14.t
+	desc = amazon.14.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.14.a 
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_increase
+		}
+		if = {
+			limit = {
+				FROM = { original_tag = ITA }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = dd_tech 
+				category = cl_tech
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = JAP }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = shbb_tech 
+				category = bb_tech
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = ENG }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = bc_tech 
+				category = ca_tech
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = USA }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+	option = {
+		name = amazon.14.b 
+		trigger = {
+			AND = {
+				NOT = { FROM = { original_tag = ITA } }
+				NOT = { FROM = { original_tag = JAP } }
+				NOT = { FROM = { original_tag = USA } }
+				NOT = { FROM = { original_tag = ENG } }
+			}
+		}
+		#if you somehow reached this, congrats, this shouldn't have happened.
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.25
+				uses = 2
+				category = naval_equipment
+		}
+	}
+}
+
+
+country_event = { #TAG - buy army tech
+	id = amazon.15
+	title = amazon.15.t
+	desc = amazon.15.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = { #Accept - for industry tech
+		name = amazon.15.a
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = industry
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.17 days = 3}}
+	}
+	option = { #Accept - for electronics tech
+		name = amazon.15.b
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.50
+			uses = 2
+			category = electronics
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.17 days = 3}}
+	}
+	option = { #Accept - for doctrines
+		name = amazon.15.c
+		add_tech_bonus = {
+			name = amazon_tech_exchange
+			bonus = 0.25
+			uses = 2
+			category = air_doctrine 
+			category = land_doctrine 
+			category = naval_doctrine
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = { country_event = {id = amazon.17 days = 3}}
+	}
+	option = { #Decline
+		name = amazon.15.e
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 10
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -39
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -9
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { is_ai = no }
+			}
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_decrease
+		}
+		FROM = { country_event = {id = amazon.16 days = 3}}
+	}
+}
+country_event = { #TAG declined
+	id = amazon.16
+	title = amazon.16.t
+	desc = amazon.16.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.16.a #bruh
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_decrease
+		}
+		add_political_power = -50
+	}
+}
+country_event = { #TAG accepted
+	id = amazon.17
+	title = amazon.17.t
+	desc = amazon.17.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.17.a 
+		add_opinion_modifier = {
+			target = FROM
+			modifier = large_increase
+		}
+		if = {
+			limit = {
+				OR = {
+					FROM = { original_tag = POL }
+					FROM = { original_tag = RZP }
+				}
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = SOV }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = FRA }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				technology = artillery1
+				technology = artillery2
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { original_tag = GER }
+			}
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.50
+				uses = 2
+				technology = interwar_antiair
+				technology = antiair2 
+				technology = antiair1
+				technology = interwar_antitank 
+				technology = antitank1 
+				technology = antitank2
+			}
+		}
+	}
+	option = {
+		name = amazon.17.b 
+		trigger = {
+			AND = {
+				NOT = { FROM = { original_tag = POL } }
+				NOT = { FROM = { original_tag = RZP } }
+				NOT = { FROM = { original_tag = GER } }
+				NOT = { FROM = { original_tag = FRA } }
+				NOT = { FROM = { original_tag = SOV } }
+			}
+		}
+		#if you somehow reached this, congrats, this shouldn't have happened.
+			add_tech_bonus = {
+				name = amazon_tech_exchange
+				bonus = 0.25
+				uses = 2
+				category = infantry_tech
+		}
+	}
+}
+country_event = { #succesful two year plan
+	id = amazon.18
+	title = amazon.18.t
+	desc = amazon.18.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.18.a 
+		add_stability = 0.15
+	}
+}
+country_event = { #guarantee from USA
+	id = amazon.19
+	title = amazon.19.t
+	desc = amazon.19.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {#accept
+		name = amazon.19.a 
+		add_political_power = 50
+		give_guarantee = FROM
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {#decline
+		name = amazon.19.b 
+		add_political_power = -25
+		FROM = {
+			country_event = {id = amazon.20 days = 5}
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 2
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -9
+					}
+				}
+			}
+			modifier = {
+				factor = 3
+				THIS = {
+					has_opinion = {
+						target = FROM
+						value < -29
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { is_ai = no }
+			}
+		}
+	}
+}
+country_event = { #USA declined
+	id = amazon.20
+	title = amazon.20.t
+	desc = amazon.20.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	option = {
+		name = amazon.20.a 
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_decrease
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = medium_decrease
+		}
+	}
+}
+
+#THE PURGE BEGINS
+
+country_event = { #Start
+	id = amazon.21
+	title = amazon.21.t
+	desc = amazon.21.d
+	#picture = GFX_
+	timeout_days = 4
+	is_triggered_only = yes
+	option = {
+		name = amazon.21.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+					is_historical_focus_on = no
+				}
+				#I have literally no idea wtf I am doing
+				randomize_variable = {
+					var = amazon_ai_ideology 	#1 fas
+					distribution = uniform		#2 com
+					min = 0						#3 dem
+					max = 4						#4 neu
+				}								#0 shouldn't occur
+				round_variable = amazon_ai_ideology
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {id = amazon.22 days = 11}
+		}
+	}
+}
+
+country_event = {#Purging Army Chiefs; army in the bad shape
+	id = amazon.22
+	title = amazon.22.t
+	desc = amazon.22.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {#Purge Loyalist
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology > 1}#also purged by commies
+			}
+		}
+		name = amazon.22.a
+		custom_effect_tooltip = remove_chief_of_army
+		show_ideas_tooltip = amazon_chief_defensive
+		set_country_flag = purged_amazon_chief_defensive
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.02
+		}
+		hidden_effect = {
+			remove_ideas = amazon_chief_defensive
+			set_variable = {
+				var = ram_purged_loyalists
+				value = 1
+			}
+			set_variable = {
+				var = ram_purged_reformist
+				value = 0
+			}
+		}
+	}
+	option = {#Purge Reformist
+		ai_chance = {
+			factor = 10
+			modifier = {#AI should go democratic on historical
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 1}
+			}
+		}
+		name = amazon.22.b
+		custom_effect_tooltip = remove_chief_of_army
+		show_ideas_tooltip = amazon_chief_reformist
+		set_country_flag = purged_amazon_chief_reformist
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.02
+		}
+		hidden_effect = {
+			remove_ideas = amazon_chief_reformist
+			set_variable = {
+				var = ram_purged_reformist
+				value = 1
+			}
+			set_variable = {
+				var = ram_purged_loyalists
+				value = 0
+			}
+		}
+	}
+	option = {#Don't Purge
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { amazon_ai_ideology = 4}
+			}
+		}
+		name = amazon.22.c
+		add_political_power = -50
+		custom_effect_tooltip = amazon_not_purging_may_cause_problems
+		hidden_effect = {
+			set_variable = {
+				var = ram_purged_reformist
+				value = 0
+			}
+			set_variable = {
+				var = ram_purged_loyalists
+				value = 0
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {id = amazon.23 days = 19}
+		}
+	}
+}
+
+country_event = {#Purging Navy Chiefs; wild accusations
+	id = amazon.23
+	title = amazon.23.t
+	desc = amazon.23.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	
+	option = {#Purge Loyalist; put some grape accusations, idc
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology > 1}#also purged by commies
+			}
+		}
+		name = amazon.23.a
+		custom_effect_tooltip = remove_chief_of_navy 
+		show_ideas_tooltip = amazon_chief_raiding
+		set_country_flag = purged_amazon_chief_raiding
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.02
+		}
+		hidden_effect = {
+			remove_ideas = amazon_chief_raiding
+			add_to_variable = {
+				var = ram_purged_loyalists
+				value = 1
+			}
+		}
+	}
+	option = {#Purge Reformist; this should save her
+		ai_chance = {
+			factor = 10
+			modifier = {#AI should go democratic on historical
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 1}
+			}
+		}
+		name = amazon.23.b
+		custom_effect_tooltip = remove_chief_of_navy 
+		show_ideas_tooltip = amazon_chief_naval_maneuver
+		set_country_flag = purged_amazon_chief_naval_maneuver
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.02
+		}
+		hidden_effect = {
+			remove_ideas = amazon_chief_naval_maneuver
+			add_to_variable = {
+				var = ram_purged_reformist
+				value = 1
+			}
+		}
+	}
+	option = {#Don't Purge; who cares about navy?
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { amazon_ai_ideology = 4}
+			}
+		}
+		name = amazon.23.c
+		add_political_power = -25
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.02
+		}
+		custom_effect_tooltip = amazon_not_purging_may_cause_problems
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {id = amazon.24 days = 19}
+		}
+	}
+}
+
+country_event = {#Purging Air Chiefs; foreign agent
+	id = amazon.24
+	title = amazon.24.t
+	desc = amazon.24.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {#Purge Loyalist; get him outta here!
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology > 2}#not by commies
+			}
+		}
+		name = amazon.24.a
+		custom_effect_tooltip = remove_chief_of_airforce 
+		show_ideas_tooltip = amazon_chief_air_reformist
+		set_country_flag = purged_amazon_chief_air_reformist
+		hidden_effect = {
+			reverse_add_opinion_modifier = {
+				target = JAP
+				modifier = withdrew_advisors
+			}
+		}
+		hidden_effect = {
+			remove_ideas = amazon_chief_air_reformist
+			add_to_variable = {
+				var = ram_purged_loyalists
+				value = 1
+			}
+		}
+		air_experience = -15
+	}
+	option = {#Purge Reformist; where's any proof?
+		ai_chance = {
+			factor = 10
+			modifier = {#AI should go democratic on historical
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 1}
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 2}
+			}
+		}
+		name = amazon.24.b
+		custom_effect_tooltip = remove_chief_of_airforce 
+		show_ideas_tooltip = amazon_chief_night_ops
+		set_country_flag = purged_amazon_chief_night_ops
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.02
+		}
+		hidden_effect = {
+			remove_ideas = amazon_chief_night_ops
+			add_to_variable = {
+				var = ram_purged_reformist
+				value = 1
+			}
+		}
+	}
+	option = {#Don't Purge; who cares?
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { amazon_ai_ideology = 4}
+			}
+		}
+		name = amazon.24.c
+		add_political_power = -25
+		custom_effect_tooltip = amazon_not_purging_may_cause_problems
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {id = amazon.25 days = 19}
+		}
+	}
+}
+country_event = {#Purging high command; Soviet or Japanese
+	id = amazon.25
+	title = amazon.25.t
+	desc = amazon.25.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {#Purge Loyalist; japanese are cool, f the soviets
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 3}#not by commies nor neutrals
+			}
+		}
+		name = amazon.25.a
+		custom_effect_tooltip = remove_chief_of_army 
+		show_ideas_tooltip = amazon_tank_expert
+		set_country_flag = purged_amazon_tank_expert
+		hidden_effect = {
+			reverse_add_opinion_modifier = {
+				target = SOV
+				modifier = withdrew_advisors
+			}
+		}
+		hidden_effect = {
+			remove_ideas = amazon_tank_expert
+			add_to_variable = {
+				var = ram_purged_loyalists
+				value = 1
+			}
+		}
+	}
+	option = {#Purge Reformist; soviets are cool, f the japanese
+		ai_chance = {
+			factor = 10
+			modifier = {#AI should go democratic on historical
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 1}
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 2}
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 4}
+			}
+		}
+		name = amazon.25.b
+		custom_effect_tooltip = remove_chief_of_airforce 
+		show_ideas_tooltip = amazon_ace_expert
+		set_country_flag = purged_amazon_ace_expert
+		hidden_effect = {
+			remove_ideas = amazon_ace_expert
+			add_to_variable = {
+				var = ram_purged_reformist
+				value = 1
+			}
+		}
+	}
+	option = {#Don't Purge; who cares?
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				check_variable = { amazon_ai_ideology = 4}
+			}
+		}
+		name = amazon.25.c
+		add_political_power = -75
+		add_stability = -0.05
+		custom_effect_tooltip = amazon_not_purging_may_cause_problems
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {id = amazon.26 days = 19}
+		}
+	}
+}
+country_event = {#Purging high command; Air or Navy?
+	id = amazon.26
+	title = amazon.26.t
+	desc = amazon.26.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {#Purge Loyalist; Navy
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 1}
+			}
+		}
+		name = amazon.26.a
+		custom_effect_tooltip = remove_chief_of_navy 
+		show_ideas_tooltip = amazon_logistics_expert
+		set_country_flag = purged_amazon_logistics_expert
+		custom_effect_tooltip = remove_chief_of_navy 
+		show_ideas_tooltip = amazon_marines_expert
+		set_country_flag = purged_amazon_marines_expert
+		navy_experience = -25
+		hidden_effect = {
+			remove_ideas = amazon_logistics_expert
+			remove_ideas = amazon_marines_expert
+			add_to_variable = {
+				var = ram_purged_loyalists
+				value = 1
+			}
+		}
+	}
+	option = {#Purge Reformist; Air
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 4}
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 3}
+			}
+		}
+		name = amazon.26.b
+		custom_effect_tooltip = remove_chief_of_airforce 
+		show_ideas_tooltip = amazon_naval_strike_expert
+		set_country_flag = purged_amazon_naval_strike_expert
+		custom_effect_tooltip = remove_chief_of_airforce 
+		show_ideas_tooltip = amazon_airborne_expert
+		set_country_flag = purged_amazon_airborne_expert
+		air_experience = -25
+		hidden_effect = {
+			remove_ideas = amazon_naval_strike_expert
+			remove_ideas = amazon_airborne_expert
+			add_to_variable = {
+				var = ram_purged_reformist
+				value = 1
+			}
+		}
+	}
+	option = {#Don't Purge; who cares?
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 6
+				check_variable = { amazon_ai_ideology = 2}
+			}
+		}
+		name = amazon.26.c
+		add_political_power = -50
+		add_war_support = -0.05
+		custom_effect_tooltip = amazon_not_purging_may_cause_problems
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {id = amazon.27 days = 19}
+		}
+	}
+}
+country_event = {#Last verdict
+	id = amazon.27
+	title = amazon.27.t
+	desc = amazon.27.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {#Give positions to trusted and loyal dudes
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 1}
+			}
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 4}
+			}
+		}
+		name = amazon.27.a
+		add_stability = 0.05
+		hidden_effect = {
+			add_to_variable = {
+				var = ram_purged_reformist
+				value = 1
+			}
+			country_event = {id = amazon.28 days = 1}
+		}
+	}
+	option = {#Give positions to experts
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 3}
+			}
+		}
+		name = amazon.27.b
+		add_war_support = 0.05
+		hidden_effect = {
+			add_to_variable = {
+				var = ram_purged_loyalists
+				value = 1
+			}
+			country_event = {id = amazon.28 days = 1}
+		}
+	}
+	option = {#Let workers decide
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				check_variable = { amazon_ai_ideology = 2}
+			}
+		}
+		name = amazon.27.c
+		add_political_power = 75
+		hidden_effect = {
+			country_event = {id = amazon.28 days = 1}
+		}
+	}
+}
+country_event = {#Invisible
+	id = amazon.28
+	title = amazon.28.t
+	desc = amazon.28.d
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	#fire_only_once = yes
+	
+	#trigger = {
+	#	tag = RAM
+	#	OR = {
+	#		date > 1938.6.6
+	#		focus_progress = {
+	#			focus = ram_the_purge
+	#			progress > 0.85
+	#		}	
+	#	}
+	#	NOT = { has_completed_focus = ram_the_purge }
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+	
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				check_variable = { ram_purged_loyalists > 3}
+			}
+			hidden_effect = {country_event = { id = amazon.29 days = 16 }}
+		}
+		else_if = {
+			limit = {
+				check_variable = { ram_purged_reformist > 3}
+			}
+			hidden_effect = {country_event = { id = amazon.30 days = 16 }}
+		}
+		else_if = {
+			limit = {
+				check_variable = { ram_purged_reformist > 2}
+				check_variable = { ram_purged_loyalists > 2}
+			}
+			hidden_effect = {country_event = { id = amazon.31 days = 16 }}
+		}
+		else = {
+			hidden_effect = {country_event = { id = amazon.32 days = 16 }}
+		}
+	}
+	option = {
+		name = amazon.28.a #placeholder
+	}
+}
+country_event = {#Democracy
+	id = amazon.29
+	title = amazon.29.t
+	desc = amazon.29.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {has_government = democratic}
+			}
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+	}
+	option = {
+		name = amazon.29.a
+		add_political_power = 75
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		add_stability = 0.1
+		set_country_flag = amazon_towards_democracy
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+			election_frequency = 48
+		}
+	}
+}
+country_event = {#Fascism
+	id = amazon.30
+	title = amazon.30.t
+	desc = amazon.30.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {has_government = fascism}
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+		}
+	}
+	option = {
+		name = amazon.30.a
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		add_stability = 0.1
+		add_war_support = 0.05
+		set_country_flag = amazon_towards_fascism
+	}
+}
+country_event = {#Neutrality
+	id = amazon.31
+	title = amazon.31.t
+	desc = amazon.31.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {has_government = neutrality}
+			}
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+	}
+	option = {
+		name = amazon.31.a
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.15
+		}
+		add_stability = 0.1
+		set_country_flag = amazon_status_quo
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+			election_frequency = 48
+		}
+	}
+}
+country_event = {#Communism
+	id = amazon.32
+	title = amazon.32.t
+	desc = amazon.32.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	immediate = {
+		#kill_country_leader = yes #F to pay respect
+		hidden_effect = {
+			kill_ideology_leader = democratic
+			kill_ideology_leader = fascism
+			kill_ideology_leader = neutrality
+		}
+		if = {
+			limit = {
+				NOT = {has_government = communism}
+			}
+			retire_ideology_leader = communism
+			set_politics = { ruling_party = communism }
+			#if = {
+				#limit = {
+				#	has_dlc = "La Resistance"
+				#}
+				create_country_leader = {
+					name = "Workers Council"
+					#desc = "POLITICS_workers_council_DESC"
+					picture = "portrait_anarchist_commune.dds"
+					expire = "1965.1.1"
+					ideology = anarchist_communism 
+					traits = {
+						our_right_to_survive 
+					}
+				}
+			#}
+			#else_if = {
+			#	limit = {
+			#		has_dlc = "Man the Guns"
+			#	}
+			#	create_country_leader = {
+			#		name = "Workers Council"
+			#		#desc = "POLITICS_workers_council_DESC"
+			#		picture = "portrait_eng_fallen_government.dds"
+			#		expire = "1965.1.1"
+			#		ideology = anarchist_communism 
+			#		traits = {
+			#			our_right_to_survive 
+			#		}
+			#	}
+			#}
+			#else = {
+			#	create_country_leader = {
+			#		name = "Workers Council"
+			#		#desc = "POLITICS_workers_council_DESC"
+			#		picture = "leader_unknown.dds"
+			#		expire = "1965.1.1"
+			#		ideology = anarchist_communism 
+			#		traits = {
+			#			our_right_to_survive 
+			#		}
+			#	}
+			#}
+		}
+		else = {
+			hidden_effect = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+		}
+	}
+	option = {
+		name = amazon.32.a
+		add_popularity = {
+			ideology = communism
+			popularity = 0.15
+		}
+		add_political_power = 100
+		add_stability = -0.1
+		set_country_flag = amazon_failed_purge
+		
+		set_country_flag = purged_amazon_chief_defensive
+		set_country_flag = purged_amazon_chief_raiding
+		set_country_flag = purged_amazon_chief_night_ops
+		set_country_flag = purged_amazon_ace_expert
+	}
+}
+country_event = {#Communist elections
+	id = amazon.33
+	title = amazon.33.t
+	desc = amazon.33.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	option = {#Jeffrey Beyblade
+		name = amazon.33.a
+		#retire_country_leader = yes
+		create_country_leader = {
+			name = "Jeffrey Beyblade"
+			#desc = "POLITICS_Jeffrey_Beyblade_DESC"
+			#picture = ".dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				devoted_trotskyist 
+			}
+		}
+		add_stability = -0.05
+	}
+	option = {#Jonathan Boestar
+		name = amazon.33.b
+		#retire_country_leader = yes
+		create_country_leader = {
+			name = "Jonathan Boestar"
+			#desc = "POLITICS_Jonathan_Boestar_DESC"
+			#picture = ".dds"
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+				veteran_communist
+			}
+		}
+		add_stability = 0.05
+	}
+	option = {#Keep the Council
+		name = amazon.33.c
+		add_political_power = 100
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+			election_frequency = 36
+		}
+	}
+}
+country_event = {#Invisible - didn't purge
+	id = amazon.34
+	title = amazon.34.t
+	desc = amazon.34.d
+	#picture = GFX_
+	
+	#is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAM
+		date > 1938.6.6
+		NOT = { has_completed_focus = ram_the_purge }
+		NOT = { has_country_flag = amazon_towards_democracy}
+		NOT = { has_country_flag = amazon_towards_fascism}
+		NOT = { has_country_flag = amazon_status_quo}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	hidden = yes
+	immediate = {
+		country_event = { id = amazon.32 days = 1 }
+	}
+}
+
+country_event = {#TAG nationalises factories
+	id = amazon.35
+	title = amazon.35.t
+	desc = amazon.35.d
+	#picture = GFX_
+
+	is_triggered_only = yes
+	option = {
+		name = amazon.35.a #bruh
+		add_stability = -0.05
+		add_opinion_modifier = {
+			target = FROM
+			modifier = hostile_status
+		}
+	}
+}
