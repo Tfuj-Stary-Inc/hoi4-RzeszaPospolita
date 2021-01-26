@@ -1,0 +1,11 @@
+close_amazon_factories = {
+	
+	icon = generic_industry
+	visible = {
+		OR = {
+			has_idea = amazon_trade_contract
+			has_idea = amazon_trade_contract_2
+			has_idea = amazon_trade_contract_3
+		}
+	}
+}

@@ -1,0 +1,8 @@
+amazon_expand_factories = {
+	
+	icon = generic_industry
+	visible = {
+		original_tag = RAM
+		has_completed_focus = ram_develop_factories
+	}
+}

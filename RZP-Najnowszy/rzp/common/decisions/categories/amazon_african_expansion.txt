@@ -1,0 +1,8 @@
+amazon_african_expansion = {
+	
+	icon = border_conflicts
+	visible = {
+		original_tag = RAM
+		has_completed_focus = ram_recolonisation_of_africa
+	}
+}
