@@ -77,29 +77,6 @@ units = {
 		start_equipment_factor = 0.3
 
 	}
-	division= {	# "28 Dywizja Piechoty"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 28
-		}
-		location = 3544
-		division_template = "Dywizja Piechoty"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
-
-	}
-	division= {	# "Nowogródzka B.K."
-		division_name = {
-			is_name_ordered = yes
-			name_order = 104
-		}
-		location = 11492
-		division_template = "Brygada Kawalerii" 
-		force_equipment_variants = { infantry_equipment_0 = { owner = "POL" } }
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
-
-	}
 	division= {	# "Mazowiecka B.K."
 		division_name = {
 			is_name_ordered = yes
@@ -131,17 +108,6 @@ units = {
 			name_order = 19
 		}
 		location = 277
-		division_template = "Dywizja Piechoty"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.7
-
-	}
-	division= {	# "20 Dywizja Piechoty"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 20
-		}
-		location = 406
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
@@ -181,28 +147,6 @@ units = {
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
-
-	}
-	division= {	# "12 Dywizja Piechoty"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 12
-		}
-		location = 3483
-		division_template = "Dywizja Piechoty"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.7
-
-	}
-	division= {	# "24 Dywizja Piechoty"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 24
-		}
-		location = 6520
-		division_template = "Dywizja Piechoty"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
 
 	}
 
@@ -310,17 +254,6 @@ units = {
 		}
 		location = 11479
 		division_template = "Dywizja Piechoty"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.7
-
-	}
-	division= {	# "22 Dywizja Piechoty Górskiej"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 22
-		}
-		location = 11479
-		division_template = "Dywizja Górskiej"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.7
 
