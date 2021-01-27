@@ -1,14 +1,8 @@
 civil_war_category = {
+
    icon = military_operation
-   
-   allowed = {
-		original_tag = RZP
-	}
-	
    visible = {
-       OR = {
-          country_exists = POL
-	  country_exists = JRP
-       }
+           original_tag = RZP
+	   has_completed_focus = RZP_marsznawarszawe
    }
 }
