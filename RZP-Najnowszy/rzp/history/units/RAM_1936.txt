@@ -45,7 +45,7 @@ units = {
 				name_order = 1
 		}
 		location = 243
-		division_template = "1st Division of Amazon"
+		division_template = "Amazon Soldiers"
 		start_experience_factor = 0.7
 	}
 	division= {	
@@ -54,7 +54,7 @@ units = {
 				name_order = 2
 		}
 		location = 334
-		division_template = "2nd Division of Amazon"
+		division_template = "Amazon Soldiers"
 		start_experience_factor = 0.9
 	}
 	division= {	
@@ -63,6 +63,6 @@ units = {
 				name_order = 3
 		}
 		location = 3532
-		division_template = "3rd Division of Amazon"
+		division_template = "Amazon Prime Delivery"
 		start_experience_factor = 0.8
 	}
