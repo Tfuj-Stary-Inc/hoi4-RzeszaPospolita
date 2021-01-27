@@ -1,3 +1,0 @@
-Aby mod pojawił się w waszych modyfikacjach w Hearts of Iron 4, w swoim folderze dokumenty musicie znaleźć folder Paradoxu,
-tam znaleść Hearts of Iron 4, a w nim (po wyczyszczeniu folderu użytkownika w launcherze) dodać folder mod i wrzucić do niego
-folder rzp i plik rzp.mod
