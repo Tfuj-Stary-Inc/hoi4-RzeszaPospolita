@@ -66,3 +66,27 @@ units = {
 		division_template = "Amazon Prime Delivery"
 		start_experience_factor = 0.8
 	}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+        add_equipement_production = {
+	        equipement = {
+		         type = infantry_equipment_1
+			 creator = "RAM"
+		}
+		requested_factories = 1
+		progress = 0.10
+		efficiency = 100
+	}
+	add_equipement_production = {
+	        equipement = {
+		         type = fighter_equipement_0
+			 creator = "RAM"
+		}
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+}
