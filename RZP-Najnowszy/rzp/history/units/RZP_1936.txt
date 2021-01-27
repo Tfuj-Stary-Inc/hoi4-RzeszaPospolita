@@ -170,7 +170,7 @@ instant_effect = {
 	}
 	add_equipment_production = {
 		equipment = {
-			type = fighter_equipment_0
+			type = fighter_equipment_1
 			creator = "RZP"
 		}
 		requested_factories = 1
