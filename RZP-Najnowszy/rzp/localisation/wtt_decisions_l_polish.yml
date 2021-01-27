@@ -943,6 +943,7 @@
  GER_cancel_mefos:0 "Anulowanie weksli MEFO"
  GER_cancel_mefos_desc:0 "Zbyt długo wierzyliśmy, że Reichsbank pomoże w odbudowie naszego przemysłu zbrojeniowego. Czas, byśmy dotrzymali zobowiązań wobec naszych producentów uzbrojenia i zakończyli farsę z "wekslami MEFO"."
  repeatable_decision_tt:0 "To działanie można powtarzać."
+ #############################################################################
  civil_war_category:0 "Wojna domowa"
  RZP_recruit_soldiers:0 "Obowiązkowy pobór"
  amazon_african_expansion:0 "Ekspansja w Afryce"
