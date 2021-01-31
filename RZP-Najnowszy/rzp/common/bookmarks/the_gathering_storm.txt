@@ -554,6 +554,18 @@ bookmarks = {
 			}
 		}
 		
+		"RUK"={
+		        minor = yes
+			history = "RUK_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			
+			}
+			focuses = {
+			
+			}
+		}
+		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }
