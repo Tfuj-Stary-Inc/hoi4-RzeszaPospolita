@@ -1,11 +1,43 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
 focus_tree = {
 	     id = ukraina_focus
 	     continuous_focus_position = { x = 2137 y = 6969 }
-	          country = {
-		            factor = 0
-		            modifier = {
-			             add = 10
-			             tag = RUK
-		            }
-	          }
-            
+	          
+	     country = {
+		     factor = 0
+		     modifier = {
+			     add = 10
+			     tag = RUK
+		     }
+	     }
+	     
+	     focus = {
+	             id = RUK_political_chaos
+		     icon =
+		     x = 15
+		     y = 0
+		     cost = 10
+		     ai_will_do = {
+		             factor = 30
+		     }
+		     search_filters = { FOCUS_FILTER_POLITICAL }
+		     completion_reward = {
+		             add_political_power = 100
+			     add_idea = UKR_political_chaos
+		     }
+		     select_effect = {
+		             hidden_effect = {
+			             custom_effect_tooltip = RUK_political_struggle
+			     }
+		     }
+	     }
+		     
+	          
+		     
