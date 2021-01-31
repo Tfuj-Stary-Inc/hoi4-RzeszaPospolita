@@ -20,7 +20,7 @@ focus_tree = {
 	     
 	     focus = {
 	             id = RUK_political_chaos
-		     icon =
+		     icon = GFX_goal_burning_ukraine
 		     x = 15
 		     y = 0
 		     cost = 10
