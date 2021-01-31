@@ -2354,4 +2354,11 @@ spriteTypes = {
 		name = "GFX_focus_TUR_loosen_the_laws_on_secularism"
 		texturefile = "gfx/interface/goals/focus_TUR_loosen_the_laws_on_secularism.dds"
 	}
+	
+	#Rzesza Pospolita#
+	SpriteType = {
+	        name = "GFX_goal_burning_ukraine"
+		texturefile = "gfx/interface/goals/burning_ukraine.dds"
+	}
+	
 }
