@@ -1,0 +1,76 @@
+political_struggle = {
+         support_fascists = {
+               icon = generic_civil_support
+               
+               available = {
+                       fascism < 0.35
+               }
+               
+               fire_only_once = no
+               
+               cost = 20
+               
+               days_remove = 30
+               
+               modifier = {
+                       fascism_drift = 0.05
+                       communism_drift = -0.1
+                       democratic_drift = -0.1
+                       political_power_gain = -0.3
+               }
+               
+               ai_will_do = {
+                       factor = 5
+               }
+        }
+        
+        support_communists = {
+              icon = generic_civil_support
+              
+              available = {
+                      communism < 0.35
+              }
+              
+              fire_only_once = no
+              
+              cost = 20
+              
+              days_remove = 30
+              
+              modifier = {
+                      communism_drift = 0.05
+                      fascism_drift = -0.1
+                      democratic_drift = -0.1
+                      political_power_gain = -0.3
+              }
+              
+              ai_will_do = {
+                      factor = 3
+              }
+       }
+       
+       support_democratic = {
+             icon = generic_civil_support
+             
+             available = {
+                     democratic < 0.35
+             }
+             
+             fire_only_once = no
+             
+             cost = 20
+             
+             days_remove = 30
+             
+             modifier = {
+                     democratic_drift = 0.05
+                     fascism_drift = -0.1
+                     communism_drift = -0.1
+                     political_power_gain = -0.3
+             }
+             
+             ai_will_do = {
+                     factor = 2
+             }
+      }
+}
