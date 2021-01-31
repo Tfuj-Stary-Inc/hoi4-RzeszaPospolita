@@ -1,0 +1,8 @@
+political_struggle = {
+
+        icon = 
+        visible = {
+                original_tag = RUK
+                has_completed_focus = RUK_political_chaos
+        }
+}
