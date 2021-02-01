@@ -32,7 +32,7 @@ focus_tree = {
                         add_state_core= 97
 
                         add_political_power = 100
-			custom_effect_tooltip = RZP
+			custom_effect_tooltip = RZP_civil_war
 
                         country_event = { id = rzeszapospolita.1 }
 		}
