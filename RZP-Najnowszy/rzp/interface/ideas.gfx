@@ -4039,4 +4039,40 @@ spriteTypes = {
 	        name = "GFX_idea_RZP_polish_ssman"
 		texturefile = "gfx/interface/ideas/rzp_advisor_adam.dds"
         }
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_needham"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Colin_Needham.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_jassy"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Andrew_Jassy.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_shriram"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Ram_Shriram.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_schappell"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Dave_Schappell.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_valentine"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Brian_Valentine.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_dalzell"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Rick_Dalzell.dds"
+	}
+	
+	spriteType = {
+	        name = "GFX_idea_RAM_meulen"
+		texturefile = "gfx/interface/ideas/Portrait_RAM_Jorrit_Van_Der_Meulen.dds"
+	}
+	
 }
