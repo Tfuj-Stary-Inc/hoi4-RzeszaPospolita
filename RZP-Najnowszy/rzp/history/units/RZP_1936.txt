@@ -44,6 +44,7 @@ division_template = {
 		cavalry = { x = 0 y = 0 }
 		cavalry = { x = 0 y = 1 }
 		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
 	}
 	support = {
 		recon = { x = 0 y = 0 }     
@@ -123,7 +124,7 @@ units = {
 				name_order = 1
 		}
 		location = 11398
-		division_template = "Kawaleria"
+		division_template = "Wściekli Husarze"
 		start_experience_factor = 0.1
 	}
 	division= {	
@@ -132,7 +133,7 @@ units = {
 				name_order = 2
 		}
 		location = 9508
-		division_template = "Kawaleria"
+		division_template = "Wściekli Husarze"
 		start_experience_factor = 0.5
 	}
 	division= {	
@@ -141,7 +142,7 @@ units = {
 				name_order = 3
 		}
 		location = 9508
-		division_template = "Kawaleria"
+		division_template = "Wściekli Husarze"
 		start_experience_factor = 0.4
 	}
 }
