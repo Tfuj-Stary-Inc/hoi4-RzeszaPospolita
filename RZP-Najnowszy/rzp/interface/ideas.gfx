@@ -4075,4 +4075,49 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/Portrait_RAM_Jorrit_Van_Der_Meulen.dds"
 	}
 	
+	spriteType = {
+	      name = "GFX_idea_RAM_wilson"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Marcus_Wilson.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_ransil"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Pat_Ransil.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_mwilson"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Michelle_Wilson.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_natta"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Owen_Van_Natta.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_szkutak"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Tom_Szkutak.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_manber"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Udi_Manber.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_onetto"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Marc_Onetto.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_piacentini"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Diego_Piacentini.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RAM_vogels"
+	      texturefile = "gfx/interface/ideas/Portrait_RAM_Werner_Vogels.dds"
+	}
+	
 }
