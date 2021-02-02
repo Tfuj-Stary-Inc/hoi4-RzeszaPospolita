@@ -584,17 +584,17 @@ country = {
 political_advisor = {
 	
 	RAM_captain_of_industry = {
-		picture = generic_political_advisor_asia_1
+		picture = GFX_idea_RAM_needham
 		allowed = {
 			original_tag = RAM
 		}
 		allowed_civil_war = {
-           always = yes
+                        always = yes
 		}
 		traits = { captain_of_industry }
 	}
 	RAM_war_industrialist = {
-		picture = generic_political_advisor_europe_6
+		picture = GFX_idea_RAM_jassy
 		allowed = {
 			original_tag = RAM
 		}
@@ -666,7 +666,7 @@ political_advisor = {
 		#}
 	}
 	RAM_popular_figurehead = {
-		picture = generic_political_advisor_europe_1
+		picture = GFX_idea_RAM_shriram
 		allowed = {
 			original_tag = RAM
 		}
@@ -683,7 +683,7 @@ political_advisor = {
 		modifier = { political_power_factor = 0.05 }
 	}
 	RAM_silent_workhorse = {
-		picture = generic_political_advisor_europe_4
+		picture = GFX_idea_RAM_schappell
 		allowed = {
 			original_tag = RAM
 		}
@@ -700,7 +700,7 @@ political_advisor = {
 		modifier = { non_core_manpower = 0.005 }
 	}
 	RAM_national_integralist = {
-		picture = generic_political_advisor_europe_5
+		picture = GFX_idea_RAM_valentine
 		allowed = {
 			original_tag = RAM
 		}
@@ -752,7 +752,7 @@ political_advisor = {
 		traits = { financial_expert }
 	}
 	RAM_economist = {
-		picture = generic_political_advisor_europe_2
+		picture = GFX_idea_RAM_meulen
 		allowed = {
 			original_tag = RAM
 		}
@@ -766,7 +766,7 @@ political_advisor = {
 		traits = { economist }
 	}
 	RAM_reluctant_interventionist = {
-		picture = generic_political_advisor_asia_2
+		picture = GFX_idea_RAM_dalzell
 		allowed = {
 			original_tag = RAM
 		}
