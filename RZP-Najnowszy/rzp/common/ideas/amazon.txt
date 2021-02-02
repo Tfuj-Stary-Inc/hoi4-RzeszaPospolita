@@ -792,7 +792,7 @@ political_advisor = {
 		}
 	}
 	RAM_prince_of_terror = {
-		picture = generic_political_advisor_asia_3
+		picture = GFX_idea_RAM_wilson
 		allowed = {
 			original_tag = RAM
 		}
@@ -904,7 +904,7 @@ political_advisor = {
 army_chief = {
 	
 	amazon_chief_defensive = {
-		picture = generic_army_europe_5
+		picture = GFX_idea_RAM_ransil
 		allowed = {
 			original_tag = RAM
 		}
@@ -971,7 +971,7 @@ air_chief = {
 	#	traits = { air_chief_ground_support_2 }
 	#}
 	amazon_chief_all_weather = {
-		picture = generic_air_europe_3
+		picture = GFX_idea_RAM_natta
 		allowed = {
 			original_tag = RAM
 		}
@@ -1007,7 +1007,7 @@ navy_chief = {
 		traits = { navy_chief_commerce_raiding_1 }
 	}
 	amazon_chief_naval_maneuver = {
-		picture = generic_navy_female_europe
+		picture = GFX_idea_RAM_mwilson
 		allowed = {
 			original_tag = RAM
 		}
@@ -1021,7 +1021,7 @@ high_command = {
 	
 	amazon_polish_army_agent = {
 		ledger = army
-		picture = generic_army_europe_3
+		picture = GFX_idea_RAM_szkutak
 		allowed = {
 			original_tag = RAM
 		}
@@ -1070,7 +1070,7 @@ high_command = {
 	}
 	amazon_commando_expert = {
 		ledger = army
-		picture = generic_army_asia_4
+		picture = GFX_idea_RAM_manber
 		allowed = {
 			original_tag = RAM
 		}
@@ -1147,7 +1147,7 @@ high_command = {
 	#}
 	amazon_naval_air_def_expert = {
 		ledger = navy
-		picture = robert_odic
+		picture = GFX_idea_RAM_onetto
 		allowed = {
 			original_tag = RAM
 		}
@@ -1158,7 +1158,7 @@ high_command = {
 	}
 	amazon_logistics_expert = {
 		ledger = navy
-		picture = renato_sandalli
+		picture = GFX_idea_RAM_piacentini
 		allowed = {
 			original_tag = RAM
 		}
@@ -1169,7 +1169,7 @@ high_command = {
 	}
 	amazon_marines_expert = {
 		ledger = navy
-		picture = generic_navy_europe_3
+		picture = GFX_idea_RAM_vogels
 		allowed = {
 			original_tag = RAM
 		}
