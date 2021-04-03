@@ -38,7 +38,40 @@ focus_tree = {
 			     }
 		     }
 	     }
+	     
+	     focus = {
+	             id = RUK_side_with_fascists
+		     icon = GFX_goal_support_fascism
+		     x = 5
+		     y = 1
+		     cost = 0
+		     prerequisite = { focus = RUK_political_chaos }
+		     mutually_exclusive = { focus = RUK_side_with_communists }
+		     search_filters = { FOCUS_FILTER_POLITICAL }
+		     available = {
+		               always = no
+		     }
+		     completion_reward = {
 		     
-	          
-		     
+		     }
+	    }
+	    
+	    focus = {
+	            id = RUK_side_with_communists
+		    icon = GFX_goal_support_communism
+		    x = 25
+		    y = 1
+		    cost = 0
+		    prerequisite = { focus = RUK_political_chaos }
+		    mutually_exclusive = { focus = RUK_side_with_fascists }
+		    search_filters = { FOCUS_FILTER_POLITICAL }
+		    available = {
+		              always = no
+	            }
+		    completion_reward = {
+		    
+		    }
+	   }
+	   
+	   
 }
