@@ -96,7 +96,7 @@ political_struggle = {
              is_good = no
              
              complete_effect = {
-                     country_event =
+                     country_event = ukraina.1
              }
              
              timeout_effect = {
