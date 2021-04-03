@@ -1,1 +1,46 @@
 add_namespace = ukraina
+
+country_event = {
+        id = ukraina.1
+        title = ukraina.1.t
+        desc = ukraina.1.d
+        picture = 
+        
+        is_triggered_only = yes
+        option = {
+          if = {
+               limit = {
+                       fascism > 0.35
+               }
+               name = ukraina.1.a
+               ai_chance = {
+                       base = 50
+               }
+               
+          }
+        }
+        option = {
+          if = {
+               limit = {
+                       communism > 0.35
+               }
+               name = ukraina.1.b
+               ai_chance = {
+                       base = 20
+               }
+               
+          }
+        }
+        option = {
+          if = {
+               limit = {
+                       democratic > 0.35
+               }
+               name = ukraina.1.c
+               ai_chance = {
+                       base = 10
+               }
+               
+          }
+        }
+}
