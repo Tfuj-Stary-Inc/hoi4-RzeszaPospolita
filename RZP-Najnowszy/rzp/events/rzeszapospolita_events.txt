@@ -14,72 +14,24 @@ country_event = {
 	option = {
 		name = rzeszapospolita.1.a
 		create_wargoal = { type = annex_everything target = POL }
+		hidden_effect = { country_event = { days = 1 id = rzeszapospolita.2 } }
 	}
 }
 
 country_event = {
-        id = rzeszapospolita.2
+    id = rzeszapospolita.2
 	title = rzeszapospolita.2.title
 	desc = rzeszapospolita.2.desc
 	picture = GFX_report_event_german_volunteers
 	is_triggered_only = yes
 	option = {
-	        name = rzeszapospolita.2.a
-		hidden_effect = {
-		        random_owned_controlled_state = {
-			       limit = { ROOT = { has_full_control_of_state = PREV } }
-			       prioritize = { 85 }
-			        create_unit = {
-                                  division = "name = \"1. Dyw. Bohaterów Stoczni\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-                                  owner = RZP
-                                }
-			}
-			       
-			random_owned_controlled_state = {
-			       limit = { ROOT = { has_full_control_of_state = PREV } }
-			       prioritize = { 85 }
-			        create_unit = {
-                                  division = "name = \"2. Dyw. Bohaterów Wielkopolskich\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-                                  owner = RZP
-                                }
-			}
-			       
-			random_owned_controlled_state = {
-			       limit = { ROOT = { has_full_control_of_state = PREV } }
-			       prioritize = { 85 }
-			        create_unit = {
-                                  division = "name = \"3. Dyw. Męczenników Oświęcimskich\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-                                  owner = RZP
-                                }
-			}
-			       
-			random_owned_controlled_state = {
-			       limit = { ROOT = { has_full_control_of_state = PREV } }
-			       prioritize = { 85 }
-			        create_unit = {
-                                  division = "name = \"4. Dyw. Zajmowania pustych prowincji\" division_template = \"Dywizja Piechoty\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-                                  owner = RZP
-                                }
-			}
-			       
-			random_owned_controlled_state = {
-			       limit = { ROOT = { has_full_control_of_state = PREV } }
-			       prioritize = { 85 }
-			        create_unit = {
-                                     division = "name = \"1. Dyw. Alpinistów Polskich\" division_template = \"Dywizja Piechoty Górskiej\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-                                     owner = RZP
-                                }
-			}
-			       
-			random_owned_controlled_state = {
-			       limit = { ROOT = { has_full_control_of_state = PREV } }
-			       prioritize = { 85 }
-			        create_unit = {
-                                  division = "name = \"2. Dyw. Słowiańskich Bojówek\" division_template = \"Dywizja Piechoty Górskiej\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
-                                  owner = RZP
-                               }
-		        }
-		}
+	    name = rzeszapospolita.2.a
+	    ai_chance = { base = 100 }
+	    add_political_power = -75
+	    hidden_effect = {
+	            load_oob = RZP_moreunits
+	            add_manpower = -90000
+	    }
 	}
 }
 	
