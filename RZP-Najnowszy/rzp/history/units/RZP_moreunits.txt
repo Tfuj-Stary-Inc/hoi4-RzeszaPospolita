@@ -1,0 +1,71 @@
+units = {
+	division = {
+	      name = "1. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "2. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "3. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "4. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "5. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "6. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "7. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "8. Dywizja Ochotników"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.2
+	}
+
+	division = {
+	      name = "1. Bojówek Partyjnych"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.4
+	}
+
+	division = {
+	      name = "2. Bojówek Partyjnych"
+	      location = 
+	      division_template = "Dywizja Piechoty"
+	      start_experience_factor = 0.4
+	}
+}
