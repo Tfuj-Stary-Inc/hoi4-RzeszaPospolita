@@ -66,7 +66,7 @@ create_country_leader = {
 create_country_leader = {
          name = "Stepan Bandera"
          desc = "POLITICS_KING_ZOG_DESC"
-         picture = "Portrait_RUK_fas.dds"
+         picture = "Portrait_Protektorat_Ukrainy_Bandera.dds"
          expire = "1965.1.1"
          ideology = falangism
          traits = {
@@ -96,9 +96,9 @@ create_country_leader = {
          }
 	 
 create_country_leader = {
-         name = "Petro Poroshenko"
+         name = "Volodymyr Zelensky"
          desc = "POLITICS_KING_ZOG_DESC"
-         picture = "Portrait_RUK_dem.dds"
+         picture = "Portrait_Protektorat_Ukrainy_Zelenski.dds"
          expire = "1965.1.1"
          ideology = conservatism
          traits = {
@@ -133,3 +133,26 @@ create_corps_commander = {
         planning_skill = 4
         logistics_skill = 4
 }
+
+create_field_marshal = {
+        name = "Bohdan Chmielnicki"
+	picture = "Portrait_Protektorat_Ukrainy_Chmielnicki.dds"
+	traits = { offensive_doctrine }
+	skill = 5
+	attack_skill = 6
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+        name = "PutOut"
+	picture = "Portrait_Protektorat_Ukrainy_Putout.dds"
+	traits = {  }
+	skill = 4
+	attack_skill = 6
+	defense_skill = 5
+	planning_skill = 5
+	logistics_skill = 6
+}
+
