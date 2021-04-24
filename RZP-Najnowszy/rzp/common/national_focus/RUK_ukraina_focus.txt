@@ -19,9 +19,9 @@ focus_tree = {
 	     }
 	     
 	     focus = {
-	             id = RUK_political_chaos
+	         id = RUK_political_chaos
 		     icon = GFX_goal_burning_ukraine
-		     x = 15
+		     x = 13
 		     y = 0
 		     cost = 10
 		     ai_will_do = {
@@ -30,7 +30,7 @@ focus_tree = {
 		     search_filters = { FOCUS_FILTER_POLITICAL }
 		     completion_reward = {
 		             add_political_power = 100
-			     add_idea = UKR_political_chaos
+			         add_ideas = UKR_political_chaos
 		     }
 		     select_effect = {
 		             hidden_effect = {
@@ -40,13 +40,14 @@ focus_tree = {
 	     }
 	     
 	     focus = {
-	             id = RUK_side_with_fascists
+	         id = RUK_side_with_fascists
 		     icon = GFX_goal_support_fascism
-		     x = 5
+		     x = 3
 		     y = 1
 		     cost = 0
 		     prerequisite = { focus = RUK_political_chaos }
 		     mutually_exclusive = { focus = RUK_side_with_communists }
+		     mutually_exclusive = { focus = RUK_side_with_democracy }
 		     search_filters = { FOCUS_FILTER_POLITICAL }
 		     available = {
 		               always = no
@@ -57,21 +58,353 @@ focus_tree = {
 	    }
 	    
 	    focus = {
-	            id = RUK_side_with_communists
+	        id = RUK_side_with_communists
 		    icon = GFX_goal_support_communism
-		    x = 25
+		    x = 23
 		    y = 1
 		    cost = 0
 		    prerequisite = { focus = RUK_political_chaos }
 		    mutually_exclusive = { focus = RUK_side_with_fascists }
+		    mutually_exclusive = { focus = RUK_side_with_democracy }
 		    search_filters = { FOCUS_FILTER_POLITICAL }
 		    available = {
-		              always = no
-	            }
+		        always = no
+	        }
 		    completion_reward = {
 		    
 		    }
 	   }
+
+	   focus = {
+	       id = RUK_side_with_democracy
+	       icon = GFX_goal_support_democracy
+	       x = 13
+	       y = 1
+	       cost = 0
+	       prerequisite = { focus = RUK_political_chaos }
+	       mutually_exclusive = { focus = RUK_side_with_fascists }
+	       mutually_exclusive = { focus = RUK_side_with_communists }
+	       search_filters = { FOCUS_FILTER_POLITICAL }
+	       available = {
+	           always = no
+	       }
+	       completion_reward = {
+
+	       }
+	   }
 	   
-	   
+	   focus = {
+	       id = RUK_buildup_industry
+	       icon = GFX_goal_generic_production
+	       x = 33
+	       y = 0
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       available = {
+	           NOT = {
+	                has_government = neutrality
+	           }
+	       }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 2
+	               add_building_construction = {
+	                       type = industrial_complex
+	                       level = 2
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	           add_tech_bonus = {
+	                   name = industrial_bonus
+	                   bonus = 2.0
+	                   uses = 2
+	                   category = industry
+	           }
+	           202 = {
+	                add_extra_state_shared_building_slots = 2
+	                add_building_construction = {
+	                        type = industrial_complex
+	                        level = 2
+	                        instant_build = yes
+	                }
+	           }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_expand_civilian_vinnytsia
+	       icon = GFX_goal_generic_construct_civ_factory
+	       x = 29
+	       y = 1
+	       cost = 5
+	       ai_will_do = {
+	               factor = 50
+	       }
+	       available = {
+	               has_full_control_of_state = 198
+	       }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       prerequisite = { focus = RUK_buildup_industry }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 2
+	               add_building_construction = {
+	                       type = industrial_complex
+	                       level = 2
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	           198 = {
+	                add_extra_state_shared_building_slots = 2
+	                add_building_construction = {
+	                        type = industrial_complex
+	                        level = 2
+	                        instant_build = yes
+	                }
+	           }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_iron_mine_zhytomyr
+	       icon = GFX_goal_generic_construct_civilian
+	       x = 29
+	       y = 2
+	       cost = 5
+	       ai_will_do = {
+	               factor = 25
+	       }
+	       available = {
+	               has_full_control_of_state = 201
+	       }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       prerequisite = { focus = RUK_expand_civilian_vinnytsia }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 1
+	               add_building_construction = {
+	                       type = industrial_complex
+	                       level = 1
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	           201 = {
+	                add_extra_state_shared_building_slots = 1
+	                add_building_construction = {
+	                        type = industrial_complex
+	                        level = 1
+	                        instant_build = yes
+	                }
+
+	                add_resource = {
+	                        type = steel
+	                        amount = 10
+	                }
+	           }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_kiev_workplaces
+	       icon = GFX_goal_generic_production
+	       x = 31
+	       y = 1
+	       cost = 5
+	       ai_will_do = {
+	               factor = 70
+	       }
+	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       prerequisite = { focus = RUK_buildup_industry }
+	       available_if_capitulated = yes
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 3
+	       }
+	       completion_reward = {
+	           202 = {
+	                add_extra_state_shared_building_slots = 3
+	           }
+	           add_stability = 0.05
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_kiev_university
+	       icon = GFX_focus_research
+	       x = 31
+	       y = 2
+	       cost = 5
+	       ai_will_do = {
+	               factor = 60
+	       }
+	       search_filter = { FOCUS_FILTER_RESEARCH }
+	       prerequisite = { focus = RUK_kiev_workplaces }
+	       available_if_capitulated = yes
+	       completion_reward = {
+	               add_research_slot = 1
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_incorporate_conquested_territories
+	       icon = GFX_goal_generic_construct_infrastructure
+	       x = 33
+	       y = 3
+	       cost = 10
+	       ai_will_do = {
+	               factor = 100
+	       }
+	       available = {
+	               OR = {
+	                       has_full_control_of_state = 93
+	                       has_full_control_of_state = 91
+	                       has_full_control_of_state = 89
+	                       has_full_control_of_state = 192
+	                       has_full_control_of_state = 203
+	                       has_full_control_of_state = 197
+	               }
+	       }
+	       search_filter = { FOCUS_FILTER_STABILITY }
+	       prerequisite = { focus = RUK_buildup_industry }
+	       completion_reward = {
+	               add_stability = 0.1
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_military_buildup
+	       icon = GFX_goal_generic_construct_mil_factory
+	       x = 35
+	       y = 1
+	       cost = 5
+	       ai_will_do = {
+	               factor = 70
+	       }
+	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_buildup_industry }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 2
+	               add_building_construction = {
+	                       type = arms_factory
+	                       level = 2
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               random_owned_controlled_state = {
+	                       add_extra_state_shared_building_slots = 2
+	                       add_building_construction = {
+	                               type = arms_factory
+	                               level = 2
+	                               instant_build = yes
+	                       }
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_khmelnytskyi_arsenal
+	       icon = GFX_goal_generic_army_artillery2
+	       x = 35
+	       y = 2
+	       cost = 5
+	       ai_will_do = {
+	               factor = 50
+	       }
+	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       available = {
+	               has_full_control_of_state = 199
+	       }
+	       prerequisite = { focus = RUK_military_buildup }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 3
+	               add_building_construction = {
+	                       type = arms_factory
+	                       level = 3
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	            199 = {
+	                add_extra_state_shared_building_slots = 3
+	                add_building_construction = {
+	                       type = arms_factory
+	                       level = 3
+	                       instant_build = yes
+	                }
+	            }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_naval_infrastructure
+	       icon = GFX_goal_generic_construct_naval_dockyard
+	       x = 37
+	       y = 1
+	       cost = 5
+	       ai_will_do = {
+	               factor = 10
+	       }
+	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       prerequisite = { focus = RUK_buildup_industry }
+	       available = {
+	               any_state = {
+	                       is_coastal = yes
+	                       is_controlled_by = ROOT
+	               }
+	       }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 4
+	               add_building_construction = {
+	                       type = dockyard
+	                       level = 4
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               navy_experience = 25
+	               if = {
+	                       limit = {
+	                               any_owned_state = {
+	                                       is_coastal = yes
+	                               }
+	                       }
+	               }
+	               random_owned_controlled_state = {
+	                       limit = {
+	                               is_coastal = yes
+	                       }
+	                       add_extra_state_shared_building_slots = 4
+	                       add_building_construction = {
+	                               type = dockyard
+	                               level = 4
+	                               instant_build = yes
+	                       }
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_dream_of_naval_power
+	       icon = GFX_goal_generic_build_navy
+	       x = 37
+	       y = 2
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_naval_infrastructure }
+	       ai_will_do = {
+	               factor = 5
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = dd_bonus
+	                       bonus = 2.0
+	                       ahead_reduction = 1
+	                       uses = 2
+	                       category = dd_tech
+	               }
+	       }
+	   }
+
 }

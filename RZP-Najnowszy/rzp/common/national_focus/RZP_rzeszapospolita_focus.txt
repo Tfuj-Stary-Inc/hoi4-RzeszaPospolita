@@ -8,49 +8,166 @@ focus_tree = {
 			tag = RZP
 		}
 	}
+
+	focus = {
+	    id = RZP_cw_preparation
+	    icon = GFX_goal_generic_demand_territory
+	    x = 5
+	    y = 2
+	    cost = 1
+	    available_if_capitulated = no
+	    ai_will_do = {
+	        factor = 50
+	    }
+	    completion_reward = {
+	        add_ideas = RZP_civil_war
+	    }
+	}
+
+	focus = {
+	    id = RZP_conscription
+	    icon = GFX_goal_generic_military_sphere
+	    x = 3
+	    y = 3
+	    cost = 1
+	    available_if_capitulated = no
+	    prerequisite = { focus = RZP_cw_preparation }
+	    ai_will_do = {
+	        factor = 100
+	    }
+	    completion_reward = {
+	        add_manpower = 50000
+	        add_ideas = RZP_mass_conscription
+	    }
+	}
+
+	focus = {
+	    id = RZP_more_guns
+	    icon = GFX_goal_generic_small_arms
+	    x = 5
+	    y = 3
+	    cost = 1
+	    available_if_capitulated = no
+	    prerequisite = { focus = RZP_cw_preparation }
+	    ai_will_do = {
+	        factor = 80
+	    }
+	    completion_reward = {
+	        add_ideas = RZP_guns_production
+	    }
+	}
+
+	focus = {
+	    id = RZP_promotions
+	    icon = GFX_goal_generic_dangerous_deal
+	    x = 7
+	    y = 3
+	    cost = 1
+	    available_if_capitulated = no
+	    prerequisite = { focus = RZP_cw_preparation }
+	    ai_will_do = {
+	        factor = 60
+	    }
+	    completion_reward = {
+	        create_corps_commander = {
+                    name = "Nat-War"
+	                picture = "rzp_nat_war_general.dds"
+	                traits = { politically_connected }
+	                skill = 3
+                    id = 2140
+                    attack_skill = 2
+                    defense_skill = 3
+                    planning_skill = 1
+                    logistics_skill = 1
+            }
+
+            create_corps_commander = {
+                    name = "KYSawier"
+	                picture = "Portrait_Rzesza_Pospolita_Xavier.dds"
+	                traits = { trickster }
+	                skill = 2
+	                id = 2142
+	                attack_skill = 1
+                    defense_skill = 2
+                    planning_skill = 1
+                    logistics_skill = 3
+            }
+	    }
+	}
 	
 	focus = {
 		id = RZP_marsznawarszawe
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 6
-		y = 1
+		x = 5
+		y = 4
 		cost = 5
-		available_if_capitulated = yes
+		available_if_capitulated = no
+		prerequisite = {
+		    focus =  RZP_conscription 
+		}
+		prerequisite = {
+		    focus = RZP_more_guns
+		}
+		prerequisite = {
+		    focus = RZP_promotions
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_state_core= 98
-                        add_state_core= 10
-                        add_state_core= 92
-                        add_state_core= 91
-                        add_state_core= 89
-                        add_state_core= 93
-                        add_state_core= 94
-                        add_state_core= 95
-                        add_state_core= 96
-                        add_state_core= 97
+		    add_named_threat = { threat = 3 name = RZP_civilwar }
 
-                        add_political_power = 100
+			add_state_core= 98
+            add_state_core= 10
+            add_state_core= 92
+            add_state_core= 91
+            add_state_core= 89
+            add_state_core= 93
+            add_state_core= 94
+            add_state_core= 95
+            add_state_core= 96
+            add_state_core= 97
+
+            add_political_power = 100
 			custom_effect_tooltip = RZP_civil_war
 
-                        country_event = { id = rzeszapospolita.1 }
+            country_event = { id = rzeszapospolita.1 }
 		}
 	}
+
+    focus = {
+        id = RZP_post_war_reconstruction
+        icon = GFX_goal_generic_construct_civilian
+        x = 5
+        y = 6
+        cost = 5
+        available_if_capitulated = yes
+        ai_will_do = {
+            factor = 25
+        }
+        available = {
+            has_full_control_of_state = 10
+        }
+        completion_reward = {
+            add_political_power = 50
+            if = {
+                        limit = { has_idea = RZP_mass_conscription }
+                        remove_ideas = RZP_mass_conscription
+            }
+            remove_ideas = RZP_civil_war
+        }
+    }
 	
 	focus = {
 		id = RZP_reformaprzemyslowa
 		icon = GFX_goal_generic_construction2
 		x = 2
-		y = 3
+		y = 7
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszawe }
+		prerequisite = { focus = RZP_post_war_reconstruction }
 		ai_will_do = {
-			factor = 2
-		}
-		available = {
-			has_full_control_of_state = 10
+			factor = 20
 		}
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 1
@@ -101,13 +218,13 @@ focus_tree = {
 		id = RZP_nowemetodybudowlane
 		icon = GFX_goal_generic_air_production
 		x = 1
-		y = 4
+		y = 8
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_reformaprzemyslowa }
 		mutually_exclusive = { focus = RZP_tradycjabudowlana }
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 		completion_reward = {
 			add_tech_bonus= {
@@ -122,13 +239,13 @@ focus_tree = {
 		id = RZP_tradycjabudowlana
 		icon = GFX_goal_generic_production2
 		x = 3
-		y = 4
+		y = 8
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_reformaprzemyslowa }
 		mutually_exclusive = { focus = RZP_nowemetodybudowlane }
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
 		completion_reward = {
 			add_tech_bonus= {
@@ -143,7 +260,7 @@ focus_tree = {
 		id = RZP_powolanienowychszkol
 		icon = GFX_goal_tfv_generic_tech_sharing
 		x = 2
-		y = 5
+		y = 9
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -164,7 +281,7 @@ focus_tree = {
 		id = RZP_budowawjezdza
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 2
-		y = 6
+		y = 10
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_powolanienowychszkol }
@@ -223,13 +340,13 @@ focus_tree = {
 	focus = {
 		id = RZP_reformaarmi
 		icon = GFX_goal_generic_axis_build_infantry
-		x = 6
-		y = 3
+		x = 8
+		y = 7
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszawe }
+		prerequisite = { focus = RZP_post_war_reconstruction }
 		ai_will_do = {
-			factor = 3
+			factor = 40
 		}
 		available = {
 			has_full_control_of_state = 10
@@ -248,8 +365,8 @@ focus_tree = {
 	focus = {
 		id = RZP_modernizacjasilpancernych
 		icon = GFX_focus_generic_army_tanks2
-		x = 6
-		y = 4
+		x = 8
+		y = 8
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_reformaarmi }
@@ -268,8 +385,8 @@ focus_tree = {
 	focus = {
 		id = RZP_wislamarines
 		icon = GFX_goal_generic_special_forces
-		x = 6
-		y = 5
+		x = 8
+		y = 9
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_modernizacjasilpancernych }
@@ -294,8 +411,8 @@ focus_tree = {
 	focus = {
 		id = RZP_modernizacjasilpowietrznych
 		icon = GFX_goal_generic_air_fighter2
-		x = 5
-		y = 6
+		x = 7
+		y = 10
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_wislamarines }
@@ -317,8 +434,8 @@ focus_tree = {
 	focus = {
 		id = RZP_zakladmilitarnywolyn
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 6
-		y = 7
+		x = 8
+		y = 11
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_wislamarines }
@@ -351,8 +468,8 @@ focus_tree = {
 	focus = {
 		id = RZP_rozwojmarynarki
 		icon = GFX_focus_generic_navy_battleship2
-		x = 7
-		y = 6
+		x = 9
+		y = 10
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_wislamarines }
@@ -363,43 +480,55 @@ focus_tree = {
 			navy_experience = 25
 		}
 	}
+
+	focus = {
+	    id = RZP_time_of_choice
+	    icon = GFX_focus_generic_polish_deal
+	    x = 24
+	    y = 15
+	    cost = 5
+	    available_if_capitulated = yes
+	    available = {
+	        RZP = { has_completed_focus = RZP_post_war_reconstruction }
+	    }
+	    completion_reward = {
+	        country_event = { id = rzeszapospolita.3 }
+	    }
+	}
 	
 	focus = {
 		id = RZP_reformapolityczna
 		icon = GFX_focus_generic_polish_deal
-		x = 10
-		y = 3
-		cost = 5
+		x = 16
+		y = 16
+		cost = 1
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszawe }
+		prerequisite = { focus = RZP_time_of_choice }
 		mutually_exclusive = { focus = RZP_kontrrewolucjamonarchistyczna }
-		ai_will_do = {
-			factor = 1
-		}
 		available = {
-			has_full_control_of_state = 10
+			always = no
 		}
 		completion_reward = {
 			add_political_power= 100
 
-                        add_popularity= { 
-			   ideology = fascism 
-			   popularity = 0.5 
-                        }
+            add_popularity= { 
+			    ideology = fascism 
+			    popularity = 0.2
+            }
 		}
 	}
 	
 	focus = {
 		id = RZP_kontrrewolucjamonarchistyczna
 		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 3
-		cost = 10
+		x = 32
+		y = 16
+		cost = 1
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_marsznawarszawe }
+		prerequisite = { focus = RZP_time_of_choice }
 		mutually_exclusive = { focus = RZP_reformapolityczna }
 		available = {
-			has_full_control_of_state = 10
+			always = no
 		}
 		completion_reward = {
 			add_popularity= { 
@@ -413,8 +542,8 @@ focus_tree = {
 	focus = {
 		id = RZP_umocnieniewladzynsppru
 		icon = GFX_goal_support_fascism
-		x = 10
-		y = 4
+		x = 16
+		y = 17
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_reformapolityczna }
@@ -434,8 +563,8 @@ focus_tree = {
 	focus = {
 		id = RZP_czystkapolityczna
 		icon = GFX_goal_generic_forceful_treaty
-		x = 10
-		y = 5
+		x = 16
+		y = 18
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_umocnieniewladzynsppru }
@@ -450,8 +579,8 @@ focus_tree = {
 	focus = {
 		id = RZP_dyplomacjaeuropejska
 		icon = GFX_focus_usa_focus_on_europe
-		x = 9
-		y = 6
+		x = 13
+		y = 19
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_czystkapolityczna }
@@ -463,8 +592,8 @@ focus_tree = {
 	focus = {
 		id = RZP_przyjaznniemiecka
 		icon = GFX_focus_chi_mission_to_germany
-		x = 8
-		y = 7
+		x = 12
+		y = 20
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_dyplomacjaeuropejska }
@@ -486,8 +615,8 @@ focus_tree = {
 	focus = {
 		id = RZP_czlonkostwowosi
 		icon = GFX_goal_support_fascism
-		x = 8
-		y = 8
+		x = 12
+		y = 21
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_przyjaznniemiecka }
@@ -504,8 +633,8 @@ focus_tree = {
 	focus = {
 		id = RZP_przyjaznradziecka
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		x = 10
-		y = 7
+		x = 14
+		y = 20
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_dyplomacjaeuropejska }
@@ -521,8 +650,8 @@ focus_tree = {
 	focus = {
 		id = RZP_dolaczeniedokominternu
 		icon = GFX_goal_support_communism
-		x = 10
-		y = 8
+		x = 14
+		y = 21
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_przyjaznradziecka }
@@ -542,8 +671,8 @@ focus_tree = {
 	focus = {
 		id = RZP_dyplomacjaswiatowa
 		icon = GFX_goal_tripartite_pact
-		x = 11
-		y = 6
+		x = 20
+		y = 19
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_czystkapolityczna }
@@ -558,8 +687,8 @@ focus_tree = {
 	focus = {
 		id = RZP_dyplomacjaazjatycka
 		icon = GFX_focus_chi_collaboration_with_the_japanese
-		x = 13
-		y = 7
+		x = 17
+		y = 20
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_dyplomacjaswiatowa }
@@ -575,11 +704,14 @@ focus_tree = {
 	focus = {
 		id = RZP_wsparciedlachin
 		icon = GFX_focus_generic_china1
-		x = 12
-		y = 8
+		x = 16
+		y = 21
 		cost = 5
 		available_if_capitulated = no
 		prerequisite = { focus = RZP_dyplomacjaazjatycka }
+		ai_will_do = {
+		    factor = 30
+		}
 		mutually_exclusive = { focus = RZP_przyjaznpolskojaponska }
 		completion_reward = {
 			CHI = {
@@ -598,8 +730,8 @@ focus_tree = {
 	focus = {
 		id = RZP_bazazapomoc
 		icon = GFX_goal_generic_position_armies
-		x = 12
-		y = 9
+		x = 16
+		y = 22
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_wsparciedlachin }
@@ -616,14 +748,14 @@ focus_tree = {
 	focus = {
 		id = RZP_przyjaznpolskojaponska
 		icon = GFX_focus_jap_showa_restoration
-		x = 14
-		y = 8
+		x = 18
+		y = 21
 		cost = 5
 		available_if_capitulated = no
 		prerequisite = { focus = RZP_dyplomacjaazjatycka }
 		mutually_exclusive = { focus = RZP_wsparciedlachin }
 		ai_will_do = {
-			factor = 1
+			factor = 60
 		}
 		available = {
 			has_equipment = {infantry_equipment > 4000}
@@ -653,8 +785,8 @@ focus_tree = {
 	focus = {
 		id = RZP_wspolnemanewry
 		icon = GFX_goal_generic_navy_battleship
-		x = 14
-		y = 9
+		x = 18
+		y = 22
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_przyjaznpolskojaponska }
@@ -669,14 +801,14 @@ focus_tree = {
 	focus = {
 		id = RZP_wymianatechnologiczna
 		icon = GFX_goal_tfv_generic_tech_sharing
-		x = 12
-		y = 10
+		x = 17
+		y = 23
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_wspolnemanewry }
 		mutually_exclusive = { focus = RZP_ukrascsaipan }
 		ai_will_do = {
-		       factor = 0
+		       factor = 25
 		}
 		available = {
 		       always = no
@@ -686,14 +818,14 @@ focus_tree = {
 	focus = {
 		id = RZP_ukrascsaipan
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 16
-		y = 10
+		x = 19
+		y = 23
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_wspolnemanewry }
 		mutually_exclusive = { focus = RZP_wymianatechnologiczna }
 		ai_will_do = {
-			factor = 1
+			factor = 50
 		}
 		completion_reward = {
 			country_event= {
@@ -706,8 +838,8 @@ focus_tree = {
 	focus = {
 		id = RZP_rozbudowawyspy
 		icon = GFX_goal_generic_construction2
-		x = 16
-		y = 11
+		x = 19
+		y = 24
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_ukrascsaipan }
@@ -725,8 +857,8 @@ focus_tree = {
 	focus = {
 		id = RZP_juntawojskowarzeszypospolitej
 		icon = GFX_focus_ger_oppose_hitler
-		x = 16
-		y = 12
+		x = 19
+		y = 25
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_rozbudowawyspy }
@@ -744,8 +876,8 @@ focus_tree = {
 	focus = {
 		id = RZP_nawiazaniekontaktuzewspolnota
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 16
-		y = 7
+		x = 20
+		y = 20
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_dyplomacjaswiatowa }
@@ -766,8 +898,8 @@ focus_tree = {
 	focus = {
 		id = RZP_cioswplecy
 		icon = GFX_goal_generic_political_pressure
-		x = 16
-		y = 8
+		x = 20
+		y = 21
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_nawiazaniekontaktuzewspolnota }
@@ -790,8 +922,8 @@ focus_tree = {
 	focus = {
 		id = RZP_nawiazaniekontaktuzamerykami
 		icon = GFX_focus_chi_mission_to_the_us
-		x = 19
-		y = 7
+		x = 24
+		y = 20
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_dyplomacjaswiatowa }
@@ -812,8 +944,8 @@ focus_tree = {
 	focus = {
 		id = RZP_amerykapolnocna
 		icon = GFX_goal_tripartite_pact
-		x = 18
-		y = 8
+		x = 23
+		y = 21
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_nawiazaniekontaktuzamerykami }
@@ -829,8 +961,8 @@ focus_tree = {
 	focus = {
 		id = RZP_ukrascalaske
 		icon = GFX_goal_generic_position_armies
-		x = 18
-		y = 9
+		x = 23
+		y = 22
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_amerykapolnocna }
@@ -848,8 +980,8 @@ focus_tree = {
 	focus = {
 		id = RZP_amerykapoludniowa
 		icon = GFX_goal_tripartite_pact
-		x = 20
-		y = 8
+		x = 25
+		y = 21
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_nawiazaniekontaktuzamerykami }
@@ -865,8 +997,8 @@ focus_tree = {
 	focus = {
 		id = RZP_gwarancjabezpieczenstwa
 		icon = GFX_focus_CZE_german_puppet
-		x = 20
-		y = 9
+		x = 25
+		y = 22
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_amerykapoludniowa }
@@ -1123,12 +1255,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+		    RZP = { has_completed_focus = RZP_reformaarmi }
+		}
 		completion_reward = {
 			add_tech_bonus= {
                            bonus = 1.0 
                            uses = 2 
                            category = land_doctrine 
-                       }
+            }
 		}
 	}
 	
