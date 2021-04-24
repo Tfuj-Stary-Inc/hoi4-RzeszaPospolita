@@ -35,7 +35,26 @@ country_event = {
 	}
 }
 	
-	
+country_event = {
+	id = rzeszapospolita.3
+	title = rzeszapospolita.3.title
+	desc = rzeszapospolita.3.desc
+	picture = 
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+	    RZP = { has_completed_focus = RZP_time_of_choice }
+	}
+	option = {
+	    name = rzeszapospolita.3.a
+	    complete_focus = RZP_reformapolityczna 
+	}
+	option = {
+	    name = rzeszapospolita.3.b
+	    complete_focus = RZP_kontrrewolucjamonarchistyczna
+	}
+}	
 
 country_event = {
 	id = rzeszapospolita.4
