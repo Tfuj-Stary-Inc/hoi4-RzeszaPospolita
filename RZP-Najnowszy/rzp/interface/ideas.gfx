@@ -4027,7 +4027,7 @@ spriteTypes = {
 	
 	spriteType = {
 	        name = "GFX_idea_RZP_jerzy_urban"
-		texturefile = "gfx/interface/ideas/rzp_advisor_urban(1).dds"
+		texturefile = "gfx/interface/ideas/rzp_urban_advisor.dds"
 	}
 	
 	spriteType = {
@@ -4118,6 +4118,11 @@ spriteTypes = {
 	spriteType = {
 	      name = "GFX_idea_RAM_vogels"
 	      texturefile = "gfx/interface/ideas/Portrait_RAM_Werner_Vogels.dds"
+	}
+
+	spriteType = {
+	      name = "GFX_idea_RUK_enemies"
+	      texturefile = "gfx/interface/goals/otoczona_ukr.dds"
 	}
 	
 }
