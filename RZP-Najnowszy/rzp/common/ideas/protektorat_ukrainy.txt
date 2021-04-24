@@ -2,7 +2,7 @@ ideas = {
  
   country = {
   
-                  UKR_enemies_on_all_sides = {
+            UKR_enemies_on_all_sides = {
 		
 			allowed = {
 				always = no
@@ -14,7 +14,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = 
+			picture = GFX_idea_RUK_enemies
 
 			modifier = {
 			  stability_factor = -0.1
