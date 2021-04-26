@@ -39,6 +39,10 @@ set_popularities = {
 	      neutrality = 45
 }
 
+add_ideas = {
+        RUK_enemies_on_all_sides
+}
+
 set_research_slots = 2
 set_convoys = 100
 
