@@ -30,7 +30,7 @@ focus_tree = {
 		     search_filters = { FOCUS_FILTER_POLITICAL }
 		     completion_reward = {
 		             add_political_power = 100
-			         add_ideas = UKR_political_chaos
+			         add_ideas = RUK_political_chaos
 		     }
 		     select_effect = {
 		             hidden_effect = {
@@ -53,8 +53,25 @@ focus_tree = {
 		               always = no
 		     }
 		     completion_reward = {
-		     
+		             set_politics = {
+		                     ruling_party = fascism
+		                     elections_allowed = no
+		             }
 		     }
+	    }
+
+	    focus = {
+	        id = RUK_path_to_great_ukraine
+	        icon = GFX_goal_generic_demand_territory
+	        x = 8
+	        y = 3
+	        cost = 10
+	        prerequisite = { focus = RUK_side_with_fascists }
+	        prerequisite = { focus = RUK_choice_made }
+	        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+	        completion_reward = {
+	                RUK_greater_ukraine_path_starts = yes
+	        }
 	    }
 	    
 	    focus = {
@@ -71,7 +88,10 @@ focus_tree = {
 		        always = no
 	        }
 		    completion_reward = {
-		    
+		            set_politics = {
+		                    ruling_party = communism
+		                    elections_allowed = no
+		            }
 		    }
 	   }
 
@@ -90,6 +110,34 @@ focus_tree = {
 	       }
 	       completion_reward = {
 
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_choice_made
+	       icon = GFX_goal_generic_forceful_treaty
+	       x = 13
+	       y = 2
+	       cost = 5
+	       prerequisite = { focus = RUK_side_with_fascists focus = RUK_side_with_democracy focus = RUK_side_with_communists }
+	       search_filters = { FOCUS_FILTER_POLITICAL }
+	       completion_reward = {
+	               remove_ideas = { RUK_political_chaos }
+	               if = {
+	                      limit = {
+	                                OR = {
+	                                       has_government = fascism
+	                                       has_government = communism 
+	                                     }
+	                      add_war_support = 0.1
+	                      }
+	               }
+	               if = {
+	                      limit = {
+	                                has_government = democracy
+	                      }
+	                      add_stability = 0.05
+	               }
 	       }
 	   }
 	   
@@ -213,7 +261,7 @@ focus_tree = {
 	       ai_will_do = {
 	               factor = 70
 	       }
-	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
 	       prerequisite = { focus = RUK_buildup_industry }
 	       available_if_capitulated = yes
 	       complete_tooltip = {
@@ -236,7 +284,7 @@ focus_tree = {
 	       ai_will_do = {
 	               factor = 60
 	       }
-	       search_filter = { FOCUS_FILTER_RESEARCH }
+	       search_filters = { FOCUS_FILTER_RESEARCH }
 	       prerequisite = { focus = RUK_kiev_workplaces }
 	       available_if_capitulated = yes
 	       completion_reward = {
@@ -263,10 +311,414 @@ focus_tree = {
 	                       has_full_control_of_state = 197
 	               }
 	       }
-	       search_filter = { FOCUS_FILTER_STABILITY }
+	       search_filters = { FOCUS_FILTER_STABILITY }
 	       prerequisite = { focus = RUK_buildup_industry }
 	       completion_reward = {
 	               add_stability = 0.1
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_wolyn_POW_camps
+	       icon = GFX_goal_generic_fortify_city
+	       x = 27
+	       y = 4
+	       cost = 10
+	       ai_will_do = {
+	               factor = 80
+	       }
+	       available = {
+	               AND = {
+	                       has_full_control_of_state = 93
+	                       is_in_faction_with = RZP
+	               }
+	       }
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 3
+	               add_building_construction = {
+	                       type = arms_factory
+	                       level = 1
+	                       instant_build = yes
+	               }
+	               add_building_construction = {
+	                       type = industrial_complex
+	                       level = 2
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               93 = {
+	                       add_manpower = 213700
+	                       add_extra_state_shared_building_slots = 3
+	                       add_building_construction = {
+	                               type = industrial_complex
+	                               level = 2
+	                               instant_build = yes
+	                       }
+	                       add_building_construction = {
+	                               type = arms_factory
+	                               level = 1
+	                               instant_build = yes
+	                       }
+	               }
+	               hidden_effect = { country_event = { days = 90 id = ukraina.30 } }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_lwow_is_ukrainian
+	       icon = GFX_goal_generic_territory_or_war
+	       x = 29
+	       y = 4
+	       cost = 10
+	       ai_will_do = {
+	               factor = 40
+	       }
+	       available = {
+	                     has_full_control_of_state = 91
+	       }
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       search_filters = { FOCUS_FILTER_STABILITY }
+	       completion_reward = {
+	               add_stability = 0.05
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_stanislawow_air_industry
+	       icon = GFX_goal_generic_build_airforce
+	       x = 31
+	       y = 4
+	       cost = 10
+	       ai_will_do = {
+	               factor = 60
+	       }
+	       available = {
+	                     has_full_control_of_state = 89
+	       }
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 2
+	               add_building_construction = {
+	                       type = arms_factory
+	                       level = 2
+	                       instant_build = yes
+	               }
+	               add_building_construction = {
+	                       type = air_base
+	                       level = 3
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               89 = {
+	                      add_extra_state_shared_building_slots = 2
+	                      add_building_construction = {
+	                              type = arms_factory
+	                              level = 2
+	                              instant_build = yes
+	                      }
+	                      add_building_construction = {
+	                              type = air_base
+	                              level = 3
+	                              instant_build = yes
+	                      }
+	                      add_resource = {
+	                              type = aluminium
+	                              amount = 20
+	                      }
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_connect_the_west
+	       icon = GFX_goal_generic_construct_infrastructure
+	       x = 29
+	       y = 5
+	       cost = 15
+	       prerequisite = { focus = RUK_wolyn_POW_camps focus = RUK_lwow_is_ukrainian focus = RUK_stanislawow_air_industry }
+	       ai_will_do = {
+	               factor = 50
+	       }
+	       available = {
+	               OR = {
+	                      has_full_control_of_state = 89
+	                      has_full_control_of_state = 91
+	                      has_full_control_of_state = 93
+	               }
+	       }
+	       search_filters = { FOCUS_FILTER_INDUSTRIAL }
+	       available_if_capitulated = yes
+	       complete_tooltip = {
+	               add_building_construction = {
+	                       type = infrastructure
+	                       level = 3
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               add_stability = 0.05
+	               89 = {
+	                    if = {
+	                        limit = {
+	                            is_controlled_by = ROOT
+	                        }
+	                        add_building_construction = {
+	                                type = infrastructure
+	                                level = 3
+	                                instant_build = yes
+	                        }
+	                    }
+	               }
+
+	               91 = {
+	                    if = {
+	                        limit = {
+	                            is_controlled_by = ROOT
+	                        }
+	                        add_building_construction = {
+	                                type = infrastructure
+	                                level = 3
+	                                instant_build = yes
+	                        }
+	                    }
+	               }
+
+	               93 = {
+	                    if = {
+	                        limit = {
+	                            is_controlled_by = ROOT
+	                        }
+	                        add_building_construction = {
+	                                type = infrastructure
+	                                level = 3
+	                                instant_build = yes
+	                        }
+	                    }
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_odessa_naval_dockyards
+	       icon = GFX_goal_generic_navy_battleship
+	       x = 35
+	       y = 4
+	       cost = 10
+	       ai_will_do = {
+	               factor = 45
+	       }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       available = {
+	               has_full_control_of_state = 192
+	       }
+	       complete_tooltip = {
+	               add_extra_state_shared_building_slots = 4
+	               add_building_construction = {
+	                       type = dockyard
+	                       level = 4
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               192 = {
+	                    add_extra_state_shared_building_slots = 4
+	                    add_building_construction = {
+	                            type = dockyard
+	                            level = 4
+	                            instant_build = yes
+	                    }
+	               }
+
+	               add_tech_bonus = {
+	                       name = cr_bonus
+	                       bonus = 1.5
+	                       ahead_reduction = 1
+	                       uses = 3
+	                       category = cl_tech
+	                       category = ca_tech
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_mikolaiv_airport
+	       icon = GFX_goal_generic_build_airforce
+	       x = 37
+	       y = 4
+	       cost = 10
+	       ai_will_do = {
+	               factor = 60
+	       }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       available = {
+	               has_full_control_of_state = 197
+	       }
+	       complete_tooltip = {
+	               add_building_construction = {
+	                       type = air_base
+	                       level = 5
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               air_experience = 50
+	               197 = {
+	                       add_building_construction = {
+	                               type = air_base
+	                               level = 5
+	                               instant_build = yes
+	                       }
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_cherkasy_settlers
+	       icon = GFX_goal_generic_construct_civilian
+	       x = 39
+	       y = 4
+	       cost = 10
+	       ai_will_do = {
+	               factor = 70
+	       }
+	       search_filters = { FOCUS_FILTER_MANPOWER }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       available = {
+	               has_full_control_of_state = 203
+	       }
+	       completion_reward = {
+	               203 = {
+	                       add_extra_state_shared_building_slots = 4
+	                       add_manpower = 250000
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_connect_the_south
+	       icon = GFX_goal_generic_construct_infrastructure
+	       x = 37
+	       y = 5
+	       cost = 10
+	       ai_will_do = {
+	               factor = 40
+	       }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_odessa_naval_dockyards focus = RUK_mikolaiv_airport focus = RUK_cherkasy_settlers }
+	       available = {
+	               OR = {
+	                      has_full_control_of_state = 192
+	                      has_full_control_of_state = 197
+	                      has_full_control_of_state = 203
+	               }
+	       }
+	       complete_tooltip = {
+	               add_building_construction = {
+	                       type = infrastructure
+	                       level = 3
+	                       instant_build = yes
+	               }
+	       }
+	       completion_reward = {
+	               add_stability = 0.05
+	               192 = {
+	                    if = {
+	                        limit = {
+	                            is_controlled_by = ROOT
+	                        }
+	                        add_building_construction = {
+	                                type = infrastructure
+	                                level = 3
+	                                instant_build = yes
+	                        }
+	                    }
+	               }
+
+	               197 = {
+	                    if = {
+	                        limit = {
+	                            is_controlled_by = ROOT
+	                        }
+	                        add_building_construction = {
+	                                type = infrastructure
+	                                level = 3
+	                                instant_build = yes
+	                        }
+	                    }
+	               }
+
+	               203 = {
+	                    if = {
+	                        limit = {
+	                            is_controlled_by = ROOT
+	                        }
+	                        add_building_construction = {
+	                                type = infrastructure
+	                                level = 3
+	                                instant_build = yes
+	                        }
+	                    }
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_united_land
+	       icon = GFX_goal_generic_position_armies
+	       x = 33
+	       y = 6
+	       cost = 15
+	       ai_will_do = {
+	               factor = 50
+	       }
+	       search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_incorporate_conquested_territories }
+	       prerequisite = { focus = RUK_connect_the_west focus = RUK_connect_the_south }
+	       available = {
+	               OR = {
+	                      has_full_control_of_state = 193
+	                      has_full_control_of_state = 225
+	                      has_full_control_of_state = 259
+	                      has_full_control_of_state = 226
+	                      has_full_control_of_state = 196
+	                      has_full_control_of_state = 200
+	                      has_full_control_of_state = 221
+	                      has_full_control_of_state = 227
+	                      has_full_control_of_state = 228
+	               }
+	       }
+	       completion_reward = {
+	               add_stability = 0.1
+	               add_ideas = RUK_united_land
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_open_more_schools
+	       icon = GFX_focus_research
+	       x = 33
+	       y = 7
+	       cost = 5
+	       ai_will_do = {
+	               factor = 100
+	       }
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       prerequisite = { focus = RUK_united_land }
+	       completion_reward = {
+	               add_research_slot = 1
+	               add_ideas = RUK_educate_the_people
 	       }
 	   }
 
@@ -279,7 +731,7 @@ focus_tree = {
 	       ai_will_do = {
 	               factor = 70
 	       }
-	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
 	       available_if_capitulated = yes
 	       prerequisite = { focus = RUK_buildup_industry }
 	       complete_tooltip = {
@@ -311,7 +763,7 @@ focus_tree = {
 	       ai_will_do = {
 	               factor = 50
 	       }
-	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
 	       available = {
 	               has_full_control_of_state = 199
 	       }
@@ -345,7 +797,7 @@ focus_tree = {
 	       ai_will_do = {
 	               factor = 10
 	       }
-	       search_filter = { FOCUS_FILTER_INDUSTRY }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
 	       prerequisite = { focus = RUK_buildup_industry }
 	       available = {
 	               any_state = {
