@@ -174,18 +174,6 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-        name = "Nat-War"
-	picture = "rzp_nat_war_general.dds"
-	traits = { politically_connected }
-	skill = 3
-        id = 2140
-        attack_skill = 2
-        defense_skill = 3
-        planning_skill = 1
-        logistics_skill = 1
-}
-
-create_corps_commander = {
         name = "Cat"
         picture = "Portrait_Rzesza_Pospolita_Cat.dds"
         traits = { trickster urban_assault_specialist }
@@ -195,18 +183,6 @@ create_corps_commander = {
         defense_skill = 3
         planning_skill = 3
         logistics_skill = 2
-}
-
-create_corps_commander = {
-        name = "KYSawier"
-	picture = "Portrait_Rzesza_Pospolita_Xavier.dds"
-	traits = { trickster }
-	skill = 2
-	id = 2142
-	attack_skill = 1
-        defense_skill = 2
-        planning_skill = 1
-        logistics_skill = 3
 }
 
 create_navy_leader = {
