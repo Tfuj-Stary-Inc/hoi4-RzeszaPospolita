@@ -2,7 +2,7 @@ ideas = {
  
   country = {
   
-            UKR_enemies_on_all_sides = {
+            RUK_enemies_on_all_sides = {
 		
 			allowed = {
 				always = no
@@ -26,7 +26,7 @@ ideas = {
 			}
 		}
 		
-		UKR_political_chaos = {
+		RUK_political_chaos = {
 		        
 			allowed = {
 				always = no
@@ -43,6 +43,44 @@ ideas = {
 				communism_drift = 0.1
 				democratic_drift = 0.1
 			}
+		}
+
+		RUK_united_land = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            NOT = {
+		                    has_government = neutrality
+		            }
+		    }
+		    picture = generic_manpower_bonus
+		    removal_cost = -1
+		    modifier = {
+		        conscription_factor = 0.15
+		        surrender_limit = 0.15
+		        stability_factor = 0.05
+		    }
+		}
+
+		RUK_educate_the_people = {
+
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		            NOT = {
+		                    has_government = communism
+		                    has_government = neutrality
+		            }
+		    }
+		    picture = generic_research_bonus
+		    removal_cost = -1
+		    modifier = {
+		            research_speed_factor = 0.15
+		    }
 		}
     
   }
