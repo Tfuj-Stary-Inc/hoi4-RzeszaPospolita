@@ -73,6 +73,504 @@ focus_tree = {
 	                RUK_greater_ukraine_path_starts = yes
 	        }
 	    }
+
+	    focus = {
+	        id = RUK_search_for_allies
+	        icon = GFX_goal_tripartite_pact
+	        x = 5
+	        y = 4
+	        cost = 10
+	        prerequisite = { focus = RUK_path_to_great_ukraine }
+	        mutually_exclusive = { focus = RUK_our_own_path }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        ai_will_do = {
+	                factor = 70
+	        }
+	        completion_reward = {
+	                add_stability = 0.05
+	                add_political_power = 100
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_seek_help_in_Rzesza_Pospolita
+	        icon = GFX_goal_ukraina_rzesza_deal
+	        x = 3
+	        y = 5
+	        cost = 10
+	        prerequisite = { focus = RUK_search_for_allies }
+	        mutually_exclusive = { focus = RUK_seek_help_in_germany }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+                    RZP = { country_event = ukraina.2 }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_ask_for_western_territories
+	        icon = GFX_goal_generic_intelligence_exchange
+	        x = 3
+	        y = 6
+	        cost = 10
+	        prerequisite = { focus = RUK_seek_help_in_Rzesza_Pospolita }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        completion_reward = {
+	                RZP = { country_event = ukraina.7 }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_seek_help_in_germany
+	        icon = GFX_focus_chi_mission_to_germany
+	        x = 7
+	        y = 5
+	        cost = 10
+	        prerequisite = { focus = RUK_search_for_allies }
+	        mutually_exclusive = { focus = RUK_seek_help_in_Rzesza_Pospolita }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                GER = { country_event = ukraina.4 }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_german_generals
+	        icon = GFX_focus_generic_military_mission
+	        x = 7
+	        y = 6
+	        cost = 10
+	        prerequisite = { focus = RUK_seek_help_in_germany }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                create_corps_commander = {
+                            name = "Osttruppen"
+	                        picture = "Portrait_RUK_Ostruppen.dds"
+	                        traits = {  }
+	                        skill = 5
+                            id = 3060
+                            attack_skill = 4
+                            defense_skill = 3
+                            planning_skill = 3
+                            logistics_skill = 2
+                    }
+                    create_corps_commander = {
+                            name = "PROsttruppen"
+	                        picture = "Portrait_RUK_Ostruppen2.dds"
+	                        traits = {  }
+	                        skill = 7
+                            id = 3061
+                            attack_skill = 7
+                            defense_skill = 6
+                            planning_skill = 4
+                            logistics_skill = 4
+                    }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_west_partisants
+	        icon = GFX_focus_prc_infiltration
+	        x = 6
+	        y = 7
+	        cost = 10
+	        prerequisite = { focus = RUK_german_generals }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        available = {
+	                has_army_manpower = { size > 299999 }
+	        }
+	        completion_reward = {
+
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_our_own_path
+	        icon = GFX_goal_generic_political_pressure
+	        x = 11
+	        y = 4
+	        cost = 10
+	        prerequisite = { focus = RUK_path_to_great_ukraine }
+	        mutually_exclusive = { focus = RUK_search_for_allies }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        ai_will_do = {
+	                factor = 40
+	        }
+	        completion_reward = {
+	                add_country_leader_trait = ukrainian_hero
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_train_our_officers
+	        icon = GFX_focus_generic_military_mission
+	        x = 11
+	        y = 5
+	        cost = 10
+	        prerequisite = { focus = RUK_our_own_path }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                create_corps_commander = {
+                            name = "PutOut"
+	                        picture = "Portrait_Protektorat_Ukrainy_Putout.dds"
+	                        traits = {  }
+	                        skill = 4
+	                        attack_skill = 6
+	                        defense_skill = 5
+	                        planning_skill = 5
+	                        logistics_skill = 6
+                            id = 3003
+                    }
+                    create_corps_commander = {
+                            name = "Pani Swietlana"
+	                        picture = "Portrait_Protektorat_Ukrainy_Swietlana.dds"
+	                        traits = {  }
+	                        skill = 3
+	                        attack_skill = 2
+	                        defense_skill = 4
+	                        planning_skill = 3
+	                        logistics_skill = 3
+                            id = 3004
+                    }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_strike_the_west
+	        icon = GFX_goal_generic_occupy_states_ongoing_war
+	        x = 11
+	        y = 6
+	        cost = 5
+	        prerequisite = { focus = RUK_train_our_officers }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        available = {
+	                has_army_manpower = { size > 249999 }
+	                NOT = { has_war_with = RZP }
+	        }
+	        bypass = {
+	                OR = {
+	                       has_war_with = RZP
+	                       NOT = { country_exists = RZP }
+	                }
+	        }
+	        completion_reward = {
+	                add_named_threat = { threat = 3 name = RUK_western_war }
+	                create_wargoal = { type = annex_everything target = RZP }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_repair_relations_with_rzp
+	        icon = GFX_goal_ukraina_rzesza_deal
+	        x = 12
+	        y = 7
+	        cost = 10
+	        prerequisite = { focus = RUK_strike_the_west }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        available = {
+	                has_full_control_of_state = 89
+	                has_full_control_of_state = 91
+	                has_full_control_of_state = 93
+	        }
+	        completion_reward = {
+	                custom_effect_tooltip = ruk_relations_with_rzp
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_south_partisants
+	        icon = GFX_focus_prc_infiltration
+	        x = 8
+	        y = 7
+	        cost = 10
+	        prerequisite = { focus = RUK_ask_for_western_territories focus = RUK_german_generals focus = RUK_strike_the_west }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        available = {
+	                has_army_manpower = { size > 399999 }
+	                NOT = { has_war_with = SOV }
+	        }
+	        bypass = {
+	                has_war_with = SOV
+	        }
+	        completion_reward = {
+
+	        }
+	    }
+
+	    #Continuation with RZP
+	    focus = {
+	        id = RUK_succes_in_south
+	        icon = GFX_goal_generic_demand_territory
+	        x = 3
+	        y = 8
+	        cost = 5
+	        prerequisite = { focus = RUK_ask_for_western_territories }
+	        prerequisite = { focus = RUK_south_partisants }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        available = {
+	                has_full_control_of_state = 192
+	                has_full_control_of_state = 197
+	                has_full_control_of_state = 203
+	        }
+	        completion_reward = {
+	                RZP = {
+	                        country_event = { hours = 24 id = ukraina.8 }
+	                }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_our_master_ambitions
+	        icon = GFX_focus_CZE_german_puppet
+	        x = 1
+	        y = 9
+	        cost = 0
+	        prerequisite = { focus = RUK_succes_in_south }
+	        mutually_exclusive = { focus = RUK_our_next_move }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        available = {
+	                always = no
+	        }
+	        completion_reward = {
+
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_claim_moldova
+	        icon = GFX_goal_generic_forceful_treaty
+	        x = 1
+	        y = 10
+	        cost = 10
+	        prerequisite = { focus = RUK_our_master_ambitions }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        completion_reward = {
+	                add_state_core = 78
+	                add_state_core = 80
+	                add_state_core = 766
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_unfulfilled_hopes
+	        icon = GFX_focus_generic_strike_at_democracy2
+	        x = 1
+	        y = 11
+	        cost = 10
+	        prerequisite = { focus = RUK_claim_moldova }
+	        search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
+	        completion_reward = {
+	                add_ideas = RUK_at_least_not_annexed
+	                add_stability = -0.05
+	        }
+	    }
+	    #Continuation with Germany
+	    focus = {
+	        id = RUK_succes_in_south2
+	        icon = GFX_goal_generic_demand_territory
+	        x = 7
+	        y = 8
+	        cost = 0
+	        prerequisite = { focus = RUK_german_generals }
+	        prerequisite = { focus = RUK_south_partisants }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        available = {
+	                always = no
+	        }
+	        completion_reward = {
+	                add_timed_idea = {
+	                        idea = RUK_german_general_staff_help
+	                        days = 730
+	                }
+	        }
+	    }
+	    #Continuation by yourself
+	    focus = {
+	        id = RUK_succes_in_south3
+	        icon = GFX_goal_generic_demand_territory
+	        x = 11
+	        y = 8
+	        cost = 5
+	        prerequisite = { focus = RUK_strike_the_west }
+	        prerequisite = { focus = RUK_south_partisants }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        available = {
+	                has_full_control_of_state = 192
+	                has_full_control_of_state = 197
+	                has_full_control_of_state = 203
+	        }
+	        completion_reward = {
+	                add_timed_idea = {
+	                        idea = RUK_victory_in_the_west
+	                        days = 730
+	                }
+	        }
+	    }
+	    ############
+	    focus = {
+	        id = RUK_our_next_move
+	        icon = GFX_goal_generic_position_armies
+	        x = 8
+	        y = 9
+	        cost = 10
+	        prerequisite = { focus = RUK_succes_in_south focus = RUK_succes_in_south2 focus = RUK_succes_in_south3 }
+	        mutually_exclusive = { focus = RUK_our_master_ambitions }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        completion_reward = {
+	                RUK_greater_ukraine_path_continues = yes
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_send_partisants
+	        icon = GFX_focus_prc_infiltration
+	        x = 4
+	        y = 10
+	        cost = 10
+	        prerequisite = { focus = RUK_our_next_move }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                custom_effect_tooltip = ruk_enemies_among_us
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_propose_fascist_aliance
+	        icon = GFX_goal_anschluss
+	        x = 6
+	        y = 11
+	        cost = 10
+	        prerequisite = { focus = RUK_our_next_move }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                if = {
+	                       limit = {
+	                                has_completed_focus = RUK_seek_help_in_Rzesza_Pospolita
+	                       }
+	                       RZP = {
+	                                country_event = { hours = 6 id = ukraina.11 }
+	                       }
+	                }
+	                if = {
+	                       limit = {
+	                                 OR = {
+	                                        has_completed_focus = RUK_our_own_way
+	                                        has_completed_focus = RUK_seek_help_in_germany
+	                                 }
+	                       }
+	                       country_event = ukraina.11
+	                }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_train_soldiers
+	        icon = GFX_goal_generic_axis_build_infantry
+	        x = 10
+	        y = 11
+	        cost = 10
+	        prerequisite = { focus = RUK_our_next_move }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                custom_effect_tooltip = ruk_train_soldiers
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_initiate_caucasus_revolt
+	        icon = GFX_goal_generic_military_deal
+	        x = 12
+	        y = 10
+	        cost = 10
+	        prerequisite = { focus = RUK_our_next_move }
+	        search_filters = { FOCUS_FILTER_POLITICAL }
+	        completion_reward = {
+	                custom_effect_tooltip = ruk_caucasus_revolution
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_strike_USSR
+	        icon = GFX_focus_attack_soviet
+	        x = 8
+	        y = 12
+	        cost = 10
+	        prerequisite = { focus = RUK_our_next_move }
+	        available = {
+	                has_army_manpower = { size > 499999 }
+	        }
+	        search_filters = { FOCUS_FILTER_ANNEXATION }
+	        completion_reward = {
+	                declare_war_on = { target = SOV type = annex_everything }
+	                if = {
+	                       limit = {
+	                                 has_completed_focus = RUK_initiate_caucasus_revolt
+	                       }
+	                       country_event = ukraina.13
+	                }
+	                if = {
+	                       limit = {
+	                                 has_completed_focus = RUK_send_partisants
+	                       }
+	                       SOV = {
+	                               add_timed_idea = {
+	                                       idea = RUK_enemies_among_us
+	                                       days = 730
+	                               }
+	                       }
+	                }
+	                if = {
+	                       limit = {
+	                                 GER = { is_in_faction_with = RUK }
+	                                 ITA = { is_in_faction_with = RUK }
+	                                 JAP = { is_in_faction_with = RUK }
+	                       }
+	                       every_other_country = {
+	                               limit = {
+	                                        is_in_faction_with = RUK
+	                               }
+	                               declare_war_on = { target = SOV type = annex_everything }
+	                       }
+	                }
+	                if = {
+	                       limit = {
+	                                 has_completed_focus = RUK_train_soldiers
+	                       }
+	                       every_other_country = {
+	                               limit = {
+	                                        is_in_faction_with = RUK
+	                               }
+	                               add_timed_idea = {
+	                                       idea = RUK_well_prepared_soldiers
+	                                       days = 995
+	                               }
+	                       }
+	                }
+	        }
+	    }
+
+	    focus = {
+	        id = RUK_united_we_stay
+	        icon = GFX_goal_generic_demand_territory
+	        x = 8
+	        y = 13
+	        cost = 15
+	        prerequisite = { focus = RUK_strike_USSR }
+	        available = {
+	                has_full_control_of_state = 193
+	                has_full_control_of_state = 196
+	                has_full_control_of_state = 200
+	                has_full_control_of_state = 221
+	                has_full_control_of_state = 225
+	                has_full_control_of_state = 226
+	                has_full_control_of_state = 227
+	                has_full_control_of_state = 228
+	                has_full_control_of_state = 259
+	        }
+	        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+	        completion_reward = {
+	                add_ideas = RUK_ukraine_united
+	        }
+	    }
 	    
 	    focus = {
 	        id = RUK_side_with_communists
@@ -451,7 +949,7 @@ focus_tree = {
 	                      has_full_control_of_state = 93
 	               }
 	       }
-	       search_filters = { FOCUS_FILTER_INDUSTRIAL }
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
 	       available_if_capitulated = yes
 	       complete_tooltip = {
 	               add_building_construction = {
@@ -855,6 +1353,681 @@ focus_tree = {
 	                       ahead_reduction = 1
 	                       uses = 2
 	                       category = dd_tech
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_army_reorganisation
+	       icon = GFX_goal_generic_army_doctrines
+	       x = 55
+	       y = 0
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       available = {
+	               NOT = {
+	                    has_government = neutrality
+	               }
+	       }
+	       ai_will_do = {
+	               factor = 80
+	       }
+	       completion_reward = {
+	               army_experience = 20
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 3.0
+	                       uses = 1
+	                       category = land_doctrine
+	               }
+	       }
+	   }
+
+	   ############
+	   # INFANTRY #
+	   ############
+
+	   focus = {
+	       id = RUK_old_ways
+	       icon = GFX_goal_generic_allies_build_infantry
+	       x = 44
+	       y = 1
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_army_reorganisation }
+	       mutually_exclusive = { focus = RUK_new_ways }
+	       ai_will_do = {
+	               factor = 50
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = infantry_weapons_bonus
+	                       bonus = 2.0
+	                       uses = 1
+	                       category = infantry_weapons
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_artillery
+	       icon = GFX_goal_generic_army_artillery2
+	       x = 44
+	       y = 2
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_old_ways }
+	       ai_will_do = {
+	               factor = 10
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = artillery_bonus
+	                       ahead_reduction = 1
+	                       uses = 2
+	                       category = artillery
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_simplify_equipment_production
+	       icon = GFX_goal_generic_production2
+	       x = 44
+	       y = 3
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_artillery }
+	       ai_will_do = {
+	               factor = 25
+	       }
+	       completion_reward = {
+	               add_ideas = RUK_simplified_equipment
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_special_forces
+	       icon = GFX_goal_generic_special_forces
+	       x = 44
+	       y = 4
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_simplify_equipment_production }
+	       ai_will_do = {
+	               factor = 25
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = special_forces_bonus
+	                       bonus = 1.0
+	                       uses = 2
+	                       technology = paratroopers
+	                       technology = paratroopers2
+	                       technology = tech_mountaineers
+	                       technology = tech_mountaineers2
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_quality
+	       icon = GFX_goal_generic_allies_build_infantry
+	       x = 42
+	       y = 5
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_simplify_equipment_production }
+	       mutually_exclusive = { focus = RUK_quantity }
+	       ai_will_do = {
+	               factor = 10
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 1.0
+	                       uses = 3
+	                       category = cat_superior_firepower
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_quantity
+	       icon = GFX_goal_generic_secret_weapon
+	       x = 46
+	       y = 5
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_simplify_equipment_production }
+	       mutually_exclusive = { focus = RUK_quality }
+	       ai_will_do = {
+	               factor = 50
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 1.0
+	                       uses = 3
+	                       category = cat_mass_assault
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_infantry_support
+	       icon = GFX_goal_generic_small_arms
+	       x = 44
+	       y = 6
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_special_forces }
+	       ai_will_do = {
+	               factor = 25
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = support_bonus
+	                       bonus = 2.0
+	                       uses = 3
+	                       category = support_tech
+	               }
+	       }
+	   }
+
+	   ##########
+	   # MOBILE #
+	   ##########
+
+	   focus = {
+	       id = RUK_new_ways
+	       icon = GFX_goal_generic_army_motorized
+	       x = 50
+	       y = 1
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_army_reorganisation }
+	       mutually_exclusive = { focus = RUK_old_ways }
+	       ai_will_do = {
+	               factor = 30
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = motorized_bonus
+	                       bonus = 2.0
+	                       technology = motorised_infantry
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_study_mobile_warfare
+	       icon = GFX_goal_generic_army_tanks
+	       x = 50
+	       y = 2
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_new_ways }
+	       ai_will_do = {
+	               factor = 20
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 1.0
+	                       uses = 2
+	                       category = cat_mobile_warfare
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_tank_designs
+	       icon = GFX_focus_generic_combined_arms
+	       x = 50
+	       y = 3
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_study_mobile_warfare }
+	       ai_will_do = {
+	               factor = 20
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = armor_bonus
+	                       bonus = 2.0
+	                       uses = 1
+	                       category = armor
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_cheaper_tanks
+	       icon = GFX_goal_generic_production2
+	       x = 50
+	       y = 4
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_INDUSTRY }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_tank_designs }
+	       ai_will_do = {
+	               factor = 20
+	       }
+	       completion_reward = {
+	               add_ideas = RUK_cheaper_tanks
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_focus_on_mobility
+	       icon = GFX_goal_generic_build_tank
+	       x = 48
+	       y = 5
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_tank_designs }
+	       mutually_exclusive = { focus = RUK_focus_on_firepower }
+	       ai_will_do = {
+	               factor = 20
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = armor_bonus
+	                       bonus = 2.0
+	                       uses = 2
+	                       technology = basic_light_tank
+	                       technology = improved_light_tank
+	                       technology = advanced_light_tank
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_focus_on_firepower
+	       icon = GFX_goal_generic_army_tanks
+	       x = 52
+	       y = 5
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_tank_designs }
+	       mutually_exclusive = { focus = RUK_focus_on_mobility }
+	       ai_will_do = {
+	               factor = 30
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = armor_bonus
+	                       bonus = 2.0
+	                       uses = 2
+	                       technology = basic_medium_tank
+	                       technology = improved_medium_tank
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_further_armor_research
+	       icon = GFX_focus_generic_army_tanks2
+	       x = 50
+	       y = 6
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_cheaper_tanks }
+	       ai_will_do = {
+	               factor = 20
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = armor_bonus
+	                       bonus = 3.0
+	                       uses = 1
+	                       category = armor
+	               }
+	       }
+	   }
+
+	   ################
+	   # DELETE DEBUF #
+	   ################
+
+	   focus = {
+	       id = RUK_first_reorganisation
+	       icon = GFX_goal_generic_army_doctrines
+	       x = 47
+	       y = 2
+	       cost = 10
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_new_ways focus = RUK_old_ways }
+	       ai_will_do = {
+	               factor = 200
+	       }
+	       completion_reward = {
+	               army_experience = 30
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 2.0
+	                       uses = 1
+	                       category = land_doctrine
+	               }
+	               RUK_army_reorganisation_removal = yes
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_second_reorganisation
+	       icon = GFX_goal_generic_army_doctrines
+	       x = 47
+	       y = 4
+	       cost = 10
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_first_reorganisation }
+	       prerequisite = { focus = RUK_simplify_equipment_production focus = RUK_tank_designs }
+	       ai_will_do = {
+	               factor = 200
+	       }
+	       completion_reward = {
+	               army_experience = 50
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 0.5
+	                       uses = 1
+	                       category = land_doctrine
+	               }
+	               RUK_army_reorganisation_removal = yes
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_third_reorganisation
+	       icon = GFX_goal_generic_army_doctrines
+	       x = 47
+	       y = 7
+	       cost = 10
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_second_reorganisation }
+	       prerequisite = { focus = RUK_infantry_support focus = RUK_further_armor_research }
+	       ai_will_do = {
+	               factor = 200
+	       }
+	       completion_reward = {
+	               army_experience = 75
+	               add_tech_bonus = {
+	                       name = land_doc_bonus
+	                       bonus = 0.25
+	                       uses = 2
+	                       category = land_doctrine
+	               }
+	               RUK_army_reorganisation_removal = yes
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_army_revitalization
+	       icon = GFX_goal_generic_cavalry
+	       x = 47
+	       y = 8
+	       cost = 10
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_third_reorganisation }
+	       ai_will_do = {
+	               factor = 100
+	       }
+	       completion_reward = {
+	               army_experience = 100
+	               RUK_army_reorganisation_removal = yes
+	       }
+	   }
+
+	   #################
+	   # RESEARCH SLOT #
+	   #################
+
+	   focus = {
+	       id = RUK_military_research_facilities
+	       icon = GFX_focus_research
+	       x = 55
+	       y = 1
+	       cost = 10
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_army_reorganisation }
+	       ai_will_do = {
+	               factor = 60
+	       }
+	       completion_reward = {
+	               add_research_slot = 1
+	       }
+	   }
+
+	   #############
+	   # AIR FORCE #
+	   #############
+
+	   focus = {
+	       id = RUK_ukrainian_air_force
+	       icon = GFX_goal_generic_build_airforce
+	       x = 60
+	       y = 1
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_army_reorganisation }
+	       ai_will_do = {
+	               factor = 10
+	       }
+	       completion_reward = {
+	               air_experience = 25
+	               add_tech_bonus = {
+	                       name = air_doc_bonus
+	                       bonus = 3.0
+	                       uses = 1
+	                       category = air_doctrine
+	               }
+	       }
+	   }
+
+	   #########################
+	   # STRATEGIC DESTRUCTION #
+	   #########################
+
+	   focus = {
+	       id = RUK_air_domination
+	       icon = GFX_goal_generic_air_fighter
+	       x = 58
+	       y = 2
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_ukrainian_air_force }
+	       mutually_exclusive = { focus = RUK_air_support }
+	       ai_will_do = {
+	               factor = 15
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = fighter_bonus
+	                       bonus = 1.50
+	                       uses = 1
+	                       category = light_fighter
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_strategic_bombers
+	       icon = GFX_goal_generic_air_bomber
+	       x = 56
+	       y = 3
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_air_domination }
+	       ai_will_do = {
+	               factor = 5
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = stategic_bomber_bonus
+	                       bonus = 1.0
+	                       uses = 2
+	                       category = cat_strategic_bomber
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_heavy_fighters
+	       icon = GFX_goal_generic_air_fighter
+	       x = 58
+	       y = 3
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_air_domination }
+	       ai_will_do = {
+	               factor = 5
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = heavy_fighter_bonus
+	                       bonus = 2.0
+	                       uses = 1
+	                       category = cat_heavy_fighter
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_destruction_doctrine
+	       icon = GFX_goal_generic_army_doctrines
+	       x = 58
+	       y = 4
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_strategic_bombers focus = RUK_heavy_fighters }
+	       ai_will_do = {
+	               factor = 10
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = strategic_destruction_bonus
+	                       bonus = 1.0
+	                       uses = 3
+	                       category = strategic_destruction_tree
+	               }
+	       }
+	   }
+
+	   #######################
+	   # BATTLEFIELD SUPPORT #
+	   #######################
+
+	   focus = {
+	       id = RUK_air_support
+	       icon = GFX_goal_generic_CAS
+	       x = 62
+	       y = 2
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_ukrainian_air_force }
+	       mutually_exclusive = { focus = RUK_air_domination }
+	       ai_will_do = {
+	               factor = 30
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = cas_bonus
+	                       bonus = 1.50
+	                       uses = 1
+	                       category = cas_bomber
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_MtG_sucks
+	       icon = GFX_goal_generic_air_naval_bomber
+	       x = 62
+	       y = 3
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_air_support }
+	       ai_will_do = {
+	               factor = 25
+	       }
+	       completion_reward = {
+	               air_experience = 50
+	               add_tech_bonus = {
+	                       name = naval_bonus
+	                       bonus = 2.0
+	                       uses = 3
+	                       category = naval_bomber
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_tactical_bombers
+	       icon = GFX_goal_generic_air_bomber
+	       x = 64
+	       y = 3
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_air_support }
+	       ai_will_do = {
+	               factor = 15
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = tactical_bomber_bonus
+	                       bonus = 3.0
+	                       uses = 1
+	                       category = tactical_bomber
+	               }
+	       }
+	   }
+
+	   focus = {
+	       id = RUK_support_doctrine
+	       icon = GFX_goal_generic_army_doctrines
+	       x = 62
+	       y = 4
+	       cost = 5
+	       search_filters = { FOCUS_FILTER_RESEARCH }
+	       available_if_capitulated = yes
+	       prerequisite = { focus = RUK_MtG_sucks focus = RUK_tactical_bombers }
+	       ai_will_do = {
+	               factor = 20
+	       }
+	       completion_reward = {
+	               add_tech_bonus = {
+	                       name = battlefield_support_bonus
+	                       bonus = 1.0
+	                       uses = 3
+	                       category = battlefield_support_tree
 	               }
 	       }
 	   }
