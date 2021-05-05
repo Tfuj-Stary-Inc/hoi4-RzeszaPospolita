@@ -25,6 +25,140 @@ ideas = {
                           communism_drift = 0.05
 			}
 		}
+
+		RUK_disorganised_army_1 = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		        always = yes
+		    }
+		    picture = chi_incompetent_officers
+		    removal_cost = -1
+		    research_bonus = {
+		            land_doctrine = -0.75
+		    }
+		    modifier = {
+		        army_attack_factor = -0.30
+		        army_defence_factor = -0.25
+		        mobilization_speed = -0.2
+		        command_power_gain_mult = -0.5
+		    }
+		}
+
+		RUK_disorganised_army_2 = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		        always = yes
+		    }
+		    picture = chi_incompetent_officers
+		    removal_cost = -1
+		    research_bonus = {
+		            land_doctrine = -0.50
+		    }
+		    modifier = {
+		        army_attack_factor = -0.20
+		        army_defence_factor = -0.15
+		        mobilization_speed = -0.15
+		        command_power_gain_mult = -0.35
+		    }
+		}
+
+		RUK_disorganised_army_3 = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		        always = yes
+		    }
+		    picture = chi_incompetent_officers
+		    removal_cost = -1
+		    research_bonus = {
+		            land_doctrine = -0.25
+		    }
+		    modifier = {
+		        army_attack_factor = -0.10
+		        army_defence_factor = -0.05
+		        mobilization_speed = -0.10
+		        command_power_gain_mult = -0.20
+		    }
+		}
+
+		RUK_army_revitalized = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		        always = yes
+		    }
+		    picture = generic_victors_of_ww1
+		    removal_cost = -1
+		    research_bonus = {
+		            land_doctrine = 0.15
+		    }
+		    modifier = {
+		        army_attack_factor = 0.05
+		        army_defence_factor = 0.10
+		        command_power_gain_mult = 0.25
+		    }
+		}
+
+		RUK_simplified_equipment = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            always = yes
+		    }
+		    picture = generic_artillery_regiments
+		    removal_cost = -1
+		    equipment_bonus = {
+		            artillery_equipment = {
+		                    build_cost_ic = -0.15
+		                    instant = yes
+		            }
+		            infantry_equipment = {
+		                    build_cost_ic = -0.20
+		                    instant = yes
+		            }
+		    }
+		}
+
+		RUK_cheaper_tanks = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            always = yes
+		    }
+		    picture = generic_acquire_tanks
+		    removal_cost = -1
+		    equipment_bonus = {
+		            medium_tank_equipment = {
+		                    build_cost_ic = -0.5
+		                    armor_value = -0.1
+		                    reliability = -0.3
+		            }
+		            light_tank_equipment = {
+		                    build_cost_ic = -0.5
+		                    armor_value = -0.05
+		                    reliability = -0.2
+		            }
+		            heavy_tank_equipment = {
+		                    build_cost_ic = -0.5
+		                    armor_value = -0.25
+		                    reliability = -0.4
+		            }
+		    }
+		}
 		
 		RUK_political_chaos = {
 		        
@@ -43,6 +177,108 @@ ideas = {
 				communism_drift = 0.1
 				democratic_drift = 0.1
 			}
+		}
+
+		RUK_german_general_staff_help = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            always = no
+		    }
+		    picture = GFX_idea_general_staff
+		    removal_cost = -1
+		    modifier = {
+		            army_org_factor = 0.1
+		            planning_speed = 0.15
+		    }
+		}
+
+		RUK_victory_in_the_west = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            always = no
+		    }
+		    picture = generic_volunteer_expedition_bonus
+		    removal_cost = -1
+		    modifier = {
+		        conscription = 0.02
+		        stability_factor = 0.1
+		        war_support_factor = 0.1
+		    }
+		}
+
+		RUK_at_least_not_annexed = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            always = no
+		    }
+		    picture = generic_disjointed_gov
+		    removal_cost = -1
+		    modifier = {
+		        conscription_factor = 0.05
+		        stability_factor = -0.1
+		    }
+		}
+
+		RUK_enemies_among_us = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            always = no
+		    }
+		    picture = chi_army_corruption
+		    removal_cost = -1
+		    modifier = {
+		            army_org_factor = -0.25
+		            industrial_capacity_factory = -0.15
+		            training_time_factor = 0.75
+		    }
+		}
+
+		RUK_well_prepared_soldiers = {
+
+		    allowed = {
+		            always = no
+		    }
+		    allowed_civil_war = {
+		            always = yes
+		    }
+		    removal_cost = -1
+		    picture = generic_manpower_bonus
+		    targeted_modifier = {
+		            tag = SOV
+		            attack_bonus_against = 0.25
+		            defense_bonus_against = 0.1
+		    }
+		}
+
+		RUK_ukraine_united = {
+
+		    allowed = {
+		        always = no
+		    }
+		    allowed_civil_war = {
+		            has_government = fascism
+		    }
+		    picture = generic_manpower_bonus
+		    removal_cost = -1
+		    modifier = {
+		        conscription_factor = 0.1
+		        stability_factor = 0.15
+		        war_support_factor = 0.1
+		        political_power_factor = 0.25
+		        consumer_goods_factor = -0.05
+		    }
 		}
 
 		RUK_united_land = {
