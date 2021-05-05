@@ -2641,3 +2641,8 @@ ram_free_market:0 "Production diversification"
  ram_tech_sharing_desc:0 "Technological exchange"
  ram_dockyard_expansion_desc:0 "Development of the dockyards"
  ram_amphibious_invasions_desc:0 "Convoy fleet"
+
+ ruk_enemies_among_us:0 "We will send partisants to Soviet Uninon with the task to sabotage their factories and disorganise the army"
+ ruk_train_soldiers:0 "We will begin training our soldiers to prepare them for the invasion"
+ ruk_caucasus_revolution:0 "We will send some people to prepare the caucasians to rise against the soviet union"
+ ruk_relations_with_rzp:0 "We will start improving our relationship with Rzesza Pospolita"
