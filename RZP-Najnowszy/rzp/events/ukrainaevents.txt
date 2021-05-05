@@ -54,15 +54,319 @@ country_event = {
 }
 
 country_event = {
-        id = ukraina.30
-        title = ukraina.30.t
-        desc = ukraina.30.d
-        picture = 
+        id = ukraina.2
+        title = ukraina.2.t
+        desc = ukraina.2.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
         is_triggered_only = yes
         fire_only_once = yes
 
         option = {
+               name = ukraina.2.a
+               ai_chance = {
+                       base = 100
+               }
+               RUK = {
+                       country_event = { hours = 12 id = ukraina.3 }
+               }
+        }
+        option = {
+               name = ukraina.2.b
+               ai_chance = {
+                       base = 20
+               }
+               RUK = {
+                       country_event = { hours = 6 id = ukraina.6 }
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.3
+        title = ukraina.3.t
+        desc = ukraina.3.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.3.a
+               ai_chance = {
+                       base = 50
+                       modifier = {
+                               add = -10
+                               RZP = { has_army_size = { size < 10 } }
+                       }
+                       modifier = {
+                               add = 50
+                               RZP = { has_army_size = { size > 30 } }
+                       }
+               }
+               RZP = {
+                       puppet = RUK
+                       set_autonomy = { target = RUK autonomy_state = autonomy_reichsprotectorate }
+               }
+               RUK = {
+                       create_country_leader = {
+                               name = "Ambasador Ukrainy"
+                               desc = "POLITICS_KING_ZOG_DESC"
+                               picture = "Portrait_RZP_Ambasador.dds"
+                               expire = "1965.1.1"
+                               ideology = fascism
+                               traits = {  }
+                       }
+               }
+        }
+        option = {
+               name = ukraina.3.b
+               ai_chance = {
+                       base = 30
+                       modifier = {
+                               add = 100
+                               any_other_country = {
+                                       is_major = yes
+                                       has_guaranteed = RUK
+                               }
+                       }
+               }
+               RZP = { create_wargoal = { type = annex_everything target = RUK } }
+        }
+}
+
+country_event = {
+        id = ukraina.4
+        title = ukraina.4.t
+        desc = ukraina.4.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.4.a
+               ai_chance = {
+                       base = 10
+               }
+               RUK = {
+                       country_event = { hours = 12 id = ukraina.5 }
+               }
+        }
+        option = {
+               name = ukraina.4.b
+               ai_chance = {
+                       base = 100
+               }
+               RUK = {
+                       country_event = { hours = 6 id = ukraina.6 }
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.5
+        title = ukraina.5.t
+        desc = ukraina.5.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.5.a
+               GER = {
+                   add_to_faction = RUK
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.6
+        title = ukraina.6.t
+        desc = ukraina.6.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.6.a
+        }
+}
+
+country_event = {
+        id = ukraina.7
+        title = ukraina.7.t
+        desc = ukraina.7.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.7.a
+               ai_chance = {
+                       base = 60
+               }
+               RUK = {
+                       transfer_state = 89
+                       transfer_state = 91
+                       transfer_state = 93
+               }
+        }
+        option = {
+               name = ukraina.7.b
+               ai_chance = {
+                       base = 30
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.8
+        title = ukraina.8.t
+        desc = ukraina.8.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.8.a
+               ai_chance = {
+                       base = 50
+               }
+               RUK = {
+                       country_event = { hours = 6 id = ukraina.9 }
+               }
+        }
+        option = {
+               name = ukraina.8.b
+               ai_chance = {
+                       base = 50
+               }
+               RUK = {
+                       country_event = { hours = 6 id = ukraina.10 }
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.9
+        title = ukraina.9.t
+        desc = ukraina.9.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.9.a
+               complete_national_focus = RUK_our_next_move
+        }
+}
+
+country_event = {
+        id = ukraina.10
+        title = ukraina.10.t
+        desc = ukraina.10.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.10.a
+               complete_national_focus = RUK_our_master_ambitions
+        }
+}
+
+country_event = {
+        id = ukraina.11
+        title = ukraina.11.t
+        desc = ukraina.11.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.11.a
+               create_faction = "anty_soviet_pact"
+               add_to_faction = RUK
+               every_other_country = {
+                       limit = {
+                               is_major = yes
+                               has_government = fascism
+                       }
+                       country_event = ukraina.12
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.12
+        title = ukraina.12.t
+        desc = ukraina.12.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.12.a
+               RZP = {
+                       add_to_faction = ROOT
+               }
+        }
+}
+
+country_event = {
+        id = ukraina.13
+        title - ukraina.13.t
+        desc = ukraina.13.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.13.a
+        }
+}
+
+country_event = {
+        id = ukraina.14
+        title = ukraina.14.t
+        desc = ukraina.14.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        trigger = {
+              has_full_control_of_state = 89
+              has_full_control_of_state = 91
+              has_full_control_of_state = 93
+              has_completed_focus = RUK_german_generals
+        }
+        fire_only_once = yes
+
+        option = {
+               name = ukraina.14.a
+               complete_national_focus = RUK_succes_in_south2
+        }
+}
+
+country_event = {
+        id = ukraina.30
+        title = ukraina.30.t
+        desc = ukraina.30.d
+        picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
+        is_triggered_only = yes
+        trigger = {
+              has_completed_focus = RUK_wolyn_POW_camps
+        }
+        fire_only_once = yes
+
+        option = {
                name = ukraina.30.a
-               
+               create_corps_commander = {
+                       name = "Ivan Pavlo 2"
+                       picture = "Portrait_Protektorat_Ukrainy_PapajNKVD.dds"
+                       traits = { career_officer trait_reckless harsh_leader infantry_officer skilled_staffer commando  }
+                       skill = 9
+                       attack_skill = 9
+                       defense_skill = 9
+                       planning_skill = 9
+                       logistics_skill = 9
+                       id = 3050
+               }
         }
 }
