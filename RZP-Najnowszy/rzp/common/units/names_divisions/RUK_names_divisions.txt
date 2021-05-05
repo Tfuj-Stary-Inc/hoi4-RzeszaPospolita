@@ -1,0 +1,78 @@
+RUK_Mil_01 = 
+{
+	    name = "Militsiya"
+
+	    for_countries = { RUK }
+
+	    can_use = { always = yes }
+
+	    division_types = { "infantry" }
+
+	    fallback_name = "%d. Pidrozdil militsiyi"
+
+	    ordered = 
+	    {
+	            5 = { "%d. Pidrozdil militsiyi" }
+	            6 = { "%d. Pidrozdil militsiyi" }
+	            8 = { "%d. Pidrozdil militsiyi" }
+	    }
+}
+
+RUK_Inf_01 =
+{
+	    name = "Pikhotna dyviziya"
+
+	    for_countries = { RUK }
+
+	    can_use = { always = yes }
+
+	    division_types = { "infantry" }
+
+	    fallback_name = "%d. Pikhotna dyviziya"
+
+	    ordered = 
+	    {
+	            1 = { "%d. Pikhotna dyviziya" }
+	            2 = { "%d. Pikhotna dyviziya" }
+	            3 = { "%d. Pikhotna dyviziya" }
+	            4 = { "%d. Pikhotna dyviziya" }
+	            5 = { "%d. Pikhotna dyviziya" }
+	            6 = { "%d. Pikhotna dyviziya" }
+	            7 = { "%d. Pikhotna dyviziya" }
+	            8 = { "%d. Pikhotna dyviziya" }
+	            9 = { "%d. Pikhotna dyviziya" }
+	            10 = { "%d. Pikhotna dyviziya" }
+	            11 = { "%d. Pikhotna dyviziya" }
+	            12 = { "%d. Pikhotna dyviziya" }
+	            13 = { "%d. Pikhotna dyviziya" }
+	            14 = { "%d. Pikhotna dyviziya" }
+	            15 = { "%d. Pikhotna dyviziya" }
+	            16 = { "%d. Pikhotna dyviziya" }
+	            17 = { "%d. Pikhotna dyviziya" }
+	            18 = { "%d. Pikhotna dyviziya" }
+	            19 = { "%d. Pikhotna dyviziya" }
+	            20 = { "Dyviziya zakhysnykiv Volyni" }
+	            21 = { "Dyviziya zakhysnykiv L'vova" }
+	    }
+}
+
+RUK_Cav_01 = 
+{
+	    name = "Kozaky"
+
+	    for_countries = { RUK }
+
+	    can_use = { always = yes }
+
+	    division_types = { "cavalry" }
+
+	    fallback_name = "%d. Kozats'ka bryhada"
+
+	    ordered = 
+	    {
+	            3 = { "%d. Kozats'ka bryhada" }
+	            4 = { "%d. Kozats'ka bryhada" }
+	            5 = { "%d. Kozats'ka bryhada" }
+	            6 = { "%d. Kozats'ka bryhada" }
+	    }
+}
