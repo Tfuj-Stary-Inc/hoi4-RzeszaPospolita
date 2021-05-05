@@ -2357,8 +2357,17 @@ spriteTypes = {
 	
 	#Rzesza Pospolita#
 	SpriteType = {
-	        name = "GFX_goal_burning_ukraine"
+	    name = "GFX_goal_burning_ukraine"
 		texturefile = "gfx/interface/goals/burning_ukraine.dds"
 	}
 	
+	SpriteType = {
+	    name = "GFX_goal_ukraina_rzesza_deal"
+	    texturefile = "gfx/interface/goals/rzp_ukr.dds"
+	}
+
+	SpriteType = {
+	    name = "GFX_goal_ukraina_zsrr_deal"
+	    texturefile = "gfx/interface/goals/zsrr_ukr.dds"
+	}
 }
