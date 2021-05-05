@@ -41,6 +41,7 @@ set_popularities = {
 
 add_ideas = {
         RUK_enemies_on_all_sides
+        RUK_disorganised_army_1
 }
 
 set_research_slots = 2
@@ -114,49 +115,27 @@ add_namespace = {
         type = unit_leader
 }
 
-create_corps_commander = {
-        name = "Osttruppen"
-	picture = "Portrait_RUK_Ostruppen.dds"
-	traits = {  }
-	skill = 5
-        id = 4562
-        attack_skill = 4
-        defense_skill = 3
-        planning_skill = 3
-        logistics_skill = 2
-}
-
-create_corps_commander = {
-        name = "PROsttruppen"
-	picture = "Portrait_RUK_Ostruppen2.dds"
-	traits = {  }
-	skill = 7
-        id = 4563
-        attack_skill = 7
-        defense_skill = 6
-        planning_skill = 4
-        logistics_skill = 4
-}
-
 create_field_marshal = {
         name = "Bohdan Chmielnicki"
-	picture = "Portrait_Protektorat_Ukrainy_Chmielnicki.dds"
-	traits = { offensive_doctrine }
-	skill = 5
-	attack_skill = 6
-	defense_skill = 4
-	planning_skill = 3
-	logistics_skill = 3
+	    picture = "Portrait_Protektorat_Ukrainy_Chmielnicki.dds"
+	    traits = { offensive_doctrine }
+	    skill = 5
+	    attack_skill = 6
+	    defense_skill = 4
+	    planning_skill = 3
+	    logistics_skill = 3
+        id = 3001
 }
 
 create_corps_commander = {
-        name = "PutOut"
-	picture = "Portrait_Protektorat_Ukrainy_Putout.dds"
-	traits = {  }
-	skill = 4
-	attack_skill = 6
-	defense_skill = 5
-	planning_skill = 5
-	logistics_skill = 6
+        name = "Nikolaj Vatutin"
+	    picture = "Portrait_Protektorat_Ukrainy_Watutin.dds"
+	    traits = {  }
+	    skill = 3
+	    attack_skill = 4
+	    defense_skill = 3
+	    planning_skill = 3
+	    logistics_skill = 4
+        id = 3002
 }
 
