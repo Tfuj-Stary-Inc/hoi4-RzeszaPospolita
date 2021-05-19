@@ -4125,4 +4125,35 @@ spriteTypes = {
 	      texturefile = "gfx/interface/goals/otoczona_ukr.dds"
 	}
 	
+	spriteType = {
+	      name = "GFX_idea_RUK_advisor_chmielnicki"
+	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Chmielnicki.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RUK_advisor_juszczenko"
+	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Juszczenko.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RUK_advisor_korolow"
+	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Korolow.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RUK_advisor_putout"
+	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Putout.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RUK_advisor_kozedub"
+	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Kozedub.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_kievmotorsports"
+	      texturefile = "gfx/interface/ideas/idea_RUK_Kiev_Motorsports.dds"
+	}
+	      
+	
 }
