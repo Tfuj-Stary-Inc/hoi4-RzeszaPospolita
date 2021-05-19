@@ -4154,6 +4154,11 @@ spriteTypes = {
 	      name = "GFX_idea_kievmotorsports"
 	      texturefile = "gfx/interface/ideas/idea_RUK_Kiev_Motorsports.dds"
 	}
+	
+	spriteType = {
+	      name = "GFX_idea_RUK_theorist_land_putout"
+	      texturefile = "gfx/interface/ideas/RUK_theorist_putout.dds"
+	}
 	      
 	
 }
