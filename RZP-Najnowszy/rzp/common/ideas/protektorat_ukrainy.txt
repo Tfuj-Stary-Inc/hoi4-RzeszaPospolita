@@ -321,4 +321,103 @@ ideas = {
     
   }
   
+  political_advisor = {
+          
+	  RUK_advisor_chmielnicki = {
+	        allowed = {
+		    original_tag = RUK
+		}
+		
+		traits = { national_hero }
+		
+		ai_will_do = {
+		        factor = 4
+		}
+	  }
+	  
+	  RUK_advisor_juszczenko = {
+	        allowed = {
+		    original_tag = RUK
+		}
+		
+		traits = { national_bank_president }
+		
+		ai_will_do = {
+		        factor = 5
+		}
+	  }
+	  
+  }
+  
+  tank_manufacturer = {
+          
+	  designer = yes
+	  
+	  kiev_motorsports = {
+	          
+		  picture = idea_kievmotorsports
+		  
+		  allowed = {
+		         original_tag = RUK
+		  }
+		  
+		  research_bonus = {
+		          armor = 0.1
+		  }
+		  
+		  traits = { sports_tank_manufacturer }
+		  
+		  ai_will_do = {
+		          factor = 4
+		  }
+	 }
+	 
+  }
+  
+  theorist = {
+          
+	  RUK_theorist_air_korolow = {
+	          
+		  allowed = {
+		          original_tag = RUK
+		  }
+		  
+		  cost = 175
+		  
+		  research_bonus = {
+		          rocketry = 0.2
+		  }
+		  
+		  traits = { rocket_scientist }
+	  }
+	  
+	  RUK_theorist_air_kozedub = {
+	          
+		  allowed = {
+		          original_tag = RUK
+		  }
+		  
+		  cost = 125
+		  
+		  research_bonus = {
+		          cat_strategic_destruction = 0.15
+		  }
+		  
+		  traits = { victory_through_airpower }
+	  }
+	  
+	  RUK_theorist_land_putout = {
+	          
+		  allowed = {
+		          original_tag = RUK
+		  }
+		  
+		  research_bonus = {
+		          cat_mobile_warfare = 0.2
+		  }
+		  
+		  traits = { mobile_warfare_expert }
+	  }
+  }
+  
 }
