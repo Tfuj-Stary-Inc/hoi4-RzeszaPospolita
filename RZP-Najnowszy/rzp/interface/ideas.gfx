@@ -4136,7 +4136,7 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-	      name = "GFX_idea_RUK_advisor_korolow"
+	      name = "GFX_idea_RUK_theorist_air_korolow"
 	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Korolow.dds"
 	}
 	
