@@ -2370,4 +2370,9 @@ spriteTypes = {
 	    name = "GFX_goal_ukraina_zsrr_deal"
 	    texturefile = "gfx/interface/goals/zsrr_ukr.dds"
 	}
+	
+	SpriteType = {
+	    name = "GFX_goal_war_with_rzp"
+	    texturefile = "gfx/interface/goals/focus_wwr.dds"
+	}
 }
