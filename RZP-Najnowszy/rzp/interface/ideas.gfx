@@ -4122,7 +4122,7 @@ spriteTypes = {
 
 	spriteType = {
 	      name = "GFX_idea_RUK_enemies"
-	      texturefile = "gfx/interface/goals/otoczona_ukr.dds"
+	      texturefile = "gfx/interface/ideas/otoczona_ukr.dds"
 	}
 	
 	spriteType = {
