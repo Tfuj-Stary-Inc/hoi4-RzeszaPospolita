@@ -4041,6 +4041,111 @@ spriteTypes = {
         }
 	
 	spriteType = {
+	      name = "GFX_idea_RZP_advisor_waza"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_waza.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_advisor_reytan"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_rejtan.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_poniatowski"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_poniatowski.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_advisor_obajtek"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_obajtek.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_advisor_morawiecki"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_morawiecki.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_advisor_korwin"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_korwin.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_advisor_braun"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_braun.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_RZP_advisor_bolek"
+	      texturefile = "gfx/interface/ideas/rzp_advisor_bolek.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_ursus"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Ursus.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_stocznia_szczecinska"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Stocznia_Sczecinska.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_stocznia_gdanska"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Stocznia_Gdanska.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_piekarnia_wadowicka"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Piekarnia_Wadowicka.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_rzp_mielec"
+	      texturefile = "gfx/interface/ideas/idea_RZP_PZL_Mielec.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_rzp_pkp"
+	      texturefile = "gfx/interface/ideas/idea_RZP_PKP.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_orlen"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Orlen.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_orange"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Orange.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_manta"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Manta.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_lot"
+	      texturefile = "gfx/interface/ideas/idea_RZP_LOT.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_czajka"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Czajka.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_cobi"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Cobi.dds"
+	}
+	
+	spriteType = {
+	      name = "GFX_idea_arsenal_wolynski"
+	      texturefile = "gfx/interface/ideas/idea_RZP_Arsenal_Wolynski.dds"
+	}
+	
+	spriteType = {
 	        name = "GFX_idea_RAM_needham"
 		texturefile = "gfx/interface/ideas/Portrait_RAM_Colin_Needham.dds"
 	}
@@ -4159,6 +4264,10 @@ spriteTypes = {
 	      name = "GFX_idea_RUK_theorist_land_putout"
 	      texturefile = "gfx/interface/ideas/RUK_theorist_putout.dds"
 	}
-	      
+	
+	spriteType = {
+	      name = GFX_idea_RUK_advisor_brezniew
+	      texturefile = "gfx/interface/ideas/Portrait_RUK_advisor_Brezniew.dds"
+	}
 	
 }
