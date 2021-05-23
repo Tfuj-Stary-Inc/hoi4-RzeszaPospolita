@@ -315,6 +315,328 @@ ideas = {
 	      
 	      traits = { bandera_cosplayer_but_worse }
 	  }
+	  
+	  RZP_advisor_waza = {
+	  
+	     available = {
+	             has_government = neutrality
+             }
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_advisor_reytan = {
+	     
+	     available = {
+	             has_government = neutrality
+	     }
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_poniatowski = {
+	     
+	     available = {
+	             has_government = neutrality
+	     }
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     cost = 175
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_advisor_obajtek = {
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     cost = 200
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_advisor_morawiecki = {
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     cost = 175
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_advisor_korwin = {
+	     
+	     available = {
+	             NOT = {
+		            has_government = communism
+			    has_government = democracy
+		     }
+	     }
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     cost = 250
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_advisor_braun = {
+	     
+	     available = {
+	             NOT = {
+		            has_government = communism
+			    has_government = democracy
+		     }
+	     }
+	     
+	     allowed = {
+	             original_tag = RZP
+	     }
+	     
+	     cost = 200
+	     
+	     traits = {}
+	  }
+	  
+	  RZP_advisor_bolek = {
+	     
+	     available = {
+	             has_intelligence_agency = yes
+	     }
+	     
+	     allowed = {
+	             original_tag = RZP
+		     has_dlc = "La Resistance"
+	     }
+	     
+	     traits = {}
+	  }
+	}
+	
+	tank_manufacturer = {
+	        
+		designer = yes
+		
+		ursus = {
+		       
+		       allowed = {
+		               original_tag = RZP
+		       }
+		       
+		       research_bonus = {
+		               armor = 0.10
+		       }
+		       
+		       traits = {}
+		       
+		       ai_will_do = {
+		               factor = 5
+		       }
+		}
+		
+		cobi = {
+		       
+		       allowed = {
+		               original_tag = RZP
+		       }
+		       
+		       research_bonus = {
+		               armor = 0.25
+		       }
+		       
+		       traits = {}
+		       
+		       ai_will_do = {
+		               factor = 10
+		       }
+		}
+	}
+	
+	naval_manufacturer = {
+	        
+		designer = yes
+		
+		stocznia_szczecinska = {
+		       
+		       available = {
+		               has_full_control_of_state = 63
+		       }
+		       
+		       allowed = {
+		               original_tag = RZP
+		       }
+		       
+		       research_bonus = {
+		               naval_equipment = 0.10
+		       }
+		       
+		       equipment_bonus = {
+		       
+		       }
+		       
+		       traits = {}
+		       
+		       ai_will_do = {
+		               factor = 1
+		       }
+		}
+		
+		stocznia_gdanska = {
+		       
+		       allowed = {
+		               original_tag = RZP
+		       }
+		       
+		       research_bonus = {
+		               naval_equipment = 0.20
+		       }
+		       
+		       equipment_bonus = {
+		       
+		       }
+		       
+		       traits = {}
+		       
+		       ai_will_do = {
+		               factor = 5
+		       }
+		}
+	}
+	
+	aircraft_manufacturer = {
+	        
+		designer = yes
+		
+		rzp_mielec = {
+		       
+		       allowed = {
+		               original_tag = RZP
+		       }
+		       
+		       research_bonus = {
+		               air_equipment = 0.15
+		       }
+		       
+		       equipment_bonus = {
+		       
+		       }
+		       
+		       traits = {}
+		       
+		       ai_will_do = {
+		               factor = 6
+		       }
+		}
+		
+		lot = {
+		       
+		       allowed = {
+		               original_tag = RZP
+		       }
+		       
+		       research_bonus = {
+		               air_equipment = 0.15
+		       }
+		       
+		       equipment_bonus = {
+		       
+		       }
+		       
+		       traits = {}
+		       
+		       ai_will_do = {
+		               factor = 9
+		       }
+		}
+	}
+	
+	industrial_concern = {
+	        
+		rzp_pkp = {
+		        
+			allowed = {
+			        original_tag = RZP
+			}
+			
+			research_bonus = {
+			        industry = 0.10
+			}
+			
+			ai_will_do = {
+			        factor = 1
+			}
+			
+			traits = {}
+		}
+		
+		orlen = {
+		        
+			allowed = {
+			        original_tag = RZP
+			}
+			
+			research_bonus = {
+			        synth_resources = 0.25
+				industry = 0.05
+			}
+			
+			ai_will_do = {
+			        factor = 10
+			}
+			
+			traits = {}
+		}
+		
+		orange = {
+		        
+			allowed = {
+			        original_tag = RZP
+			}
+			
+			research_bonus = {
+			        electronics = 0.20
+			}
+			
+			ai_will_do = {
+			        factor = 8
+			}
+			
+			traits = {}
+		}
+		
+		manta = {
+		        
+		        allowed = {
+			        original_tag = RZP
+			}
+			
+			research_bonus = {
+			        electronics = 0.05
+			}
+			
+			ai_will_do = {
+			        factor = 2
+			}
+			
+			traits = {}
+		}
 	}
 	
 	theorist = {
