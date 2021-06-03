@@ -504,7 +504,7 @@ focus_tree = {
 		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_time_of_choice }
-		mutually_exclusive = { focus = RZP_kontrrewolucjamonarchistyczna }
+		mutually_exclusive = { focus = RZP_strengthening_monarchist_position }
 		available = {
 			always = no
 		}
@@ -515,27 +515,6 @@ focus_tree = {
 			    ideology = fascism 
 			    popularity = 0.2
             }
-		}
-	}
-	
-	focus = {
-		id = RZP_kontrrewolucjamonarchistyczna
-		icon = GFX_goal_generic_demand_territory
-		x = 32
-		y = 16
-		cost = 1
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_time_of_choice }
-		mutually_exclusive = { focus = RZP_reformapolityczna }
-		available = {
-			always = no
-		}
-		completion_reward = {
-			add_popularity= { 
-                           ideology = neutrality 
-                           popularity = 0.3 
-                        }
-                        add_political_power= 75
 		}
 	}
 	
@@ -1011,6 +990,104 @@ focus_tree = {
 			       id = rzeszapospolita.20
 			}
 		}
+	}
+
+	focus = {
+		id = RZP_strengthening_monarchist_position
+		icon = GFX_goal_generic_demand_territory
+		x = 32
+		y = 16
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_time_of_choice }
+		mutually_exclusive = { focus = RZP_reformapolityczna }
+		available = {
+			always = no
+		}
+		completion_reward = {
+			    add_popularity= { 
+                    ideology = neutrality 
+                    popularity = 0.3 
+                }
+                add_political_power= 75
+		}
+	}
+
+	focus = {
+	    id = RZP_prepare_monarchist_plot
+	    icon = GFX_
+	    x = 32
+	    y = 17
+	    cost = 5
+	    available_if_capitulated = no
+	    prerequisite = { focus = RZP_strengthening_monarchist_position }
+	    completion_reward = {
+	            country_event = rzeszapospolita.30
+	    }
+	}
+
+	focus = {
+	    id = RZP_monarchist_uprising
+	    icon = GFX_
+	    x = 32
+	    y = 17
+	    cost = 5
+	    available_if_capitulated = no
+	    prerequisite = { focus = RZP_prepare_monarchist_plot }
+	    completion_reward = {
+
+	    }
+	}
+
+	focus = {
+	    id = RZP_NSPPR_fate
+	    icon = GFX_
+	    x = 34
+	    y = 18
+	    cost = 25
+	    available_if_capitulated = yes
+	    prerequisite = { focus = RZP_prepare_monarchist_plot }
+	    available = {
+	            has_government = neutrality
+	            NOT = {
+	                    has_civil_war = yes
+	            }
+	    }
+	    completion_reward = {
+	            if = {
+	                    #limit = {
+	                    #        has_country_flag = nsppr_purge_1_a
+	                    #}
+	                    #add_timed_idea = {
+	                    #        idea = 
+	                    #        days = 650
+	                    #}
+	            }
+	            if = {
+	                   limit = {
+	                           has_country_flag = nsppr_purge_1_b
+	                   }
+	                   add_stability = -0.07
+	                   add_war_support = -0.05
+	            }
+	            if = {
+	                   limit = {
+	                           OR = {
+	                                  has_country_flag = nsppr_purge_2_a
+	                                  has_country_flag = nsppr_purge_2_b
+	                           }
+	                   }
+	                   add_stability = -0.15
+	                   add_popularity = {
+	                           ideology = fascism
+	                           popularity = -0.25
+	                   }
+	                   add_popularity = {
+	                           ideology = neutrality
+	                           popularity = 0.20
+	                   }
+	            }
+	    }
 	}
 	
 	focus = {
@@ -1971,295 +2048,234 @@ focus_tree = {
 		}
 	}
 	
-	#Focus for Conquer of Europe
 	focus = {
-		id = RZP_fundamentimperium
-		icon = GFX_goal_support_fascism
-		x = 31
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-		          add_ideas = RZP_aggressive_expansion_of_the_reich
-		}
-	}
-	
-	focus = {
-		id = RZP_ekspansjapolnocna
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 27
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_fundamentimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			create_wargoal= { 
-                              type = annex_everything 
-			      target = EST
-			}
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = LAT
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_zajecieczechoslowacji
-		icon = GFX_goal_rhineland
-		x = 31
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_fundamentimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = CZE
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_nowegraniceimperium
-		icon = GFX_focus_generic_treaty
-		x = 29
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_ekspansjapolnocna 
-		}
-		prerequisite = { 
-			focus = RZP_zajecieczechoslowacji 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			LIT = { has_capitulated = yes }
-			
-			9 = { is_controlled_by = RZP }
-			13 = { is_controlled_by = RZP }
-			12 = { is_controlled_by = RZP }
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.24
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_sprawagranicznai
-		icon = GFX_goal_generic_position_armies
-		x = 29
-		y = 10
-		cost = 15
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_nowegraniceimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			date > 1939.1.1
-
-                        43 = { is_controlled_by = RZP }
-                        46 = { is_controlled_by = RZP }
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id =  rzeszapospolita.25
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_sprawagranicznaii
-		icon = GFX_goal_generic_position_armies
-		x = 29
-		y = 11
-		cost = 15
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_sprawagranicznai }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			date > 1940.1.1
-			
-			RZP = { controls_state = 107 }
-			RZP = { controls_state = 48 }
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.26
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_bramanabalkany
-		icon = GFX_focus_rom_preserve_romania
-		x = 35
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_fundamentimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.29
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_sprawawegier
-		icon = GFX_focus_hun_assassinate_horthy
-		x = 33
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_zajecieczechoslowacji 
-		}
-		prerequisite = { 
-			focus = RZP_bramanabalkany 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.28
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_wojnanabalkanach
-		icon = GFX_focus_generic_strike_at_democracy1
-		x = 35
-		y = 10
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_bramanabalkany 
-		}
-		prerequisite = { 
-			focus = RZP_sprawawegier 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = YUG
-			}
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = BUL
-			}
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = GRE
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_wojnazturcja
-		icon = GFX_goal_generic_secret_weapon
-		x = 33
-		y = 11
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wojnanabalkanach }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			create_wargoal= { 
-			      type = annex_everything 
-			      target = TUR
-			}
-		}
-	}
-	
-	focus = {
-		id = RZP_projektflotysrodziemnomorskiej
-		icon = GFX_goal_generic_navy_battleship
-		x = 36
-		y = 11
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_wojnanabalkanach }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = RZP_ostatecznegraniceimperium
-		icon = GFX_focus_generic_treaty
-		x = 31
-		y = 12
-		cost = 15
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = RZP_wojnazturcja 
-		}
-		prerequisite = { 
-			focus = RZP_sprawagranicznaii 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			date > 1941.1.1
-			
-			RZP = { controls_state = 49 }
-		}
-		completion_reward = {
-			country_event= {
-			       days = 1 
-			       id = rzeszapospolita.27
-			}
-		}
+	    id = RZP_great_empire
+	    icon = GFX_
+	    x = 14
+	    y = 1
+	    cost = 10
+	    available_if_capitulated = yes
+	    available = {
+	        NOT = {
+	                POL = {
+	                        exists = yes
+	                }
+	        }
+	        has_government = fascism
+	    }
+	    ai_will_do = {
+	        factor = 1
+	    }
+	    completion_reward = {
+	            set_cosmetic_tag = RZP_empire
+	    }
 	}
 
 	focus = {
-		id = RZP_armiaokupacyjnanaszychmozliwosci
-		icon = GFX_focus_generic_little_entente
-		x = 31
-		y = 13
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = RZP_ostatecznegraniceimperium }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-		          add_ideas = RZP_imperials_recruitment
-		}
+	    id = RZP_ukrainian_investments
+	    icon = GFX_
+	    x = 12
+	    y = 2
+	    cost = 10
+	    available_if_capitulated = no
+	    available = {
+	        RUK = { is_subject_of = ROOT }
+	    }
+	    ai_will_do = {
+	        factor = 1
+	    }
+	    prerequisite = { focus = RZP_great_empire }
+	    cancel_if_invalid = yes
+	    continue_if_invalid = no
+	    completion_reward = {
+	            RUK = {
+	                    add_stability = 0.05
+	                    add_political_power = 250
+	                    add_autonomy_ratio = {
+	                            value = -0.03
+	                    }
+	            }
+	    }
+	}
+
+	focus = {
+	    id = RZP_ukrainian_infrastructure
+	    icon = GFX_
+	    x = 10
+	    y = 3
+	    cost = 10
+	    available_if_capitulated = no
+	    available = {
+	        RUK = { is_subject_of = ROOT }
+	    }
+	    ai_will_do = {
+	        factor = 1
+	    }
+	    prerequisite = { focus = RZP_ukrainian_investments }
+	    cancel_if_invalid = yes
+	    continue_if_invalid = no
+	    complete_tooltip = {
+	            RUK = {
+	                    random_state = {
+	                            add_building_construction = {
+	                                    type = infrastructure
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                    }
+	                    random_state = {
+	                            add_building_construction = {
+	                                    type = infrastructure
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                    }
+	                    random_state = {
+	                            add_building_construction = {
+	                                    type = infrastructure
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                    }
+	            }
+	    }
+	    completion_reward = {
+	            RUK = {
+	                    random_owned_controlled_state = {
+	                            add_building_construction = {
+	                                    type = infrastructure
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                    }
+	                    random_owned_controlled_state = {
+	                            add_building_construction = {
+	                                    type = infrastructure
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                    }
+	                    random_owned_controlled_state = {
+	                            add_building_construction = {
+	                                    type = infrastructure
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                    }
+	            }
+	    }
+	}
+
+	focus = {
+	    id = RZP_kiev_industry
+	    icon = GFX_
+	    x = 12
+	    y = 3
+	    cost = 10
+	    available_if_capitulated = no
+	    available = {
+	        RUK = { is_subject_of = ROOT }
+	    }
+	    ai_will_do = {
+	        factor = 2
+	    }
+	    prerequisite = { focus = RZP_ukrainian_investments }
+	    cancel_if_invalid = yes
+	    continue_if_invalid = no
+	    completion_reward = {
+	            202 = {
+	                    add_extra_state_shared_building_slots = 3
+	                    add_building_construction = {
+	                            type = industrial_complex
+	                            level = 2
+	                            instant_build = yes
+	                    }
+	                    add_building_construction = {
+	                            type = arms_factory
+	                            level = 1
+	                            instant_build = yes
+	                    }
+	            }
+	    }
+	}
+
+	focus = {
+	    id = RZP_expand_oil_fields
+	    icon = GFX_
+	    x = 12
+	    y = 4
+	    cost = 10
+	    available_if_capitulated = no
+	    available = {
+	        RUK = { is_subject_of = ROOT }
+	    }
+	    ai_will_do = {
+	        factor = 2
+	    }
+	    prerequisite = { focus = RZP_kiev_industry }
+	    cancel_if_invalid = yes
+	    continue_if_invalid = no
+	    completion_reward = {
+	            202 = {
+	                    add_resource = {
+	                            type = oil
+	                            amount = 12
+	                    }
+	            }
+	    }
+	}
+
+	focus = {
+	    id = RZP_open_new_mines
+	    icon = GFX_
+	    x = 14
+	    y = 4
+	    cost = 10
+	    available_if_capitulated = no
+	    available = {
+	        RUK = { is_subject_of = ROOT }
+	    }
+	    ai_will_do = {
+	        factor = 1
+	    }
+	    prerequisite = { focus = RZP_ukrainian_investments }
+	    cancel_if_invalid = yes
+	    continue_if_invalid = no
+	    completion_reward = {
+	            RUK = {
+	                    random_owned_controlled_state = {
+	                            add_extra_state_shared_building_slots = 1
+	                            add_building_construction = {
+	                                    type = industrial_complex
+	                                    level = 1
+	                                    instant_build = yes
+	                            }
+	                            add_resource = {
+	                                    type = steel
+	                                    amount = 10
+	                            }
+	                            add_resource = {
+	                                    type = aluminium
+	                                    amount = 5
+	                            }
+	                    }
+	            }
+	    }
+	}
+
+	focus = {
+	    id = RZP_in_next_update
+	    icon = GFX_
+	    x = 16
+	    y = 2
+	    cost = 0
+	    available = {
+	        always = no
+	    }
+	    prerequisite = { focus = RZP_great_empire }
+	    completion_reward = {
+	    
+	    }
 	}
 
 #End of focuses 
