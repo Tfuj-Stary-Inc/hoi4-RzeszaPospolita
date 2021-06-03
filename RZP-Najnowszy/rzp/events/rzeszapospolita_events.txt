@@ -52,7 +52,7 @@ country_event = {
 	}
 	option = {
 	    name = rzeszapospolita.3.b
-	    complete_focus = RZP_kontrrewolucjamonarchistyczna
+	    complete_focus = RZP_strengthening_monarchist_position
 	}
 }	
 
@@ -552,5 +552,184 @@ country_event = {
 		RZP = {
 			create_wargoal = { type = annex_everything target = ROM }
 		}
+	}
+}
+
+country_event = {
+	id = rzeszapospolita.30
+	title = rzeszapospolita.30.t
+	desc = rzeszapospolita.30.d
+
+	is_triggerd_only = yes
+	fire_only_once = yes
+
+	immediate = {
+	        hidden_effect = {
+	                set_country_flag = RZP_prepare_monarchist_uprising
+	        }
+	}
+
+	option = {
+	        name = rzeszapospolita.30.a
+	        add_popularity = {
+	                ideology = neutrality
+	                popularity = 0.05
+	        }
+	}
+}
+
+# NSPPR purge - fate of advisors
+country_event = {
+	id = rzeszapospolita.31
+	title = rzeszapospolita.31.t
+	desc = rzeszapospolita.31.d
+
+	fire_only_once = yes
+
+	trigger = {
+	        tag = RZP
+	        NOT = { has_completed_focus = RZP_NSPPR_fate }
+	        focus_progress = {
+	                focus = RZP_NSPPR_fate
+	                progress > 0.25
+	        }
+	}
+
+	mean_time_to_happen = {
+	        days = 3
+	}
+
+	option = {
+	        ai_chance = {
+	                factor = 20
+	        }
+	        name = rzeszapospolita.31.a
+	        custom_effect_tooltip = remove_political_advisor
+	        show_ideas_tooltip = RZP_ambasador_ukrainy
+	        set_country_flag = purged_ambasador
+	        hidden_effect = {
+	                remove_ideas = RZP_ambasador_ukrainy
+	        }
+	}
+	option = {
+	        ai_chance = {
+	                factor = 20
+	        }
+	        name = rzeszapospolita.31.b
+	        custom_effect_tooltip = remove_political_advisor
+	        show_ideas_tooltip = RZP_jerzy_urban
+	        set_country_flag = purged_urban
+	        hidden_effect = {
+	                remove_ideas = RZP_jerzy_urban
+	        }
+	}
+	option = {
+	        ai_chance = {
+	                factor = 20
+	        }
+	        name = rzeszapospolita.31.c
+	        add_political_power = -100
+	        add_stability = 0.05
+	}
+}
+
+# NSPPR purge - generals
+country_event = {
+	id = rzeszapospolita.32
+	title = rzeszapospolita.32.t
+	desc = rzeszapospolita.32.d
+
+	fire_only_once = yes
+
+	trigger = {
+	        tag = RZP
+	        NOT = { has_completed_focus = RZP_NSPPR_fate }
+	        focus_progress = {
+	                focus = RZP_NSPPR_fate
+	                progress > 0.55
+	        }
+	}
+
+	mean_time_to_happen = {
+	        days = 4
+	}
+
+	option = {
+	        ai_chance = {
+	                factor = 30
+	        }
+	        name = rzeszapospolita.32.a
+	        set_country_flag = nsppr_purge_1_a
+	        custom_effect_tooltip = remove_chief_of_army
+	        show_ideas_tooltip = RZP_polish_ssman
+	        custom_effect_tooltip = remove_chief_of_navy
+	        show_ideas_tooltip = RZP_kornel_olkowski
+	        custom_effect_tooltip = remove_military_high_command
+	        show_ideas_tooltip = RZP_nat_war
+	        remove_unit_leader = 2141 #cat
+	        remove_unit_leader = 2143 #shefour
+	        remove_unit_leader = 2140 #nat_war
+	        remove_unit_leader = 2142 #KYSawier
+	        hidden_effect = {
+	                remove_ideas = RZP_polish_ssman
+	                remove_ideas = RZP_nat_war
+	                remove_ideas = RZP_kornel_olkowski
+	        }
+	}
+	option = {
+	        ai_chance = {
+	                factor = 20
+	        }
+	        name = rzeszapospolita.32.b
+	        add_political_power = -200
+	        set_country_flag = nsppr_purge_1_b
+	}
+}
+
+# NSPPR purge - fate of Krystian Marczuk and Szymon Wilk
+country_event = {
+	id = rzeszapospolita.33
+	title = rzeszapospolita.33.t
+	desc = rzeszapospolita.33.d
+
+	fire_only_once = yes
+
+	trigger = {
+	        tag = RZP
+	        NOT = { has_completed_focus = RZP_NSPPR_fate }
+	        focus_progress = {
+	                focus = RZP_NSPPR_fate
+	                progress > 0.8
+	        }
+	}
+
+	mean_time_to_happen = {
+	        days = 10
+	}
+
+	option = {
+	        ai_chance = {
+	                factor = 10
+	        }
+	        name = rzeszapospolita.33.a #both gone
+	        add_stability = -0.2
+	        add_political_power = -500
+	        custom_effect_tooltip = remove_political_advisor
+	        show_ideas_tooltip = RZP_szymon_wilk
+	        kill_ideology_leader = fascism
+	        set_country_flag = nsppr_purge_2_a
+	        hidden_effect = {
+	                remove_ideas = RZP_szymon_wilk
+	        }
+	}
+	option = {
+	        ai_chance = {
+	                factor = 50
+	        }
+	        name = rzeszapospolita.33.b #Krystian Marczuk gone
+	        add_stability = -0.1
+	        add_political_power = -200
+	        kill_ideology_leader = fascism
+	        set_country_flag = nsppr_purge_2_b
 	}
 }
