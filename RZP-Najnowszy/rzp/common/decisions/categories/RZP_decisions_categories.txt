@@ -1,8 +1,15 @@
 civil_war_category = {
-
+   priority = 10
    icon = military_operation
-   visible = {
+   
+   allowed = {
            original_tag = RZP
-	   has_completed_focus = RZP_marsznawarszawe
+   }
+
+   visible_when_empty = yes
+
+   visible = {
+        original_tag = RZP
+	    has_completed_focus = RZP_marsznawarszawe
    }
 }
