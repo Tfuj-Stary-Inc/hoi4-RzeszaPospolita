@@ -1,25 +1,32 @@
 civil_war_category = {
 
-   RZP_recruit_soldiers = {
-   
-         visible = {
-                country_exists = POL
-                country_exists = JRP
-         }
-         ai_will_do = {
-                factor = 1
-         }
-         icon = generic_operation
-         cost = 10
-         modifier = {
-              
-         }
-         allowed = { always = no }
-         
-         fire_only_once = yes
-         
-         complete_effect = {        
-                 country_event = rzeszapospolita.2
-         }
+   RZP_monarchist_faction_plot = {
+
+           priority = 10
+
+           icon = generic_ignite_civil_war
+
+           available = {
+                   hidden_trigger = { always = no }
+           }
+
+           days_mission_timeout = 180
+
+           fire_only_once = yes
+
+           activation = {
+                   has_country_flag = RZP_prepare_monarchist_uprising
+           }
+
+           visible = {
+                   tag = RZP
+                   has_completed_focus = RZP_prepare_monarchist_plot
+           }
+
+           is_good = yes
+
+           timeout_effect = {
+                   country_event = rzeszapospolita.31
+           }
    }
 }
