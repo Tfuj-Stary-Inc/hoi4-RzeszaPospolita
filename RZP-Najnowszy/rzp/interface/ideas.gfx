@@ -4051,7 +4051,7 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-	      name = "GFX_idea_RZP_poniatowski"
+	      name = "GFX_idea_RZP_advisor_poniatowski"
 	      texturefile = "gfx/interface/ideas/rzp_advisor_poniatowski.dds"
 	}
 	

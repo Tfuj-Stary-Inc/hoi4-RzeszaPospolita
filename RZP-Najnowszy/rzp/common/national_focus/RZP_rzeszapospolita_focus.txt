@@ -1089,6 +1089,69 @@ focus_tree = {
 	            }
 	    }
 	}
+
+	focus = {
+		id = RZP_old_times
+		icon = GFX_
+		x = 34
+		y = 19
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_NSPPR_fate }
+		completion_reward = {
+			    add_political_power = 100
+				custom_effect_tooltip = available_political_advisor
+				show_ideas_tooltip = RZP_advisor_waza
+				show_ideas_tooltip = RZP_advisor_poniatowski
+				show_ideas_tooltip = RZP_advisor_reytan
+		}
+	}
+
+	focus = {
+		id = RZP_hetmans_return
+		icon = GFX_
+		x = 34
+		y = 20
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_old_times }
+		completion_reward = {
+			    army_experience = 25
+				create_corps_commander = {
+					    name = "Jan K. Chodkiewicz"
+						picture = "Portrait_RZP_Chodkiewicz.dds"
+						traits = {  }
+						skill = 5
+						id = 2144
+						attack_skill = 4
+						defense_skill = 3
+						planning_skill = 4
+						logistics_skill = 4
+				}
+				create_corps_commander = {
+					    name = "Stefan Czarniecki"
+						picture = "Portrait_RZP_Czarniecki.dds"
+						traits = {  }
+						skill = 5
+						id = 2145
+						attack_skill = 5
+						defense_skill = 4
+						planning_skill = 4
+						logistics_skill = 4
+				}
+				create_corps_commander = {
+					    name = "Stanisław Żółkiewski"
+						picture = "Portrait_RZP_Zolkiewski.dds"
+						traits = {  }
+						skill = 5
+						id = 2146
+						attack_skill = 5
+						defense_skill = 3
+						planning_skill = 3
+						logistics_skill = 4
+				}
+		}
+	}
 	
 	focus = {
 		id = RZP_dofinansowaniemarynarkirzeszypospolitej

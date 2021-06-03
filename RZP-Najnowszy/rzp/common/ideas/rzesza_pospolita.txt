@@ -328,7 +328,119 @@ ideas = {
 	      }
 	      
 	      traits = { bandera_cosplayer_but_worse }
-	  }
+	   }
+
+	   RZP_advisor_waza = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   available = {
+			       AND = {
+					       has_government = neutrality
+						   has_completed_focus = RZP_old_times
+				   }
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_reytan = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   available = {
+			       AND = {
+					       has_government = neutrality
+						   has_completed_focus = RZP_old_times
+				   }
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_poniatowski = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   available = {
+			       AND = {
+					       has_government = neutrality
+						   has_completed_focus = RZP_old_times
+				   }
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_obajtek = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_morawiecki = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_korwin = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   available = {
+			       NOT = {
+					       has_government = communism
+						   has_government = democratic
+				   }
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_braun = {
+
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   available = {
+			       NOT = {
+					       has_government = communism
+						   has_government = democratic
+				   }
+		   }
+
+		   traits = {  }
+	   }
+
+	   RZP_advisor_bolek = {
+		   
+		   allowed = {
+			       original_tag = RZP
+				   has_dlc = "La Resistance"
+		   }
+
+		   aveilable = {
+			       has_intelligence_agency = yes
+		   }
+
+		   traits = {  }
+	   }
 	}
 	
 	theorist = {
