@@ -1,4 +1,5 @@
 add_namespace = rzeszapospolita
+add_namespace = rzeszapospolita_monarchist
 
 country_event = {
 	id = rzeszapospolita.1
@@ -560,7 +561,7 @@ country_event = {
 	title = rzeszapospolita.30.t
 	desc = rzeszapospolita.30.d
 
-	is_triggerd_only = yes
+	is_triggered_only = yes
 	fire_only_once = yes
 
 	immediate = {
@@ -580,9 +581,9 @@ country_event = {
 
 # NSPPR purge - fate of advisors
 country_event = {
-	id = rzeszapospolita.31
-	title = rzeszapospolita.31.t
-	desc = rzeszapospolita.31.d
+	id = rzeszapospolita_monarchist.1
+	title = rzeszapospolita_monarchist.1.t
+	desc = rzeszapospolita_monarchist.1.d
 
 	fire_only_once = yes
 
@@ -603,7 +604,7 @@ country_event = {
 	        ai_chance = {
 	                factor = 20
 	        }
-	        name = rzeszapospolita.31.a
+	        name = rzeszapospolita_monarchist.1.a
 	        custom_effect_tooltip = remove_political_advisor
 	        show_ideas_tooltip = RZP_ambasador_ukrainy
 	        set_country_flag = purged_ambasador
@@ -615,7 +616,7 @@ country_event = {
 	        ai_chance = {
 	                factor = 20
 	        }
-	        name = rzeszapospolita.31.b
+	        name = rzeszapospolita_monarchist.1.b
 	        custom_effect_tooltip = remove_political_advisor
 	        show_ideas_tooltip = RZP_jerzy_urban
 	        set_country_flag = purged_urban
@@ -627,7 +628,7 @@ country_event = {
 	        ai_chance = {
 	                factor = 20
 	        }
-	        name = rzeszapospolita.31.c
+	        name = rzeszapospolita_monarchist.1.c
 	        add_political_power = -100
 	        add_stability = 0.05
 	}
@@ -635,9 +636,9 @@ country_event = {
 
 # NSPPR purge - generals
 country_event = {
-	id = rzeszapospolita.32
-	title = rzeszapospolita.32.t
-	desc = rzeszapospolita.32.d
+	id = rzeszapospolita_monarchist.2
+	title = rzeszapospolita_monarchist.2.t
+	desc = rzeszapospolita_monarchist.2.d
 
 	fire_only_once = yes
 
@@ -658,7 +659,7 @@ country_event = {
 	        ai_chance = {
 	                factor = 30
 	        }
-	        name = rzeszapospolita.32.a
+	        name = rzeszapospolita_monarchist.2.a
 	        set_country_flag = nsppr_purge_1_a
 	        custom_effect_tooltip = remove_chief_of_army
 	        show_ideas_tooltip = RZP_polish_ssman
@@ -680,7 +681,7 @@ country_event = {
 	        ai_chance = {
 	                factor = 20
 	        }
-	        name = rzeszapospolita.32.b
+	        name = rzeszapospolita_monarchist.2.b
 	        add_political_power = -200
 	        set_country_flag = nsppr_purge_1_b
 	}
@@ -688,9 +689,9 @@ country_event = {
 
 # NSPPR purge - fate of Krystian Marczuk and Szymon Wilk
 country_event = {
-	id = rzeszapospolita.33
-	title = rzeszapospolita.33.t
-	desc = rzeszapospolita.33.d
+	id = rzeszapospolita_monarchist.3
+	title = rzeszapospolita_monarchist.3.t
+	desc = rzeszapospolita_monarchist.3.d
 
 	fire_only_once = yes
 
@@ -711,7 +712,7 @@ country_event = {
 	        ai_chance = {
 	                factor = 10
 	        }
-	        name = rzeszapospolita.33.a #both gone
+	        name = rzeszapospolita_monarchist.3.a #both gone
 	        add_stability = -0.2
 	        add_political_power = -500
 	        custom_effect_tooltip = remove_political_advisor
@@ -726,10 +727,116 @@ country_event = {
 	        ai_chance = {
 	                factor = 50
 	        }
-	        name = rzeszapospolita.33.b #Krystian Marczuk gone
+	        name = rzeszapospolita_monarchist.3.b #Krystian Marczuk gone
 	        add_stability = -0.1
 	        add_political_power = -200
 	        kill_ideology_leader = fascism
 	        set_country_flag = nsppr_purge_2_b
+	}
+}
+
+country_event = {
+	id = rzeszapospolita_monarchist.4
+	title = rzeszapospolita_monarchist.4.t
+	desc = rzeszapospolita_monarchist.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		    days = 7
+	}
+
+	option = {
+		    ai_chance = {
+				    base = 40
+					modifier = {
+						    add = 60
+							RZP = { has_army_size = { size > 40 } }
+					}
+					modifier = {
+						    add = -100
+							any_other_country = {
+								    is_major = yes
+									has_guaranteed = LIT
+							}
+					}
+			}
+			name = rzeszapospolita_monarchist.4.a
+			RZP = { 
+				country_event = { hours = 12 id = rzeszapospolita_monarchist.5 }
+			}
+			custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = {
+		    ai_chance = {
+				    base = 20
+					modifier = {
+						    add = 100
+							any_other_country = {
+								    is_major = yes
+									has_guaranteed = LIT
+							}
+					}
+			}
+			name = rzeszapospolita_monarchist.4.b
+			RZP = {
+				country_event = { hours = 12 id = rzeszapospolita_monarchist.6 }
+			}
+	}
+}
+
+country_event = {
+	id = rzeszapospolita_monarchist.5
+	title = rzeszapospolita_monarchist.5.t
+	desc = rzeszapospolita_monarchist.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		    name = rzeszapospolita_monarchist.5.a
+			11 = {
+				     if = {
+						     limit = { is_owned_by = LIT }
+							 add_core_of = RZP
+					 }
+			}
+			188 = {
+				     if = {
+						     limit = { is_owned_by = LIT }
+							 add_core_of = RZP
+					 }
+			}
+			189 = {
+				     if = {
+						     limit = { is_owned_by = LIT }
+							 add_core_of = RZP
+					 }
+			}
+			annex_country = { target = LIT transfer_troops = yes }
+			add_war_support = 0.05
+			add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = rzeszapospolita_monarchist.6
+	title = rzeszapospolita_monarchist.6.t
+	desc = rzeszapospolita_monarchist.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		    name = rzeszapospolita_monarchist.6.a
+			add_state_claim = 11
+			add_state_claim = 188
+			add_state_claim = 189
+			create_wargoal = {
+				    type = take_state_focus
+					target = LIT
+					generator = { 11 188 189 }
+			}
 	}
 }

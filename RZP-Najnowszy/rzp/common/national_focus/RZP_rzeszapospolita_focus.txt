@@ -1152,6 +1152,21 @@ focus_tree = {
 				}
 		}
 	}
+
+	focus = {
+		id = RZP_bring_back_commonwealth
+		icon = GFX_
+		x = 36
+		y = 19
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_NSPPR_fate }
+		completion_reward = {
+			    LIT = {
+					 country_event = rzeszapospolita_monarchist.4
+				}
+		}
+	}
 	
 	focus = {
 		id = RZP_dofinansowaniemarynarkirzeszypospolitej
