@@ -4079,6 +4079,11 @@ spriteTypes = {
 	      name = "GFX_idea_RZP_advisor_bolek"
 	      texturefile = "gfx/interface/ideas/rzp_advisor_bolek.dds"
 	}
+
+	spriteType = {
+		  name = "GFX_idea_RZP_advisor_bashar"
+		  texturefile = "gfx/interface/ideas/rzp_advisor_bashar.dds"
+	}
 	
 	spriteType = {
 	      name = "GFX_idea_ursus"

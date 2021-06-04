@@ -343,7 +343,7 @@ ideas = {
 				   }
 		   }
 
-		   traits = {  }
+		   traits = { conqueror_king }
 	   }
 
 	   RZP_advisor_reytan = {
@@ -359,7 +359,7 @@ ideas = {
 				   }
 		   }
 
-		   traits = {  }
+		   traits = { patriotism_symbol }
 	   }
 
 	   RZP_advisor_poniatowski = {
@@ -375,7 +375,7 @@ ideas = {
 				   }
 		   }
 
-		   traits = {  }
+		   traits = { cultural_reformist }
 	   }
 
 	   RZP_advisor_obajtek = {
@@ -384,7 +384,7 @@ ideas = {
 			       original_tag = RZP
 		   }
 
-		   traits = {  }
+		   traits = { property_owner oil_company_president }
 	   }
 
 	   RZP_advisor_morawiecki = {
@@ -393,7 +393,7 @@ ideas = {
 			       original_tag = RZP
 		   }
 
-		   traits = {  }
+		   traits = { bank_president }
 	   }
 
 	   RZP_advisor_korwin = {
@@ -409,7 +409,7 @@ ideas = {
 				   }
 		   }
 
-		   traits = {  }
+		   traits = { socialism_enemy free_market_proponent }
 	   }
 
 	   RZP_advisor_braun = {
@@ -425,7 +425,7 @@ ideas = {
 				   }
 		   }
 
-		   traits = {  }
+		   traits = { socialism_enemy powerful_monarchist king_of_jerusalem }
 	   }
 
 	   RZP_advisor_bolek = {
@@ -439,8 +439,19 @@ ideas = {
 			       has_intelligence_agency = yes
 		   }
 
-		   traits = {  }
+		   traits = { tw_bolek }
 	   }
+
+	   RZP_advisor_bashar = {
+		   
+		   allowed = {
+			       original_tag = RZP
+		   }
+
+		   cost = 2000
+
+		   traits = { national_agrarist }
+	    }
 	}
 	
 	theorist = {

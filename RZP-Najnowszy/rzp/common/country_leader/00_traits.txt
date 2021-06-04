@@ -4939,36 +4939,145 @@ rebbelious_commander = {
 }
 
      cringekrieg_theorist = {
-     sprite = 14
+        sprite = 14
 
-     equipment_bonus = {
-             armor = {
-                   instant = yes
-                   maximum_speed = 0.05
-                   armor_value = 0.05
-             }
-     }
-     experience_gain_army = 0.05
+        equipment_bonus = {
+            armor = {
+                instant = yes
+                maximum_speed = 0.05
+                armor_value = 0.05
+            }
+        }
+        experience_gain_army = 0.05
 
-             ai_will_do = {
-			factor = 1
-	     }
+        ai_will_do = {
+			    factor = 1
+	    }
     }
 
-   polish_special_forces = {
-    sprite = 15
+    polish_special_forces = {
+		random = no
+        sprite = 15
 
-    army_org_factor = 0.04
-    planning_speed = 0.05
-    special_forces_attack_factor = 0.15
-    special_forces_defence_factor = 0.15
+        army_org_factor = 0.04
+        planning_speed = 0.05
+        special_forces_attack_factor = 0.15
+        special_forces_defence_factor = 0.15
 
-    ai_will_do = {
-           factor = 3
+        ai_will_do = {
+                factor = 3
+        }
     }
-   }
+
+    tw_bolek = {
+		random = no
+		sprite = 17
+
+		operative_slot = 2
+		agency_upgrade_time = -0.25
+	}
+
+	socialism_enemy = {
+		random = no
+		sprite = 16
+
+		communism_drift = -0.05
+	}
+
+	powerful_monarchist = {
+		random = no
+		sprite = 16
+
+		neutrality_drift = 0.1
+	}
+
+	king_of_jerusalem = {
+		random = no
+		sprite = 19
+
+		stability_factor = 0.05
+		war_support_factor = 0.05
+		consumer_goods_factor = -0.01
+	}
+
+	free_market_proponent = {
+		random = no
+		sprite = 20
+
+		consumer_goods_factor = -0.05
+		production_factory_max_efficiency_factor = 0.1
+		production_factory_efficiency_gain_factor = 0.05
+	}
+
+	bank_president = {
+		random = no
+		sprite = 21
+
+		consumer_goods_factor = -0.02
+		political_power_gain = 0.15
+	}
+
+	property_owner = {
+		random = no
+		sprite = 22
+
+		production_speed_industrial_complex_factor = 0.15
+		production_speed_arms_factory_factor = 0.10
+		consumer_goods_factor = -0.02
+	}
+
+	oil_company_president = {
+		random = no
+		sprite = 23
+
+		production_speed_synthetic_refinery_factor = 0.2
+		consumer_goods_factor = -0.03
+	}
+
+	national_agrarist = {
+		random = no
+		sprite = 24
+
+		consumer_goods_factor = -0.25
+		production_speed_synthetic_refinery_factor = 0.3
+		production_speed_dockyard_factor = 0.1
+		production_speed_industrial_complex_factor = 0.15
+		production_speed_arms_factory_factor = 0.15
+		army_speed_factor = 0.35
+		conscription_factor = 0.25
+		army_attack_factor = 0.15
+		army_defence_factor = 0.10
+		political_power_gain = -5
+	}
+
+	cultural_reformist = {
+		random = no
+		sprite = 25
+
+		stability_weekly = 0.15
+		consumer_goods_factor = -0.01
+		neutrality_drift = 0.05
+	}
+
+	patriotism_symbol = {
+		random = no
+		sprite = 26
+
+		stability_factor = 0.1
+		war_support_factor = 0.1
+		conscription_factor = 0.05
+	}
+
+	conqueror_king = {
+		random = no
+		sprite = 27
+
+		war_support_weekly = 0.05
+		conscription_factor = 0.1
+	}
    
     national_hero = {
+		random = no
         sprite = 16
        
         stability_factor = 0.05
@@ -4980,19 +5089,20 @@ rebbelious_commander = {
     }
    
     national_bank_president = {
+		random = no
         sprite = 17
 	
-	consumer_goods_factor = -0.06
-	political_power_factor = 0.1
-	industrial_capacity_factor = 0.1
+	    consumer_goods_factor = -0.06
+	    political_power_factor = 0.1
+	    industrial_capacity_factor = 0.1
 	
-	ai_will_do = {
-	        factor = 5
-	}
+	    ai_will_do = {
+	            factor = 5
+	    }
     }
     
     sports_tank_manufacturer = {
-            random = no
+        random = no
 	    equipment_bonus = {
 	            armor = {
 		            maximum_speed = 0.15
@@ -5006,14 +5116,15 @@ rebbelious_commander = {
     }
     
     cossack_leader = {
-           sprite = 18
+		random = no
+        sprite = 18
 	   
-	   cavalry_attack_factor = 0.45
-	   cavalry_defence_factor = 0.25
+	    cavalry_attack_factor = 0.45
+	    cavalry_defence_factor = 0.25
 	   
-	   ai_will_do = {
-	           factor = 3
-	   }
+	    ai_will_do = {
+	            factor = 3
+	    }
     }
     
 }
