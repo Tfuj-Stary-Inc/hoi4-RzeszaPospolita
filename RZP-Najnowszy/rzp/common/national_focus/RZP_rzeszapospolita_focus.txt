@@ -1167,6 +1167,19 @@ focus_tree = {
 				}
 		}
 	}
+
+	focus = {
+		id = RZP_commonwealth_rebirth
+		icon = GFX_
+		x = 36
+		y = 20
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_bring_back_commonwealth }
+		completion_reward = {
+			    set_cosmetic_tag = RZP_commonwealth
+		}
+	}
 	
 	focus = {
 		id = RZP_dofinansowaniemarynarkirzeszypospolitej
