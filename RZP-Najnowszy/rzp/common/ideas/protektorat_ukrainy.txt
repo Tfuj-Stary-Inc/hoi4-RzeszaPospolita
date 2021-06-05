@@ -377,6 +377,8 @@ ideas = {
   theorist = {
           
 	  RUK_theorist_air_korolow = {
+
+		  ledger = air
 	          
 		  allowed = {
 		          original_tag = RUK
@@ -392,6 +394,9 @@ ideas = {
 	  }
 	  
 	  RUK_theorist_air_kozedub = {
+
+		  ledger = air
+
 	          
 		  allowed = {
 		          original_tag = RUK
@@ -407,6 +412,8 @@ ideas = {
 	  }
 	  
 	  RUK_theorist_land_putout = {
+
+		  ledger = army
 	          
 		  allowed = {
 		          original_tag = RUK

@@ -534,9 +534,9 @@ bookmarks = {
 			
 			}
 			focuses = {
-			        RZP_marsznawarszawe
+			    RZP_marsznawarszawe
 				RZP_juntawojskowarzeszypospolitej
-				RZP_fundamentimperium
+				RZP_great_empire
 			}
 		}
 		

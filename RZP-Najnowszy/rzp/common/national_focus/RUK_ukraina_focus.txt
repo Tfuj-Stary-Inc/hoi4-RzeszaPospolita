@@ -453,7 +453,7 @@ focus_tree = {
 	                if = {
 	                       limit = {
 	                                 OR = {
-	                                        has_completed_focus = RUK_our_own_way
+	                                        has_completed_focus = RUK_our_own_path
 	                                        has_completed_focus = RUK_seek_help_in_germany
 	                                 }
 	                       }

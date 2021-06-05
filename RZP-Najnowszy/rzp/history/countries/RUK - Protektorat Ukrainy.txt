@@ -57,58 +57,52 @@ create_country_leader = {
         traits = {
             #
         }
-        
-create_country_leader = {
-         name = "Ambasador Ukrainy"
-         desc = "POLITICS_KING_ZOG_DESC"
-         picture = "Portrait_RZP_Ambasador.dds"
-         expire = "1965.1.1"
-         ideology = falangism
-         traits = {
-             #
-         }
+}
 	 
 create_country_leader = {
-         name = "Stepan Bandera"
-         desc = "POLITICS_KING_ZOG_DESC"
-         picture = "Portrait_Protektorat_Ukrainy_Bandera.dds"
-         expire = "1965.1.1"
-         ideology = falangism
-         traits = {
-             #
-         }
+        name = "Stepan Bandera"
+        desc = "POLITICS_KING_ZOG_DESC"
+        picture = "Portrait_Protektorat_Ukrainy_Bandera.dds"
+        expire = "1965.1.1"
+        ideology = falangism
+        traits = {
+            #
+        }
+}
          
 create_country_leader = {
-         name = "Jakub Kowalczyk"
-         desc = "POLITICS_JOSEPH_STALIN_DESC"
-         picture = "Portrait_Rzesza_Pospolita_Kowal.dds"
-         expire = "1965.1.1"
-         ideology = stalinism
-         traits = {
-	              revolutionary_rubish
+        name = "Jakub Kowalczyk"
+        desc = "POLITICS_JOSEPH_STALIN_DESC"
+        picture = "Portrait_Rzesza_Pospolita_Kowal.dds"
+        expire = "1965.1.1"
+        ideology = stalinism
+        traits = {
+	        revolutionary_rubish
                 soviet_tactics_lover
         }
 }
 
 create_country_leader = {
-         name = "Ukraińskie zgromadzenie ludowe"
-         desc = "POLITICS_KING_ZOG_DESC"
-         picture = "Portrait_RUK_com.dds"
-         expire = "1965.1.1"
-         ideology = socialism
-         traits = {
-             #
-         }
+        name = "Ukraińskie zgromadzenie ludowe"
+        desc = "POLITICS_KING_ZOG_DESC"
+        picture = "Portrait_RUK_com.dds"
+        expire = "1965.1.1"
+        ideology = socialism
+        traits = {
+            #
+        }
+}
 	 
 create_country_leader = {
-         name = "Volodymyr Zelensky"
-         desc = "POLITICS_KING_ZOG_DESC"
-         picture = "Portrait_Protektorat_Ukrainy_Zelenski.dds"
-         expire = "1965.1.1"
-         ideology = conservatism
-         traits = {
-             #
-         }
+        name = "Volodymyr Zelensky"
+        desc = "POLITICS_KING_ZOG_DESC"
+        picture = "Portrait_Protektorat_Ukrainy_Zelenski.dds"
+        expire = "1965.1.1"
+        ideology = conservatism
+        traits = {
+            #
+        }
+}
 
 add_namespace = {
         name = "ruk_unit_leader"
@@ -117,25 +111,25 @@ add_namespace = {
 
 create_field_marshal = {
         name = "Bohdan Chmielnicki"
-	    picture = "Portrait_Protektorat_Ukrainy_Chmielnicki.dds"
-	    traits = { offensive_doctrine }
-	    skill = 5
-	    attack_skill = 6
-	    defense_skill = 4
-	    planning_skill = 3
-	    logistics_skill = 3
+	picture = "Portrait_Protektorat_Ukrainy_Chmielnicki.dds"
+	traits = { offensive_doctrine }
+	skill = 5
+	attack_skill = 6
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
         id = 3001
 }
 
 create_corps_commander = {
         name = "Nikolaj Vatutin"
-	    picture = "Portrait_Protektorat_Ukrainy_Watutin.dds"
-	    traits = {  }
-	    skill = 3
-	    attack_skill = 4
-	    defense_skill = 3
-	    planning_skill = 3
-	    logistics_skill = 4
+	picture = "Portrait_Protektorat_Ukrainy_Watutin.dds"
+	traits = {  }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 4
         id = 3002
 }
 

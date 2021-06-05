@@ -100,7 +100,7 @@ political_struggle = {
              }
              
              timeout_effect = {
-                     RZP = { country_event =  }
+                     
              }
              
              ai_will_do = {

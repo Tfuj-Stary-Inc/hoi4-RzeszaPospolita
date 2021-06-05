@@ -111,7 +111,7 @@ country_event = {
                                desc = "POLITICS_KING_ZOG_DESC"
                                picture = "Portrait_RZP_Ambasador.dds"
                                expire = "1965.1.1"
-                               ideology = fascism
+                               ideology = nazism
                                traits = {  }
                        }
                }
@@ -312,7 +312,7 @@ country_event = {
 
 country_event = {
         id = ukraina.13
-        title - ukraina.13.t
+        title = ukraina.13.t
         desc = ukraina.13.d
         picture = GFX_/hoi4/event_gfx/report_event_soldiers_marching
         is_triggered_only = yes
