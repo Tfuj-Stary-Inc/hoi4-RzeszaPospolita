@@ -1,0 +1,114 @@
+division_template = {
+        name = "Krycha Jugend"
+        is_locked = yes
+        division_names_group = RZP_INF_01
+        regiments = {
+                infantry = { x = 0 y = 0 }
+                infantry = { x = 0 y = 1 }
+                infantry = { x = 0 y = 2 }
+                infantry = { x = 0 y = 3 }
+                infantry = { x = 1 y = 0 }
+                infantry = { x = 1 y = 1 }
+        }
+}
+
+division_template = {
+        name = "Przymusowi Ochotnicy"
+        is_locked = yes
+        division_names_group = RZP_INF_01
+        regiments = {
+                infantry = { x = 0 y = 0 }
+                infantry = { x = 0 y = 1 }
+                infantry = { x = 0 y = 2 }
+                infantry = { x = 1 y = 0 }
+                infantry = { x = 1 y = 1 }
+        }
+}
+
+units = {
+        division = {
+                name = "Batalion 'Otyły Pan'"
+                location = 3544
+                division_template = "Krycha Jugend"
+        }
+        division = {
+                name = "Dywizja Kurew z Pomorza"
+                location = 362
+                division_template = "Krycha Jugend"
+        }
+        division = {
+                name = "Batalion 'Knur'"
+                location = 11301
+                division_template = "Krycha Jugend"
+        }
+        division = {
+                name = "Drużyna Poznańska"
+                location = 6558
+                division_template = "Krycha Jugend"
+        }
+        division = {
+                name = "Drużyna Toruńska"
+                location = 3295
+                division_template = "Krycha Jugend"
+        }
+        division = {
+                name = "Ochotnicy Białoruscy"
+                location = 3392
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "Ochotnicy Białoruscy"
+                location = 3392
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "Ochotnicy Białoruscy"
+                location = 3309
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "Ochotnicy Białoruscy"
+                location = 406
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "Ochotnicy Białoruscy"
+                location = 9359
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "Ochotnicy Białoruscy"
+                location = 6359
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "W 100% dobrowolni ochotnicy"
+                location = 6259
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "W 100% dobrowolni ochotnicy"
+                location = 6259
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "W 100% dobrowolni ochotnicy"
+                location = 6259
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "W 100% dobrowolni ochotnicy"
+                location = 6259
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "W 100% dobrowolni ochotnicy"
+                location = 6259
+                division_template = "Przymusowi Ochotnicy"
+        }
+        division = {
+                name = "W 100% dobrowolni ochotnicy"
+                location = 6259
+                division_template = "Przymusowi Ochotnicy"
+        }
+}

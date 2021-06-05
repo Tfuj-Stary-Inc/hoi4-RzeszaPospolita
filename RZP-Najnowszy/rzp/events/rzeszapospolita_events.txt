@@ -16,6 +16,7 @@ country_event = {
 		name = rzeszapospolita.1.a
 		create_wargoal = { type = annex_everything target = POL }
 		hidden_effect = { country_event = { days = 1 id = rzeszapospolita.2 } }
+		hidden_effect = { country_event = { days = 843 id = rzeszapospolita.21 } }
 	}
 }
 
@@ -370,6 +371,53 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = rzeszapospolita.31
+	title = rzeszapospolita.31.t
+	desc = rzeszapospolita.31.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		    name = rzeszapospolita.31
+			hidden_effect = {
+				    set_capital = 88
+					start_civil_war = {
+						    ruling_party = neutrality
+							ideology = fascism
+							size = 0.6
+							capital = 10
+							states = { 10 85 86 87 92 97 94 95 96 748 }
+					}
+					random_other_country = {
+						    limit = {
+								    original_tag = RZP
+									has_government = fascism
+							}
+							load_oob = "RZP_cw_fascism"
+							set_equipment_fraction = 0.6
+							set_stability = 0.55
+							set_war_support = 1
+							add_popularity = {
+								    ideology = fascism
+									popularity = 1
+							}
+					}
+					load_oob = "RZP_cw_monarchist"
+					set_equipment_fraction = 0.4
+					set_stability = 0.45
+					set_war_support = 0.3
+
+					add_popularity = {
+						    ideology = neutrality
+							popularity = 0.15
+					}
+			}
+			add_political_power = -100
+	}
+}
+
 # NSPPR purge - fate of advisors
 country_event = {
 	id = rzeszapospolita_monarchist.1
@@ -496,7 +544,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-	        days = 10
+	        days = 8
 	}
 
 	option = {
