@@ -31,7 +31,7 @@ country_event = {
 	    ai_chance = { base = 100 }
 	    add_political_power = -75
 	    hidden_effect = {
-	            load_oob = RZP_moreunits
+	            load_oob = "RZP_moreunits"
 	            add_manpower = -90000
 	    }
 	}
