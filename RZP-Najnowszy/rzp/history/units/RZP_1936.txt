@@ -119,37 +119,37 @@ units = {
 		start_experience_factor = 0.3
 	}
 	division= {	
-		division_name = "Przymusowi Ochotnicy"
+		name = "Przymusowi Ochotnicy"
 		location = 9412
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 	}
 	division= {	
-		division_name = "Przymusowi Ochotnicy"
+		name = "Przymusowi Ochotnicy"
 		location = 3295
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 	}
 	division= {	
-		division_name = "Przymusowi Ochotnicy"
+		name = "Przymusowi Ochotnicy"
 		location = 3295
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 	}
 	division= {	
-		division_name = "Przymusowi Ochotnicy"
+		name = "Przymusowi Ochotnicy"
 		location = 11428
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 	}
 	division= {	
-		division_name = "Przymusowi Ochotnicy"
+		name = "Przymusowi Ochotnicy"
 		location = 334
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
 	}
 	division= {	
-		division_name = "Przymusowi Ochotnicy"
+		name = "Przymusowi Ochotnicy"
 		location = 243
 		division_template = "Dywizja Piechoty"
 		start_experience_factor = 0.3
