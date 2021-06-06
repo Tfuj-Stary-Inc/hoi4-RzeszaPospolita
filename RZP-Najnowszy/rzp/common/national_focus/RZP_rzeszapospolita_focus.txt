@@ -552,6 +552,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
+			add_popularity = {
+				    ideology = communism
+					popularity = -0.05
+			}
+			add_popularity = {
+				    ideology = democarcy
+					popularity = -0.05
+			}
+			add_popularity = {
+				    ideology = neutrality
+					popularity = -0.05
+			}
 		}
 	}
 	
@@ -585,8 +597,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation= { 
-                                  country = GER 
-                                  relation = non_aggression_pact 
+                        country = GER 
+                        relation = non_aggression_pact 
 			}
 		}
 	}
@@ -604,8 +616,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			GER = {
-                          add_to_faction = RZP
-                        }
+                add_to_faction = RZP
+            }
 		}
 	}
 	
@@ -644,6 +656,95 @@ focus_tree = {
 			SOV = {
 			   add_to_faction = RZP
 			}
+		}
+	}
+
+	focus = {
+		id = RZP_internal_affairs
+		icon = GFX_
+		x = 8
+		y = 20
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_czystkapolityczna }
+		ai_will_do = {
+			    factor = 5
+		}
+		completion_reward = {
+			    add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = RZP_party_youth
+		icon = GFX_
+		x = 6
+		y = 21
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_internal_affairs }
+		ai_will_do = {
+			    factor = 6
+		}
+		completion_reward = {
+			    add_ideas = { RZP_krycha_jugend }
+		}
+	}
+
+	focus = {
+		id = RZP_land_claims
+		icon = GFX_
+		x = 8
+		y = 21
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_internal_affairs }
+		ai_will_do = {
+			    factor = 10
+		}
+		completion_reward = {
+			    RZP_claims = yes
+		}
+	}
+
+	focus = {
+		id = RZP_finish_lithuania
+		icon = GFX_
+		x = 7
+		y = 22
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_land_claims }
+		ai_will_do = {
+			    factor = 15
+		}
+		completion_reward = {
+			    declare_war_on = {
+					target = LIT
+					type = annex_everything
+				}
+		}
+	}
+
+	focus = {
+		id = RZP_retake_german_land
+		icon = GFX_
+		x = 9
+		y = 22
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_land_claims }
+		ai_will_do = {
+			    factor = 5
+		}
+		available = {
+			has_army_manpower = { size > 499999 }
+		}
+		completion_reward = {
+			    declare_war_on = {
+					target = GER
+					type = annex_everything
+				}
 		}
 	}
 	
@@ -2153,6 +2254,7 @@ focus_tree = {
 	                }
 	        }
 	        has_government = fascism
+			has_completed_focus = RZP_umocnieniewladzynsppru
 	    }
 	    ai_will_do = {
 	        factor = 1

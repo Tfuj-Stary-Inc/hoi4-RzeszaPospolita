@@ -1,0 +1,7 @@
+RZP_claims = {
+    add_state_claim = 5
+    add_state_claim = 63
+    add_state_claim = 66
+    add_state_claim = 67
+    add_state_claim = 68
+}

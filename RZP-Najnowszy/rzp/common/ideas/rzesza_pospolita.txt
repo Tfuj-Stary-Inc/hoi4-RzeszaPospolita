@@ -87,26 +87,7 @@ ideas = {
 			}
 		}
 		
-		RZP_plan_w = {
-				
-				allowed = {
-					always = yes
-				}
-
-				allowed_civil_war = {
-					always = yes
-				}
-
-				removal_cost = -1
-				
-				picture = generic_manpower_bonus
-				
-				modifier = {
-					non_core_manpower = 0.05
-				}
-		}
-		
-		RZP_recruitment = {
+		RZP_krycha_jugend = {
 
 				allowed = {
 					always = yes
@@ -118,10 +99,11 @@ ideas = {
 
 				removal_cost = -1
 				
-                                picture = generic_infantry_bonus
+                picture = generic_infantry_bonus
 
 				modifier = {
-					conscription = 0.02
+					conscription = 0.01
+					war_support_factor = 0.05
 				}
 		}
 		
@@ -142,8 +124,8 @@ ideas = {
 					consumer_goods_factor = -0.10
 					production_speed_buildings_factor = 0.25
 					political_power_gain = 0.20
-					economy_cost_factor = -0.50
-					trade_laws_cost_factor = -0.50
+					economy_cost_factor = -0.10
+					trade_laws_cost_factor = -0.10
 				}
 		}
 		
@@ -435,7 +417,7 @@ ideas = {
 				   has_dlc = "La Resistance"
 		   }
 
-		   aveilable = {
+		   available = {
 			       has_intelligence_agency = yes
 		   }
 
@@ -528,7 +510,7 @@ ideas = {
 					    naval_equipment = 0.15
 				}
 
-				availalbe = {
+				available = {
 					    has_full_control_of_state = 85
 				}
 
@@ -619,9 +601,9 @@ ideas = {
 
 			orange = {
 
-				allowed = [
+				allowed = {
 					    original_tag = RZP
-				]
+				}
 
 				research_bonus = {
 					    electronics = 0.2

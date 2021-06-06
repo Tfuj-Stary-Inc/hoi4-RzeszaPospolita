@@ -199,7 +199,7 @@ if = {
 	}
 	create_operative_leader = {
 		name = "Lech Wałęsa"
-		GFX = "gfx/leaders/operative_walesa.dds"
+		GFX = "operative_walesa.dds"
 		traits = { operative_commando operative_safe_cracker }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -208,7 +208,7 @@ if = {
 	
 	create_operative_leader = {
 		name = "Tomasz Hajto"
-		GFX = "gfx/leaders/operative_hajto.dds"
+		GFX = "operative_hajto.dds"
 		traits = { operative_commando }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -217,7 +217,7 @@ if = {
 	
 	create_operative_leader = {
 		name = "Jezus Ipanienka"
-		GFX = "gfx/leaders/operative_jezus.dds"
+		GFX = "operative_jezus.dds"
 		traits = { operative_infiltrator }
 		bypass_recruitment = no
 		available_to_spy_master = yes
