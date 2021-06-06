@@ -1,0 +1,165 @@
+RUK_border_wars = {
+    border_war_wolyn = {
+        available = {
+                NOT = { owns_state = 93 }
+                has_completed_focus = RUK_west_partisants
+        }
+        visible = {
+                has_completed_focus = RUK_west_partisants
+                NOT = { owns_state = 93 }
+        }
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 201
+                    num_provinces = 2
+                    on_win = ukraina_bw.2
+                }
+				
+                defender = {
+                    state = 93
+                    num_provinces = 2
+                    on_win = ukraina_bw.1
+                }
+            }
+        }
+    }
+
+    border_war_lwow = {
+        available = {
+                NOT = { owns_state = 91 }
+                has_completed_focus = RUK_west_partisants
+        }
+        visible = {
+                has_completed_focus = RUK_west_partisants
+                NOT = { owns_state = 91 }
+        }
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                    attacker = {
+                        state = 199
+                        num_provinces = 3
+                        on_win = ukraina_bw.3
+                    }
+				
+                    defender = {
+                        state = 91
+                        num_provinces = 3
+                        on_win = ukraina_bw.1
+                    }
+            }
+        }
+    }
+
+    border_war_stanislawow = {
+        available = { 
+                has_completed_focus = RUK_west_partisants
+                owns_state = 91
+                NOT = { owns_state = 89 }
+        }
+        visible = {
+                has_completed_focus = RUK_west_partisants
+                NOT = { owns_state = 89 }
+        }
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                    attacker = {
+                        state = 91
+                        num_provinces = 5
+                        on_win = ukraina_bw.4
+                    }
+				
+                    defender = {
+                        state = 89
+                        num_provinces = 4
+                        on_win = ukraina_bw.1
+                    }
+            }
+        }
+    }
+
+    border_war_cherkasy = {
+        available = {
+                NOT = { owns_state = 203 }
+                has_completed_focus = RUK_south_partisants
+        }
+        visible = {
+                has_completed_focus = RUK_south_partisants
+                NOT = { owns_state = 203 }
+        }
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                    attacker = {
+                        state = 202
+                        num_provinces = 5
+                        on_win = ukraina_bw.5
+                    }
+				
+                    defender = {
+                        state = 203
+                        num_provinces = 5
+                        on_win = ukraina_bw.1
+                    }
+            }
+        }
+    }
+
+    border_war_odessa = {
+        available = {
+                NOT = { owns_state = 192 }
+                has_completed_focus = RUK_south_partisants
+        }
+        visible = {
+                has_completed_focus = RUK_south_partisants
+                NOT = { owns_state = 192 }
+        }
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                    attacker = {
+                        state = 198
+                        num_provinces = 2
+                        on_win = ukraina_bw.6
+                    }
+				
+                    defender = {
+                        state = 192
+                        num_provinces = 2
+                        on_win = ukraina_bw.1
+                    }
+            }
+        }
+    }
+
+    border_war_mykolaiv = {
+        available = {
+                owns_state = 203
+                NOT = { owns_state = 197 }
+                has_completed_focus = RUK_south_partisants
+        }
+        visible = {
+                has_completed_focus = RUK_south_partisants
+                NOT = { owns_state = 197 }
+        }
+        complete_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                    attacker = {
+                        state = 203
+                        num_provinces = 5
+                        on_win = ukraina_bw.7
+                    }
+				
+                    defender = {
+                        state = 197
+                        num_provinces = 4
+                        on_win = ukraina_bw.1
+                    }
+            }
+        }
+    }
+}    

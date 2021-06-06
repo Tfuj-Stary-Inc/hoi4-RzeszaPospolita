@@ -1,0 +1,20 @@
+RUK_border_wars = {
+     icon = Decision_border_war
+     visible = {
+          AND = {
+               OR = {
+                    has_completed_focus = RUK_south_partisants
+                    has_completed_focus = RUK_west_partisants
+               }
+               NOT = {
+                    owns_state = 89
+                    owns_state = 91
+                    owns_state = 93
+                    owns_state = 192
+                    owns_state = 197
+                    owns_state = 203
+               }
+          }
+          original_tag = RUK
+     }
+}
