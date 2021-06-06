@@ -349,6 +349,31 @@ country_event = {
 }
 
 country_event = {
+	id = rzeszapospolita.22
+	title = rzeszapospolita.22.t
+	desc = rzeszapospolita.22.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RZP
+		has_war_with = POL
+		POL = {
+			surrender_progress > 0.6
+		}
+	}
+
+	option = {
+		annex_country = { target = POL transfer_troops = yes }
+		add_war_support = 0.05
+		add_popularity = {
+			    ideology = fascism
+				popularity = 0.07
+		}
+	}
+}
+
+country_event = {
 	id = rzeszapospolita.30
 	title = rzeszapospolita.30.t
 	desc = rzeszapospolita.30.d
