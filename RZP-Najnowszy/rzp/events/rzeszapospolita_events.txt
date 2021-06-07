@@ -291,6 +291,8 @@ country_event = {
 					transfer_state = 63
 					add_state_core = 63
 				}
+			}
+			if = {
 				limit = {
 					68 = {
 						is_controlled_by = RZP
@@ -298,6 +300,8 @@ country_event = {
 					transfer_state = 68
 					add_state_core = 68
 				}
+			}
+			if = {
 				limit = {
 					85 = {
 						is_controlled_by = RZP
@@ -305,6 +309,8 @@ country_event = {
 					transfer_state = 85
 					add_state_core = 85
 				}
+			}
+			if = {
 				limit = {
 					86 = {
 						is_controlled_by = RZP
@@ -321,6 +327,8 @@ country_event = {
                 target = JRP
                 type = annex_everything 
             }
+			remove_unit_leader = 2141
+			remove_unit_leader = 2143
         }
 	}
 }

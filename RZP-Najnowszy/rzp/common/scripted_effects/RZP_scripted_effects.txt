@@ -5,3 +5,82 @@ RZP_claims = {
     add_state_claim = 67
     add_state_claim = 68
 }
+
+RZP_monarchist_north = {
+    add_state_claim = 190
+    add_state_claim = 12
+    add_state_claim = 13
+    add_state_claim = 191
+    create_wargoal = {
+            type = take_state_focus
+            target = LAT
+            generator = { 190 12 }
+    }
+    create_wargoal = {
+            type = take_state_focus
+            target = EST
+            generator = { 13 191 }
+    }
+}
+
+RZP_monarchist_east = {
+    add_state_claim = 207
+    add_state_claim = 206
+    add_state_claim = 204
+    add_state_claim = 194
+    add_state_claim = 241
+    add_state_claim = 201
+    add_state_claim = 199
+    add_state_claim = 198
+    add_state_claim = 202
+    add_state_claim = 192
+    add_state_claim = 203
+    add_state_claim = 197
+    add_state_claim = 226
+    add_state_claim = 196
+    add_state_claim = 200
+    add_state_claim = 193
+    add_state_claim = 259
+}
+
+RZP_east_claim_control = {
+    ALL = {
+        207 = { is_controlled_by = RZP }
+        206 = { is_controlled_by = RZP }
+        204 = { is_controlled_by = RZP }
+        194 = { is_controlled_by = RZP }
+        241 = { is_controlled_by = RZP }
+        201 = { is_controlled_by = RZP }
+        199 = { is_controlled_by = RZP }
+        198 = { is_controlled_by = RZP }
+        202 = { is_controlled_by = RZP }
+        192 = { is_controlled_by = RZP }
+        203 = { is_controlled_by = RZP }
+        197 = { is_controlled_by = RZP }
+        226 = { is_controlled_by = RZP }
+        196 = { is_controlled_by = RZP }
+        200 = { is_controlled_by = RZP }
+        193 = { is_controlled_by = RZP }
+        259 = { is_controlled_by = RZP }
+    }
+}
+
+RZP_core_east = {
+    add_state_core = 207
+    add_state_core = 206
+    add_state_core = 204
+    add_state_core = 194
+    add_state_core = 241
+    add_state_core = 201
+    add_state_core = 199
+    add_state_core = 198
+    add_state_core = 202
+    add_state_core = 192
+    add_state_core = 203
+    add_state_core = 197
+    add_state_core = 226
+    add_state_core = 196
+    add_state_core = 200
+    add_state_core = 193
+    add_state_core = 259
+}

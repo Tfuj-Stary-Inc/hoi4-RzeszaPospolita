@@ -4036,9 +4036,19 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-	        name = "GFX_idea_RZP_polish_ssman"
+	    name = "GFX_idea_RZP_polish_ssman"
 		texturefile = "gfx/interface/ideas/rzp_advisor_adam.dds"
-        }
+    }
+
+	spriteType = {
+		name = "GFX_idea_luigi"
+		texturefile = "gfx/interface/ideas/rzp_theorist_luigi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RZP_kapitan_luigi"
+		texturefile = "gfx/interface/ideas/rzp_advisor_luigi.dds"
+	}
 	
 	spriteType = {
 	      name = "GFX_idea_RZP_advisor_waza"

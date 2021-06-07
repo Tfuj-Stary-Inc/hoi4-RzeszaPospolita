@@ -557,7 +557,7 @@ focus_tree = {
 					popularity = -0.05
 			}
 			add_popularity = {
-				    ideology = democarcy
+				    ideology = democracy
 					popularity = -0.05
 			}
 			add_popularity = {
@@ -791,7 +791,7 @@ focus_tree = {
 		id = RZP_relations_with_neighbours
 		icon = GFX_
 		x = 10
-		y = 22
+		y = 23
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_condemn_entente }
@@ -847,17 +847,23 @@ focus_tree = {
 		ai_will_do = {
 		    factor = 30
 		}
+		available = {
+			CHI = {
+				has_war_with = JAP
+			}
+		}
 		mutually_exclusive = { focus = RZP_przyjaznpolskojaponska }
 		completion_reward = {
 			CHI = {
-			  add_manpower = 25000
-			  add_political_power = 100
-			  army_experience = 20
+			    add_manpower = 25000
+			    add_political_power = 100
+			    army_experience = 20
 			}
 			
 			RZP = {
-			  add_political_power = 150
-			  army_experience = 25
+			    add_political_power = 150
+			    army_experience = 25
+			    add_manpower = -25000
 			}
 		}
 	}
@@ -894,6 +900,9 @@ focus_tree = {
 		}
 		available = {
 			has_equipment = {infantry_equipment > 4000}
+			JAP = {
+				has_war_with = CHI
+			}
 		}
 		completion_reward = {
 			JAP = {
@@ -1220,13 +1229,13 @@ focus_tree = {
 	    }
 	    completion_reward = {
 	            if = {
-	                    #limit = {
-	                    #        has_country_flag = nsppr_purge_1_a
-	                    #}
-	                    #add_timed_idea = {
-	                    #        idea = 
-	                    #        days = 650
-	                    #}
+	                    limit = {
+	                            has_country_flag = nsppr_purge_1_a
+	                    }
+	                    add_timed_idea = {
+	                            idea = RZP_generals_purged
+	                            days = 650
+	                    }
 	            }
 	            if = {
 	                   limit = {
@@ -1341,8 +1350,131 @@ focus_tree = {
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_bring_back_commonwealth }
+		available = {
+			LIT = {
+				NOT = {
+					exists = yes
+				}
+			}
+		}
 		completion_reward = {
 			    set_cosmetic_tag = RZP_commonwealth
+		}
+	}
+
+	focus = {
+		id = RZP_claim_north
+		icon = GFX_
+		x = 33
+		y = 22
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_commonwealth_rebirth }
+		completion_reward = {
+			    custom_effect_tooltip = rzp_north_claims
+			    hidden_effect = {
+			        RZP_monarchist_north = yes
+				}
+		}
+	}
+
+	focus = {
+		id = RZP_incorporate_north
+		icon = GFX_
+		x = 33
+		y = 23
+		cost = 9
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_claim_north }
+		available = {
+			AND = {
+				RZP = {
+					controls_state = 12
+					controls_state = 13
+					controls_state = 190
+					controls_state = 191
+				}
+			}
+		}
+		completion_reward = {
+			add_state_core = 12
+			add_state_core = 13
+			add_state_core = 190
+			add_state_core = 191
+		}
+	}
+
+	focus = {
+		id = RZP_claim_prussia
+		icon = GFX_
+		x = 36
+		y = 22
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = RZP_commonwealth_rebirth }
+		completion_reward = {
+			add_state_claim = 763
+			add_state_claim = 5
+		}
+	}
+
+	focus = {
+		id = RZP_incorporate_prussia
+		icon = GFX_
+		x = 36
+		y = 23
+		cost = 9
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_claim_prussia }
+		available = {
+			AND = {
+				RZP = {
+					controls_state = 5
+					controls_state = 763
+				}
+			}
+		}
+		completion_reward = {
+			add_state_core = 5
+			add_state_core = 763
+		}
+	}
+
+	focus = {
+		id = RZP_claim_east
+		icon = GFX_
+		x = 39
+		y = 22
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_commonwealth_rebirth }
+		completion_reward = {
+			custom_effect_tooltip = rzp_east_claims
+			hidden_effect = {
+				RZP_monarchist_east = yes
+			}
+		}
+	}
+
+	focus = {
+	    id = RZP_incorporate_east
+		icon = GFX_
+		x = 39
+		y = 23
+		cost = 20
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_claim_east }
+		available = {
+			custom_effect_tooltip = rzp_claims_controled
+			hidden_effect = {
+				RZP_east_claim_control = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = RZP_core_east
+			hidden_effect = {
+				RZP_core_east = yes
+			}
 		}
 	}
 	
