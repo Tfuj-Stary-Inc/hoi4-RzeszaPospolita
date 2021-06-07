@@ -220,25 +220,52 @@ country_event = {
 	}
 	option = {
 		name = rzeszapospolita.11.a
-		ai_chance = { factor = 3 }
-		RZP = {
+		ai_chance = {
+			base = 25
+		}
+		random_list = {
+			35 = {
+		        RZP = {
                     transfer_state = 689
                     transfer_state = 696
                 }
+			}
+			65 = {
+				add_political_power = -75
+			}
+		}
 	}
 	option = {
 		name = rzeszapospolita.11.b
-		ai_chance = { factor = 1 }
-		RZP = {
+		ai_chance = {
+			base = 10
+		}
+		random_list = {
+			60 = {
+		        RZP = {
                     transfer_state= 422
                 }
+			}
+			40 = {
+				add_political_power = -25
+			}
+		}
 	}
 	option = {
 		name = rzeszapospolita.11.c
-		ai_chance = { factor = 0 }
-		RZP = {
+		ai_chance = {
+			base = 0
+		}
+		random_list = {
+			60 = {
+		        RZP = {
                     transfer_state= 704
                 }
+			}
+			40 = {
+				add_political_power = -25
+			}
+		}
 	}
 }
 
@@ -256,19 +283,45 @@ country_event = {
 	option = {
 		name = rzeszapospolita.15.a
 		JRP = {
-                    transfer_state= 646
-                    transfer_state= 63
-                    transfer_state= 85
-                    add_state_core= 62
-                    add_state_core= 86
-                }
+			if = {
+				limit = {
+					63 = {
+						is_controlled_by = RZP
+					}
+					transfer_state = 63
+					add_state_core = 63
+				}
+				limit = {
+					68 = {
+						is_controlled_by = RZP
+					}
+					transfer_state = 68
+					add_state_core = 68
+				}
+				limit = {
+					85 = {
+						is_controlled_by = RZP
+					}
+					transfer_state = 85
+					add_state_core = 85
+				}
+				limit = {
+					86 = {
+						is_controlled_by = RZP
+					}
+					transfer_state = 86
+					add_state_core = 86
+				}
+			}
+            transfer_state= 646
+        }
 
-                RZP = {
-                    declare_war_on= { 
-                    target = JRP
-                    type = annex_everything 
-                    }
-                }
+        RZP = {
+            declare_war_on= { 
+                target = JRP
+                type = annex_everything 
+            }
+        }
 	}
 }
 
@@ -295,13 +348,16 @@ country_event = {
 	picture = GFX_/hoi4/event_gfx/report_event_merchant_ship_01
 	is_triggered_only = yes
 	fire_only_once = yes
-	major = yes
-	trigger = {
-		RZP = { has_completed_focus = RZP_ukrascalaske }
-	}
 	option = {
 		name = rzeszapospolita.18.a
-		RZP = { transfer_state = 463 }
+		random_list = {
+            35 = {
+				RZP = { transfer_state = 463 }
+			}
+			65 = {
+				add_political_power = -100
+			}
+		}
 	}
 }
 
@@ -711,6 +767,47 @@ country_event = {
 				    type = take_state_focus
 					target = LIT
 					generator = { 11 188 189 }
+			}
+	}
+}
+
+country_event = {
+	id = rzeszapospolita_monarchist.7
+	title = rzeszapospolita_monarchist.7.t
+	desc = rzeszapospolita_monarchist.7.d
+
+	fire_only_once = yes
+	trigger = {
+		has_civil_war = yes
+		random_other_country = {
+			limit = {
+			    original_tag = RZP
+				has_government = fascism
+			}
+			surrender_progress > 0.7
+		}
+	}
+
+	option = {
+		    name = rzeszapospolita_monarchist.8.a
+			random_other_country = {
+				limit = {
+					original_tag = RZP
+					has_government = fascism
+				}
+				every_unit_leader = {
+					    set_nationality = RZP
+				}
+			}
+			annex_country = {
+				target = {
+					random_other_country = {
+						limit = {
+							original_tag = RZP
+							has_government = fascism
+						}
+					}
+				}
 			}
 	}
 }

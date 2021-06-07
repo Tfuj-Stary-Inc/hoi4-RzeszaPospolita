@@ -5194,6 +5194,19 @@ rebbelious_commander = {
 		war_support_weekly = 0.05
 		conscription_factor = 0.1
 	}
+
+	likes_germany = {
+		random = no
+		ai_strategy = {
+			type = befriend
+			id = "GER"			
+			value = 50
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
    
     national_hero = {
 		random = no
