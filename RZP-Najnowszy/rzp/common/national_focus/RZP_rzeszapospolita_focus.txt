@@ -1041,7 +1041,7 @@ focus_tree = {
 		y = 21
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_nawiazaniekontaktuzewspolnota }
+		prerequisite = { focus = RZP_contact_with_commonwealth }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1109,7 +1109,7 @@ focus_tree = {
 		y = 22
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = RZP_amerykapolnocna }
+		prerequisite = { focus = RZP_contact_with_usa }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1129,7 +1129,7 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = RZP_nawiazaniekontaktuzamerykami }
-		mutually_exclusive = { focus = RZP_amerykapolnocna }
+		mutually_exclusive = { focus = RZP_contact_with_usa }
 		ai_will_do = {
 			factor = 1
 		}
