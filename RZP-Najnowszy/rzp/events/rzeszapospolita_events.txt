@@ -507,6 +507,7 @@ country_event = {
 					set_equipment_fraction = 0.4
 					set_stability = 0.45
 					set_war_support = 0.3
+					complete_national_focus = RZP_monarchist_uprising
 
 					add_popularity = {
 						    ideology = neutrality

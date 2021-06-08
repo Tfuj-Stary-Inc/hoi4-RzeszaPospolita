@@ -1205,12 +1205,67 @@ focus_tree = {
 	    icon = GFX_
 	    x = 32
 	    y = 18
-	    cost = 5
+	    cost = 1
 	    available_if_capitulated = no
 	    prerequisite = { focus = RZP_prepare_monarchist_plot }
+		available = {
+			has_civil_war = yes
+			has_government = neutrality
+		}
 	    completion_reward = {
-
+			add_ideas = { RZP_monarchist_cw }
 	    }
+	}
+
+	focus = {
+		id = RZP_desperate_defense
+		icon = GFX_
+		x = 32
+		y = 19
+		cost = 1
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_monarchist_uprising }
+		available = {
+			has_civil_war = yes
+			has_government = neutrality
+			surrender_progress > 0.35
+		}
+		bypass = {
+			NOT = {
+				has_civil_war = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = { RZP_hold_the_ground }
+		}
+	}
+
+	focus = {
+		id = RZP_cw_end
+		icon = GFX_
+		x = 32
+		y = 20
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = { focus = RZP_desperate_defense }
+		available = {
+			NOT = {
+				has_civil_war = yes
+			}
+			OR = {
+			    has_idea = RZP_monarchist_cw
+			    has_idea = RZP_hold_the_ground
+			}
+		}
+		completion_reward = {
+			remove_ideas = RZP_monarchist_cw
+			if = {
+				limit = {
+					has_idea = RZP_hold_the_ground
+				}
+				remove_ideas = RZP_hold_the_ground
+			}
+		}
 	}
 
 	focus = {
@@ -1226,6 +1281,7 @@ focus_tree = {
 	            NOT = {
 	                    has_civil_war = yes
 	            }
+				has_completed_focus = RZP_cw_end
 	    }
 	    completion_reward = {
 	            if = {

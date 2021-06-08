@@ -5173,7 +5173,7 @@ rebbelious_commander = {
 		random = no
 		sprite = 25
 
-		stability_weekly = 0.15
+		stability_weekly = 0.0015
 		consumer_goods_factor = -0.01
 		neutrality_drift = 0.05
 	}
@@ -5191,7 +5191,7 @@ rebbelious_commander = {
 		random = no
 		sprite = 27
 
-		war_support_weekly = 0.05
+		war_support_weekly = 0.005
 		conscription_factor = 0.1
 	}
 
