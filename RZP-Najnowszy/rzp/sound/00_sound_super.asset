@@ -1,0 +1,5 @@
+sound = {
+    name = "ukraina"
+    file = "super_events/ukraina.wav"
+    always_load = no
+}
